@@ -1,0 +1,2768 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Arc2D (fsharp-geometry)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="Thomas Waters">
+
+    <link rel="stylesheet" id="theme_link" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.6.0/materia/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+    <link type="text/css" rel="stylesheet" href="/fsharp-geometry/content/navbar-fixed-left.css" />
+    <link type="text/css" rel="stylesheet" href="/fsharp-geometry/content/fsdocs-default.css" />
+    <link type="text/css" rel="stylesheet" href="/fsharp-geometry/content/fsdocs-custom.css" />
+    <script type="text/javascript" src="/fsharp-geometry/content/fsdocs-tips.js"></script>
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!-- BEGIN SEARCH BOX: this adds support for the search box -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.css" />
+    <!-- END SEARCH BOX: this adds support for the search box -->
+    
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md navbar-light bg-secondary fixed-left" id="fsdocs-nav">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse navbar-nav-scroll" id="navbarsExampleDefault">
+            <a href="/fsharp-geometry/"><img id="fsdocs-logo" src="/fsharp-geometry/img/logo.png" /></a>
+            <!-- BEGIN SEARCH BOX: this adds support for the search box -->
+            <div id="header">
+                <div class="searchbox" id="fsdocs-searchbox">
+                    <label for="search-by">
+                        <i class="fas fa-search"></i>
+                    </label>
+                    <input data-search-input="" id="search-by" type="search" placeholder="Search..." />
+                    <span data-search-clear="">
+                        <i class="fas fa-times"></i>
+                    </span>
+                </div>
+            </div>
+
+            <!-- END SEARCH BOX: this adds support for the search box -->
+            <ul class="navbar-nav">
+                <li class="nav-header">Links</li>
+                <li class="nav-item" id="fsdocs-license-link"><a class="nav-link" href="https://github.com/Evelios/fsharp-geometry/blob/master/LICENSE.md">License</a></li>
+                <li class="nav-item" id="fsdocs-release-notes-link"><a class="nav-link" href="https://github.com/Evelios/fsharp-geometry/blob/master/RELEASE_NOTES.md">Release Notes</a></li>
+                <li class="nav-item" id="fsdocs-repository-link"><a class="nav-link" href="https://github.com/Evelios/fsharp-geometry/">Source Repository</a></li>
+                
+                <li class="nav-header">
+  API Reference
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="/fsharp-geometry/reference/index.html">
+    All Namespaces
+  </a>
+</li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="masthead">
+            <h3 class="muted"><a href="/fsharp-geometry/">fsharp-geometry</a></h3>
+        </div>
+        <hr />
+        <div class="container" id="fsdocs-content">
+            <div>
+  <h2>
+    Arc2D Module
+  </h2>
+  <dl class="fsdocs-metadata">
+    <dt>
+      Namespace: 
+      <a href="/fsharp-geometry/reference/geometry.html">
+        Geometry
+      </a>
+    </dt>
+    <dt>
+      Assembly: Geometry.dll
+    </dt>
+  </dl>
+  <div class="fsdocs-xmldoc">
+    <div>
+      <p class="fsdocs-summary">
+        
+      </p>
+    </div>
+  </div>
+  <div>
+    <h3>
+      Functions and values
+    </h3>
+    <table class="table outer-list fsdocs-member-list">
+      <thead>
+        <tr>
+          <td class="fsdocs-member-list-header">
+            Function or value
+          </td>
+          <td class="fsdocs-member-list-header">
+            Description
+          </td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '46', 46)" onmouseover="showTip(event, '46', 46)">
+                <p>
+                  <a id="boundingBox">
+                    <a href="#boundingBox">
+                      <code><span>boundingBox&#32;<span>givenArc</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="46">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>boundingBox&#32;<span>givenArc</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        givenArc
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-arc2d-2.html">Arc2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="/fsharp-geometry/reference/geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Geometry.Arc2DModule.boundingBox``2```')">
+                <img src="/fsharp-geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Geometry.Arc2DModule.boundingBox``2\'/>')">
+                <img src="/fsharp-geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/fsharp-geometry/Geometry/Arc2D.fs#L271-271" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/fsharp-geometry/content/img/github.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Get a bounding box for a given arc.
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  givenArc
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-arc2d-2.html">Arc2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="/fsharp-geometry/reference/geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '47', 47)" onmouseover="showTip(event, '47', 47)">
+                <p>
+                  <a id="centerPoint">
+                    <a href="#centerPoint">
+                      <code><span>centerPoint&#32;<span>arc</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="47">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>centerPoint&#32;<span>arc</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        arc
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-arc2d-2.html">Arc2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="/fsharp-geometry/reference/geometry-point2d-2.html">Point2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Geometry.Arc2DModule.centerPoint``2```')">
+                <img src="/fsharp-geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Geometry.Arc2DModule.centerPoint``2\'/>')">
+                <img src="/fsharp-geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/fsharp-geometry/Geometry/Arc2D.fs#L210-210" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/fsharp-geometry/content/img/github.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  arc
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-arc2d-2.html">Arc2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="/fsharp-geometry/reference/geometry-point2d-2.html">Point2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '48', 48)" onmouseover="showTip(event, '48', 48)">
+                <p>
+                  <a id="endPoint">
+                    <a href="#endPoint">
+                      <code><span>endPoint&#32;<span>arc</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="48">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>endPoint&#32;<span>arc</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        arc
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-arc2d-2.html">Arc2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="/fsharp-geometry/reference/geometry-point2d-2.html">Point2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Geometry.Arc2DModule.endPoint``2```')">
+                <img src="/fsharp-geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Geometry.Arc2DModule.endPoint``2\'/>')">
+                <img src="/fsharp-geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/fsharp-geometry/Geometry/Arc2D.fs#L268-268" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/fsharp-geometry/content/img/github.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  arc
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-arc2d-2.html">Arc2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="/fsharp-geometry/reference/geometry-point2d-2.html">Point2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '49', 49)" onmouseover="showTip(event, '49', 49)">
+                <p>
+                  <a id="firstDerivative">
+                    <a href="#firstDerivative">
+                      <code><span>firstDerivative&#32;<span>arc&#32;parameterValue</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="49">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>firstDerivative&#32;<span>arc&#32;parameterValue</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        arc
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-arc2d-2.html">Arc2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        parameterValue
+                      </b>
+                      :
+                      <code>float</code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="/fsharp-geometry/reference/geometry-vector2d-2.html">Vector2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Geometry.Arc2DModule.firstDerivative``2```')">
+                <img src="/fsharp-geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Geometry.Arc2DModule.firstDerivative``2\'/>')">
+                <img src="/fsharp-geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/fsharp-geometry/Geometry/Arc2D.fs#L313-313" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/fsharp-geometry/content/img/github.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Get the first derivative of an arc at a given parameter value.
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  arc
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-arc2d-2.html">Arc2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  parameterValue
+                </span>
+                :
+                <code>float</code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="/fsharp-geometry/reference/geometry-vector2d-2.html">Vector2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '50', 50)" onmouseover="showTip(event, '50', 50)">
+                <p>
+                  <a id="from">
+                    <a href="#from">
+                      <code><span>from&#32;<span>givenStartPoint&#32;givenEndPoint&#32;givenSweptAngle</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="50">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>from&#32;<span>givenStartPoint&#32;givenEndPoint&#32;givenSweptAngle</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        givenStartPoint
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-point2d-2.html">Point2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        givenEndPoint
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-point2d-2.html">Point2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        givenSweptAngle
+                      </b>
+                      :
+                      <code><a href="/fsharp-geometry/reference/geometry-angle.html">Angle</a></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="/fsharp-geometry/reference/geometry-arc2d-2.html">Arc2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Geometry.Arc2DModule.from``2```')">
+                <img src="/fsharp-geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Geometry.Arc2DModule.from``2\'/>')">
+                <img src="/fsharp-geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/fsharp-geometry/Geometry/Arc2D.fs#L9-9" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/fsharp-geometry/content/img/github.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Construct an arc with from the first given point to the second, with the
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  givenStartPoint
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-point2d-2.html">Point2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  givenEndPoint
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-point2d-2.html">Point2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  givenSweptAngle
+                </span>
+                :
+                <code><a href="/fsharp-geometry/reference/geometry-angle.html">Angle</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="/fsharp-geometry/reference/geometry-arc2d-2.html">Arc2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '51', 51)" onmouseover="showTip(event, '51', 51)">
+                <p>
+                  <a id="fromNondegenerate">
+                    <a href="#fromNondegenerate">
+                      <code><span>fromNondegenerate&#32;<span>arc</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="51">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>fromNondegenerate&#32;<span>arc</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        arc
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-nondegenerate-2.html">Nondegenerate</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="/fsharp-geometry/reference/geometry-arc2d-2.html">Arc2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Geometry.Arc2DModule.fromNondegenerate``2```')">
+                <img src="/fsharp-geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Geometry.Arc2DModule.fromNondegenerate``2\'/>')">
+                <img src="/fsharp-geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/fsharp-geometry/Geometry/Arc2D.fs#L337-337" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/fsharp-geometry/content/img/github.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Convert a nondegenerate arc back to a general `Arc2d`.
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  arc
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-nondegenerate-2.html">Nondegenerate</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="/fsharp-geometry/reference/geometry-arc2d-2.html">Arc2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '52', 52)" onmouseover="showTip(event, '52', 52)">
+                <p>
+                  <a id="midpoint">
+                    <a href="#midpoint">
+                      <code><span>midpoint&#32;<span>arc</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="52">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>midpoint&#32;<span>arc</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        arc
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-arc2d-2.html">Arc2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="/fsharp-geometry/reference/geometry-point2d-2.html">Point2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Geometry.Arc2DModule.midpoint``2```')">
+                <img src="/fsharp-geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Geometry.Arc2DModule.midpoint``2\'/>')">
+                <img src="/fsharp-geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/fsharp-geometry/Geometry/Arc2D.fs#L266-266" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/fsharp-geometry/content/img/github.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  arc
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-arc2d-2.html">Arc2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="/fsharp-geometry/reference/geometry-point2d-2.html">Point2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '53', 53)" onmouseover="showTip(event, '53', 53)">
+                <p>
+                  <a id="mirrorAcross">
+                    <a href="#mirrorAcross">
+                      <code><span>mirrorAcross&#32;<span>axis&#32;arc</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="53">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>mirrorAcross&#32;<span>axis&#32;arc</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        axis
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-axis2d-2.html">Axis2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        arc
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-arc2d-2.html">Arc2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="/fsharp-geometry/reference/geometry-arc2d-2.html">Arc2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Geometry.Arc2DModule.mirrorAcross``2```')">
+                <img src="/fsharp-geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Geometry.Arc2DModule.mirrorAcross``2\'/>')">
+                <img src="/fsharp-geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/fsharp-geometry/Geometry/Arc2D.fs#L416-416" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/fsharp-geometry/content/img/github.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Mirror an arc across a given axis. This negates the sign of the arc's
+ swept angle.
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  axis
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-axis2d-2.html">Axis2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  arc
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-arc2d-2.html">Arc2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="/fsharp-geometry/reference/geometry-arc2d-2.html">Arc2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '54', 54)" onmouseover="showTip(event, '54', 54)">
+                <p>
+                  <a id="nondegenerate">
+                    <a href="#nondegenerate">
+                      <code><span>nondegenerate&#32;<span>arc</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="54">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>nondegenerate&#32;<span>arc</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        arc
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-arc2d-2.html">Arc2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-fsharpresult-2">Result</a>&lt;<span><span><a href="/fsharp-geometry/reference/geometry-nondegenerate-2.html">Nondegenerate</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span>,&#32;<span><a href="/fsharp-geometry/reference/geometry-point2d-2.html">Point2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Geometry.Arc2DModule.nondegenerate``2```')">
+                <img src="/fsharp-geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Geometry.Arc2DModule.nondegenerate``2\'/>')">
+                <img src="/fsharp-geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/fsharp-geometry/Geometry/Arc2D.fs#L326-326" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/fsharp-geometry/content/img/github.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Attempt to construct a non-degenerate arc from a general `Arc2d`. If the arc
+ is in fact degenerate (consists of a single point), returns an `Err` with that
+ point.
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  arc
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-arc2d-2.html">Arc2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-fsharpresult-2">Result</a>&lt;<span><span><a href="/fsharp-geometry/reference/geometry-nondegenerate-2.html">Nondegenerate</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span>,&#32;<span><a href="/fsharp-geometry/reference/geometry-point2d-2.html">Point2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '55', 55)" onmouseover="showTip(event, '55', 55)">
+                <p>
+                  <a id="placeIn">
+                    <a href="#placeIn">
+                      <code><span>placeIn&#32;<span>frame&#32;arc</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="55">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>placeIn&#32;<span>frame&#32;arc</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        frame
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-frame2d-3.html">Frame2D</a>&lt;<span>'Unit,&#32;'Coordinates,&#32;'Defines</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        arc
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-arc2d-2.html">Arc2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="/fsharp-geometry/reference/geometry-arc2d-2.html">Arc2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Geometry.Arc2DModule.placeIn``3```')">
+                <img src="/fsharp-geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Geometry.Arc2DModule.placeIn``3\'/>')">
+                <img src="/fsharp-geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/fsharp-geometry/Geometry/Arc2D.fs#L445-445" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/fsharp-geometry/content/img/github.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Take an arc considered to be defined in local coordinates relative to a
+ given reference frame, and return that arc expressed in global coordinates.
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  frame
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-frame2d-3.html">Frame2D</a>&lt;<span>'Unit,&#32;'Coordinates,&#32;'Defines</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  arc
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-arc2d-2.html">Arc2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="/fsharp-geometry/reference/geometry-arc2d-2.html">Arc2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '56', 56)" onmouseover="showTip(event, '56', 56)">
+                <p>
+                  <a id="pointOn">
+                    <a href="#pointOn">
+                      <code><span>pointOn&#32;<span>arc&#32;parameterValue</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="56">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>pointOn&#32;<span>arc&#32;parameterValue</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        arc
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-arc2d-2.html">Arc2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        parameterValue
+                      </b>
+                      :
+                      <code>float</code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="/fsharp-geometry/reference/geometry-point2d-2.html">Point2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Geometry.Arc2DModule.pointOn``2```')">
+                <img src="/fsharp-geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Geometry.Arc2DModule.pointOn``2\'/>')">
+                <img src="/fsharp-geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/fsharp-geometry/Geometry/Arc2D.fs#L232-232" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/fsharp-geometry/content/img/github.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Get the point along an arc at a given parameter value.
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  arc
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-arc2d-2.html">Arc2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  parameterValue
+                </span>
+                :
+                <code>float</code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="/fsharp-geometry/reference/geometry-point2d-2.html">Point2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '57', 57)" onmouseover="showTip(event, '57', 57)">
+                <p>
+                  <a id="radius">
+                    <a href="#radius">
+                      <code><span>radius&#32;<span>arc</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="57">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>radius&#32;<span>arc</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        arc
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-arc2d-2.html">Arc2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="/fsharp-geometry/reference/geometry-length-1.html">Length</a>&lt;'Unit&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Geometry.Arc2DModule.radius``2```')">
+                <img src="/fsharp-geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Geometry.Arc2DModule.radius``2\'/>')">
+                <img src="/fsharp-geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/fsharp-geometry/Geometry/Arc2D.fs#L226-226" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/fsharp-geometry/content/img/github.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Get the radius of an arc.
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  arc
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-arc2d-2.html">Arc2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="/fsharp-geometry/reference/geometry-length-1.html">Length</a>&lt;'Unit&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '58', 58)" onmouseover="showTip(event, '58', 58)">
+                <p>
+                  <a id="relativeTo">
+                    <a href="#relativeTo">
+                      <code><span>relativeTo&#32;<span>frame&#32;arc</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="58">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>relativeTo&#32;<span>frame&#32;arc</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        frame
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-frame2d-3.html">Frame2D</a>&lt;<span>'Unit,&#32;'Coordinates,&#32;'Defines</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        arc
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-arc2d-2.html">Arc2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="/fsharp-geometry/reference/geometry-arc2d-2.html">Arc2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Geometry.Arc2DModule.relativeTo``3```')">
+                <img src="/fsharp-geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Geometry.Arc2DModule.relativeTo``3\'/>')">
+                <img src="/fsharp-geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/fsharp-geometry/Geometry/Arc2D.fs#L425-425" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/fsharp-geometry/content/img/github.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Take an arc defined in global coordinates, and return it expressed in local
+ coordinates relative to a given reference frame.
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  frame
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-frame2d-3.html">Frame2D</a>&lt;<span>'Unit,&#32;'Coordinates,&#32;'Defines</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  arc
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-arc2d-2.html">Arc2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="/fsharp-geometry/reference/geometry-arc2d-2.html">Arc2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '59', 59)" onmouseover="showTip(event, '59', 59)">
+                <p>
+                  <a id="reverse">
+                    <a href="#reverse">
+                      <code><span>reverse&#32;<span>arc</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="59">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>reverse&#32;<span>arc</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        arc
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-arc2d-2.html">Arc2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="/fsharp-geometry/reference/geometry-arc2d-2.html">Arc2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Geometry.Arc2DModule.reverse``2```')">
+                <img src="/fsharp-geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Geometry.Arc2DModule.reverse``2\'/>')">
+                <img src="/fsharp-geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/fsharp-geometry/Geometry/Arc2D.fs#L354-354" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/fsharp-geometry/content/img/github.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Reverse the direction of an arc, so that the start point becomes the end
+ point and vice versa.
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  arc
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-arc2d-2.html">Arc2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="/fsharp-geometry/reference/geometry-arc2d-2.html">Arc2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '60', 60)" onmouseover="showTip(event, '60', 60)">
+                <p>
+                  <a id="rotateAround">
+                    <a href="#rotateAround">
+                      <code><span>rotateAround&#32;<span>point&#32;angle&#32;arc</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="60">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>rotateAround&#32;<span>point&#32;angle&#32;arc</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        point
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-point2d-2.html">Point2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        angle
+                      </b>
+                      :
+                      <code><a href="/fsharp-geometry/reference/geometry-angle.html">Angle</a></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        arc
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-arc2d-2.html">Arc2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="/fsharp-geometry/reference/geometry-arc2d-2.html">Arc2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Geometry.Arc2DModule.rotateAround``2```')">
+                <img src="/fsharp-geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Geometry.Arc2DModule.rotateAround``2\'/>')">
+                <img src="/fsharp-geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/fsharp-geometry/Geometry/Arc2D.fs#L380-380" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/fsharp-geometry/content/img/github.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Rotate an arc around a given point by a given angle.
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  point
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-point2d-2.html">Point2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  angle
+                </span>
+                :
+                <code><a href="/fsharp-geometry/reference/geometry-angle.html">Angle</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  arc
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-arc2d-2.html">Arc2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="/fsharp-geometry/reference/geometry-arc2d-2.html">Arc2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '61', 61)" onmouseover="showTip(event, '61', 61)">
+                <p>
+                  <a id="sample">
+                    <a href="#sample">
+                      <code><span>sample&#32;<span>nondegenerateArc&#32;parameterValue</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="61">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>sample&#32;<span>nondegenerateArc&#32;parameterValue</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        nondegenerateArc
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-nondegenerate-2.html">Nondegenerate</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        parameterValue
+                      </b>
+                      :
+                      <code>float</code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><span><a href="/fsharp-geometry/reference/geometry-point2d-2.html">Point2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span>&#32;*&#32;<span><a href="/fsharp-geometry/reference/geometry-direction2d-1.html">Direction2D</a>&lt;'Coordinates&gt;</span></span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Geometry.Arc2DModule.sample``2```')">
+                <img src="/fsharp-geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Geometry.Arc2DModule.sample``2\'/>')">
+                <img src="/fsharp-geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/fsharp-geometry/Geometry/Arc2D.fs#L346-346" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/fsharp-geometry/content/img/github.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Get both the point and tangent direction of a nondegenerate arc at a given
+ parameter value.
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  nondegenerateArc
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-nondegenerate-2.html">Nondegenerate</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  parameterValue
+                </span>
+                :
+                <code>float</code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><span><a href="/fsharp-geometry/reference/geometry-point2d-2.html">Point2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span>&#32;*&#32;<span><a href="/fsharp-geometry/reference/geometry-direction2d-1.html">Direction2D</a>&lt;'Coordinates&gt;</span></span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '62', 62)" onmouseover="showTip(event, '62', 62)">
+                <p>
+                  <a id="scaleAbout">
+                    <a href="#scaleAbout">
+                      <code><span>scaleAbout&#32;<span>point&#32;scale&#32;arc</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="62">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>scaleAbout&#32;<span>point&#32;scale&#32;arc</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        point
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-point2d-2.html">Point2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        scale
+                      </b>
+                      :
+                      <code>float</code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        arc
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-arc2d-2.html">Arc2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="/fsharp-geometry/reference/geometry-arc2d-2.html">Arc2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Geometry.Arc2DModule.scaleAbout``2```')">
+                <img src="/fsharp-geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Geometry.Arc2DModule.scaleAbout``2\'/>')">
+                <img src="/fsharp-geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/fsharp-geometry/Geometry/Arc2D.fs#L363-363" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/fsharp-geometry/content/img/github.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Scale an arc about a given point by a given scale.
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  point
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-point2d-2.html">Point2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  scale
+                </span>
+                :
+                <code>float</code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  arc
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-arc2d-2.html">Arc2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="/fsharp-geometry/reference/geometry-arc2d-2.html">Arc2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '63', 63)" onmouseover="showTip(event, '63', 63)">
+                <p>
+                  <a id="startPoint">
+                    <a href="#startPoint">
+                      <code><span>startPoint&#32;<span>arc</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="63">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>startPoint&#32;<span>arc</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        arc
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-arc2d-2.html">Arc2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="/fsharp-geometry/reference/geometry-point2d-2.html">Point2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Geometry.Arc2DModule.startPoint``2```')">
+                <img src="/fsharp-geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Geometry.Arc2DModule.startPoint``2\'/>')">
+                <img src="/fsharp-geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/fsharp-geometry/Geometry/Arc2D.fs#L264-264" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/fsharp-geometry/content/img/github.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Get the start point of an arc.
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  arc
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-arc2d-2.html">Arc2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="/fsharp-geometry/reference/geometry-point2d-2.html">Point2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '64', 64)" onmouseover="showTip(event, '64', 64)">
+                <p>
+                  <a id="sweptAngle">
+                    <a href="#sweptAngle">
+                      <code><span>sweptAngle&#32;<span>arc</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="64">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>sweptAngle&#32;<span>arc</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        arc
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-arc2d-2.html">Arc2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><a href="/fsharp-geometry/reference/geometry-angle.html">Angle</a></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Geometry.Arc2DModule.sweptAngle``2```')">
+                <img src="/fsharp-geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Geometry.Arc2DModule.sweptAngle``2\'/>')">
+                <img src="/fsharp-geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/fsharp-geometry/Geometry/Arc2D.fs#L229-229" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/fsharp-geometry/content/img/github.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Get the swept angle of an arc. The result will be positive for a
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  arc
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-arc2d-2.html">Arc2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><a href="/fsharp-geometry/reference/geometry-angle.html">Angle</a></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '65', 65)" onmouseover="showTip(event, '65', 65)">
+                <p>
+                  <a id="sweptAround">
+                    <a href="#sweptAround">
+                      <code><span>sweptAround&#32;<span>givenCenterPoint&#32;givenSweptAngle&#32;givenStartPoint</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="65">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>sweptAround&#32;<span>givenCenterPoint&#32;givenSweptAngle&#32;givenStartPoint</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        givenCenterPoint
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-point2d-2.html">Point2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        givenSweptAngle
+                      </b>
+                      :
+                      <code><a href="/fsharp-geometry/reference/geometry-angle.html">Angle</a></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        givenStartPoint
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-point2d-2.html">Point2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="/fsharp-geometry/reference/geometry-arc2d-2.html">Arc2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Geometry.Arc2DModule.sweptAround``2```')">
+                <img src="/fsharp-geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Geometry.Arc2DModule.sweptAround``2\'/>')">
+                <img src="/fsharp-geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/fsharp-geometry/Geometry/Arc2D.fs#L81-81" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/fsharp-geometry/content/img/github.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Construct an arc by sweeping (rotating) a given start point around a given
+ center point by a given angle. The center point to sweep around is given first
+ and the start point to be swept is given last.
+
+ A positive swept angle means that the arc is formed by rotating the start point
+ counterclockwise around the center point. A negative swept angle results in
+ a clockwise arc instead.
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  givenCenterPoint
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-point2d-2.html">Point2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  givenSweptAngle
+                </span>
+                :
+                <code><a href="/fsharp-geometry/reference/geometry-angle.html">Angle</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  givenStartPoint
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-point2d-2.html">Point2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="/fsharp-geometry/reference/geometry-arc2d-2.html">Arc2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '66', 66)" onmouseover="showTip(event, '66', 66)">
+                <p>
+                  <a id="tangentDirection">
+                    <a href="#tangentDirection">
+                      <code><span>tangentDirection&#32;<span>arc&#32;parameterValue</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="66">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>tangentDirection&#32;<span>arc&#32;parameterValue</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        arc
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-arc2d-2.html">Arc2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        parameterValue
+                      </b>
+                      :
+                      <code>float</code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="/fsharp-geometry/reference/geometry-direction2d-1.html">Direction2D</a>&lt;'Coordinates&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Geometry.Arc2DModule.tangentDirection``2```')">
+                <img src="/fsharp-geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Geometry.Arc2DModule.tangentDirection``2\'/>')">
+                <img src="/fsharp-geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/fsharp-geometry/Geometry/Arc2D.fs#L340-340" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/fsharp-geometry/content/img/github.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+  Get the tangent direction to a nondegenerate arc at a given parameter
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  arc
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-arc2d-2.html">Arc2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  parameterValue
+                </span>
+                :
+                <code>float</code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="/fsharp-geometry/reference/geometry-direction2d-1.html">Direction2D</a>&lt;'Coordinates&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '67', 67)" onmouseover="showTip(event, '67', 67)">
+                <p>
+                  <a id="throughPoints">
+                    <a href="#throughPoints">
+                      <code><span>throughPoints&#32;<span>first&#32;second&#32;third</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="67">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>throughPoints&#32;<span>first&#32;second&#32;third</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        first
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-point2d-2.html">Point2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        second
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-point2d-2.html">Point2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        third
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-point2d-2.html">Point2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><span><a href="/fsharp-geometry/reference/geometry-arc2d-2.html">Arc2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span>&#32;option</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Geometry.Arc2DModule.throughPoints``2```')">
+                <img src="/fsharp-geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Geometry.Arc2DModule.throughPoints``2\'/>')">
+                <img src="/fsharp-geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/fsharp-geometry/Geometry/Arc2D.fs#L106-106" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/fsharp-geometry/content/img/github.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Attempt to construct an arc that starts at the first given point, passes
+ through the second given point and ends at the third given point:
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  first
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-point2d-2.html">Point2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  second
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-point2d-2.html">Point2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  third
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-point2d-2.html">Point2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><span><a href="/fsharp-geometry/reference/geometry-arc2d-2.html">Arc2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span>&#32;option</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '68', 68)" onmouseover="showTip(event, '68', 68)">
+                <p>
+                  <a id="translateBy">
+                    <a href="#translateBy">
+                      <code><span>translateBy&#32;<span>displacement&#32;arc</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="68">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>translateBy&#32;<span>displacement&#32;arc</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        displacement
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-vector2d-2.html">Vector2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        arc
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-arc2d-2.html">Arc2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="/fsharp-geometry/reference/geometry-arc2d-2.html">Arc2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Geometry.Arc2DModule.translateBy``2```')">
+                <img src="/fsharp-geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Geometry.Arc2DModule.translateBy``2\'/>')">
+                <img src="/fsharp-geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/fsharp-geometry/Geometry/Arc2D.fs#L393-393" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/fsharp-geometry/content/img/github.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Translate an arc by a given displacement.
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  displacement
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-vector2d-2.html">Vector2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  arc
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-arc2d-2.html">Arc2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="/fsharp-geometry/reference/geometry-arc2d-2.html">Arc2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '69', 69)" onmouseover="showTip(event, '69', 69)">
+                <p>
+                  <a id="translateIn">
+                    <a href="#translateIn">
+                      <code><span>translateIn&#32;<span>direction&#32;distance&#32;arc</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="69">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>translateIn&#32;<span>direction&#32;distance&#32;arc</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        direction
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-direction2d-1.html">Direction2D</a>&lt;'Coordinates&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        distance
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-length-1.html">Length</a>&lt;'Unit&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        arc
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-arc2d-2.html">Arc2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="/fsharp-geometry/reference/geometry-arc2d-2.html">Arc2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Geometry.Arc2DModule.translateIn``2```')">
+                <img src="/fsharp-geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Geometry.Arc2DModule.translateIn``2\'/>')">
+                <img src="/fsharp-geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/fsharp-geometry/Geometry/Arc2D.fs#L405-405" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/fsharp-geometry/content/img/github.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Translate an arc in a given direction by a given distance.
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  direction
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-direction2d-1.html">Direction2D</a>&lt;'Coordinates&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  distance
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-length-1.html">Length</a>&lt;'Unit&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  arc
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-arc2d-2.html">Arc2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="/fsharp-geometry/reference/geometry-arc2d-2.html">Arc2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '70', 70)" onmouseover="showTip(event, '70', 70)">
+                <p>
+                  <a id="withCenterPoint">
+                    <a href="#withCenterPoint">
+                      <code><span>withCenterPoint&#32;<span>centerPoint&#32;radius&#32;startAngle&#32;sweptAngle</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="70">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>withCenterPoint&#32;<span>centerPoint&#32;radius&#32;startAngle&#32;sweptAngle</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        centerPoint
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-point2d-2.html">Point2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        radius
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-length-1.html">Length</a>&lt;'Unit&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        startAngle
+                      </b>
+                      :
+                      <code><a href="/fsharp-geometry/reference/geometry-angle.html">Angle</a></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        sweptAngle
+                      </b>
+                      :
+                      <code><a href="/fsharp-geometry/reference/geometry-angle.html">Angle</a></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="/fsharp-geometry/reference/geometry-arc2d-2.html">Arc2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Geometry.Arc2DModule.withCenterPoint``2```')">
+                <img src="/fsharp-geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Geometry.Arc2DModule.withCenterPoint``2\'/>')">
+                <img src="/fsharp-geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/fsharp-geometry/Geometry/Arc2D.fs#L49-49" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/fsharp-geometry/content/img/github.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Construct an arc with the given center point, radius, start angle and swept
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  centerPoint
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-point2d-2.html">Point2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  radius
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-length-1.html">Length</a>&lt;'Unit&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  startAngle
+                </span>
+                :
+                <code><a href="/fsharp-geometry/reference/geometry-angle.html">Angle</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  sweptAngle
+                </span>
+                :
+                <code><a href="/fsharp-geometry/reference/geometry-angle.html">Angle</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="/fsharp-geometry/reference/geometry-arc2d-2.html">Arc2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '71', 71)" onmouseover="showTip(event, '71', 71)">
+                <p>
+                  <a id="withRadius">
+                    <a href="#withRadius">
+                      <code><span>withRadius&#32;<span>radius&#32;sweptAngle&#32;startPoint&#32;endPoint</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="71">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>withRadius&#32;<span>radius&#32;sweptAngle&#32;startPoint&#32;endPoint</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        radius
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-length-1.html">Length</a>&lt;'Unit&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        sweptAngle
+                      </b>
+                      :
+                      <code><a href="/fsharp-geometry/reference/geometry-sweptangle.html">SweptAngle</a></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        startPoint
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-point2d-2.html">Point2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        endPoint
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-point2d-2.html">Point2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><span><a href="/fsharp-geometry/reference/geometry-arc2d-2.html">Arc2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span>&#32;option</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Geometry.Arc2DModule.withRadius``2```')">
+                <img src="/fsharp-geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Geometry.Arc2DModule.withRadius``2\'/>')">
+                <img src="/fsharp-geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/fsharp-geometry/Geometry/Arc2D.fs#L142-142" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/fsharp-geometry/content/img/github.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  radius
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-length-1.html">Length</a>&lt;'Unit&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  sweptAngle
+                </span>
+                :
+                <code><a href="/fsharp-geometry/reference/geometry-sweptangle.html">SweptAngle</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  startPoint
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-point2d-2.html">Point2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  endPoint
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-point2d-2.html">Point2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><span><a href="/fsharp-geometry/reference/geometry-arc2d-2.html">Arc2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span>&#32;option</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '72', 72)" onmouseover="showTip(event, '72', 72)">
+                <p>
+                  <a id="withSweptAngle">
+                    <a href="#withSweptAngle">
+                      <code><span>withSweptAngle&#32;<span>center&#32;radius&#32;startAngle&#32;sweptAngle</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="72">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>withSweptAngle&#32;<span>center&#32;radius&#32;startAngle&#32;sweptAngle</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        center
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-point2d-2.html">Point2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        radius
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-length-1.html">Length</a>&lt;'Unit&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        startAngle
+                      </b>
+                      :
+                      <code><a href="/fsharp-geometry/reference/geometry-angle.html">Angle</a></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        sweptAngle
+                      </b>
+                      :
+                      <code><a href="/fsharp-geometry/reference/geometry-angle.html">Angle</a></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="/fsharp-geometry/reference/geometry-arc2d-2.html">Arc2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Geometry.Arc2DModule.withSweptAngle``2```')">
+                <img src="/fsharp-geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Geometry.Arc2DModule.withSweptAngle``2\'/>')">
+                <img src="/fsharp-geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/fsharp-geometry/Geometry/Arc2D.fs#L191-191" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/fsharp-geometry/content/img/github.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Construct an arc with the given center point, radius, start angle and swept
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  center
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-point2d-2.html">Point2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  radius
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-length-1.html">Length</a>&lt;'Unit&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  startAngle
+                </span>
+                :
+                <code><a href="/fsharp-geometry/reference/geometry-angle.html">Angle</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  sweptAngle
+                </span>
+                :
+                <code><a href="/fsharp-geometry/reference/geometry-angle.html">Angle</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="/fsharp-geometry/reference/geometry-arc2d-2.html">Arc2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+</div>
+            
+        </div>
+
+        <!-- BEGIN SEARCH BOX: this adds support for the search box -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.css" />
+        <script type="text/javascript">var fsdocs_search_baseurl = '/fsharp-geometry/';</script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.8/lunr.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.min.js"></script>
+        <script type="text/javascript" src="/fsharp-geometry/content/fsdocs-search.js"></script>
+        <!-- END SEARCH BOX: this adds support for the search box -->
+    </div>
+</body>
+
+</html>

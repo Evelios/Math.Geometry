@@ -1,0 +1,1853 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Triangle2D (fsharp-geometry)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="Thomas Waters">
+
+    <link rel="stylesheet" id="theme_link" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.6.0/materia/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+    <link type="text/css" rel="stylesheet" href="/fsharp-geometry/content/navbar-fixed-left.css" />
+    <link type="text/css" rel="stylesheet" href="/fsharp-geometry/content/fsdocs-default.css" />
+    <link type="text/css" rel="stylesheet" href="/fsharp-geometry/content/fsdocs-custom.css" />
+    <script type="text/javascript" src="/fsharp-geometry/content/fsdocs-tips.js"></script>
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!-- BEGIN SEARCH BOX: this adds support for the search box -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.css" />
+    <!-- END SEARCH BOX: this adds support for the search box -->
+    
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md navbar-light bg-secondary fixed-left" id="fsdocs-nav">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse navbar-nav-scroll" id="navbarsExampleDefault">
+            <a href="/fsharp-geometry/"><img id="fsdocs-logo" src="/fsharp-geometry/img/logo.png" /></a>
+            <!-- BEGIN SEARCH BOX: this adds support for the search box -->
+            <div id="header">
+                <div class="searchbox" id="fsdocs-searchbox">
+                    <label for="search-by">
+                        <i class="fas fa-search"></i>
+                    </label>
+                    <input data-search-input="" id="search-by" type="search" placeholder="Search..." />
+                    <span data-search-clear="">
+                        <i class="fas fa-times"></i>
+                    </span>
+                </div>
+            </div>
+
+            <!-- END SEARCH BOX: this adds support for the search box -->
+            <ul class="navbar-nav">
+                <li class="nav-header">Links</li>
+                <li class="nav-item" id="fsdocs-license-link"><a class="nav-link" href="https://github.com/Evelios/fsharp-geometry/blob/master/LICENSE.md">License</a></li>
+                <li class="nav-item" id="fsdocs-release-notes-link"><a class="nav-link" href="https://github.com/Evelios/fsharp-geometry/blob/master/RELEASE_NOTES.md">Release Notes</a></li>
+                <li class="nav-item" id="fsdocs-repository-link"><a class="nav-link" href="https://github.com/Evelios/fsharp-geometry/">Source Repository</a></li>
+                
+                <li class="nav-header">
+  API Reference
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="/fsharp-geometry/reference/index.html">
+    All Namespaces
+  </a>
+</li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="masthead">
+            <h3 class="muted"><a href="/fsharp-geometry/">fsharp-geometry</a></h3>
+        </div>
+        <hr />
+        <div class="container" id="fsdocs-content">
+            <div>
+  <h2>
+    Triangle2D Module
+  </h2>
+  <dl class="fsdocs-metadata">
+    <dt>
+      Namespace: 
+      <a href="/fsharp-geometry/reference/geometry.html">
+        Geometry
+      </a>
+    </dt>
+    <dt>
+      Assembly: Geometry.dll
+    </dt>
+  </dl>
+  <div class="fsdocs-xmldoc">
+    <div>
+      <p class="fsdocs-summary">
+        
+      </p>
+    </div>
+  </div>
+  <div>
+    <h3>
+      Functions and values
+    </h3>
+    <table class="table outer-list fsdocs-member-list">
+      <thead>
+        <tr>
+          <td class="fsdocs-member-list-header">
+            Function or value
+          </td>
+          <td class="fsdocs-member-list-header">
+            Description
+          </td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '547', 547)" onmouseover="showTip(event, '547', 547)">
+                <p>
+                  <a id="area">
+                    <a href="#area">
+                      <code><span>area&#32;<span>triangle</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="547">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>area&#32;<span>triangle</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        triangle
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-triangle2d-2.html">Triangle2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="/fsharp-geometry/reference/geometry-length-1.html">Length</a>&lt;<span>'Unit&#32;*&#32;'Unit</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Geometry.Triangle2DModule.area``2```')">
+                <img src="/fsharp-geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Geometry.Triangle2DModule.area``2\'/>')">
+                <img src="/fsharp-geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/fsharp-geometry/Geometry/Triangle2D.fs#L144-144" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/fsharp-geometry/content/img/github.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Get the area of a triangle. The result will always be positive regardless of
+ whether the triangle's vertices are in clockwise or counterclockwise order.
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  triangle
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-triangle2d-2.html">Triangle2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="/fsharp-geometry/reference/geometry-length-1.html">Length</a>&lt;<span>'Unit&#32;*&#32;'Unit</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '548', 548)" onmouseover="showTip(event, '548', 548)">
+                <p>
+                  <a id="centroid">
+                    <a href="#centroid">
+                      <code><span>centroid&#32;<span>triangle</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="548">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>centroid&#32;<span>triangle</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        triangle
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-triangle2d-2.html">Triangle2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="/fsharp-geometry/reference/geometry-point2d-2.html">Point2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Geometry.Triangle2DModule.centroid``2```')">
+                <img src="/fsharp-geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Geometry.Triangle2DModule.centroid``2\'/>')">
+                <img src="/fsharp-geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/fsharp-geometry/Geometry/Triangle2D.fs#L46-46" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/fsharp-geometry/content/img/github.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Get the centroid (center of mass) of a triangle.
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  triangle
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-triangle2d-2.html">Triangle2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="/fsharp-geometry/reference/geometry-point2d-2.html">Point2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '549', 549)" onmouseover="showTip(event, '549', 549)">
+                <p>
+                  <a id="circumcircle">
+                    <a href="#circumcircle">
+                      <code><span>circumcircle&#32;<span>triangle</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="549">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>circumcircle&#32;<span>triangle</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        triangle
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-triangle2d-2.html">Triangle2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><span><a href="/fsharp-geometry/reference/geometry-circle2d-2.html">Circle2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span>&#32;option</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Geometry.Triangle2DModule.circumcircle``2```')">
+                <img src="/fsharp-geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Geometry.Triangle2DModule.circumcircle``2\'/>')">
+                <img src="/fsharp-geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/fsharp-geometry/Geometry/Triangle2D.fs#L53-53" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/fsharp-geometry/content/img/github.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Attempt to find the circumcircle of a triangle, a circle that passes through
+ each of the triangle's vertices;
+ If the triangle is degenerate (its three vertices are collinear), returns
+ `None`.
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  triangle
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-triangle2d-2.html">Triangle2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><span><a href="/fsharp-geometry/reference/geometry-circle2d-2.html">Circle2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span>&#32;option</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '550', 550)" onmouseover="showTip(event, '550', 550)">
+                <p>
+                  <a id="clockwiseArea">
+                    <a href="#clockwiseArea">
+                      <code><span>clockwiseArea&#32;<span>triangle</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="550">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>clockwiseArea&#32;<span>triangle</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        triangle
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-triangle2d-2.html">Triangle2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="/fsharp-geometry/reference/geometry-length-1.html">Length</a>&lt;<span>'Unit&#32;*&#32;'Unit</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Geometry.Triangle2DModule.clockwiseArea``2```')">
+                <img src="/fsharp-geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Geometry.Triangle2DModule.clockwiseArea``2\'/>')">
+                <img src="/fsharp-geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/fsharp-geometry/Geometry/Triangle2D.fs#L140-140" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/fsharp-geometry/content/img/github.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Get the signed area of a triangle, returning a positive value if the
+ triangle's vertices are in clockwise order and a negative value otherwise.
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  triangle
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-triangle2d-2.html">Triangle2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="/fsharp-geometry/reference/geometry-length-1.html">Length</a>&lt;<span>'Unit&#32;*&#32;'Unit</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '551', 551)" onmouseover="showTip(event, '551', 551)">
+                <p>
+                  <a id="contains">
+                    <a href="#contains">
+                      <code><span>contains&#32;<span>point&#32;triangle</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="551">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>contains&#32;<span>point&#32;triangle</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        point
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-point2d-2.html">Point2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        triangle
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-triangle2d-2.html">Triangle2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code>bool</code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Geometry.Triangle2DModule.contains``2```')">
+                <img src="/fsharp-geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Geometry.Triangle2DModule.contains``2\'/>')">
+                <img src="/fsharp-geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/fsharp-geometry/Geometry/Triangle2D.fs#L113-113" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/fsharp-geometry/content/img/github.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Check whether a given point is inside a given triangle. It does not matter
+ whether the triangle's vertices are in clockwise or counterclockwise order.
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  point
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-point2d-2.html">Point2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  triangle
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-triangle2d-2.html">Triangle2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code>bool</code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '552', 552)" onmouseover="showTip(event, '552', 552)">
+                <p>
+                  <a id="counterclockwiseArea">
+                    <a href="#counterclockwiseArea">
+                      <code><span>counterclockwiseArea&#32;<span>triangle</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="552">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>counterclockwiseArea&#32;<span>triangle</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        triangle
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-triangle2d-2.html">Triangle2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="/fsharp-geometry/reference/geometry-length-1.html">Length</a>&lt;<span>'Unit&#32;*&#32;'Unit</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Geometry.Triangle2DModule.counterclockwiseArea``2```')">
+                <img src="/fsharp-geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Geometry.Triangle2DModule.counterclockwiseArea``2\'/>')">
+                <img src="/fsharp-geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/fsharp-geometry/Geometry/Triangle2D.fs#L133-133" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/fsharp-geometry/content/img/github.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Get the signed area of a triangle, returning a positive value if the
+ triangle's vertices are in counterclockwise order and a negative value
+ otherwise.
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  triangle
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-triangle2d-2.html">Triangle2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="/fsharp-geometry/reference/geometry-length-1.html">Length</a>&lt;<span>'Unit&#32;*&#32;'Unit</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '553', 553)" onmouseover="showTip(event, '553', 553)">
+                <p>
+                  <a id="edges">
+                    <a href="#edges">
+                      <code><span>edges&#32;<span>triangle</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="553">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>edges&#32;<span>triangle</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        triangle
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-triangle2d-2.html">Triangle2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><span><a href="/fsharp-geometry/reference/geometry-linesegment2d-2.html">LineSegment2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span>&#32;*&#32;<span><a href="/fsharp-geometry/reference/geometry-linesegment2d-2.html">LineSegment2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span>&#32;*&#32;<span><a href="/fsharp-geometry/reference/geometry-linesegment2d-2.html">LineSegment2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Geometry.Triangle2DModule.edges``2```')">
+                <img src="/fsharp-geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Geometry.Triangle2DModule.edges``2\'/>')">
+                <img src="/fsharp-geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/fsharp-geometry/Geometry/Triangle2D.fs#L37-37" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/fsharp-geometry/content/img/github.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Get the edges of a triangle: from the first vertex to the second, from the
+ second to the third, and from the third back to the first.
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  triangle
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-triangle2d-2.html">Triangle2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><span><a href="/fsharp-geometry/reference/geometry-linesegment2d-2.html">LineSegment2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span>&#32;*&#32;<span><a href="/fsharp-geometry/reference/geometry-linesegment2d-2.html">LineSegment2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span>&#32;*&#32;<span><a href="/fsharp-geometry/reference/geometry-linesegment2d-2.html">LineSegment2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '554', 554)" onmouseover="showTip(event, '554', 554)">
+                <p>
+                  <a id="from">
+                    <a href="#from">
+                      <code><span>from&#32;<span>p1&#32;p2&#32;p3</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="554">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>from&#32;<span>p1&#32;p2&#32;p3</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        p1
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-point2d-2.html">Point2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        p2
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-point2d-2.html">Point2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        p3
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-point2d-2.html">Point2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="/fsharp-geometry/reference/geometry-triangle2d-2.html">Triangle2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Geometry.Triangle2DModule.from``2```')">
+                <img src="/fsharp-geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Geometry.Triangle2DModule.from``2\'/>')">
+                <img src="/fsharp-geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/fsharp-geometry/Geometry/Triangle2D.fs#L10-10" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/fsharp-geometry/content/img/github.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Construct a triangle from the first point, to the second, to the third.
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  p1
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-point2d-2.html">Point2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  p2
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-point2d-2.html">Point2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  p3
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-point2d-2.html">Point2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="/fsharp-geometry/reference/geometry-triangle2d-2.html">Triangle2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '555', 555)" onmouseover="showTip(event, '555', 555)">
+                <p>
+                  <a id="fromVertices">
+                    <a href="#fromVertices">
+                      <code><span>fromVertices&#32;<span><span>(<span>arg1,&#32;arg2,&#32;arg3</span>)</span></span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="555">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>fromVertices&#32;<span><span>(<span>arg1,&#32;arg2,&#32;arg3</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        arg0
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-point2d-2.html">Point2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        arg1
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-point2d-2.html">Point2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        arg2
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-point2d-2.html">Point2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="/fsharp-geometry/reference/geometry-triangle2d-2.html">Triangle2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Geometry.Triangle2DModule.fromVertices``2```')">
+                <img src="/fsharp-geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Geometry.Triangle2DModule.fromVertices``2\'/>')">
+                <img src="/fsharp-geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/fsharp-geometry/Geometry/Triangle2D.fs#L19-19" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/fsharp-geometry/content/img/github.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Construct a triangle from its three vertices.
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  arg0
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-point2d-2.html">Point2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  arg1
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-point2d-2.html">Point2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  arg2
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-point2d-2.html">Point2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="/fsharp-geometry/reference/geometry-triangle2d-2.html">Triangle2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '556', 556)" onmouseover="showTip(event, '556', 556)">
+                <p>
+                  <a id="mapVertices">
+                    <a href="#mapVertices">
+                      <code><span>mapVertices&#32;<span>f&#32;triangle</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="556">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>mapVertices&#32;<span>f&#32;triangle</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        f
+                      </b>
+                      :
+                      <code><span><span><a href="/fsharp-geometry/reference/geometry-point2d-2.html">Point2D</a>&lt;<span>'UnitA,&#32;'CoordinatesA</span>&gt;</span>&#32;->&#32;<span><a href="/fsharp-geometry/reference/geometry-point2d-2.html">Point2D</a>&lt;<span>'UnitB,&#32;'CoordinatesB</span>&gt;</span></span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        triangle
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-triangle2d-2.html">Triangle2D</a>&lt;<span>'UnitA,&#32;'CoordinatesA</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="/fsharp-geometry/reference/geometry-triangle2d-2.html">Triangle2D</a>&lt;<span>'UnitB,&#32;'CoordinatesB</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Geometry.Triangle2DModule.mapVertices``4```')">
+                <img src="/fsharp-geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Geometry.Triangle2DModule.mapVertices``4\'/>')">
+                <img src="/fsharp-geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/fsharp-geometry/Geometry/Triangle2D.fs#L62-62" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/fsharp-geometry/content/img/github.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Transform each vertex of a triangle by a given function and create a new
+ triangle from the resulting points. Most other transformation functions can be
+ defined in terms of `mapVertices`.
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  f
+                </span>
+                :
+                <code><span><span><a href="/fsharp-geometry/reference/geometry-point2d-2.html">Point2D</a>&lt;<span>'UnitA,&#32;'CoordinatesA</span>&gt;</span>&#32;->&#32;<span><a href="/fsharp-geometry/reference/geometry-point2d-2.html">Point2D</a>&lt;<span>'UnitB,&#32;'CoordinatesB</span>&gt;</span></span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  triangle
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-triangle2d-2.html">Triangle2D</a>&lt;<span>'UnitA,&#32;'CoordinatesA</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="/fsharp-geometry/reference/geometry-triangle2d-2.html">Triangle2D</a>&lt;<span>'UnitB,&#32;'CoordinatesB</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '557', 557)" onmouseover="showTip(event, '557', 557)">
+                <p>
+                  <a id="mirrorAcross">
+                    <a href="#mirrorAcross">
+                      <code><span>mirrorAcross&#32;<span>axis&#32;triangle</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="557">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>mirrorAcross&#32;<span>axis&#32;triangle</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        axis
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-axis2d-2.html">Axis2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        triangle
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-triangle2d-2.html">Triangle2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="/fsharp-geometry/reference/geometry-triangle2d-2.html">Triangle2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Geometry.Triangle2DModule.mirrorAcross``2```')">
+                <img src="/fsharp-geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Geometry.Triangle2DModule.mirrorAcross``2\'/>')">
+                <img src="/fsharp-geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/fsharp-geometry/Geometry/Triangle2D.fs#L95-95" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/fsharp-geometry/content/img/github.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Mirror a triangle across a given axis. Note that mirroring a triangle will
+ result in its 'winding direction' being flipped - if the triangle's vertices
+ were in counterclockwise order before mirroring, they will be in clockwise order
+ afterwards and vice versa.
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  axis
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-axis2d-2.html">Axis2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  triangle
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-triangle2d-2.html">Triangle2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="/fsharp-geometry/reference/geometry-triangle2d-2.html">Triangle2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '558', 558)" onmouseover="showTip(event, '558', 558)">
+                <p>
+                  <a id="placeIn">
+                    <a href="#placeIn">
+                      <code><span>placeIn&#32;<span>frame&#32;triangle</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="558">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>placeIn&#32;<span>frame&#32;triangle</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        frame
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-frame2d-3.html">Frame2D</a>&lt;<span>'Unit,&#32;'Coordinates,&#32;'Defines</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        triangle
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-triangle2d-2.html">Triangle2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="/fsharp-geometry/reference/geometry-triangle2d-2.html">Triangle2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Geometry.Triangle2DModule.placeIn``3```')">
+                <img src="/fsharp-geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Geometry.Triangle2DModule.placeIn``3\'/>')">
+                <img src="/fsharp-geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/fsharp-geometry/Geometry/Triangle2D.fs#L105-105" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/fsharp-geometry/content/img/github.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Take a triangle considered to be defined in local coordinates relative to a
+ given reference frame, and return that triangle expressed in global coordinates.
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  frame
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-frame2d-3.html">Frame2D</a>&lt;<span>'Unit,&#32;'Coordinates,&#32;'Defines</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  triangle
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-triangle2d-2.html">Triangle2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="/fsharp-geometry/reference/geometry-triangle2d-2.html">Triangle2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '559', 559)" onmouseover="showTip(event, '559', 559)">
+                <p>
+                  <a id="relativeTo">
+                    <a href="#relativeTo">
+                      <code><span>relativeTo&#32;<span>frame&#32;triangle</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="559">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>relativeTo&#32;<span>frame&#32;triangle</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        frame
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-frame2d-3.html">Frame2D</a>&lt;<span>'Unit,&#32;'Coordinates,&#32;'Defines</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        triangle
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-triangle2d-2.html">Triangle2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="/fsharp-geometry/reference/geometry-triangle2d-2.html">Triangle2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Geometry.Triangle2DModule.relativeTo``3```')">
+                <img src="/fsharp-geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Geometry.Triangle2DModule.relativeTo``3\'/>')">
+                <img src="/fsharp-geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/fsharp-geometry/Geometry/Triangle2D.fs#L100-100" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/fsharp-geometry/content/img/github.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Take a triangle defined in global coordinates, and return it expressed
+ in local coordinates relative to a given reference frame.
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  frame
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-frame2d-3.html">Frame2D</a>&lt;<span>'Unit,&#32;'Coordinates,&#32;'Defines</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  triangle
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-triangle2d-2.html">Triangle2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="/fsharp-geometry/reference/geometry-triangle2d-2.html">Triangle2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '560', 560)" onmouseover="showTip(event, '560', 560)">
+                <p>
+                  <a id="rotateAround">
+                    <a href="#rotateAround">
+                      <code><span>rotateAround&#32;<span>centerPoint&#32;angle&#32;triangle</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="560">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>rotateAround&#32;<span>centerPoint&#32;angle&#32;triangle</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        centerPoint
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-point2d-2.html">Point2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        angle
+                      </b>
+                      :
+                      <code><a href="/fsharp-geometry/reference/geometry-angle.html">Angle</a></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        triangle
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-triangle2d-2.html">Triangle2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="/fsharp-geometry/reference/geometry-triangle2d-2.html">Triangle2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Geometry.Triangle2DModule.rotateAround``2```')">
+                <img src="/fsharp-geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Geometry.Triangle2DModule.rotateAround``2\'/>')">
+                <img src="/fsharp-geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/fsharp-geometry/Geometry/Triangle2D.fs#L80-80" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/fsharp-geometry/content/img/github.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Rotate a triangle around a given point by a given angle.
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  centerPoint
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-point2d-2.html">Point2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  angle
+                </span>
+                :
+                <code><a href="/fsharp-geometry/reference/geometry-angle.html">Angle</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  triangle
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-triangle2d-2.html">Triangle2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="/fsharp-geometry/reference/geometry-triangle2d-2.html">Triangle2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '561', 561)" onmouseover="showTip(event, '561', 561)">
+                <p>
+                  <a id="scaleAbout">
+                    <a href="#scaleAbout">
+                      <code><span>scaleAbout&#32;<span>point&#32;scale&#32;triangle</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="561">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>scaleAbout&#32;<span>point&#32;scale&#32;triangle</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        point
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-point2d-2.html">Point2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        scale
+                      </b>
+                      :
+                      <code>float</code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        triangle
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-triangle2d-2.html">Triangle2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="/fsharp-geometry/reference/geometry-triangle2d-2.html">Triangle2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Geometry.Triangle2DModule.scaleAbout``2```')">
+                <img src="/fsharp-geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Geometry.Triangle2DModule.scaleAbout``2\'/>')">
+                <img src="/fsharp-geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/fsharp-geometry/Geometry/Triangle2D.fs#L75-75" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/fsharp-geometry/content/img/github.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Scale a triangle about a given point by a given scale. Note that scaling by
+ a negative value will result in the 'winding direction' of the triangle being
+ flipped - if the triangle's vertices were in counterclockwise order before the
+ negative scaling, they will be in clockwise order afterwards and vice versa.
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  point
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-point2d-2.html">Point2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  scale
+                </span>
+                :
+                <code>float</code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  triangle
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-triangle2d-2.html">Triangle2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="/fsharp-geometry/reference/geometry-triangle2d-2.html">Triangle2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '562', 562)" onmouseover="showTip(event, '562', 562)">
+                <p>
+                  <a id="translateBy">
+                    <a href="#translateBy">
+                      <code><span>translateBy&#32;<span>vector&#32;triangle</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="562">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>translateBy&#32;<span>vector&#32;triangle</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        vector
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-vector2d-2.html">Vector2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        triangle
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-triangle2d-2.html">Triangle2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="/fsharp-geometry/reference/geometry-triangle2d-2.html">Triangle2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Geometry.Triangle2DModule.translateBy``2```')">
+                <img src="/fsharp-geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Geometry.Triangle2DModule.translateBy``2\'/>')">
+                <img src="/fsharp-geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/fsharp-geometry/Geometry/Triangle2D.fs#L84-84" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/fsharp-geometry/content/img/github.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Translate a triangle by a given displacement.
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  vector
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-vector2d-2.html">Vector2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  triangle
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-triangle2d-2.html">Triangle2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="/fsharp-geometry/reference/geometry-triangle2d-2.html">Triangle2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '563', 563)" onmouseover="showTip(event, '563', 563)">
+                <p>
+                  <a id="translateIn">
+                    <a href="#translateIn">
+                      <code><span>translateIn&#32;<span>direction&#32;distance&#32;triangle</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="563">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>translateIn&#32;<span>direction&#32;distance&#32;triangle</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        direction
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-direction2d-1.html">Direction2D</a>&lt;'Coordinates&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        distance
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-length-1.html">Length</a>&lt;'Unit&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        triangle
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-triangle2d-2.html">Triangle2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="/fsharp-geometry/reference/geometry-triangle2d-2.html">Triangle2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Geometry.Triangle2DModule.translateIn``2```')">
+                <img src="/fsharp-geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Geometry.Triangle2DModule.translateIn``2\'/>')">
+                <img src="/fsharp-geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/fsharp-geometry/Geometry/Triangle2D.fs#L88-88" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/fsharp-geometry/content/img/github.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Translate a triangle in a given direction by a given distance.
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  direction
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-direction2d-1.html">Direction2D</a>&lt;'Coordinates&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  distance
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-length-1.html">Length</a>&lt;'Unit&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  triangle
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-triangle2d-2.html">Triangle2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="/fsharp-geometry/reference/geometry-triangle2d-2.html">Triangle2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '564', 564)" onmouseover="showTip(event, '564', 564)">
+                <p>
+                  <a id="vertices">
+                    <a href="#vertices">
+                      <code><span>vertices&#32;<span>triangle</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="564">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>vertices&#32;<span>triangle</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        triangle
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-triangle2d-2.html">Triangle2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><span><a href="/fsharp-geometry/reference/geometry-point2d-2.html">Point2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span>&#32;*&#32;<span><a href="/fsharp-geometry/reference/geometry-point2d-2.html">Point2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span>&#32;*&#32;<span><a href="/fsharp-geometry/reference/geometry-point2d-2.html">Point2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Geometry.Triangle2DModule.vertices``2```')">
+                <img src="/fsharp-geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Geometry.Triangle2DModule.vertices``2\'/>')">
+                <img src="/fsharp-geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/fsharp-geometry/Geometry/Triangle2D.fs#L29-29" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/fsharp-geometry/content/img/github.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Get the three vertices of the triangle
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  triangle
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-triangle2d-2.html">Triangle2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><span><a href="/fsharp-geometry/reference/geometry-point2d-2.html">Point2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span>&#32;*&#32;<span><a href="/fsharp-geometry/reference/geometry-point2d-2.html">Point2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span>&#32;*&#32;<span><a href="/fsharp-geometry/reference/geometry-point2d-2.html">Point2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+</div>
+            
+        </div>
+
+        <!-- BEGIN SEARCH BOX: this adds support for the search box -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.css" />
+        <script type="text/javascript">var fsdocs_search_baseurl = '/fsharp-geometry/';</script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.8/lunr.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.min.js"></script>
+        <script type="text/javascript" src="/fsharp-geometry/content/fsdocs-search.js"></script>
+        <!-- END SEARCH BOX: this adds support for the search box -->
+    </div>
+</body>
+
+</html>

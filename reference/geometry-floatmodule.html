@@ -113,7 +113,7 @@
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '69', 69)" onmouseover="showTip(event, '69', 69)">
+              <code onmouseout="hideTip(event, '202', 202)" onmouseover="showTip(event, '202', 202)">
                 <p>
                   <a id="Epsilon">
                     <a href="#Epsilon">
@@ -122,7 +122,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="69">
+              <div class="fsdocs-tip" id="202">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code><span>Epsilon&#32;<span></span></span></code>
@@ -169,7 +169,7 @@
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '70', 70)" onmouseover="showTip(event, '70', 70)">
+              <code onmouseout="hideTip(event, '203', 203)" onmouseover="showTip(event, '203', 203)">
                 <p>
                   <a id="almostEqual">
                     <a href="#almostEqual">
@@ -178,7 +178,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="70">
+              <div class="fsdocs-tip" id="203">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code><span>almostEqual&#32;<span>a&#32;b</span></span></code>
@@ -263,7 +263,138 @@
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '71', 71)" onmouseover="showTip(event, '71', 71)">
+              <code onmouseout="hideTip(event, '204', 204)" onmouseover="showTip(event, '204', 204)">
+                <p>
+                  <a id="interpolateFrom">
+                    <a href="#interpolateFrom">
+                      <code><span>interpolateFrom&#32;<span>start&#32;finish&#32;parameter</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="204">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>interpolateFrom&#32;<span>start&#32;finish&#32;parameter</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        start
+                      </b>
+                      :
+                      <code>float</code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        finish
+                      </b>
+                      :
+                      <code>float</code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        parameter
+                      </b>
+                      :
+                      <code>float</code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code>float</code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Geometry.FloatModule.interpolateFrom`')">
+                <img src="/fsharp-geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Geometry.FloatModule.interpolateFrom\'/>')">
+                <img src="/fsharp-geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/fsharp-geometry/Geometry/Float.fs#L44-44" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/fsharp-geometry/content/img/github.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Interpolate from the first value to the second, based on a parameter that
+ ranges from zero to one. Passing a parameter value of zero will return the start
+ value and passing a parameter value of one will return the end value.
+     Float.interpolateFrom 5 10 0
+     --> 5
+     Float.interpolateFrom 5 10 1
+     --> 10
+     Float.interpolateFrom 5 10 0.6
+     --> 8
+ The end value can be less than the start value:
+     Float.interpolateFrom 10 5 0.1
+     --> 9.5
+ Parameter values less than zero or greater than one can be used to extrapolate:
+     Float.interpolateFrom 5 10 1.5
+     --> 12.5
+     Float.interpolateFrom 5 10 -0.5
+     --> 2.5
+     Float.interpolateFrom 10 5 -0.2
+     --> 11
+ -}
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  start
+                </span>
+                :
+                <code>float</code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  finish
+                </span>
+                :
+                <code>float</code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  parameter
+                </span>
+                :
+                <code>float</code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code>float</code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '205', 205)" onmouseover="showTip(event, '205', 205)">
                 <p>
                   <a id="roundFloat">
                     <a href="#roundFloat">
@@ -272,7 +403,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="71">
+              <div class="fsdocs-tip" id="205">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code><span>roundFloat&#32;<span>x</span></span></code>
@@ -341,7 +472,7 @@
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '72', 72)" onmouseover="showTip(event, '72', 72)">
+              <code onmouseout="hideTip(event, '206', 206)" onmouseover="showTip(event, '206', 206)">
                 <p>
                   <a id="roundFloatTo">
                     <a href="#roundFloatTo">
@@ -350,7 +481,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="72">
+              <div class="fsdocs-tip" id="206">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code><span>roundFloatTo&#32;<span>precision&#32;x</span></span></code>

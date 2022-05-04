@@ -1,0 +1,1805 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Ellipse2D (fsharp-geometry)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="Thomas Waters">
+
+    <link rel="stylesheet" id="theme_link" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.6.0/materia/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+    <link type="text/css" rel="stylesheet" href="/fsharp-geometry/content/navbar-fixed-left.css" />
+    <link type="text/css" rel="stylesheet" href="/fsharp-geometry/content/fsdocs-default.css" />
+    <link type="text/css" rel="stylesheet" href="/fsharp-geometry/content/fsdocs-custom.css" />
+    <script type="text/javascript" src="/fsharp-geometry/content/fsdocs-tips.js"></script>
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!-- BEGIN SEARCH BOX: this adds support for the search box -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.css" />
+    <!-- END SEARCH BOX: this adds support for the search box -->
+    
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md navbar-light bg-secondary fixed-left" id="fsdocs-nav">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse navbar-nav-scroll" id="navbarsExampleDefault">
+            <a href="/fsharp-geometry/"><img id="fsdocs-logo" src="/fsharp-geometry/img/logo.png" /></a>
+            <!-- BEGIN SEARCH BOX: this adds support for the search box -->
+            <div id="header">
+                <div class="searchbox" id="fsdocs-searchbox">
+                    <label for="search-by">
+                        <i class="fas fa-search"></i>
+                    </label>
+                    <input data-search-input="" id="search-by" type="search" placeholder="Search..." />
+                    <span data-search-clear="">
+                        <i class="fas fa-times"></i>
+                    </span>
+                </div>
+            </div>
+
+            <!-- END SEARCH BOX: this adds support for the search box -->
+            <ul class="navbar-nav">
+                <li class="nav-header">Links</li>
+                <li class="nav-item" id="fsdocs-license-link"><a class="nav-link" href="https://github.com/Evelios/fsharp-geometry/blob/master/LICENSE.md">License</a></li>
+                <li class="nav-item" id="fsdocs-release-notes-link"><a class="nav-link" href="https://github.com/Evelios/fsharp-geometry/blob/master/RELEASE_NOTES.md">Release Notes</a></li>
+                <li class="nav-item" id="fsdocs-repository-link"><a class="nav-link" href="https://github.com/Evelios/fsharp-geometry/">Source Repository</a></li>
+                
+                <li class="nav-header">
+  API Reference
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="/fsharp-geometry/reference/index.html">
+    All Namespaces
+  </a>
+</li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="masthead">
+            <h3 class="muted"><a href="/fsharp-geometry/">fsharp-geometry</a></h3>
+        </div>
+        <hr />
+        <div class="container" id="fsdocs-content">
+            <div>
+  <h2>
+    Ellipse2D Module
+  </h2>
+  <dl class="fsdocs-metadata">
+    <dt>
+      Namespace: 
+      <a href="/fsharp-geometry/reference/geometry.html">
+        Geometry
+      </a>
+    </dt>
+    <dt>
+      Assembly: Geometry.dll
+    </dt>
+  </dl>
+  <div class="fsdocs-xmldoc">
+    <div>
+      <p class="fsdocs-summary">
+        
+      </p>
+    </div>
+  </div>
+  <div>
+    <h3>
+      Functions and values
+    </h3>
+    <table class="table outer-list fsdocs-member-list">
+      <thead>
+        <tr>
+          <td class="fsdocs-member-list-header">
+            Function or value
+          </td>
+          <td class="fsdocs-member-list-header">
+            Description
+          </td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '184', 184)" onmouseover="showTip(event, '184', 184)">
+                <p>
+                  <a id="area">
+                    <a href="#area">
+                      <code><span>area&#32;<span>ellipse</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="184">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>area&#32;<span>ellipse</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        ellipse
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-ellipse2d-2.html">Ellipse2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="/fsharp-geometry/reference/geometry-length-1.html">Length</a>&lt;<span>'Unit&#32;*&#32;'Unit</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Geometry.Ellipse2D.area``2```')">
+                <img src="/fsharp-geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Geometry.Ellipse2D.area``2\'/>')">
+                <img src="/fsharp-geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/fsharp-geometry/Geometry/Ellipse2D.fs#L53-53" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/fsharp-geometry/content/img/github.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Get the area of an ellipse.
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  ellipse
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-ellipse2d-2.html">Ellipse2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="/fsharp-geometry/reference/geometry-length-1.html">Length</a>&lt;<span>'Unit&#32;*&#32;'Unit</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '185', 185)" onmouseover="showTip(event, '185', 185)">
+                <p>
+                  <a id="axes">
+                    <a href="#axes">
+                      <code><span>axes&#32;<span>ellipse</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="185">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>axes&#32;<span>ellipse</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        ellipse
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-ellipse2d-2.html">Ellipse2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="/fsharp-geometry/reference/geometry-frame2d-3.html">Frame2D</a>&lt;<span>'Unit,&#32;'Coordinates,&#32;'Defines</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Geometry.Ellipse2D.axes``3```')">
+                <img src="/fsharp-geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Geometry.Ellipse2D.axes``3\'/>')">
+                <img src="/fsharp-geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/fsharp-geometry/Geometry/Ellipse2D.fs#L19-19" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/fsharp-geometry/content/img/github.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Get the X and Y axes of an ellipse as a `Frame2D`.
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  ellipse
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-ellipse2d-2.html">Ellipse2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="/fsharp-geometry/reference/geometry-frame2d-3.html">Frame2D</a>&lt;<span>'Unit,&#32;'Coordinates,&#32;'Defines</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '186', 186)" onmouseover="showTip(event, '186', 186)">
+                <p>
+                  <a id="centerPoint">
+                    <a href="#centerPoint">
+                      <code><span>centerPoint&#32;<span>ellipse</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="186">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>centerPoint&#32;<span>ellipse</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        ellipse
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-ellipse2d-2.html">Ellipse2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="/fsharp-geometry/reference/geometry-point2d-2.html">Point2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Geometry.Ellipse2D.centerPoint``2```')">
+                <img src="/fsharp-geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Geometry.Ellipse2D.centerPoint``2\'/>')">
+                <img src="/fsharp-geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/fsharp-geometry/Geometry/Ellipse2D.fs#L22-22" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/fsharp-geometry/content/img/github.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Get the center point of an ellipse.
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  ellipse
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-ellipse2d-2.html">Ellipse2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="/fsharp-geometry/reference/geometry-point2d-2.html">Point2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '187', 187)" onmouseover="showTip(event, '187', 187)">
+                <p>
+                  <a id="from">
+                    <a href="#from">
+                      <code><span>from&#32;<span>centerPoint&#32;xDirection&#32;xRadius&#32;yRadius</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="187">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>from&#32;<span>centerPoint&#32;xDirection&#32;xRadius&#32;yRadius</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        centerPoint
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-point2d-2.html">Point2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        xDirection
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-direction2d-1.html">Direction2D</a>&lt;'Coordinates&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        xRadius
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-length-1.html">Length</a>&lt;'Unit&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        yRadius
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-length-1.html">Length</a>&lt;'Unit&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="/fsharp-geometry/reference/geometry-ellipse2d-2.html">Ellipse2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Geometry.Ellipse2D.from``2```')">
+                <img src="/fsharp-geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Geometry.Ellipse2D.from``2\'/>')">
+                <img src="/fsharp-geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/fsharp-geometry/Geometry/Ellipse2D.fs#L5-5" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/fsharp-geometry/content/img/github.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  centerPoint
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-point2d-2.html">Point2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  xDirection
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-direction2d-1.html">Direction2D</a>&lt;'Coordinates&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  xRadius
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-length-1.html">Length</a>&lt;'Unit&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  yRadius
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-length-1.html">Length</a>&lt;'Unit&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="/fsharp-geometry/reference/geometry-ellipse2d-2.html">Ellipse2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '188', 188)" onmouseover="showTip(event, '188', 188)">
+                <p>
+                  <a id="mirrorAcross">
+                    <a href="#mirrorAcross">
+                      <code><span>mirrorAcross&#32;<span>axis&#32;ellipse</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="188">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>mirrorAcross&#32;<span>axis&#32;ellipse</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        axis
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-axis2d-2.html">Axis2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        ellipse
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-ellipse2d-2.html">Ellipse2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="/fsharp-geometry/reference/geometry-ellipse2d-2.html">Ellipse2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Geometry.Ellipse2D.mirrorAcross``2```')">
+                <img src="/fsharp-geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Geometry.Ellipse2D.mirrorAcross``2\'/>')">
+                <img src="/fsharp-geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/fsharp-geometry/Geometry/Ellipse2D.fs#L120-120" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/fsharp-geometry/content/img/github.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+  Mirror an ellipse across a given axis. Note that if the axes of the original
+ ellipse form a [right-handed](https://en.wikipedia.org/wiki/Cartesian_coordinate_system#Orientation_and_handedness)
+ frame, then the axes of the mirrored ellipse will form a left-handed frame (and
+ vice versa).
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  axis
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-axis2d-2.html">Axis2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  ellipse
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-ellipse2d-2.html">Ellipse2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="/fsharp-geometry/reference/geometry-ellipse2d-2.html">Ellipse2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '189', 189)" onmouseover="showTip(event, '189', 189)">
+                <p>
+                  <a id="placeIn">
+                    <a href="#placeIn">
+                      <code><span>placeIn&#32;<span>frame&#32;ellipse</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="189">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>placeIn&#32;<span>frame&#32;ellipse</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        frame
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-frame2d-3.html">Frame2D</a>&lt;<span>'Unit,&#32;'GlobalCoordinates,&#32;unit</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        ellipse
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-ellipse2d-2.html">Ellipse2D</a>&lt;<span>'Unit,&#32;'GlobalCoordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="/fsharp-geometry/reference/geometry-ellipse2d-2.html">Ellipse2D</a>&lt;<span>'Unit,&#32;'LocalCoordinates</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Geometry.Ellipse2D.placeIn``3```')">
+                <img src="/fsharp-geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Geometry.Ellipse2D.placeIn``3\'/>')">
+                <img src="/fsharp-geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/fsharp-geometry/Geometry/Ellipse2D.fs#L138-138" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/fsharp-geometry/content/img/github.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Take an ellipse considered to be defined in local coordinates relative to a
+ given reference frame, and return that circle expressed in global coordinates.
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  frame
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-frame2d-3.html">Frame2D</a>&lt;<span>'Unit,&#32;'GlobalCoordinates,&#32;unit</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  ellipse
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-ellipse2d-2.html">Ellipse2D</a>&lt;<span>'Unit,&#32;'GlobalCoordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="/fsharp-geometry/reference/geometry-ellipse2d-2.html">Ellipse2D</a>&lt;<span>'Unit,&#32;'LocalCoordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '190', 190)" onmouseover="showTip(event, '190', 190)">
+                <p>
+                  <a id="relativeTo">
+                    <a href="#relativeTo">
+                      <code><span>relativeTo&#32;<span>frame&#32;ellipse</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="190">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>relativeTo&#32;<span>frame&#32;ellipse</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        frame
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-frame2d-3.html">Frame2D</a>&lt;<span>'Unit,&#32;'GlobalCoordinates,&#32;unit</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        ellipse
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-ellipse2d-2.html">Ellipse2D</a>&lt;<span>'Unit,&#32;'GlobalCoordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="/fsharp-geometry/reference/geometry-ellipse2d-2.html">Ellipse2D</a>&lt;<span>'Unit,&#32;'LocalCoordinates</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Geometry.Ellipse2D.relativeTo``3```')">
+                <img src="/fsharp-geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Geometry.Ellipse2D.relativeTo``3\'/>')">
+                <img src="/fsharp-geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/fsharp-geometry/Geometry/Ellipse2D.fs#L129-129" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/fsharp-geometry/content/img/github.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Take an ellipse defined in global coordinates, and return it expressed in
+ local coordinates relative to a given reference frame.
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  frame
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-frame2d-3.html">Frame2D</a>&lt;<span>'Unit,&#32;'GlobalCoordinates,&#32;unit</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  ellipse
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-ellipse2d-2.html">Ellipse2D</a>&lt;<span>'Unit,&#32;'GlobalCoordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="/fsharp-geometry/reference/geometry-ellipse2d-2.html">Ellipse2D</a>&lt;<span>'Unit,&#32;'LocalCoordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '191', 191)" onmouseover="showTip(event, '191', 191)">
+                <p>
+                  <a id="rotateAround">
+                    <a href="#rotateAround">
+                      <code><span>rotateAround&#32;<span>point&#32;angle&#32;ellipse</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="191">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>rotateAround&#32;<span>point&#32;angle&#32;ellipse</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        point
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-point2d-2.html">Point2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        angle
+                      </b>
+                      :
+                      <code><a href="/fsharp-geometry/reference/geometry-angle.html">Angle</a></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        ellipse
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-ellipse2d-2.html">Ellipse2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="/fsharp-geometry/reference/geometry-ellipse2d-2.html">Ellipse2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Geometry.Ellipse2D.rotateAround``2```')">
+                <img src="/fsharp-geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Geometry.Ellipse2D.rotateAround``2\'/>')">
+                <img src="/fsharp-geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/fsharp-geometry/Geometry/Ellipse2D.fs#L91-91" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/fsharp-geometry/content/img/github.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Rotate an ellipse around a given point by a given angle.
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  point
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-point2d-2.html">Point2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  angle
+                </span>
+                :
+                <code><a href="/fsharp-geometry/reference/geometry-angle.html">Angle</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  ellipse
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-ellipse2d-2.html">Ellipse2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="/fsharp-geometry/reference/geometry-ellipse2d-2.html">Ellipse2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '192', 192)" onmouseover="showTip(event, '192', 192)">
+                <p>
+                  <a id="scaleAbout">
+                    <a href="#scaleAbout">
+                      <code><span>scaleAbout&#32;<span>point&#32;scale&#32;ellipse</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="192">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>scaleAbout&#32;<span>point&#32;scale&#32;ellipse</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        point
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-point2d-2.html">Point2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        scale
+                      </b>
+                      :
+                      <code>float</code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        ellipse
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-ellipse2d-2.html">Ellipse2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="/fsharp-geometry/reference/geometry-ellipse2d-2.html">Ellipse2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Geometry.Ellipse2D.scaleAbout``2```')">
+                <img src="/fsharp-geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Geometry.Ellipse2D.scaleAbout``2\'/>')">
+                <img src="/fsharp-geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/fsharp-geometry/Geometry/Ellipse2D.fs#L57-57" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/fsharp-geometry/content/img/github.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Scale an ellipse about a given point by a given scale.
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  point
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-point2d-2.html">Point2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  scale
+                </span>
+                :
+                <code>float</code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  ellipse
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-ellipse2d-2.html">Ellipse2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="/fsharp-geometry/reference/geometry-ellipse2d-2.html">Ellipse2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '193', 193)" onmouseover="showTip(event, '193', 193)">
+                <p>
+                  <a id="transformBy">
+                    <a href="#transformBy">
+                      <code><span>transformBy&#32;<span>axesTransformation&#32;ellipse</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="193">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>transformBy&#32;<span>axesTransformation&#32;ellipse</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        axesTransformation
+                      </b>
+                      :
+                      <code><span><span><a href="/fsharp-geometry/reference/geometry-frame2d-3.html">Frame2D</a>&lt;<span>'Unit,&#32;'CoordinatesA,&#32;unit</span>&gt;</span>&#32;->&#32;<span><a href="/fsharp-geometry/reference/geometry-frame2d-3.html">Frame2D</a>&lt;<span>'Unit,&#32;'CoordinatesB,&#32;unit</span>&gt;</span></span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        ellipse
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-ellipse2d-2.html">Ellipse2D</a>&lt;<span>'Unit,&#32;'CoordinatesA</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="/fsharp-geometry/reference/geometry-ellipse2d-2.html">Ellipse2D</a>&lt;<span>'Unit,&#32;'CoordinatesB</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Geometry.Ellipse2D.transformBy``3```')">
+                <img src="/fsharp-geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Geometry.Ellipse2D.transformBy``3\'/>')">
+                <img src="/fsharp-geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/fsharp-geometry/Geometry/Ellipse2D.fs#L81-81" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/fsharp-geometry/content/img/github.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  axesTransformation
+                </span>
+                :
+                <code><span><span><a href="/fsharp-geometry/reference/geometry-frame2d-3.html">Frame2D</a>&lt;<span>'Unit,&#32;'CoordinatesA,&#32;unit</span>&gt;</span>&#32;->&#32;<span><a href="/fsharp-geometry/reference/geometry-frame2d-3.html">Frame2D</a>&lt;<span>'Unit,&#32;'CoordinatesB,&#32;unit</span>&gt;</span></span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  ellipse
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-ellipse2d-2.html">Ellipse2D</a>&lt;<span>'Unit,&#32;'CoordinatesA</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="/fsharp-geometry/reference/geometry-ellipse2d-2.html">Ellipse2D</a>&lt;<span>'Unit,&#32;'CoordinatesB</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '194', 194)" onmouseover="showTip(event, '194', 194)">
+                <p>
+                  <a id="translateBy">
+                    <a href="#translateBy">
+                      <code><span>translateBy&#32;<span>displacement&#32;ellipse</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="194">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>translateBy&#32;<span>displacement&#32;ellipse</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        displacement
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-vector2d-2.html">Vector2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        ellipse
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-ellipse2d-2.html">Ellipse2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="/fsharp-geometry/reference/geometry-ellipse2d-2.html">Ellipse2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Geometry.Ellipse2D.translateBy``2```')">
+                <img src="/fsharp-geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Geometry.Ellipse2D.translateBy``2\'/>')">
+                <img src="/fsharp-geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/fsharp-geometry/Geometry/Ellipse2D.fs#L100-100" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/fsharp-geometry/content/img/github.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Translate an ellipse by a given displacement.
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  displacement
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-vector2d-2.html">Vector2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  ellipse
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-ellipse2d-2.html">Ellipse2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="/fsharp-geometry/reference/geometry-ellipse2d-2.html">Ellipse2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '195', 195)" onmouseover="showTip(event, '195', 195)">
+                <p>
+                  <a id="translateIn">
+                    <a href="#translateIn">
+                      <code><span>translateIn&#32;<span>direction&#32;distance&#32;ellipse</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="195">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>translateIn&#32;<span>direction&#32;distance&#32;ellipse</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        direction
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-direction2d-1.html">Direction2D</a>&lt;'Coordinates&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        distance
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-length-1.html">Length</a>&lt;'Unit&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        ellipse
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-ellipse2d-2.html">Ellipse2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="/fsharp-geometry/reference/geometry-ellipse2d-2.html">Ellipse2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Geometry.Ellipse2D.translateIn``2```')">
+                <img src="/fsharp-geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Geometry.Ellipse2D.translateIn``2\'/>')">
+                <img src="/fsharp-geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/fsharp-geometry/Geometry/Ellipse2D.fs#L108-108" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/fsharp-geometry/content/img/github.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Translate an ellipse in a given direction by a given distance.
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  direction
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-direction2d-1.html">Direction2D</a>&lt;'Coordinates&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  distance
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-length-1.html">Length</a>&lt;'Unit&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  ellipse
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-ellipse2d-2.html">Ellipse2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="/fsharp-geometry/reference/geometry-ellipse2d-2.html">Ellipse2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '196', 196)" onmouseover="showTip(event, '196', 196)">
+                <p>
+                  <a id="xAxis">
+                    <a href="#xAxis">
+                      <code><span>xAxis&#32;<span>ellipse</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="196">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>xAxis&#32;<span>ellipse</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        ellipse
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-ellipse2d-2.html">Ellipse2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="/fsharp-geometry/reference/geometry-axis2d-2.html">Axis2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Geometry.Ellipse2D.xAxis``2```')">
+                <img src="/fsharp-geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Geometry.Ellipse2D.xAxis``2\'/>')">
+                <img src="/fsharp-geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/fsharp-geometry/Geometry/Ellipse2D.fs#L27-27" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/fsharp-geometry/content/img/github.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Get the X axis of an ellipse.
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  ellipse
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-ellipse2d-2.html">Ellipse2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="/fsharp-geometry/reference/geometry-axis2d-2.html">Axis2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '197', 197)" onmouseover="showTip(event, '197', 197)">
+                <p>
+                  <a id="xDirection">
+                    <a href="#xDirection">
+                      <code><span>xDirection&#32;<span>ellipse</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="197">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>xDirection&#32;<span>ellipse</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        ellipse
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-ellipse2d-2.html">Ellipse2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="/fsharp-geometry/reference/geometry-direction2d-1.html">Direction2D</a>&lt;'Coordinates&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Geometry.Ellipse2D.xDirection``2```')">
+                <img src="/fsharp-geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Geometry.Ellipse2D.xDirection``2\'/>')">
+                <img src="/fsharp-geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/fsharp-geometry/Geometry/Ellipse2D.fs#L45-45" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/fsharp-geometry/content/img/github.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Get the direction of the ellipse's X axis.
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  ellipse
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-ellipse2d-2.html">Ellipse2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="/fsharp-geometry/reference/geometry-direction2d-1.html">Direction2D</a>&lt;'Coordinates&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '198', 198)" onmouseover="showTip(event, '198', 198)">
+                <p>
+                  <a id="xRadius">
+                    <a href="#xRadius">
+                      <code><span>xRadius&#32;<span>ellipse</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="198">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>xRadius&#32;<span>ellipse</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        ellipse
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-ellipse2d-2.html">Ellipse2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="/fsharp-geometry/reference/geometry-length-1.html">Length</a>&lt;'Unit&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Geometry.Ellipse2D.xRadius``2```')">
+                <img src="/fsharp-geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Geometry.Ellipse2D.xRadius``2\'/>')">
+                <img src="/fsharp-geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/fsharp-geometry/Geometry/Ellipse2D.fs#L36-36" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/fsharp-geometry/content/img/github.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Get the radius of an ellipse along its X axis. This may be either the
+ minimum or maximum radius.
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  ellipse
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-ellipse2d-2.html">Ellipse2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="/fsharp-geometry/reference/geometry-length-1.html">Length</a>&lt;'Unit&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '199', 199)" onmouseover="showTip(event, '199', 199)">
+                <p>
+                  <a id="yAxis">
+                    <a href="#yAxis">
+                      <code><span>yAxis&#32;<span>ellipse</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="199">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>yAxis&#32;<span>ellipse</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        ellipse
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-ellipse2d-2.html">Ellipse2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="/fsharp-geometry/reference/geometry-axis2d-2.html">Axis2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Geometry.Ellipse2D.yAxis``2```')">
+                <img src="/fsharp-geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Geometry.Ellipse2D.yAxis``2\'/>')">
+                <img src="/fsharp-geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/fsharp-geometry/Geometry/Ellipse2D.fs#L31-31" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/fsharp-geometry/content/img/github.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Get the Y axis of an ellipse.
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  ellipse
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-ellipse2d-2.html">Ellipse2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="/fsharp-geometry/reference/geometry-axis2d-2.html">Axis2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '200', 200)" onmouseover="showTip(event, '200', 200)">
+                <p>
+                  <a id="yDirection">
+                    <a href="#yDirection">
+                      <code><span>yDirection&#32;<span>ellipse</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="200">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>yDirection&#32;<span>ellipse</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        ellipse
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-ellipse2d-2.html">Ellipse2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="/fsharp-geometry/reference/geometry-direction2d-1.html">Direction2D</a>&lt;'Coordinates&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Geometry.Ellipse2D.yDirection``2```')">
+                <img src="/fsharp-geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Geometry.Ellipse2D.yDirection``2\'/>')">
+                <img src="/fsharp-geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/fsharp-geometry/Geometry/Ellipse2D.fs#L49-49" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/fsharp-geometry/content/img/github.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Get the direction of an ellipse's Y axis.
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  ellipse
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-ellipse2d-2.html">Ellipse2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="/fsharp-geometry/reference/geometry-direction2d-1.html">Direction2D</a>&lt;'Coordinates&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '201', 201)" onmouseover="showTip(event, '201', 201)">
+                <p>
+                  <a id="yRadius">
+                    <a href="#yRadius">
+                      <code><span>yRadius&#32;<span>ellipse</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="201">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>yRadius&#32;<span>ellipse</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        ellipse
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-ellipse2d-2.html">Ellipse2D</a>&lt;<span>'Unit,&#32;'Coordiantes</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="/fsharp-geometry/reference/geometry-length-1.html">Length</a>&lt;'Unit&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Geometry.Ellipse2D.yRadius``2```')">
+                <img src="/fsharp-geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Geometry.Ellipse2D.yRadius``2\'/>')">
+                <img src="/fsharp-geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/fsharp-geometry/Geometry/Ellipse2D.fs#L41-41" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/fsharp-geometry/content/img/github.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Get the radius of an ellipse along its Y axis. This may be either the
+ minimum or maximum radius.
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  ellipse
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-ellipse2d-2.html">Ellipse2D</a>&lt;<span>'Unit,&#32;'Coordiantes</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="/fsharp-geometry/reference/geometry-length-1.html">Length</a>&lt;'Unit&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+</div>
+            
+        </div>
+
+        <!-- BEGIN SEARCH BOX: this adds support for the search box -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.css" />
+        <script type="text/javascript">var fsdocs_search_baseurl = '/fsharp-geometry/';</script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.8/lunr.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.min.js"></script>
+        <script type="text/javascript" src="/fsharp-geometry/content/fsdocs-search.js"></script>
+        <!-- END SEARCH BOX: this adds support for the search box -->
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>2D Vectors</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="Thomas Waters">
+
+    <link rel="stylesheet" id="theme_link" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.6.0/materia/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+    <link type="text/css" rel="stylesheet" href="/fsharp-geometry/content/navbar-fixed-left.css" />
+    <link type="text/css" rel="stylesheet" href="/fsharp-geometry/content/fsdocs-default.css" />
+    <link type="text/css" rel="stylesheet" href="/fsharp-geometry/content/fsdocs-custom.css" />
+    <script type="text/javascript" src="/fsharp-geometry/content/fsdocs-tips.js"></script>
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!-- BEGIN SEARCH BOX: this adds support for the search box -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.css" />
+    <!-- END SEARCH BOX: this adds support for the search box -->
+    
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md navbar-light bg-secondary fixed-left" id="fsdocs-nav">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse navbar-nav-scroll" id="navbarsExampleDefault">
+            <a href="/fsharp-geometry/"><img id="fsdocs-logo" src="/fsharp-geometry/img/logo.png" /></a>
+            <!-- BEGIN SEARCH BOX: this adds support for the search box -->
+            <div id="header">
+                <div class="searchbox" id="fsdocs-searchbox">
+                    <label for="search-by">
+                        <i class="fas fa-search"></i>
+                    </label>
+                    <input data-search-input="" id="search-by" type="search" placeholder="Search..." />
+                    <span data-search-clear="">
+                        <i class="fas fa-times"></i>
+                    </span>
+                </div>
+            </div>
+
+            <!-- END SEARCH BOX: this adds support for the search box -->
+            <ul class="navbar-nav">
+                <li class="nav-header">Links</li>
+                <li class="nav-item" id="fsdocs-license-link"><a class="nav-link" href="https://github.com/Evelios/fsharp-geometry/blob/master/LICENSE.md">License</a></li>
+                <li class="nav-item" id="fsdocs-release-notes-link"><a class="nav-link" href="https://github.com/Evelios/fsharp-geometry/blob/master/RELEASE_NOTES.md">Release Notes</a></li>
+                <li class="nav-item" id="fsdocs-repository-link"><a class="nav-link" href="https://github.com/Evelios/fsharp-geometry/">Source Repository</a></li>
+                <li class="nav-header">
+  Documentation
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="/fsharp-geometry/triangle.html">
+    triangle
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="/fsharp-geometry/axes.html">
+    axes
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="/fsharp-geometry/arc.html">
+    arc
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="/fsharp-geometry/frame.html">
+    frame
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="/fsharp-geometry/direction.html">
+    direction
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="/fsharp-geometry/vector.html">
+    2D Vectors
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="/fsharp-geometry/bounding-box.html">
+    bounding-box
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="/fsharp-geometry/ellipse.html">
+    ellipse
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="/fsharp-geometry/point.html">
+    point
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="/fsharp-geometry/size.html">
+    size
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="/fsharp-geometry/polyline.html">
+    polyline
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="/fsharp-geometry/circle.html">
+    circle
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="/fsharp-geometry/line-segment.html">
+    line-segment
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="/fsharp-geometry/polygon.html">
+    polygon
+  </a>
+</li>
+                <li class="nav-header">
+  API Reference
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="/fsharp-geometry/reference/index.html">
+    All Namespaces
+  </a>
+</li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="masthead">
+            <h3 class="muted"><a href="/fsharp-geometry/">fsharp-geometry</a></h3>
+        </div>
+        <hr />
+        <div class="container" id="fsdocs-content">
+            
+<h1><a name="Constructors" class="anchor" href="#Constructors">Constructors</a></h1>
+<p>Vectors can be created from the <strong>x</strong> and <strong>y</strong> components.</p>
+<pre class="fssnip highlighted"><code lang="fsharp"><span onmouseout="hideTip(event, 'fs2', 2)" onmouseover="showTip(event, 'fs2', 2)" class="m">Vector2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs3', 3)" onmouseover="showTip(event, 'fs3', 3)" class="id">xy</span> <span class="pn">(</span><span onmouseout="hideTip(event, 'fs4', 4)" onmouseover="showTip(event, 'fs4', 4)" class="m">Length</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs5', 5)" onmouseover="showTip(event, 'fs5', 5)" class="id">meters</span> <span class="n">3.</span><span class="pn">)</span> <span class="pn">(</span><span onmouseout="hideTip(event, 'fs4', 6)" onmouseover="showTip(event, 'fs4', 6)" class="m">Length</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs5', 7)" onmouseover="showTip(event, 'fs5', 7)" class="id">meters</span> <span class="n">4.</span><span class="pn">)</span>
+</code></pre>
+<p>You can also create a vector in polar coordinates.</p>
+<pre class="fssnip highlighted"><code lang="fsharp"><span onmouseout="hideTip(event, 'fs2', 8)" onmouseover="showTip(event, 'fs2', 8)" class="m">Vector2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs6', 9)" onmouseover="showTip(event, 'fs6', 9)" class="id">rTheta</span> <span class="pn">(</span><span onmouseout="hideTip(event, 'fs4', 10)" onmouseover="showTip(event, 'fs4', 10)" class="m">Length</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs5', 11)" onmouseover="showTip(event, 'fs5', 11)" class="id">meters</span> <span class="n">5.</span><span class="pn">)</span> <span onmouseout="hideTip(event, 'fs7', 12)" onmouseover="showTip(event, 'fs7', 12)" class="m">Angle</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs8', 13)" onmouseover="showTip(event, 'fs8', 13)" class="id">halfPi</span>
+</code></pre>
+<p>Using a vector <strong>direction</strong> you can create a vector of a given length following that direction.</p>
+<pre class="fssnip highlighted"><code lang="fsharp"><span onmouseout="hideTip(event, 'fs2', 14)" onmouseover="showTip(event, 'fs2', 14)" class="m">Vector2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs9', 15)" onmouseover="showTip(event, 'fs9', 15)" class="id">withLength</span> <span class="pn">(</span><span onmouseout="hideTip(event, 'fs4', 16)" onmouseover="showTip(event, 'fs4', 16)" class="m">Length</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs5', 17)" onmouseover="showTip(event, 'fs5', 17)" class="id">meters</span> <span class="n">5.</span><span class="pn">)</span> <span class="pn">(</span><span onmouseout="hideTip(event, 'fs10', 18)" onmouseover="showTip(event, 'fs10', 18)" class="m">Direction2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs11', 19)" onmouseover="showTip(event, 'fs11', 19)" class="id">fromAngle</span> <span onmouseout="hideTip(event, 'fs7', 20)" onmouseover="showTip(event, 'fs7', 20)" class="m">Angle</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs8', 21)" onmouseover="showTip(event, 'fs8', 21)" class="id">halfPi</span><span class="pn">)</span>
+</code></pre>
+
+            <div class="fsdocs-tip" id="fs1">namespace Geometry</div>
+<div class="fsdocs-tip" id="fs2">Multiple items<br />module Vector2D
+
+from Geometry<br /><br />--------------------<br />[&lt;Struct&gt;]
+type Vector2D&lt;&#39;Unit,&#39;Coordinates&gt; =
+  { X: Length&lt;&#39;Unit&gt;
+    Y: Length&lt;&#39;Unit&gt; }
+    interface IComparable
+    interface IComparable&lt;Vector2D&lt;&#39;Unit,&#39;Coordinates&gt;&gt;
+    member Comparison : other:Vector2D&lt;&#39;Unit,&#39;Coordinates&gt; -&gt; int
+    override Equals : obj:obj -&gt; bool + 1 overload
+    override GetHashCode : unit -&gt; int
+    member LessThan : other:Vector2D&lt;&#39;Unit,&#39;Coordinates&gt; -&gt; bool
+    static member ( * ) : vector:Vector2D&lt;&#39;Unit,&#39;Coordinates&gt; * scale:float -&gt; Vector2D&lt;&#39;Unit,&#39;Coordinates&gt; + 1 overload
+    static member ( + ) : lhs:Vector2D&lt;&#39;Unit,&#39;Coordinates&gt; * rhs:Vector2D&lt;&#39;Unit,&#39;Coordinates&gt; -&gt; Vector2D&lt;&#39;Unit,&#39;Coordinates&gt;
+    static member ( - ) : lhs:Vector2D&lt;&#39;Unit,&#39;Coordinates&gt; * rhs:Vector2D&lt;&#39;Unit,&#39;Coordinates&gt; -&gt; Vector2D&lt;&#39;Unit,&#39;Coordinates&gt;
+    static member ( / ) : vector:Vector2D&lt;&#39;Unit,&#39;Coordinates&gt; * scale:float -&gt; Vector2D&lt;&#39;Unit,&#39;Coordinates&gt; + 1 overload
+    ...</div>
+<div class="fsdocs-tip" id="fs3">val xy : x:Length&lt;&#39;Unit&gt; -&gt; y:Length&lt;&#39;Unit&gt; -&gt; Vector2D&lt;&#39;Unit,&#39;Coordinates&gt;<br /><em>&lt;summary&gt;
+ Construct a Vector2D object from the x and y lengths.
+&lt;/summary&gt;</em></div>
+<div class="fsdocs-tip" id="fs4">Multiple items<br />module Length
+
+from Geometry<br /><br />--------------------<br />type Length&lt;&#39;Unit&gt; =
+  | Length of float
+    interface IComparable
+    interface IComparable&lt;Length&lt;&#39;Unit&gt;&gt;
+    member Comparison : other:Length&lt;&#39;Unit&gt; -&gt; int
+    override Equals : obj:obj -&gt; bool + 1 overload
+    override GetHashCode : unit -&gt; int
+    member LessThan : Length&lt;&#39;Unit&gt; -&gt; bool
+    static member ( * ) : Length&lt;&#39;Unit&gt; * Length&lt;Unitless&gt; -&gt; Length&lt;&#39;Unit&gt; + 6 overloads
+    static member ( + ) : Length&lt;&#39;Unit&gt; * Length&lt;&#39;Unit&gt; -&gt; Length&lt;&#39;Unit&gt;
+    static member ( - ) : Length&lt;&#39;Unit&gt; * Length&lt;&#39;Unit&gt; -&gt; Length&lt;&#39;Unit&gt;
+    static member ( / ) : Length&lt;&#39;Unit&gt; * scale:float -&gt; Length&lt;&#39;Unit&gt; + 2 overloads
+    ...</div>
+<div class="fsdocs-tip" id="fs5">val meters : m:float -&gt; Length&lt;Meters&gt;</div>
+<div class="fsdocs-tip" id="fs6">val rTheta : r:Length&lt;&#39;Unit&gt; -&gt; theta:Angle -&gt; Vector2D&lt;&#39;Unit,&#39;Coordinates&gt;<br /><em>&lt;summary&gt;
+ Construct a vector using polar coordinates coordinates given a length and angle
+&lt;/summary&gt;</em></div>
+<div class="fsdocs-tip" id="fs7">Multiple items<br />module Angle
+
+from Geometry<br /><br />--------------------<br />[&lt;Struct&gt;]
+type Angle =
+  | Radians of float
+    interface IComparable
+    interface IComparable&lt;Angle&gt;
+    member Comparison : other:Angle -&gt; int
+    override Equals : obj:obj -&gt; bool + 1 overload
+    override GetHashCode : unit -&gt; int
+    member LessThan : Angle -&gt; bool
+    static member ( * ) : Angle * rhs:float -&gt; Angle + 1 overload
+    static member ( + ) : Angle * Angle -&gt; Angle
+    static member ( - ) : Angle * Angle -&gt; Angle
+    static member ( / ) : Angle * rhs:float -&gt; Angle + 1 overload
+    ...</div>
+<div class="fsdocs-tip" id="fs8">val halfPi : Angle<br /><em>&lt;summary&gt;
+ Alias for `piOverTwo`
+&lt;/summary&gt;</em></div>
+<div class="fsdocs-tip" id="fs9">val withLength : a:Length&lt;&#39;Unit&gt; -&gt; d:Direction2D&lt;&#39;Coordinates&gt; -&gt; Vector2D&lt;&#39;Unit,&#39;Coordinates&gt;<br /><em>&lt;summary&gt;
+ Construct a vector with the given length in the given direction.
+&lt;/summary&gt;</em></div>
+<div class="fsdocs-tip" id="fs10">Multiple items<br />module Direction2D
+
+from Geometry<br /><br />--------------------<br />type Direction2D&lt;&#39;Coordinates&gt; =
+  { X: float
+    Y: float }
+    interface IComparable
+    interface IComparable&lt;Direction2D&lt;&#39;Coordinates&gt;&gt;
+    member Comparison : other:Direction2D&lt;&#39;Coordinates&gt; -&gt; int
+    override Equals : obj:obj -&gt; bool + 1 overload
+    override GetHashCode : unit -&gt; int
+    member LessThan : other:Direction2D&lt;&#39;Coordinates&gt; -&gt; bool
+    static member xy : x:float -&gt; y:float -&gt; Direction2D&lt;&#39;Coordinates&gt; option
+    static member xyLength : Length&lt;&#39;Unit&gt; -&gt; Length&lt;&#39;Unit&gt; -&gt; Direction2D&lt;&#39;Coordinates&gt; option</div>
+<div class="fsdocs-tip" id="fs11">val fromAngle : angle:Angle -&gt; Direction2D&lt;&#39;Coordinates&gt;</div>
+
+        </div>
+
+        <!-- BEGIN SEARCH BOX: this adds support for the search box -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.css" />
+        <script type="text/javascript">var fsdocs_search_baseurl = '/fsharp-geometry/';</script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.8/lunr.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.min.js"></script>
+        <script type="text/javascript" src="/fsharp-geometry/content/fsdocs-search.js"></script>
+        <!-- END SEARCH BOX: this adds support for the search box -->
+    </div>
+</body>
+
+</html>

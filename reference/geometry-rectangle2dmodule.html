@@ -1,0 +1,2657 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Rectangle2D (fsharp-geometry)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="Thomas Waters">
+
+    <link rel="stylesheet" id="theme_link" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.6.0/materia/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+    <link type="text/css" rel="stylesheet" href="/fsharp-geometry/content/navbar-fixed-left.css" />
+    <link type="text/css" rel="stylesheet" href="/fsharp-geometry/content/fsdocs-default.css" />
+    <link type="text/css" rel="stylesheet" href="/fsharp-geometry/content/fsdocs-custom.css" />
+    <script type="text/javascript" src="/fsharp-geometry/content/fsdocs-tips.js"></script>
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!-- BEGIN SEARCH BOX: this adds support for the search box -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.css" />
+    <!-- END SEARCH BOX: this adds support for the search box -->
+    
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md navbar-light bg-secondary fixed-left" id="fsdocs-nav">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse navbar-nav-scroll" id="navbarsExampleDefault">
+            <a href="/fsharp-geometry/"><img id="fsdocs-logo" src="/fsharp-geometry/img/logo.png" /></a>
+            <!-- BEGIN SEARCH BOX: this adds support for the search box -->
+            <div id="header">
+                <div class="searchbox" id="fsdocs-searchbox">
+                    <label for="search-by">
+                        <i class="fas fa-search"></i>
+                    </label>
+                    <input data-search-input="" id="search-by" type="search" placeholder="Search..." />
+                    <span data-search-clear="">
+                        <i class="fas fa-times"></i>
+                    </span>
+                </div>
+            </div>
+
+            <!-- END SEARCH BOX: this adds support for the search box -->
+            <ul class="navbar-nav">
+                <li class="nav-header">Links</li>
+                <li class="nav-item" id="fsdocs-license-link"><a class="nav-link" href="https://github.com/Evelios/fsharp-geometry/blob/master/LICENSE.md">License</a></li>
+                <li class="nav-item" id="fsdocs-release-notes-link"><a class="nav-link" href="https://github.com/Evelios/fsharp-geometry/blob/master/RELEASE_NOTES.md">Release Notes</a></li>
+                <li class="nav-item" id="fsdocs-repository-link"><a class="nav-link" href="https://github.com/Evelios/fsharp-geometry/">Source Repository</a></li>
+                
+                <li class="nav-header">
+  API Reference
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="/fsharp-geometry/reference/index.html">
+    All Namespaces
+  </a>
+</li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="masthead">
+            <h3 class="muted"><a href="/fsharp-geometry/">fsharp-geometry</a></h3>
+        </div>
+        <hr />
+        <div class="container" id="fsdocs-content">
+            <div>
+  <h2>
+    Rectangle2D Module
+  </h2>
+  <dl class="fsdocs-metadata">
+    <dt>
+      Namespace: 
+      <a href="/fsharp-geometry/reference/geometry.html">
+        Geometry
+      </a>
+    </dt>
+    <dt>
+      Assembly: Geometry.dll
+    </dt>
+  </dl>
+  <div class="fsdocs-xmldoc">
+    <div>
+      <p class="fsdocs-summary">
+        
+      </p>
+    </div>
+  </div>
+  <div>
+    <h3>
+      Functions and values
+    </h3>
+    <table class="table outer-list fsdocs-member-list">
+      <thead>
+        <tr>
+          <td class="fsdocs-member-list-header">
+            Function or value
+          </td>
+          <td class="fsdocs-member-list-header">
+            Description
+          </td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '512', 512)" onmouseover="showTip(event, '512', 512)">
+                <p>
+                  <a id="area">
+                    <a href="#area">
+                      <code><span>area&#32;<span>rectangle</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="512">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>area&#32;<span>rectangle</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        rectangle
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-rectangle2d-2.html">Rectangle2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="/fsharp-geometry/reference/geometry-length-1.html">Length</a>&lt;<span>'Unit&#32;*&#32;'Unit</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Geometry.Rectangle2DModule.area``2```')">
+                <img src="/fsharp-geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Geometry.Rectangle2DModule.area``2\'/>')">
+                <img src="/fsharp-geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/fsharp-geometry/Geometry/Rectangle2D.fs#L188-188" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/fsharp-geometry/content/img/github.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Get the area of a rectangle.
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  rectangle
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-rectangle2d-2.html">Rectangle2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="/fsharp-geometry/reference/geometry-length-1.html">Length</a>&lt;<span>'Unit&#32;*&#32;'Unit</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '513', 513)" onmouseover="showTip(event, '513', 513)">
+                <p>
+                  <a id="axes">
+                    <a href="#axes">
+                      <code><span>axes&#32;<span>rectangle</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="513">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>axes&#32;<span>rectangle</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        rectangle
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-rectangle2d-2.html">Rectangle2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="/fsharp-geometry/reference/geometry-frame2d-3.html">Frame2D</a>&lt;<span>'Unit,&#32;'Coordinates,&#32;'Defines</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Geometry.Rectangle2DModule.axes``3```')">
+                <img src="/fsharp-geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Geometry.Rectangle2DModule.axes``3\'/>')">
+                <img src="/fsharp-geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/fsharp-geometry/Geometry/Rectangle2D.fs#L158-158" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/fsharp-geometry/content/img/github.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Get the central axes of a rectangle as a `Frame2D`:
+     rectangle =
+         Rectangle2D.with
+             (Length.meters 2)
+             (Length.meters 5)
+             (Length.meters 1)
+             (Length.meters 3)
+     Rectangle2D.axes rectangle
+     --> Frame2D.atPoint (Point2D.meters 3.5 2)
+ The origin point of the frame will be the center point of the rectangle.
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  rectangle
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-rectangle2d-2.html">Rectangle2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="/fsharp-geometry/reference/geometry-frame2d-3.html">Frame2D</a>&lt;<span>'Unit,&#32;'Coordinates,&#32;'Defines</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '514', 514)" onmouseover="showTip(event, '514', 514)">
+                <p>
+                  <a id="boundingBox">
+                    <a href="#boundingBox">
+                      <code><span>boundingBox&#32;<span>rectangle</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="514">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>boundingBox&#32;<span>rectangle</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        rectangle
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-rectangle2d-2.html">Rectangle2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="/fsharp-geometry/reference/geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Geometry.Rectangle2DModule.boundingBox``2```')">
+                <img src="/fsharp-geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Geometry.Rectangle2DModule.boundingBox``2\'/>')">
+                <img src="/fsharp-geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/fsharp-geometry/Geometry/Rectangle2D.fs#L259-259" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/fsharp-geometry/content/img/github.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Get the minimal bounding box containing a given rectangle. This will have
+ exactly the same shape and size as the rectangle itself if the rectangle is
+ axis-aligned, but will be larger than the rectangle if the rectangle is at an
+ angle.
+     square =
+         Rectangle2D.with
+             { x1 = Length.meters 0
+             , x2 = Length.meters 1
+             , y1 = Length.meters 0
+             , y2 = Length.meters 1
+             }
+     diamond =
+         square
+             |> Rectangle2D.rotateAround Point2D.origin
+                 (Angle.degrees 45)
+     Rectangle2D.boundingBox diamond
+     --> BoundingBox2D.from
+     -->     (Point2D.meters -0.7071 0)
+     -->     (Point2D.meters 0.7071 1.4142)
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  rectangle
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-rectangle2d-2.html">Rectangle2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="/fsharp-geometry/reference/geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '515', 515)" onmouseover="showTip(event, '515', 515)">
+                <p>
+                  <a id="centerPoint">
+                    <a href="#centerPoint">
+                      <code><span>centerPoint&#32;<span>rectangle</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="515">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>centerPoint&#32;<span>rectangle</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        rectangle
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-rectangle2d-2.html">Rectangle2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="/fsharp-geometry/reference/geometry-point2d-2.html">Point2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Geometry.Rectangle2DModule.centerPoint``2```')">
+                <img src="/fsharp-geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Geometry.Rectangle2DModule.centerPoint``2\'/>')">
+                <img src="/fsharp-geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/fsharp-geometry/Geometry/Rectangle2D.fs#L170-170" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/fsharp-geometry/content/img/github.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Get the center point of a rectangle.
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  rectangle
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-rectangle2d-2.html">Rectangle2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="/fsharp-geometry/reference/geometry-point2d-2.html">Point2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '516', 516)" onmouseover="showTip(event, '516', 516)">
+                <p>
+                  <a id="centeredOn">
+                    <a href="#centeredOn">
+                      <code><span>centeredOn&#32;<span>givenAxes&#32;dimensions</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="516">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>centeredOn&#32;<span>givenAxes&#32;dimensions</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        givenAxes
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-frame2d-3.html">Frame2D</a>&lt;<span>'Unit,&#32;'Coordinates,&#32;'Defines</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        dimensions
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-size2d-1.html">Size2D</a>&lt;'Unit&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="/fsharp-geometry/reference/geometry-rectangle2d-2.html">Rectangle2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Geometry.Rectangle2DModule.centeredOn``3```')">
+                <img src="/fsharp-geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Geometry.Rectangle2DModule.centeredOn``3\'/>')">
+                <img src="/fsharp-geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/fsharp-geometry/Geometry/Rectangle2D.fs#L122-122" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/fsharp-geometry/content/img/github.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Construct a frame centered on the given axes, with the given overall
+ dimensions;
+     Rectangle2D.withDimensions dimensions angle centerPoint
+ could be written as
+     Rectangle2D.centeredOn
+         (Frame2D.withAngle angle centerPoint)
+         dimensions
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  givenAxes
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-frame2d-3.html">Frame2D</a>&lt;<span>'Unit,&#32;'Coordinates,&#32;'Defines</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  dimensions
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-size2d-1.html">Size2D</a>&lt;'Unit&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="/fsharp-geometry/reference/geometry-rectangle2d-2.html">Rectangle2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '517', 517)" onmouseover="showTip(event, '517', 517)">
+                <p>
+                  <a id="contains">
+                    <a href="#contains">
+                      <code><span>contains&#32;<span>point&#32;rectangle</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="517">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>contains&#32;<span>point&#32;rectangle</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        point
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-point2d-2.html">Point2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        rectangle
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-rectangle2d-2.html">Rectangle2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code>bool</code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Geometry.Rectangle2DModule.contains``2```')">
+                <img src="/fsharp-geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Geometry.Rectangle2DModule.contains``2\'/>')">
+                <img src="/fsharp-geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/fsharp-geometry/Geometry/Rectangle2D.fs#L213-213" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/fsharp-geometry/content/img/github.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Check if a rectangle contains a given point.
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  point
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-point2d-2.html">Point2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  rectangle
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-rectangle2d-2.html">Rectangle2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code>bool</code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '518', 518)" onmouseover="showTip(event, '518', 518)">
+                <p>
+                  <a id="dimensions">
+                    <a href="#dimensions">
+                      <code><span>dimensions&#32;<span>rectangle</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="518">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>dimensions&#32;<span>rectangle</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        rectangle
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-rectangle2d-2.html">Rectangle2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="/fsharp-geometry/reference/geometry-size2d-1.html">Size2D</a>&lt;'Unit&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Geometry.Rectangle2DModule.dimensions``2```')">
+                <img src="/fsharp-geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Geometry.Rectangle2DModule.dimensions``2\'/>')">
+                <img src="/fsharp-geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/fsharp-geometry/Geometry/Rectangle2D.fs#L184-184" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/fsharp-geometry/content/img/github.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Get the overall dimensions (width and height) of a rectangle:
+     rectangle =
+         Rectangle2D.with
+             { x1 = Length.meters 2
+             , x2 = Length.meters 5
+             , y1 = Length.meters 1
+             , y2 = Length.meters 3
+             }
+     Rectangle2D.dimensions rectangle
+     --> ( Length.meters 3, Length.meters 2 )
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  rectangle
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-rectangle2d-2.html">Rectangle2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="/fsharp-geometry/reference/geometry-size2d-1.html">Size2D</a>&lt;'Unit&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '519', 519)" onmouseover="showTip(event, '519', 519)">
+                <p>
+                  <a id="edges">
+                    <a href="#edges">
+                      <code><span>edges&#32;<span>rectangle</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="519">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>edges&#32;<span>rectangle</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        rectangle
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-rectangle2d-2.html">Rectangle2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><span><a href="/fsharp-geometry/reference/geometry-linesegment2d-2.html">LineSegment2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span>&#32;list</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Geometry.Rectangle2DModule.edges``2```')">
+                <img src="/fsharp-geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Geometry.Rectangle2DModule.edges``2\'/>')">
+                <img src="/fsharp-geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/fsharp-geometry/Geometry/Rectangle2D.fs#L226-226" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/fsharp-geometry/content/img/github.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Get the edges of a rectangle as a list. The edges will be returned
+ in counterclockwise order if the rectangle's axes are right-handed, and
+ clockwise order if the axes are left-handed.
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  rectangle
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-rectangle2d-2.html">Rectangle2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><span><a href="/fsharp-geometry/reference/geometry-linesegment2d-2.html">LineSegment2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span>&#32;list</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '520', 520)" onmouseover="showTip(event, '520', 520)">
+                <p>
+                  <a id="from">
+                    <a href="#from">
+                      <code><span>from&#32;<span>x1&#32;y1&#32;x2&#32;y2</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="520">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>from&#32;<span>x1&#32;y1&#32;x2&#32;y2</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        x1
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-length-1.html">Length</a>&lt;'Unit&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        y1
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-length-1.html">Length</a>&lt;'Unit&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        x2
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-length-1.html">Length</a>&lt;'Unit&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        y2
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-length-1.html">Length</a>&lt;'Unit&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="/fsharp-geometry/reference/geometry-rectangle2d-2.html">Rectangle2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Geometry.Rectangle2DModule.from``2```')">
+                <img src="/fsharp-geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Geometry.Rectangle2DModule.from``2\'/>')">
+                <img src="/fsharp-geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/fsharp-geometry/Geometry/Rectangle2D.fs#L53-53" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/fsharp-geometry/content/img/github.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Construct an axis-aligned rectangle given the X and Y coordinates of two
+ diagonally opposite vertices. The X and Y directions of the resulting rectangle
+ are determined by the order of the given values:
+   - If `x1 <= x2`, then the rectangle's X direction will be
+     `Direction2D.positiveX`, otherwise it will be `Direction2D.negativeX`
+   - If `y1 <= y2`, then the rectangle's Y direction will be
+     `Direction2D.positiveY`, otherwise it will be `Direction2D.negativeY`
+ Therefore, something like
+     Rectangle2D.from
+         (Pixels.pixels 0)
+         (Pixels.pixels 300)
+         (Pixels.pixels 500)
+         (Pixels.pixels 0)
+ would have its X direction equal to `Direction2D.positiveX` and its Y direction
+ equal to `Direction2D.negativeY`.
+ -}
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  x1
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-length-1.html">Length</a>&lt;'Unit&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  y1
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-length-1.html">Length</a>&lt;'Unit&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  x2
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-length-1.html">Length</a>&lt;'Unit&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  y2
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-length-1.html">Length</a>&lt;'Unit&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="/fsharp-geometry/reference/geometry-rectangle2d-2.html">Rectangle2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '521', 521)" onmouseover="showTip(event, '521', 521)">
+                <p>
+                  <a id="fromBoundingBox">
+                    <a href="#fromBoundingBox">
+                      <code><span>fromBoundingBox&#32;<span>box</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="521">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>fromBoundingBox&#32;<span>box</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        box
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="/fsharp-geometry/reference/geometry-rectangle2d-2.html">Rectangle2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Geometry.Rectangle2DModule.fromBoundingBox``2```')">
+                <img src="/fsharp-geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Geometry.Rectangle2DModule.fromBoundingBox``2\'/>')">
+                <img src="/fsharp-geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/fsharp-geometry/Geometry/Rectangle2D.fs#L142-142" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/fsharp-geometry/content/img/github.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Convert a `BoundingBox2D` to the equivalent axis-aligned `Rectangle2D`.
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  box
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="/fsharp-geometry/reference/geometry-rectangle2d-2.html">Rectangle2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '522', 522)" onmouseover="showTip(event, '522', 522)">
+                <p>
+                  <a id="fromPoints">
+                    <a href="#fromPoints">
+                      <code><span>fromPoints&#32;<span>p1&#32;p2</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="522">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>fromPoints&#32;<span>p1&#32;p2</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        p1
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-point2d-2.html">Point2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        p2
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-point2d-2.html">Point2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="/fsharp-geometry/reference/geometry-rectangle2d-2.html">Rectangle2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Geometry.Rectangle2DModule.fromPoints``2```')">
+                <img src="/fsharp-geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Geometry.Rectangle2DModule.fromPoints``2\'/>')">
+                <img src="/fsharp-geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/fsharp-geometry/Geometry/Rectangle2D.fs#L72-72" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/fsharp-geometry/content/img/github.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Construct an axis-aligned rectangle stretching from one point to another;
+     Rectangle2D.from p1 p2
+ is equivalent to
+     Rectangle2D.with p1.X p1.Y p2.X p2.Y
+ and so the same logic about the resulting rectangle's X and Y directions
+ applies (see above for details). Therefore, assuming a Y-up coordinate system,
+ something like
+     Rectangle2D.from lowerLeftPoint upperRightPoint
+ would have positive X and Y directions, while
+     Rectangle2D.from upperLeftPoint lowerRightPoint
+ would have a positive X direction but a negative Y direction.
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  p1
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-point2d-2.html">Point2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  p2
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-point2d-2.html">Point2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="/fsharp-geometry/reference/geometry-rectangle2d-2.html">Rectangle2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '523', 523)" onmouseover="showTip(event, '523', 523)">
+                <p>
+                  <a id="interpolate">
+                    <a href="#interpolate">
+                      <code><span>interpolate&#32;<span>rectangle&#32;u&#32;v</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="523">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>interpolate&#32;<span>rectangle&#32;u&#32;v</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        rectangle
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-rectangle2d-2.html">Rectangle2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        u
+                      </b>
+                      :
+                      <code>float</code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        v
+                      </b>
+                      :
+                      <code>float</code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="/fsharp-geometry/reference/geometry-point2d-2.html">Point2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Geometry.Rectangle2DModule.interpolate``2```')">
+                <img src="/fsharp-geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Geometry.Rectangle2DModule.interpolate``2\'/>')">
+                <img src="/fsharp-geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/fsharp-geometry/Geometry/Rectangle2D.fs#L389-389" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/fsharp-geometry/content/img/github.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Interpolate within a rectangle based on coordinates which range from 0 to 1.
+ For example, the four vertices of a given rectangle are
+     [ Rectangle2D.interpolate rectangle 0 0
+       Rectangle2D.interpolate rectangle 1 0
+       Rectangle2D.interpolate rectangle 1 1
+       Rectangle2D.interpolate rectangle 0 1
+     ]
+ and its center point is
+     Rectangle2D.interpolate rectangle 0.5 0.5
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  rectangle
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-rectangle2d-2.html">Rectangle2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  u
+                </span>
+                :
+                <code>float</code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  v
+                </span>
+                :
+                <code>float</code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="/fsharp-geometry/reference/geometry-point2d-2.html">Point2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '524', 524)" onmouseover="showTip(event, '524', 524)">
+                <p>
+                  <a id="mirrorAcross">
+                    <a href="#mirrorAcross">
+                      <code><span>mirrorAcross&#32;<span>axis&#32;rectangle</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="524">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>mirrorAcross&#32;<span>axis&#32;rectangle</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        axis
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-axis2d-2.html">Axis2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        rectangle
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-rectangle2d-2.html">Rectangle2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="/fsharp-geometry/reference/geometry-rectangle2d-2.html">Rectangle2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Geometry.Rectangle2DModule.mirrorAcross``2```')">
+                <img src="/fsharp-geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Geometry.Rectangle2DModule.mirrorAcross``2\'/>')">
+                <img src="/fsharp-geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/fsharp-geometry/Geometry/Rectangle2D.fs#L351-351" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/fsharp-geometry/content/img/github.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Mirror a rectangle across a given axis. Note that this will flip the
+ handedness of the rectangle's axes, and therefore the order/direction of results
+ from `Rectangle2D.vertices` and `Rectangle2D.edges` will change.
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  axis
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-axis2d-2.html">Axis2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  rectangle
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-rectangle2d-2.html">Rectangle2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="/fsharp-geometry/reference/geometry-rectangle2d-2.html">Rectangle2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '525', 525)" onmouseover="showTip(event, '525', 525)">
+                <p>
+                  <a id="placeIn">
+                    <a href="#placeIn">
+                      <code><span>placeIn&#32;<span>frame&#32;rectangle</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="525">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>placeIn&#32;<span>frame&#32;rectangle</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        frame
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-frame2d-3.html">Frame2D</a>&lt;<span>'Unit,&#32;'GlobalCoordinates,&#32;unit</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        rectangle
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-rectangle2d-2.html">Rectangle2D</a>&lt;<span>'Unit,&#32;'GlobalCoordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="/fsharp-geometry/reference/geometry-rectangle2d-2.html">Rectangle2D</a>&lt;<span>'Unit,&#32;'LocalCoordinates</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Geometry.Rectangle2DModule.placeIn``3```')">
+                <img src="/fsharp-geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Geometry.Rectangle2DModule.placeIn``3\'/>')">
+                <img src="/fsharp-geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/fsharp-geometry/Geometry/Rectangle2D.fs#L362-362" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/fsharp-geometry/content/img/github.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Take a rectangle considered to be defined in local coordinates relative to a
+ given reference frame, and return that rectangle expressed in global
+ coordinates.
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  frame
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-frame2d-3.html">Frame2D</a>&lt;<span>'Unit,&#32;'GlobalCoordinates,&#32;unit</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  rectangle
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-rectangle2d-2.html">Rectangle2D</a>&lt;<span>'Unit,&#32;'GlobalCoordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="/fsharp-geometry/reference/geometry-rectangle2d-2.html">Rectangle2D</a>&lt;<span>'Unit,&#32;'LocalCoordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '526', 526)" onmouseover="showTip(event, '526', 526)">
+                <p>
+                  <a id="relativeTo">
+                    <a href="#relativeTo">
+                      <code><span>relativeTo&#32;<span>frame&#32;rectangle</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="526">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>relativeTo&#32;<span>frame&#32;rectangle</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        frame
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-frame2d-3.html">Frame2D</a>&lt;<span>'Unit,&#32;'GlobalCoordinates,&#32;unit</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        rectangle
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-rectangle2d-2.html">Rectangle2D</a>&lt;<span>'Unit,&#32;'GlobalCoordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="/fsharp-geometry/reference/geometry-rectangle2d-2.html">Rectangle2D</a>&lt;<span>'Unit,&#32;'LocalCoordinates</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Geometry.Rectangle2DModule.relativeTo``3```')">
+                <img src="/fsharp-geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Geometry.Rectangle2DModule.relativeTo``3\'/>')">
+                <img src="/fsharp-geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/fsharp-geometry/Geometry/Rectangle2D.fs#L372-372" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/fsharp-geometry/content/img/github.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Take a rectangle defined in global coordinates, and return it expressed
+ in local coordinates relative to a given reference frame.
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  frame
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-frame2d-3.html">Frame2D</a>&lt;<span>'Unit,&#32;'GlobalCoordinates,&#32;unit</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  rectangle
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-rectangle2d-2.html">Rectangle2D</a>&lt;<span>'Unit,&#32;'GlobalCoordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="/fsharp-geometry/reference/geometry-rectangle2d-2.html">Rectangle2D</a>&lt;<span>'Unit,&#32;'LocalCoordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '527', 527)" onmouseover="showTip(event, '527', 527)">
+                <p>
+                  <a id="rotateAround">
+                    <a href="#rotateAround">
+                      <code><span>rotateAround&#32;<span>point&#32;angle&#32;rectangle</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="527">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>rotateAround&#32;<span>point&#32;angle&#32;rectangle</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        point
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-point2d-2.html">Point2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        angle
+                      </b>
+                      :
+                      <code><a href="/fsharp-geometry/reference/geometry-angle.html">Angle</a></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        rectangle
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-rectangle2d-2.html">Rectangle2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="/fsharp-geometry/reference/geometry-rectangle2d-2.html">Rectangle2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Geometry.Rectangle2DModule.rotateAround``2```')">
+                <img src="/fsharp-geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Geometry.Rectangle2DModule.rotateAround``2\'/>')">
+                <img src="/fsharp-geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/fsharp-geometry/Geometry/Rectangle2D.fs#L321-321" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/fsharp-geometry/content/img/github.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Rotate a rectangle around a given point by a given angle.
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  point
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-point2d-2.html">Point2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  angle
+                </span>
+                :
+                <code><a href="/fsharp-geometry/reference/geometry-angle.html">Angle</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  rectangle
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-rectangle2d-2.html">Rectangle2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="/fsharp-geometry/reference/geometry-rectangle2d-2.html">Rectangle2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '528', 528)" onmouseover="showTip(event, '528', 528)">
+                <p>
+                  <a id="scaleAbout">
+                    <a href="#scaleAbout">
+                      <code><span>scaleAbout&#32;<span>point&#32;scale&#32;rectangle</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="528">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>scaleAbout&#32;<span>point&#32;scale&#32;rectangle</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        point
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-point2d-2.html">Point2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        scale
+                      </b>
+                      :
+                      <code>float</code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        rectangle
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-rectangle2d-2.html">Rectangle2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="/fsharp-geometry/reference/geometry-rectangle2d-2.html">Rectangle2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Geometry.Rectangle2DModule.scaleAbout``2```')">
+                <img src="/fsharp-geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Geometry.Rectangle2DModule.scaleAbout``2\'/>')">
+                <img src="/fsharp-geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/fsharp-geometry/Geometry/Rectangle2D.fs#L287-287" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/fsharp-geometry/content/img/github.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Scale a rectangle about a given point by a given scale. Note that scaling by
+ a negative value will flip the handedness of the rectangle's axes, and therefore
+ the order/direction of results from `Rectangle2D.vertices` and
+ `Rectangle2D.edges` will change.
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  point
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-point2d-2.html">Point2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  scale
+                </span>
+                :
+                <code>float</code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  rectangle
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-rectangle2d-2.html">Rectangle2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="/fsharp-geometry/reference/geometry-rectangle2d-2.html">Rectangle2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '529', 529)" onmouseover="showTip(event, '529', 529)">
+                <p>
+                  <a id="toPolygon">
+                    <a href="#toPolygon">
+                      <code><span>toPolygon&#32;<span>rectangle</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="529">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>toPolygon&#32;<span>rectangle</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        rectangle
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-rectangle2d-2.html">Rectangle2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="/fsharp-geometry/reference/geometry-polygon2d-2.html">Polygon2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Geometry.Rectangle2DModule.toPolygon``2```')">
+                <img src="/fsharp-geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Geometry.Rectangle2DModule.toPolygon``2\'/>')">
+                <img src="/fsharp-geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/fsharp-geometry/Geometry/Rectangle2D.fs#L207-207" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/fsharp-geometry/content/img/github.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Convert a rectangle to a [`Polygon2D`](Polygon2D#Polygon2D).
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  rectangle
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-rectangle2d-2.html">Rectangle2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="/fsharp-geometry/reference/geometry-polygon2d-2.html">Polygon2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '530', 530)" onmouseover="showTip(event, '530', 530)">
+                <p>
+                  <a id="translateBy">
+                    <a href="#translateBy">
+                      <code><span>translateBy&#32;<span>displacement&#32;rectangle</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="530">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>translateBy&#32;<span>displacement&#32;rectangle</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        displacement
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-vector2d-2.html">Vector2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        rectangle
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-rectangle2d-2.html">Rectangle2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="/fsharp-geometry/reference/geometry-rectangle2d-2.html">Rectangle2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Geometry.Rectangle2DModule.translateBy``2```')">
+                <img src="/fsharp-geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Geometry.Rectangle2DModule.translateBy``2\'/>')">
+                <img src="/fsharp-geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/fsharp-geometry/Geometry/Rectangle2D.fs#L331-331" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/fsharp-geometry/content/img/github.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Translate a rectangle by a given displacement.
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  displacement
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-vector2d-2.html">Vector2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  rectangle
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-rectangle2d-2.html">Rectangle2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="/fsharp-geometry/reference/geometry-rectangle2d-2.html">Rectangle2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '531', 531)" onmouseover="showTip(event, '531', 531)">
+                <p>
+                  <a id="translateIn">
+                    <a href="#translateIn">
+                      <code><span>translateIn&#32;<span>direction&#32;distance&#32;rectangle</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="531">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>translateIn&#32;<span>direction&#32;distance&#32;rectangle</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        direction
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-direction2d-1.html">Direction2D</a>&lt;'Coordinates&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        distance
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-length-1.html">Length</a>&lt;'Unit&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        rectangle
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-rectangle2d-2.html">Rectangle2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="/fsharp-geometry/reference/geometry-rectangle2d-2.html">Rectangle2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Geometry.Rectangle2DModule.translateIn``2```')">
+                <img src="/fsharp-geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Geometry.Rectangle2DModule.translateIn``2\'/>')">
+                <img src="/fsharp-geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/fsharp-geometry/Geometry/Rectangle2D.fs#L340-340" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/fsharp-geometry/content/img/github.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Translate a rectangle in a given direction by a given distance.
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  direction
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-direction2d-1.html">Direction2D</a>&lt;'Coordinates&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  distance
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-length-1.html">Length</a>&lt;'Unit&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  rectangle
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-rectangle2d-2.html">Rectangle2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="/fsharp-geometry/reference/geometry-rectangle2d-2.html">Rectangle2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '532', 532)" onmouseover="showTip(event, '532', 532)">
+                <p>
+                  <a id="vertices">
+                    <a href="#vertices">
+                      <code><span>vertices&#32;<span>rectangle</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="532">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>vertices&#32;<span>rectangle</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        rectangle
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-rectangle2d-2.html">Rectangle2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><span><a href="/fsharp-geometry/reference/geometry-point2d-2.html">Point2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span>&#32;list</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Geometry.Rectangle2DModule.vertices``2```')">
+                <img src="/fsharp-geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Geometry.Rectangle2DModule.vertices``2\'/>')">
+                <img src="/fsharp-geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/fsharp-geometry/Geometry/Rectangle2D.fs#L195-195" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/fsharp-geometry/content/img/github.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Get the vertices of a rectangle as a list. The vertices will be returned
+ in counterclockwise order if the rectangle's axes are right-handed, and
+ clockwise order if the axes are left-handed.
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  rectangle
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-rectangle2d-2.html">Rectangle2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><span><a href="/fsharp-geometry/reference/geometry-point2d-2.html">Point2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span>&#32;list</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '533', 533)" onmouseover="showTip(event, '533', 533)">
+                <p>
+                  <a id="withDimensions">
+                    <a href="#withDimensions">
+                      <code><span>withDimensions&#32;<span>size&#32;angle&#32;center</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="533">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>withDimensions&#32;<span>size&#32;angle&#32;center</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        size
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-size2d-1.html">Size2D</a>&lt;'Unit&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        angle
+                      </b>
+                      :
+                      <code><a href="/fsharp-geometry/reference/geometry-angle.html">Angle</a></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        center
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-point2d-2.html">Point2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="/fsharp-geometry/reference/geometry-rectangle2d-2.html">Rectangle2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Geometry.Rectangle2DModule.withDimensions``2```')">
+                <img src="/fsharp-geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Geometry.Rectangle2DModule.withDimensions``2\'/>')">
+                <img src="/fsharp-geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/fsharp-geometry/Geometry/Rectangle2D.fs#L106-106" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/fsharp-geometry/content/img/github.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  size
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-size2d-1.html">Size2D</a>&lt;'Unit&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  angle
+                </span>
+                :
+                <code><a href="/fsharp-geometry/reference/geometry-angle.html">Angle</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  center
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-point2d-2.html">Point2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="/fsharp-geometry/reference/geometry-rectangle2d-2.html">Rectangle2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '534', 534)" onmouseover="showTip(event, '534', 534)">
+                <p>
+                  <a id="withXAxis">
+                    <a href="#withXAxis">
+                      <code><span>withXAxis&#32;<span>axis&#32;dimensions</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="534">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>withXAxis&#32;<span>axis&#32;dimensions</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        axis
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-axis2d-2.html">Axis2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        dimensions
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-size2d-1.html">Size2D</a>&lt;'Unit&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="/fsharp-geometry/reference/geometry-rectangle2d-2.html">Rectangle2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Geometry.Rectangle2DModule.withXAxis``2```')">
+                <img src="/fsharp-geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Geometry.Rectangle2DModule.withXAxis``2\'/>')">
+                <img src="/fsharp-geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/fsharp-geometry/Geometry/Rectangle2D.fs#L132-132" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/fsharp-geometry/content/img/github.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Construct a rectangle with the given X axis and overall dimensions. The
+ rectangle will be centered on the axis' origin point.
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  axis
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-axis2d-2.html">Axis2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  dimensions
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-size2d-1.html">Size2D</a>&lt;'Unit&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="/fsharp-geometry/reference/geometry-rectangle2d-2.html">Rectangle2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '535', 535)" onmouseover="showTip(event, '535', 535)">
+                <p>
+                  <a id="withYAxis">
+                    <a href="#withYAxis">
+                      <code><span>withYAxis&#32;<span>axis&#32;dimensions</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="535">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>withYAxis&#32;<span>axis&#32;dimensions</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        axis
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-axis2d-2.html">Axis2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        dimensions
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-size2d-1.html">Size2D</a>&lt;'Unit&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="/fsharp-geometry/reference/geometry-rectangle2d-2.html">Rectangle2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Geometry.Rectangle2DModule.withYAxis``2```')">
+                <img src="/fsharp-geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Geometry.Rectangle2DModule.withYAxis``2\'/>')">
+                <img src="/fsharp-geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/fsharp-geometry/Geometry/Rectangle2D.fs#L138-138" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/fsharp-geometry/content/img/github.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Construct a rectangle with the given Y axis and overall dimensions. The
+ rectangle will be centered on the axis' origin point.
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  axis
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-axis2d-2.html">Axis2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  dimensions
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-size2d-1.html">Size2D</a>&lt;'Unit&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="/fsharp-geometry/reference/geometry-rectangle2d-2.html">Rectangle2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '536', 536)" onmouseover="showTip(event, '536', 536)">
+                <p>
+                  <a id="xAxis">
+                    <a href="#xAxis">
+                      <code><span>xAxis&#32;<span>rectangle</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="536">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>xAxis&#32;<span>rectangle</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        rectangle
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-rectangle2d-2.html">Rectangle2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="/fsharp-geometry/reference/geometry-axis2d-2.html">Axis2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Geometry.Rectangle2DModule.xAxis``2```')">
+                <img src="/fsharp-geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Geometry.Rectangle2DModule.xAxis``2\'/>')">
+                <img src="/fsharp-geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/fsharp-geometry/Geometry/Rectangle2D.fs#L163-163" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/fsharp-geometry/content/img/github.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Get the X axis of a rectangle.
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  rectangle
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-rectangle2d-2.html">Rectangle2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="/fsharp-geometry/reference/geometry-axis2d-2.html">Axis2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '537', 537)" onmouseover="showTip(event, '537', 537)">
+                <p>
+                  <a id="yAxis">
+                    <a href="#yAxis">
+                      <code><span>yAxis&#32;<span>rectangle</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="537">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>yAxis&#32;<span>rectangle</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        rectangle
+                      </b>
+                      :
+                      <code><span><a href="/fsharp-geometry/reference/geometry-rectangle2d-2.html">Rectangle2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="/fsharp-geometry/reference/geometry-axis2d-2.html">Axis2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Geometry.Rectangle2DModule.yAxis``2```')">
+                <img src="/fsharp-geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Geometry.Rectangle2DModule.yAxis``2\'/>')">
+                <img src="/fsharp-geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/fsharp-geometry/Geometry/Rectangle2D.fs#L167-167" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/fsharp-geometry/content/img/github.png" class="normal"/>
+                <img src="/fsharp-geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Get the Y axis of a rectangle.
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  rectangle
+                </span>
+                :
+                <code><span><a href="/fsharp-geometry/reference/geometry-rectangle2d-2.html">Rectangle2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="/fsharp-geometry/reference/geometry-axis2d-2.html">Axis2D</a>&lt;<span>'Unit,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+</div>
+            
+        </div>
+
+        <!-- BEGIN SEARCH BOX: this adds support for the search box -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.css" />
+        <script type="text/javascript">var fsdocs_search_baseurl = '/fsharp-geometry/';</script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.8/lunr.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.min.js"></script>
+        <script type="text/javascript" src="/fsharp-geometry/content/fsdocs-search.js"></script>
+        <!-- END SEARCH BOX: this adds support for the search box -->
+    </div>
+</body>
+
+</html>
