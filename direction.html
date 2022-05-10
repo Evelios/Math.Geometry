@@ -171,8 +171,74 @@
         <hr />
         <div class="container" id="fsdocs-content">
             
+<h1><a name="Direction-2D" class="anchor" href="#Direction-2D">Direction 2D</a></h1>
+<p>A direction can be though of as a normalized vector or can be though of just something pointing in a particular
+direction on the 2D cartesian plane. When looking at the type of a direction, you can notice that it doesn't have any
+unit type, <code>Direction2D&lt;'Coordinates&gt;</code>. This is because a direction <em>always</em> has a magnitude of 1 and doesn't need any
+unit qualifier.</p>
+<p># Builders</p>
+<p><code>Direction2D.xy</code> first checks to make sure that the input components are both non-zero, then normalizes them to
+guarantee a valid direction is created.</p>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">Direction2D</span><span class="pn">.</span><span class="id">xy</span> <span class="n">3.</span> <span class="n">4.</span>
+</code></pre>
+<table class="pre"><tr><td><pre><code>No value returned by any evaluator</code></pre></td></tr></table>
+<p>When both values are zero, a proper direction cannot be created, so the program returns a <code>None</code> option.
+(Appears as <code>&lt;null&gt;</code> in the terminal)</p>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">Direction2D</span><span class="pn">.</span><span class="id">xy</span> <span class="n">0.</span> <span class="n">0.</span>
+</code></pre>
+<table class="pre"><tr><td><pre><code>No value returned by any evaluator</code></pre></td></tr></table>
+<p>You can also create a direction using similar functionality to <code>Direction2D.xy</code> but with <em>tuples</em> as an input instead.</p>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">Direction2D</span><span class="pn">.</span><span class="id">fromComponents</span> <span class="pn">(</span><span class="n">3.</span><span class="pn">,</span> <span class="n">4.</span><span class="pn">)</span>
+</code></pre>
+<table class="pre"><tr><td><pre><code>No value returned by any evaluator</code></pre></td></tr></table>
+<h1><a name="Constants" class="anchor" href="#Constants">Constants</a></h1>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">Direction2D</span><span class="pn">.</span><span class="id">positiveX</span>
+<span class="id">Direction2D</span><span class="pn">.</span><span class="id">x</span>
+
+<span class="id">Direction2D</span><span class="pn">.</span><span class="id">positiveY</span>
+<span class="id">Direction2D</span><span class="pn">.</span><span class="id">y</span>
+
+<span class="id">Direction2D</span><span class="pn">.</span><span class="id">negativeX</span>
+
+<span class="id">Direction2D</span><span class="pn">.</span><span class="id">negativeY</span>
+</code></pre>
+<h1><a name="Accessors" class="anchor" href="#Accessors">Accessors</a></h1>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">Direction2D</span><span class="pn">.</span><span class="id">toAngle</span>
+<span class="id">Direction2D</span><span class="pn">.</span><span class="id">toTuple</span>
+
+<span class="id">Direction2D</span><span class="pn">.</span><span class="id">xComponent</span>
+<span onmouseout="hideTip(event, 'fs4', 9)" onmouseover="showTip(event, 'fs4', 9)" class="id">direction</span><span class="pn">.</span><span class="id">X</span>
+
+<span class="id">Direction2D</span><span class="pn">.</span><span class="id">yComponent</span>
+<span onmouseout="hideTip(event, 'fs4', 10)" onmouseover="showTip(event, 'fs4', 10)" class="id">direction</span><span class="pn">.</span><span class="id">Y</span>
+</code></pre>
+<h1><a name="Modifiers" class="anchor" href="#Modifiers">Modifiers</a></h1>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">Direction2D</span><span class="pn">.</span><span class="id">reverse</span>
+<span class="id">Direction2D</span><span class="pn">.</span><span class="id">rotateClockwise</span>
+<span class="id">Direction2D</span><span class="pn">.</span><span class="id">rotateCounterclockwise</span>
+<span class="id">Direction2D</span><span class="pn">.</span><span class="id">perpendicularTo</span>
+<span class="id">Direction2D</span><span class="pn">.</span><span class="id">mirrorAcross</span>
+<span class="id">Direction2D</span><span class="pn">.</span><span class="id">orthonormalize</span>
+</code></pre>
+<h1><a name="Queries" class="anchor" href="#Queries">Queries</a></h1>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">Direction2D</span><span class="pn">.</span><span class="id">equalWithin</span>
+<span class="id">Direction2D</span><span class="pn">.</span><span class="id">componentIn</span>
+<span class="id">Direction2D</span><span class="pn">.</span><span class="id">angleFrom</span>
+</code></pre>
+<h1><a name="Coordinate-Conversions" class="anchor" href="#Coordinate-Conversions">Coordinate Conversions</a></h1>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">Direction2D</span><span class="pn">.</span><span class="id">relativeTo</span>
+<span class="id">Direction2D</span><span class="pn">.</span><span class="id">placeIn</span>
+</code></pre>
 
             <div class="fsdocs-tip" id="fs1">Multiple items<br />union case Cartesian.Cartesian: Cartesian<br /><br />--------------------<br />type Cartesian = | Cartesian</div>
+<div class="fsdocs-tip" id="fs2">module Option
+
+from Microsoft.FSharp.Core<br /><em>&lt;summary&gt;Contains operations for working with options.&lt;/summary&gt;<br />&lt;category&gt;Options&lt;/category&gt;</em></div>
+<div class="fsdocs-tip" id="fs3">val map : mapping:(&#39;T -&gt; &#39;U) -&gt; option:&#39;T option -&gt; &#39;U option<br /><em>&lt;summary&gt;&lt;c&gt;map f inp&lt;/c&gt; evaluates to &lt;c&gt;match inp with None -&amp;gt; None | Some x -&amp;gt; Some (f x)&lt;/c&gt;.&lt;/summary&gt;<br />&lt;param name=&quot;mapping&quot;&gt;A function to apply to the option value.&lt;/param&gt;<br />&lt;param name=&quot;option&quot;&gt;The input option.&lt;/param&gt;<br />&lt;example&gt;&lt;code&gt;
+     None |&amp;gt; Option.map (fun x -&amp;gt; x * 2) // evaluates to None
+     Some 42 |&amp;gt; Option.map (fun x -&amp;gt; x * 2) // evaluates to Some 84
+ &lt;/code&gt;&lt;/example&gt;<br />&lt;returns&gt;An option of the input value after applying the mapping function, or None if the input is None.&lt;/returns&gt;</em></div>
+<div class="fsdocs-tip" id="fs4">val direction : obj</div>
 
         </div>
 
