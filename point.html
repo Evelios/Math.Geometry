@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>point</title>
+    <title>2D Points</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="author" content="Thomas Waters">
 
@@ -55,76 +55,102 @@
                 <li class="nav-item" id="fsdocs-release-notes-link"><a class="nav-link" href="https://github.com/Evelios/fsharp-geometry/blob/master/RELEASE_NOTES.md">Release Notes</a></li>
                 <li class="nav-item" id="fsdocs-repository-link"><a class="nav-link" href="https://github.com/Evelios/fsharp-geometry/">Source Repository</a></li>
                 <li class="nav-header">
-  Documentation
+  Tutorials
 </li>             
 <li class="nav-item">
-  <a class="nav-link" href="/fsharp-geometry/triangle.html">
-    triangle
+  <a class="nav-link" href="/fsharp-geometry/digit-precision.html">
+    Digit Precision
+  </a>
+</li>             
+<li class="nav-header">
+  Modules
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="/fsharp-geometry/angle.html">
+    Angle
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="/fsharp-geometry/length.html">
+    Lengths
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="/fsharp-geometry/interval.html">
+    Interval
+  </a>
+</li>             
+<li class="nav-header">
+  2D Modules
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="/fsharp-geometry/arc.html">
+    2D Arc
   </a>
 </li>             
 <li class="nav-item">
   <a class="nav-link" href="/fsharp-geometry/axes.html">
-    axes
+    2D Axes
   </a>
 </li>             
 <li class="nav-item">
-  <a class="nav-link" href="/fsharp-geometry/arc.html">
-    arc
+  <a class="nav-link" href="/fsharp-geometry/bounding-box.html">
+    2D Bounding Box
   </a>
 </li>             
 <li class="nav-item">
-  <a class="nav-link" href="/fsharp-geometry/frame.html">
-    frame
+  <a class="nav-link" href="/fsharp-geometry/circle.html">
+    2D Circle
   </a>
 </li>             
 <li class="nav-item">
   <a class="nav-link" href="/fsharp-geometry/direction.html">
-    direction
+    2D Direction
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="/fsharp-geometry/ellipse.html">
+    2D Ellipse
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="/fsharp-geometry/frame.html">
+    2D Frame
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="/fsharp-geometry/line-segment.html">
+    2D Line Segment
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="/fsharp-geometry/point.html">
+    2D Points
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="/fsharp-geometry/polygon.html">
+    2D Polygon
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="/fsharp-geometry/polyline.html">
+    2D Poly-Line
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="/fsharp-geometry/size.html">
+    2D Size
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="/fsharp-geometry/triangle.html">
+    2D Triangle
   </a>
 </li>             
 <li class="nav-item">
   <a class="nav-link" href="/fsharp-geometry/vector.html">
     2D Vectors
-  </a>
-</li>             
-<li class="nav-item">
-  <a class="nav-link" href="/fsharp-geometry/bounding-box.html">
-    bounding-box
-  </a>
-</li>             
-<li class="nav-item">
-  <a class="nav-link" href="/fsharp-geometry/ellipse.html">
-    ellipse
-  </a>
-</li>             
-<li class="nav-item">
-  <a class="nav-link" href="/fsharp-geometry/point.html">
-    point
-  </a>
-</li>             
-<li class="nav-item">
-  <a class="nav-link" href="/fsharp-geometry/size.html">
-    size
-  </a>
-</li>             
-<li class="nav-item">
-  <a class="nav-link" href="/fsharp-geometry/polyline.html">
-    polyline
-  </a>
-</li>             
-<li class="nav-item">
-  <a class="nav-link" href="/fsharp-geometry/circle.html">
-    circle
-  </a>
-</li>             
-<li class="nav-item">
-  <a class="nav-link" href="/fsharp-geometry/line-segment.html">
-    line-segment
-  </a>
-</li>             
-<li class="nav-item">
-  <a class="nav-link" href="/fsharp-geometry/polygon.html">
-    polygon
   </a>
 </li>
                 <li class="nav-header">
@@ -145,7 +171,110 @@
         <hr />
         <div class="container" id="fsdocs-content">
             
-            
+<h1><a name="Constructors" class="anchor" href="#Constructors">Constructors</a></h1>
+<p>Points can be created from the <strong>x</strong> and <strong>y</strong> components.</p>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">Point2D</span><span class="pn">.</span><span class="id">xy</span> <span class="pn">(</span><span class="id">Length</span><span class="pn">.</span><span class="id">meters</span> <span class="n">3.</span><span class="pn">)</span> <span class="pn">(</span><span class="id">Length</span><span class="pn">.</span><span class="id">meters</span> <span class="n">4.</span><span class="pn">)</span>
+</code></pre>
+<p>You can use either <code>rTheta</code> or <code>polar</code> when using polar coordinates.</p>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">Point2D</span><span class="pn">.</span><span class="id">rTheta</span> <span class="pn">(</span><span class="id">Length</span><span class="pn">.</span><span class="id">meters</span> <span class="n">5.</span><span class="pn">)</span> <span class="id">Angle</span><span class="pn">.</span><span class="id">halfPi</span>
+
+<span class="id">Point2D</span><span class="pn">.</span><span class="id">polar</span> <span class="pn">(</span><span class="id">Length</span><span class="pn">.</span><span class="id">meters</span> <span class="n">5.</span><span class="pn">)</span> <span class="id">Angle</span><span class="pn">.</span><span class="id">halfPi</span>
+</code></pre>
+<h1><a name="Operators" class="anchor" href="#Operators">Operators</a></h1>
+<p>Operators are provided for more concise syntax when dealing with points. All
+of these symbol operators have a corresponding function that you can use as
+well. These are often used when using functions like <code>List.map</code> or when used
+in piping operations (<code>|&gt;</code>). Pay attention to the order of the arguments!
+Because these functions are intended to be used in pipes the order goes like
+<code>Point2D.add rhs lhs</code>.</p>
+<p>The following three statements are equivalent.
+<span class="math">\[Point2D + Point2D = Point2D\]</span></p>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">Point2D</span><span class="pn">.</span><span class="id">translate</span> <span onmouseout="hideTip(event, 'fs4', 9)" onmouseover="showTip(event, 'fs4', 9)" class="id">vec</span> <span onmouseout="hideTip(event, 'fs2', 10)" onmouseover="showTip(event, 'fs2', 10)" class="id">point</span>
+
+<span onmouseout="hideTip(event, 'fs2', 11)" onmouseover="showTip(event, 'fs2', 11)" class="id">point</span> <span class="o">|&gt;</span> <span class="id">Point2D</span><span class="pn">.</span><span class="id">plus</span> <span onmouseout="hideTip(event, 'fs4', 12)" onmouseover="showTip(event, 'fs4', 12)" class="id">vec</span>
+
+<span onmouseout="hideTip(event, 'fs2', 13)" onmouseover="showTip(event, 'fs2', 13)" class="id">point</span> <span class="o">+</span> <span onmouseout="hideTip(event, 'fs4', 14)" onmouseover="showTip(event, 'fs4', 14)" class="id">vec</span>
+</code></pre>
+<table class="pre"><tr><td><pre><code>No value returned by any evaluator</code></pre></td></tr></table>
+<p><span class="math">\[ Point2D - Vector2D = Point2D \]</span></p>
+<pre class="fssnip highlighted"><code lang="fsharp"><span onmouseout="hideTip(event, 'fs2', 15)" onmouseover="showTip(event, 'fs2', 15)" class="id">point</span> <span class="o">-</span> <span onmouseout="hideTip(event, 'fs4', 16)" onmouseover="showTip(event, 'fs4', 16)" class="id">vec</span>
+</code></pre>
+<table class="pre"><tr><td><pre><code>No value returned by any evaluator</code></pre></td></tr></table>
+<p><span class="math">\[ Point2D - Point2D = Vector2D \]</span></p>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="pn">(</span><span onmouseout="hideTip(event, 'fs3', 17)" onmouseover="showTip(event, 'fs3', 17)" class="id">secondPoint</span> <span class="o">-</span> <span onmouseout="hideTip(event, 'fs2', 18)" onmouseover="showTip(event, 'fs2', 18)" class="id">point</span><span class="pn">)</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs4', 19)" onmouseover="showTip(event, 'fs4', 19)" class="id">vec</span>
+</code></pre>
+<table class="pre"><tr><td><pre><code>No value returned by any evaluator</code></pre></td></tr></table>
+<p>The following table is the complete list of operators that can be used on
+point objects.</p>
+<table>
+<thead>
+<tr class="header">
+<th><p>Operator</p></th>
+<th><p>Lhs</p></th>
+<th><p>Rhs</p></th>
+<th><p>Return Type</p></th>
+<th><p>Example</p></th>
+<th><p>Function</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><p>-</p></td>
+<td><p>Point</p></td>
+<td></td>
+<td><p>Point</p></td>
+<td><p><code>-vec</code></p></td>
+<td><p><code>Point2D.neg</code></p></td>
+</tr>
+<tr class="even">
+<td><p>+</p></td>
+<td><p>Point</p></td>
+<td><p>Point</p></td>
+<td><p>Point</p></td>
+<td><p><code>lhs + rhs</code></p></td>
+<td><p><code>Point2D.plus</code></p></td>
+</tr>
+<tr class="odd">
+<td><p>-</p></td>
+<td><p>Point</p></td>
+<td><p>Point</p></td>
+<td><p>Point</p></td>
+<td><p><code>lhs - rhs</code></p></td>
+<td><p><code>Point2D.minus</code></p></td>
+</tr>
+<tr class="even">
+<td><p>*</p></td>
+<td><p>Point</p></td>
+<td><p>float</p></td>
+<td><p>Point</p></td>
+<td><p><code>lhs * 0.5</code></p></td>
+<td><p><code>Point2D.times</code> &amp; <code>Point2D.scaleBy</code></p></td>
+</tr>
+<tr class="odd">
+<td><p>*</p></td>
+<td><p>float</p></td>
+<td><p>Point</p></td>
+<td><p>Point</p></td>
+<td><p><code>0.5 * rhs</code></p></td>
+<td><p><code>None</code></p></td>
+</tr>
+<tr class="even">
+<td><p>/</p></td>
+<td><p>Point</p></td>
+<td><p>float</p></td>
+<td><p>Point</p></td>
+<td><p><code>lhs / 4.</code></p></td>
+<td><p><code>Point2D.dividedBy</code></p></td>
+</tr>
+</tbody>
+</table>
+
+
+            <div class="fsdocs-tip" id="fs1">Multiple items<br />union case Cartesian.Cartesian: Cartesian<br /><br />--------------------<br />type Cartesian = | Cartesian</div>
+<div class="fsdocs-tip" id="fs2">val point : obj</div>
+<div class="fsdocs-tip" id="fs3">val secondPoint : obj</div>
+<div class="fsdocs-tip" id="fs4">val vec : obj</div>
+
         </div>
 
         <!-- BEGIN SEARCH BOX: this adds support for the search box -->

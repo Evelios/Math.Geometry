@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>2D Arc</title>
+    <title>Angle</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="author" content="Thomas Waters">
 
@@ -171,8 +171,185 @@
         <hr />
         <div class="container" id="fsdocs-content">
             
+<h1><a name="Builders" class="anchor" href="#Builders">Builders</a></h1>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">Angle</span><span class="pn">.</span><span class="id">degrees</span> <span class="n">120.</span>
 
-            <div class="fsdocs-tip" id="fs1">Multiple items<br />union case Cartesian.Cartesian: Cartesian<br /><br />--------------------<br />type Cartesian = | Cartesian</div>
+<span class="id">Angle</span><span class="pn">.</span><span class="id">radians</span> <span class="pn">(</span><span onmouseout="hideTip(event, 'fs3', 4)" onmouseover="showTip(event, 'fs3', 4)" class="id">Math</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs4', 5)" onmouseover="showTip(event, 'fs4', 5)" class="id">PI</span> <span class="o">/</span> <span class="n">3.</span><span class="pn">)</span>
+</code></pre>
+<h1><a name="Accessors" class="anchor" href="#Accessors">Accessors</a></h1>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">Angle</span><span class="pn">.</span><span class="id">inDegrees</span> <span class="id">Angle</span><span class="pn">.</span><span class="id">halfPi</span>
+
+<span class="id">Angle</span><span class="pn">.</span><span class="id">inRadians</span> <span class="id">Angle</span><span class="pn">.</span><span class="id">halfPi</span>
+</code></pre>
+<h1><a name="Trigonometry" class="anchor" href="#Trigonometry">Trigonometry</a></h1>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">Angle</span><span class="pn">.</span><span class="id">sin</span> <span class="id">Angle</span><span class="pn">.</span><span class="id">pi</span>
+<span class="id">Angle</span><span class="pn">.</span><span class="id">cos</span> <span class="id">Angle</span><span class="pn">.</span><span class="id">pi</span>
+<span class="id">Angle</span><span class="pn">.</span><span class="id">tan</span> <span class="id">Angle</span><span class="pn">.</span><span class="id">pi</span>
+
+<span class="id">Angle</span><span class="pn">.</span><span class="id">asin</span> <span class="pn">(</span><span class="n">1.</span> <span class="o">/</span> <span class="n">2.</span><span class="pn">)</span>
+<span class="id">Angle</span><span class="pn">.</span><span class="id">acos</span> <span class="pn">(</span><span class="n">1.</span> <span class="o">/</span> <span class="n">2.</span><span class="pn">)</span>
+<span class="id">Angle</span><span class="pn">.</span><span class="id">atan</span> <span class="pn">(</span><span class="n">1.</span> <span class="o">/</span> <span class="n">2.</span><span class="pn">)</span>
+</code></pre>
+<h1><a name="Constants" class="anchor" href="#Constants">Constants</a></h1>
+<table>
+<thead>
+<tr class="header">
+<th><p>Function</p></th>
+<th><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><p><code>Angle.zero</code></p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="even">
+<td><p><code>Angle.pi</code></p></td>
+<td><p><span class="math">\(\pi\)</span></p></td>
+</tr>
+<tr class="odd">
+<td><p><code>Angle.twoPi</code></p></td>
+<td><p><span class="math">\(2 \pi\)</span></p></td>
+</tr>
+<tr class="even">
+<td><p><code>Angle.piOverTwo</code></p></td>
+<td><p><span class="math">\(\frac{\pi}{2}\)</span></p></td>
+</tr>
+<tr class="odd">
+<td><p><code>Angle.halfPi</code></p></td>
+<td><p><span class="math">\(\frac{\pi}{2}\)</span></p></td>
+</tr>
+<tr class="even">
+<td><p><code>Angle.radiansToDegrees</code></p></td>
+<td><p><span class="math">\(\frac{180}{\pi}\)</span></p></td>
+</tr>
+<tr class="odd">
+<td><p><code>Angle.degreesToRadians</code></p></td>
+<td><p><span class="math">\(\frac{\pi}{180}\)</span></p></td>
+</tr>
+</tbody>
+</table>
+
+<h1><a name="Operators" class="anchor" href="#Operators">Operators</a></h1>
+<table>
+<thead>
+<tr class="header">
+<th><p>Operator</p></th>
+<th><p>Lhs</p></th>
+<th><p>Rhs</p></th>
+<th><p>Return Type</p></th>
+<th><p>Example</p></th>
+<th><p>Function</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><p>-</p></td>
+<td><p>Angle</p></td>
+<td></td>
+<td><p>Angle</p></td>
+<td><p><code>-length</code></p></td>
+<td><p><code>Angle.neg</code></p></td>
+</tr>
+<tr class="even">
+<td><p>+</p></td>
+<td><p>Angle</p></td>
+<td><p>Angle</p></td>
+<td><p>Angle</p></td>
+<td><p><code>lhs + rhs</code></p></td>
+<td><p><code>Angle.plus</code></p></td>
+</tr>
+<tr class="odd">
+<td><p>-</p></td>
+<td><p>Angle</p></td>
+<td><p>Angle</p></td>
+<td><p>Angle</p></td>
+<td><p><code>lhs - rhs</code></p></td>
+<td><p><code>Angle.minus</code></p></td>
+</tr>
+<tr class="even">
+<td><p>*</p></td>
+<td><p>Angle</p></td>
+<td><p>float</p></td>
+<td><p>Angle</p></td>
+<td><p><code>lhs * 0.5</code></p></td>
+<td><p><code>Angle.times</code></p></td>
+</tr>
+<tr class="odd">
+<td><p>*</p></td>
+<td><p>float</p></td>
+<td><p>Angle</p></td>
+<td><p>Angle</p></td>
+<td><p><code>0.5 * rhs</code></p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="even">
+<td><p>*</p></td>
+<td><p>Angle</p></td>
+<td><p>Length</p></td>
+<td><p>Length</p></td>
+<td><p><code>angle / length</code></p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="odd">
+<td><p>*</p></td>
+<td><p>Length</p></td>
+<td><p>Angle</p></td>
+<td><p>Length</p></td>
+<td><p><code>length / angle</code></p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="even">
+<td><p>/</p></td>
+<td><p>Angle</p></td>
+<td><p>float</p></td>
+<td><p>Angle</p></td>
+<td><p><code>lhs / 4.</code></p></td>
+<td><p><code>Angle.dividedBy</code></p></td>
+</tr>
+<tr class="odd">
+<td><p>/</p></td>
+<td><p>Angle</p></td>
+<td><p>Angle</p></td>
+<td><p>float</p></td>
+<td><p><code>lhs / rhs</code></p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="even">
+<td><p>/</p></td>
+<td><p>Angle</p></td>
+<td><p>Length</p></td>
+<td><p>Length</p></td>
+<td><p><code>angle / length</code></p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="odd">
+<td><p>/</p></td>
+<td><p>Length</p></td>
+<td><p>Angle</p></td>
+<td><p>Length</p></td>
+<td><p><code>length / angle</code></p></td>
+<td><p>None</p></td>
+</tr>
+</tbody>
+</table>
+
+
+            <div class="fsdocs-tip" id="fs1">namespace System</div>
+<div class="fsdocs-tip" id="fs2">Multiple items<br />union case Cartesian.Cartesian: Cartesian<br /><br />--------------------<br />type Cartesian = | Cartesian</div>
+<div class="fsdocs-tip" id="fs3">type Math =
+  static member Abs : value: decimal -&gt; decimal + 7 overloads
+  static member Acos : d: float -&gt; float
+  static member Acosh : d: float -&gt; float
+  static member Asin : d: float -&gt; float
+  static member Asinh : d: float -&gt; float
+  static member Atan : d: float -&gt; float
+  static member Atan2 : y: float * x: float -&gt; float
+  static member Atanh : d: float -&gt; float
+  static member BigMul : a: int * b: int -&gt; int64 + 2 overloads
+  static member BitDecrement : x: float -&gt; float
+  ...<br /><em>&lt;summary&gt;Provides constants and static methods for trigonometric, logarithmic, and other common mathematical functions.&lt;/summary&gt;</em></div>
+<div class="fsdocs-tip" id="fs4">field Math.PI: float = 3.14159265359<br /><em>&lt;summary&gt;Represents the ratio of the circumference of a circle to its diameter, specified by the constant, π.&lt;/summary&gt;</em></div>
 
         </div>
 

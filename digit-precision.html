@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>2D Arc</title>
+    <title>Digit Precision</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="author" content="Thomas Waters">
 
@@ -171,6 +171,50 @@
         <hr />
         <div class="container" id="fsdocs-content">
             
+<h1><a name="Digit-Precision" class="anchor" href="#Digit-Precision">Digit Precision</a></h1>
+<p>This library provides equality operators <code>lhs = rhs</code> for many of the data
+structures. The savvy among you may have noticed that all the data structures
+are also storing float numbers. Comparing <a href="https://floating-point-gui.de/errors/comparison/">floating point equality</a> is no easy
+task. Due to floating point rounding errors when numbers are being stored, and
+with many calculations (especially trig functions), the output numbers may be
+slightly different than you would expect.</p>
+<p>We can show this with an example. We would expect the following to be true</p>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="n">1.</span> <span class="o">=</span> <span class="pn">(</span><span class="n">0.3</span> <span class="o">*</span> <span class="n">3.</span><span class="pn">)</span> <span class="o">+</span> <span class="n">0.1</span>
+</code></pre>
+<table class="pre"><tr><td><pre><code>false</code></pre></td></tr></table>
+<p>Checking the returned value from the right hand side we see that we are getting
+the value <code>1.0</code>. So what's going on?</p>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="pn">(</span><span class="n">0.3</span> <span class="o">*</span> <span class="n">3.</span><span class="pn">)</span> <span class="o">+</span> <span class="n">0.1</span>
+</code></pre>
+<table class="pre"><tr><td><pre><code>1.0</code></pre></td></tr></table>
+<p>Well, with a little investigation, we can see that we aren't getting exactly
+<code>1.0</code>. We are getting ever so slightly less than <code>1.0</code>.</p>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="pn">(</span><span class="pn">(</span><span class="n">0.3</span> <span class="o">*</span> <span class="n">3.</span><span class="pn">)</span> <span class="o">+</span> <span class="n">0.1</span><span class="pn">)</span> <span class="o">-</span> <span class="n">1.</span>
+</code></pre>
+<table class="pre"><tr><td><pre><code>-1.110223025e-16</code></pre></td></tr></table>
+<p>Comparing datastructures that use floating point numbers can sometimes be a sign
+of bad code code design, but this is not always the case. So when you are
+looking to do equality comparison, this library provides the ability to do
+approximate equality comparison on floating point numbers and data structures
+like points and vectors.</p>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">Float</span><span class="pn">.</span><span class="id">almostEqual</span> <span class="n">1.</span> <span class="pn">(</span><span class="pn">(</span><span class="n">0.3</span> <span class="pn">*</span> <span class="n">3.</span><span class="pn">)</span> <span class="o">+</span> <span class="n">0.1</span><span class="pn">)</span>
+</code></pre>
+<table class="pre"><tr><td><pre><code>No value returned by any evaluator</code></pre></td></tr></table>
+<p>You can change the precision that floating point operations are performed at. The
+default precision is a digit precision of 10. If we were looking a higher level
+of precision, you can change the digit precision to be something more fitting of
+your needs. In this example, we can make that equality check fail by increasing
+the precision we are requiring for this operation.</p>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="c">// Increasing the equality precision to make this check fail</span>
+<span class="id">Float</span><span class="pn">.</span><span class="id">DigitPrecision</span> <span class="k">&lt;-</span> <span class="n">17</span>
+
+<span class="id">Float</span><span class="pn">.</span><span class="id">almostEqual</span> <span class="n">1.</span> <span class="pn">(</span><span class="pn">(</span><span class="n">0.3</span> <span class="pn">*</span> <span class="n">3.</span><span class="pn">)</span> <span class="o">+</span> <span class="n">0.1</span><span class="pn">)</span>
+</code></pre>
+<table class="pre"><tr><td><pre><code>No value returned by any evaluator</code></pre></td></tr></table>
+<h1><a name="Examples" class="anchor" href="#Examples">Examples</a></h1>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">Point2D</span><span class="pn">.</span><span class="id">meters</span> <span class="n">1.</span> <span class="n">5.</span> <span class="o">=</span> <span class="id">Point2D</span><span class="pn">.</span><span class="id">meters</span> <span class="n">1.</span> <span class="pn">(</span><span class="n">5.</span> <span class="o">+</span> <span class="n">1.e-20</span><span class="pn">)</span>
+</code></pre>
+<table class="pre"><tr><td><pre><code>No value returned by any evaluator</code></pre></td></tr></table>
 
             <div class="fsdocs-tip" id="fs1">Multiple items<br />union case Cartesian.Cartesian: Cartesian<br /><br />--------------------<br />type Cartesian = | Cartesian</div>
 
