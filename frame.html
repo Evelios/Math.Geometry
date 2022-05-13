@@ -171,8 +171,94 @@
         <hr />
         <div class="container" id="fsdocs-content">
             
+<h1><a name="Builders" class="anchor" href="#Builders">Builders</a></h1>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">Frame2D</span><span class="pn">.</span><span class="id">atOrigin</span>
+</code></pre>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">Frame2D</span><span class="pn">.</span><span class="id">atPoint</span> <span class="pn">(</span><span class="id">Point2D</span><span class="pn">.</span><span class="id">meters</span> <span class="n">4.</span> <span class="n">2.</span><span class="pn">)</span>
+</code></pre>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">Frame2D</span><span class="pn">.</span><span class="id">withXDirection</span>
+    <span class="pn">(</span><span class="id">Direction2D</span><span class="pn">.</span><span class="id">fromAngle</span> <span class="pn">(</span><span class="id">Angle</span><span class="pn">.</span><span class="id">degrees</span> <span class="n">30.</span><span class="pn">)</span><span class="pn">)</span>
+    <span class="pn">(</span><span class="id">Point2D</span><span class="pn">.</span><span class="id">meters</span> <span class="n">3.</span> <span class="n">1.</span><span class="pn">)</span>
+</code></pre>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">Frame2D</span><span class="pn">.</span><span class="id">withYDirection</span>
+    <span class="pn">(</span><span class="id">Direction2D</span><span class="pn">.</span><span class="id">fromAngle</span> <span class="pn">(</span><span class="id">Angle</span><span class="pn">.</span><span class="id">degrees</span> <span class="o">-</span><span class="n">60.</span><span class="pn">)</span><span class="pn">)</span>
+    <span class="pn">(</span><span class="id">Point2D</span><span class="pn">.</span><span class="id">meters</span> <span class="o">-</span><span class="n">1.</span> <span class="n">2.</span><span class="pn">)</span>
+</code></pre>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">Frame2D</span><span class="pn">.</span><span class="id">withAngle</span>
+    <span class="pn">(</span><span class="id">Angle</span><span class="pn">.</span><span class="id">degrees</span> <span class="n">20.</span><span class="pn">)</span>
+    <span class="pn">(</span><span class="id">Point2D</span><span class="pn">.</span><span class="id">meters</span> <span class="n">2.</span> <span class="n">3.</span><span class="pn">)</span>
+</code></pre>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="k">let</span> <span onmouseout="hideTip(event, 'fs2', 3)" onmouseover="showTip(event, 'fs2', 3)" class="id">axis</span> <span class="pn">:</span> <span class="id">Axis2D</span><span class="pn">&lt;</span><span class="id">Meters</span><span class="pn">,</span> <span onmouseout="hideTip(event, 'fs1', 4)" onmouseover="showTip(event, 'fs1', 4)" class="id">Cartesian</span><span class="pn">&gt;</span> <span class="o">=</span>
+    <span class="id">Axis2D</span><span class="pn">.</span><span class="id">through</span>
+        <span class="pn">(</span><span class="id">Point2D</span><span class="pn">.</span><span class="id">meters</span> <span class="n">3.</span> <span class="n">2.</span><span class="pn">)</span>
+        <span class="pn">(</span><span class="id">Direction2D</span><span class="pn">.</span><span class="id">fromAngle</span> <span class="id">Angle</span><span class="pn">.</span><span class="id">pi</span><span class="pn">)</span>
+</code></pre>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">Frame2D</span><span class="pn">.</span><span class="id">fromXAxis</span> <span onmouseout="hideTip(event, 'fs2', 5)" onmouseover="showTip(event, 'fs2', 5)" class="id">axis</span>
+</code></pre>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">Frame2D</span><span class="pn">.</span><span class="id">fromYAxis</span> <span onmouseout="hideTip(event, 'fs2', 6)" onmouseover="showTip(event, 'fs2', 6)" class="id">axis</span>
+</code></pre>
+<h1><a name="Accessors" class="anchor" href="#Accessors">Accessors</a></h1>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="k">let</span> <span onmouseout="hideTip(event, 'fs3', 7)" onmouseover="showTip(event, 'fs3', 7)" class="id">frame</span> <span class="pn">:</span> <span class="id">Frame2D</span><span class="pn">&lt;</span><span class="id">Meters</span><span class="pn">,</span> <span onmouseout="hideTip(event, 'fs1', 8)" onmouseover="showTip(event, 'fs1', 8)" class="id">Cartesian</span><span class="pn">,</span> <span onmouseout="hideTip(event, 'fs4', 9)" onmouseover="showTip(event, 'fs4', 9)" class="id">unit</span><span class="pn">&gt;</span> <span class="o">=</span>
+    <span class="id">Frame2D</span><span class="pn">.</span><span class="id">withAngle</span>
+        <span class="pn">(</span><span class="id">Angle</span><span class="pn">.</span><span class="id">degrees</span> <span class="n">20.</span><span class="pn">)</span>
+        <span class="pn">(</span><span class="id">Point2D</span><span class="pn">.</span><span class="id">meters</span> <span class="n">2.</span> <span class="n">3.</span><span class="pn">)</span>
+</code></pre>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">Frame2D</span><span class="pn">.</span><span class="id">originPoint</span> <span onmouseout="hideTip(event, 'fs3', 10)" onmouseover="showTip(event, 'fs3', 10)" class="id">frame</span> <span class="c">// or</span>
+
+<span onmouseout="hideTip(event, 'fs3', 11)" onmouseover="showTip(event, 'fs3', 11)" class="id">frame</span><span class="pn">.</span><span class="id">Origin</span>
+</code></pre>
+<table class="pre"><tr><td><pre><code>No value returned by any evaluator</code></pre></td></tr></table>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">Frame2D</span><span class="pn">.</span><span class="id">xDirection</span> <span onmouseout="hideTip(event, 'fs3', 12)" onmouseover="showTip(event, 'fs3', 12)" class="id">frame</span> <span class="c">// or</span>
+
+<span onmouseout="hideTip(event, 'fs3', 13)" onmouseover="showTip(event, 'fs3', 13)" class="id">frame</span><span class="pn">.</span><span class="id">XDirection</span>
+</code></pre>
+<table class="pre"><tr><td><pre><code>No value returned by any evaluator</code></pre></td></tr></table>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">Frame2D</span><span class="pn">.</span><span class="id">yDirection</span> <span onmouseout="hideTip(event, 'fs3', 14)" onmouseover="showTip(event, 'fs3', 14)" class="id">frame</span> <span class="c">// or</span>
+
+<span onmouseout="hideTip(event, 'fs3', 15)" onmouseover="showTip(event, 'fs3', 15)" class="id">frame</span><span class="pn">.</span><span class="id">YDirection</span>
+</code></pre>
+<table class="pre"><tr><td><pre><code>No value returned by any evaluator</code></pre></td></tr></table>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">Frame2D</span><span class="pn">.</span><span class="id">isRightHanded</span> <span onmouseout="hideTip(event, 'fs3', 16)" onmouseover="showTip(event, 'fs3', 16)" class="id">frame</span>
+</code></pre>
+<table class="pre"><tr><td><pre><code>No value returned by any evaluator</code></pre></td></tr></table>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">Frame2D</span><span class="pn">.</span><span class="id">yAxis</span> <span onmouseout="hideTip(event, 'fs3', 17)" onmouseover="showTip(event, 'fs3', 17)" class="id">frame</span>
+</code></pre>
+<table class="pre"><tr><td><pre><code>No value returned by any evaluator</code></pre></td></tr></table>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">Frame2D</span><span class="pn">.</span><span class="id">xAxis</span> <span onmouseout="hideTip(event, 'fs3', 18)" onmouseover="showTip(event, 'fs3', 18)" class="id">frame</span>
+</code></pre>
+<table class="pre"><tr><td><pre><code>No value returned by any evaluator</code></pre></td></tr></table>
+<h1><a name="Modifiers" class="anchor" href="#Modifiers">Modifiers</a></h1>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">Frame2D</span><span class="pn">.</span><span class="id">reverseX</span> <span onmouseout="hideTip(event, 'fs3', 19)" onmouseover="showTip(event, 'fs3', 19)" class="id">frame</span>
+</code></pre>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">Frame2D</span><span class="pn">.</span><span class="id">reverseY</span> <span onmouseout="hideTip(event, 'fs3', 20)" onmouseover="showTip(event, 'fs3', 20)" class="id">frame</span>
+</code></pre>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">Frame2D</span><span class="pn">.</span><span class="id">moveTo</span> <span class="id">Point2D</span><span class="pn">.</span><span class="id">origin</span> <span onmouseout="hideTip(event, 'fs3', 21)" onmouseover="showTip(event, 'fs3', 21)" class="id">frame</span>
+</code></pre>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">Frame2D</span><span class="pn">.</span><span class="id">rotateBy</span> <span class="pn">(</span><span class="id">Angle</span><span class="pn">.</span><span class="id">degrees</span> <span class="n">30.</span><span class="pn">)</span> <span onmouseout="hideTip(event, 'fs3', 22)" onmouseover="showTip(event, 'fs3', 22)" class="id">frame</span>
+</code></pre>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">Frame2D</span><span class="pn">.</span><span class="id">rotateAround</span>
+    <span class="pn">(</span><span class="id">Point2D</span><span class="pn">.</span><span class="id">meters</span> <span class="o">-</span><span class="n">3.</span> <span class="o">-</span><span class="n">2.</span><span class="pn">)</span>
+    <span class="pn">(</span><span class="id">Angle</span><span class="pn">.</span><span class="id">degrees</span> <span class="n">70.</span><span class="pn">)</span>
+    <span onmouseout="hideTip(event, 'fs3', 23)" onmouseover="showTip(event, 'fs3', 23)" class="id">frame</span>
+</code></pre>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">Frame2D</span><span class="pn">.</span><span class="id">translateBy</span> <span class="pn">(</span><span class="id">Vector2D</span><span class="pn">.</span><span class="id">meters</span> <span class="n">4.</span> <span class="n">7.</span><span class="pn">)</span> <span onmouseout="hideTip(event, 'fs3', 24)" onmouseover="showTip(event, 'fs3', 24)" class="id">frame</span>
+</code></pre>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">Frame2D</span><span class="pn">.</span><span class="id">translateIn</span>
+</code></pre>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">Frame2D</span><span class="pn">.</span><span class="id">translateAlongOwn</span>
+</code></pre>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">Frame2D</span><span class="pn">.</span><span class="id">mirrorAcross</span>
+</code></pre>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">Frame2D</span><span class="pn">.</span><span class="id">relativeTo</span>
+</code></pre>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">Frame2D</span><span class="pn">.</span><span class="id">placeIn</span>
+</code></pre>
 
             <div class="fsdocs-tip" id="fs1">Multiple items<br />union case Cartesian.Cartesian: Cartesian<br /><br />--------------------<br />type Cartesian = | Cartesian</div>
+<div class="fsdocs-tip" id="fs2">val axis : obj</div>
+<div class="fsdocs-tip" id="fs3">val frame : obj</div>
+<div class="fsdocs-tip" id="fs4">type unit = Unit<br /><em>&lt;summary&gt;The type &#39;unit&#39;, which has only one value &quot;()&quot;. This value is special and
+ always uses the representation &#39;null&#39;.&lt;/summary&gt;<br />&lt;category index=&quot;1&quot;&gt;Basic Types&lt;/category&gt;</em></div>
 
         </div>
 
