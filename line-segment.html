@@ -171,8 +171,119 @@
         <hr />
         <div class="container" id="fsdocs-content">
             
+<h1><a name="Line-Segment-2D" class="anchor" href="#Line-Segment-2D">Line Segment 2D</a></h1>
+<h1><a name="Builders" class="anchor" href="#Builders">Builders</a></h1>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">LineSegment2D</span><span class="pn">.</span><span class="id">from</span>
+    <span class="pn">(</span><span class="id">Point2D</span><span class="pn">.</span><span class="id">meters</span> <span class="n">3.</span> <span class="n">4.</span><span class="pn">)</span>
+    <span class="pn">(</span><span class="id">Point2D</span><span class="pn">.</span><span class="id">meters</span> <span class="o">-</span><span class="n">8.</span> <span class="n">2.</span><span class="pn">)</span>
+</code></pre>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">LineSegment2D</span><span class="pn">.</span><span class="id">fromEndpoints</span>
+    <span class="pn">(</span><span class="id">Point2D</span><span class="pn">.</span><span class="id">meters</span> <span class="n">3.</span> <span class="n">4.</span><span class="pn">,</span>
+     <span class="id">Point2D</span><span class="pn">.</span><span class="id">meters</span> <span class="o">-</span><span class="n">8.</span> <span class="n">2.</span><span class="pn">)</span>
+</code></pre>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">LineSegment2D</span><span class="pn">.</span><span class="id">safeFrom</span>
+    <span class="pn">(</span><span class="id">Point2D</span><span class="pn">.</span><span class="id">meters</span> <span class="n">3.</span> <span class="n">4.</span><span class="pn">)</span>
+    <span class="pn">(</span><span class="id">Point2D</span><span class="pn">.</span><span class="id">meters</span> <span class="o">-</span><span class="n">8.</span> <span class="n">2.</span><span class="pn">)</span>
+</code></pre>
+<table class="pre"><tr><td><pre><code>No value returned by any evaluator</code></pre></td></tr></table>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">LineSegment2D</span><span class="pn">.</span><span class="id">safeFrom</span>
+    <span class="pn">(</span><span class="id">Point2D</span><span class="pn">.</span><span class="id">meters</span> <span class="n">2.</span> <span class="n">1.</span><span class="pn">)</span>
+    <span class="pn">(</span><span class="id">Point2D</span><span class="pn">.</span><span class="id">meters</span> <span class="n">2.</span> <span class="n">1.</span><span class="pn">)</span>
+</code></pre>
+<table class="pre"><tr><td><pre><code>No value returned by any evaluator</code></pre></td></tr></table>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">LineSegment2D</span><span class="pn">.</span><span class="id">fromPointAndVector</span>
+    <span class="id">Point2D</span><span class="pn">.</span><span class="id">origin</span>
+    <span class="pn">(</span><span class="id">Vector2D</span><span class="pn">.</span><span class="id">meters</span> <span class="n">7.</span> <span class="n">8.</span><span class="pn">)</span>
+</code></pre>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">LineSegment2D</span><span class="pn">.</span><span class="id">along</span>
+    <span class="id">Axis2D</span><span class="pn">.</span><span class="id">x</span>
+    <span class="pn">(</span><span class="id">Length</span><span class="pn">.</span><span class="id">meters</span> <span class="n">3.</span><span class="pn">)</span>
+    <span class="pn">(</span><span class="id">Length</span><span class="pn">.</span><span class="id">meters</span> <span class="n">7.</span><span class="pn">)</span>
+</code></pre>
+<h1><a name="Accessors" class="anchor" href="#Accessors">Accessors</a></h1>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="k">let</span> <span onmouseout="hideTip(event, 'fs2', 5)" onmouseover="showTip(event, 'fs2', 5)" class="id">segment</span><span class="pn">:</span> <span class="id">LineSegment2D</span><span class="pn">&lt;</span><span class="id">Meters</span><span class="pn">,</span> <span onmouseout="hideTip(event, 'fs1', 6)" onmouseover="showTip(event, 'fs1', 6)" class="id">Cartesian</span><span class="pn">&gt;</span> <span class="o">=</span>
+    <span class="id">LineSegment2D</span><span class="pn">.</span><span class="id">from</span>
+        <span class="pn">(</span><span class="id">Point2D</span><span class="pn">.</span><span class="id">meters</span> <span class="n">3.</span> <span class="n">4.</span><span class="pn">)</span>
+        <span class="pn">(</span><span class="id">Point2D</span><span class="pn">.</span><span class="id">meters</span> <span class="o">-</span><span class="n">8.</span> <span class="n">2.</span><span class="pn">)</span>
+</code></pre>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">LineSegment2D</span><span class="pn">.</span><span class="id">start</span> <span onmouseout="hideTip(event, 'fs2', 7)" onmouseover="showTip(event, 'fs2', 7)" class="id">segment</span>  <span class="c">// or</span>
+<span onmouseout="hideTip(event, 'fs2', 8)" onmouseover="showTip(event, 'fs2', 8)" class="id">segment</span><span class="pn">.</span><span class="id">Start</span>
+</code></pre>
+<table class="pre"><tr><td><pre><code>No value returned by any evaluator</code></pre></td></tr></table>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">LineSegment2D</span><span class="pn">.</span><span class="id">finish</span> <span onmouseout="hideTip(event, 'fs2', 9)" onmouseover="showTip(event, 'fs2', 9)" class="id">segment</span>  <span class="c">// or</span>
+<span onmouseout="hideTip(event, 'fs2', 10)" onmouseover="showTip(event, 'fs2', 10)" class="id">segment</span><span class="pn">.</span><span class="id">Finish</span>
+</code></pre>
+<table class="pre"><tr><td><pre><code>No value returned by any evaluator</code></pre></td></tr></table>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">LineSegment2D</span><span class="pn">.</span><span class="id">endpoints</span> <span onmouseout="hideTip(event, 'fs2', 11)" onmouseover="showTip(event, 'fs2', 11)" class="id">segment</span>
+</code></pre>
+<table class="pre"><tr><td><pre><code>No value returned by any evaluator</code></pre></td></tr></table>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">LineSegment2D</span><span class="pn">.</span><span class="id">vector</span> <span onmouseout="hideTip(event, 'fs2', 12)" onmouseover="showTip(event, 'fs2', 12)" class="id">segment</span>
+</code></pre>
+<table class="pre"><tr><td><pre><code>No value returned by any evaluator</code></pre></td></tr></table>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">LineSegment2D</span><span class="pn">.</span><span class="id">direction</span> <span onmouseout="hideTip(event, 'fs2', 13)" onmouseover="showTip(event, 'fs2', 13)" class="id">segment</span>
+</code></pre>
+<table class="pre"><tr><td><pre><code>No value returned by any evaluator</code></pre></td></tr></table>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">LineSegment2D</span><span class="pn">.</span><span class="id">length</span> <span onmouseout="hideTip(event, 'fs2', 14)" onmouseover="showTip(event, 'fs2', 14)" class="id">segment</span>
+</code></pre>
+<table class="pre"><tr><td><pre><code>No value returned by any evaluator</code></pre></td></tr></table>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">LineSegment2D</span><span class="pn">.</span><span class="id">axis</span> <span onmouseout="hideTip(event, 'fs2', 15)" onmouseover="showTip(event, 'fs2', 15)" class="id">segment</span>
+</code></pre>
+<table class="pre"><tr><td><pre><code>No value returned by any evaluator</code></pre></td></tr></table>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">LineSegment2D</span><span class="pn">.</span><span class="id">perpendicularDirection</span> <span onmouseout="hideTip(event, 'fs2', 16)" onmouseover="showTip(event, 'fs2', 16)" class="id">segment</span>
+</code></pre>
+<table class="pre"><tr><td><pre><code>No value returned by any evaluator</code></pre></td></tr></table>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">LineSegment2D</span><span class="pn">.</span><span class="id">midpoint</span> <span onmouseout="hideTip(event, 'fs2', 17)" onmouseover="showTip(event, 'fs2', 17)" class="id">segment</span>
+</code></pre>
+<table class="pre"><tr><td><pre><code>No value returned by any evaluator</code></pre></td></tr></table>
+<h1><a name="Modifiers" class="anchor" href="#Modifiers">Modifiers</a></h1>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">LineSegment2D</span><span class="pn">.</span><span class="id">mapEndpoints</span>
+    <span class="pn">(</span><span class="id">Point2D</span><span class="pn">.</span><span class="id">plus</span> <span class="pn">(</span><span class="id">Vector2D</span><span class="pn">.</span><span class="id">meters</span> <span class="n">4.</span> <span class="n">2.</span><span class="pn">)</span><span class="pn">)</span>
+</code></pre>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">LineSegment2D</span><span class="pn">.</span><span class="id">reverse</span> <span onmouseout="hideTip(event, 'fs2', 18)" onmouseover="showTip(event, 'fs2', 18)" class="id">segment</span>
+</code></pre>
+<table class="pre"><tr><td><pre><code>No value returned by any evaluator</code></pre></td></tr></table>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">LineSegment2D</span><span class="pn">.</span><span class="id">scaleAbout</span>
+</code></pre>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">LineSegment2D</span><span class="pn">.</span><span class="id">rotateAround</span>
+</code></pre>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">LineSegment2D</span><span class="pn">.</span><span class="id">translateBy</span>
+</code></pre>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">LineSegment2D</span><span class="pn">.</span><span class="id">translateIn</span>
+</code></pre>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">LineSegment2D</span><span class="pn">.</span><span class="id">mirrorAcross</span>
+</code></pre>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">LineSegment2D</span><span class="pn">.</span><span class="id">projectOnto</span>
+</code></pre>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">LineSegment2D</span><span class="pn">.</span><span class="id">round</span>
+</code></pre>
+<h1><a name="Queries" class="anchor" href="#Queries">Queries</a></h1>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">LineSegment2D</span><span class="pn">.</span><span class="id">interpolate</span> 
+</code></pre>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">LineSegment2D</span><span class="pn">.</span><span class="id">areParallel</span>
+</code></pre>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">LineSegment2D</span><span class="pn">.</span><span class="id">isPointOnSegment</span>
+</code></pre>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">LineSegment2D</span><span class="pn">.</span><span class="id">distanceToPoint</span>
+</code></pre>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">LineSegment2D</span><span class="pn">.</span><span class="id">pointClosestTo</span>
+</code></pre>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">LineSegment2D</span><span class="pn">.</span><span class="id">intersectionPoint</span>
+</code></pre>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">LineSegment2D</span><span class="pn">.</span><span class="id">intersectionWithAxis</span>
+</code></pre>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">LineSegment2D</span><span class="pn">.</span><span class="id">signedDistanceAlong</span>
+</code></pre>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">LineSegment2D</span><span class="pn">.</span><span class="id">signedDistanceFrom</span>
+</code></pre>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">LineSegment2D</span><span class="pn">.</span><span class="id">relativeTo</span>
+</code></pre>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">LineSegment2D</span><span class="pn">.</span><span class="id">placeIn</span>
+</code></pre>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">LineSegment2D</span><span class="pn">.</span><span class="id">boundingBox</span>
+</code></pre>
 
             <div class="fsdocs-tip" id="fs1">Multiple items<br />union case Cartesian.Cartesian: Cartesian<br /><br />--------------------<br />type Cartesian = | Cartesian</div>
+<div class="fsdocs-tip" id="fs2">val segment : obj</div>
 
         </div>
 
