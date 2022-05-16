@@ -171,8 +171,28 @@
         <hr />
         <div class="container" id="fsdocs-content">
             
+<h1><a name="Builders" class="anchor" href="#Builders">Builders</a></h1>
+<p>Create a size with zero length and zero height.</p>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">Size2D</span><span class="pn">.</span><span class="id">empty</span>
+</code></pre>
+<table class="pre"><tr><td><pre><code>No value returned by any evaluator</code></pre></td></tr></table>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">Size2D</span><span class="pn">.</span><span class="id">create</span> <span class="pn">(</span><span class="id">Length</span><span class="pn">.</span><span class="id">meters</span> <span class="n">4.</span><span class="pn">)</span> <span class="pn">(</span><span class="id">Length</span><span class="pn">.</span><span class="id">meters</span> <span class="n">3.</span><span class="pn">)</span>
+</code></pre>
+<h1><a name="Modifiers" class="anchor" href="#Modifiers">Modifiers</a></h1>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="k">let</span> <span onmouseout="hideTip(event, 'fs2', 3)" onmouseover="showTip(event, 'fs2', 3)" class="id">size</span> <span class="o">=</span> <span class="id">Size2D</span><span class="pn">.</span><span class="id">create</span> <span class="pn">(</span><span class="id">Length</span><span class="pn">.</span><span class="id">meters</span> <span class="n">2.</span><span class="pn">)</span> <span class="pn">(</span><span class="id">Length</span><span class="pn">.</span><span class="id">meters</span> <span class="n">7.</span><span class="pn">)</span>
+</code></pre>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">Size2D</span><span class="pn">.</span><span class="id">scale</span> <span class="n">1.5</span> <span onmouseout="hideTip(event, 'fs2', 4)" onmouseover="showTip(event, 'fs2', 4)" class="id">size</span>
+</code></pre>
+<table class="pre"><tr><td><pre><code>No value returned by any evaluator</code></pre></td></tr></table>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">Size2D</span><span class="pn">.</span><span class="id">normalizeBelowOne</span> <span onmouseout="hideTip(event, 'fs2', 5)" onmouseover="showTip(event, 'fs2', 5)" class="id">size</span>
+</code></pre>
+<table class="pre"><tr><td><pre><code>No value returned by any evaluator</code></pre></td></tr></table>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">Size2D</span><span class="pn">.</span><span class="id">withMaxSize</span> <span class="pn">(</span><span class="id">Length</span><span class="pn">.</span><span class="id">meters</span> <span class="n">14.</span><span class="pn">)</span> <span onmouseout="hideTip(event, 'fs2', 6)" onmouseover="showTip(event, 'fs2', 6)" class="id">size</span>
+</code></pre>
+<table class="pre"><tr><td><pre><code>No value returned by any evaluator</code></pre></td></tr></table>
 
             <div class="fsdocs-tip" id="fs1">Multiple items<br />union case Cartesian.Cartesian: Cartesian<br /><br />--------------------<br />type Cartesian = | Cartesian</div>
+<div class="fsdocs-tip" id="fs2">val size : obj</div>
 
         </div>
 
