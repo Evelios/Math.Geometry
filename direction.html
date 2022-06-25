@@ -179,66 +179,163 @@ unit qualifier.</p>
 <p># Builders</p>
 <p><code>Direction2D.xy</code> first checks to make sure that the input components are both non-zero, then normalizes them to
 guarantee a valid direction is created.</p>
-<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">Direction2D</span><span class="pn">.</span><span class="id">xy</span> <span class="n">3.</span> <span class="n">4.</span>
+<pre class="fssnip highlighted"><code lang="fsharp"><span onmouseout="hideTip(event, 'fs3', 4)" onmouseover="showTip(event, 'fs3', 4)" class="m">Direction2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs4', 5)" onmouseover="showTip(event, 'fs4', 5)" class="id">xy</span> <span class="n">3.</span> <span class="n">4.</span>
 </code></pre>
 <table class="pre"><tr><td><pre><code>No value returned by any evaluator</code></pre></td></tr></table>
 <p>When both values are zero, a proper direction cannot be created, so the program returns a <code>None</code> option.
 (Appears as <code>&lt;null&gt;</code> in the terminal)</p>
-<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">Direction2D</span><span class="pn">.</span><span class="id">xy</span> <span class="n">0.</span> <span class="n">0.</span>
+<pre class="fssnip highlighted"><code lang="fsharp"><span onmouseout="hideTip(event, 'fs3', 12)" onmouseover="showTip(event, 'fs3', 12)" class="m">Direction2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs4', 13)" onmouseover="showTip(event, 'fs4', 13)" class="id">xy</span> <span class="n">0.</span> <span class="n">0.</span>
 </code></pre>
 <table class="pre"><tr><td><pre><code>No value returned by any evaluator</code></pre></td></tr></table>
 <p>You can also create a direction using similar functionality to <code>Direction2D.xy</code> but with <em>tuples</em> as an input instead.</p>
-<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">Direction2D</span><span class="pn">.</span><span class="id">fromComponents</span> <span class="pn">(</span><span class="n">3.</span><span class="pn">,</span> <span class="n">4.</span><span class="pn">)</span>
+<pre class="fssnip highlighted"><code lang="fsharp"><span onmouseout="hideTip(event, 'fs3', 20)" onmouseover="showTip(event, 'fs3', 20)" class="m">Direction2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs8', 21)" onmouseover="showTip(event, 'fs8', 21)" class="id">fromComponents</span> <span class="pn">(</span><span class="n">3.</span><span class="pn">,</span> <span class="n">4.</span><span class="pn">)</span>
 </code></pre>
 <table class="pre"><tr><td><pre><code>No value returned by any evaluator</code></pre></td></tr></table>
 <h1><a name="Constants" class="anchor" href="#Constants">Constants</a></h1>
-<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">Direction2D</span><span class="pn">.</span><span class="id">positiveX</span>
-<span class="id">Direction2D</span><span class="pn">.</span><span class="id">x</span>
+<pre class="fssnip highlighted"><code lang="fsharp"><span onmouseout="hideTip(event, 'fs3', 26)" onmouseover="showTip(event, 'fs3', 26)" class="m">Direction2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs11', 27)" onmouseover="showTip(event, 'fs11', 27)" class="id">positiveX</span>
+<span onmouseout="hideTip(event, 'fs3', 28)" onmouseover="showTip(event, 'fs3', 28)" class="m">Direction2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs12', 29)" onmouseover="showTip(event, 'fs12', 29)" class="id">x</span>
 
-<span class="id">Direction2D</span><span class="pn">.</span><span class="id">positiveY</span>
-<span class="id">Direction2D</span><span class="pn">.</span><span class="id">y</span>
+<span onmouseout="hideTip(event, 'fs3', 30)" onmouseover="showTip(event, 'fs3', 30)" class="m">Direction2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs9', 31)" onmouseover="showTip(event, 'fs9', 31)" class="id">positiveY</span>
+<span onmouseout="hideTip(event, 'fs3', 32)" onmouseover="showTip(event, 'fs3', 32)" class="m">Direction2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs13', 33)" onmouseover="showTip(event, 'fs13', 33)" class="id">y</span>
 
-<span class="id">Direction2D</span><span class="pn">.</span><span class="id">negativeX</span>
+<span onmouseout="hideTip(event, 'fs3', 34)" onmouseover="showTip(event, 'fs3', 34)" class="m">Direction2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs14', 35)" onmouseover="showTip(event, 'fs14', 35)" class="id">negativeX</span>
 
-<span class="id">Direction2D</span><span class="pn">.</span><span class="id">negativeY</span>
+<span onmouseout="hideTip(event, 'fs3', 36)" onmouseover="showTip(event, 'fs3', 36)" class="m">Direction2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs15', 37)" onmouseover="showTip(event, 'fs15', 37)" class="id">negativeY</span>
 </code></pre>
 <h1><a name="Accessors" class="anchor" href="#Accessors">Accessors</a></h1>
-<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">Direction2D</span><span class="pn">.</span><span class="id">toAngle</span>
-<span class="id">Direction2D</span><span class="pn">.</span><span class="id">toTuple</span>
+<pre class="fssnip highlighted"><code lang="fsharp"><span onmouseout="hideTip(event, 'fs3', 43)" onmouseover="showTip(event, 'fs3', 43)" class="m">Direction2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs10', 44)" onmouseover="showTip(event, 'fs10', 44)" class="id">toAngle</span>
+<span onmouseout="hideTip(event, 'fs3', 45)" onmouseover="showTip(event, 'fs3', 45)" class="m">Direction2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs7', 46)" onmouseover="showTip(event, 'fs7', 46)" class="id">toTuple</span>
 
-<span class="id">Direction2D</span><span class="pn">.</span><span class="id">xComponent</span>
-<span onmouseout="hideTip(event, 'fs4', 9)" onmouseover="showTip(event, 'fs4', 9)" class="id">direction</span><span class="pn">.</span><span class="id">X</span>
+<span onmouseout="hideTip(event, 'fs3', 47)" onmouseover="showTip(event, 'fs3', 47)" class="m">Direction2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs18', 48)" onmouseover="showTip(event, 'fs18', 48)" class="id">xComponent</span>
+<span onmouseout="hideTip(event, 'fs16', 49)" onmouseover="showTip(event, 'fs16', 49)" class="id">direction</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs19', 50)" onmouseover="showTip(event, 'fs19', 50)" class="id">X</span>
 
-<span class="id">Direction2D</span><span class="pn">.</span><span class="id">yComponent</span>
-<span onmouseout="hideTip(event, 'fs4', 10)" onmouseover="showTip(event, 'fs4', 10)" class="id">direction</span><span class="pn">.</span><span class="id">Y</span>
+<span onmouseout="hideTip(event, 'fs3', 51)" onmouseover="showTip(event, 'fs3', 51)" class="m">Direction2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs20', 52)" onmouseover="showTip(event, 'fs20', 52)" class="id">yComponent</span>
+<span onmouseout="hideTip(event, 'fs16', 53)" onmouseover="showTip(event, 'fs16', 53)" class="id">direction</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs21', 54)" onmouseover="showTip(event, 'fs21', 54)" class="id">Y</span>
 </code></pre>
 <h1><a name="Modifiers" class="anchor" href="#Modifiers">Modifiers</a></h1>
-<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">Direction2D</span><span class="pn">.</span><span class="id">reverse</span>
-<span class="id">Direction2D</span><span class="pn">.</span><span class="id">rotateClockwise</span>
-<span class="id">Direction2D</span><span class="pn">.</span><span class="id">rotateCounterclockwise</span>
-<span class="id">Direction2D</span><span class="pn">.</span><span class="id">perpendicularTo</span>
-<span class="id">Direction2D</span><span class="pn">.</span><span class="id">mirrorAcross</span>
-<span class="id">Direction2D</span><span class="pn">.</span><span class="id">orthonormalize</span>
+<pre class="fssnip highlighted"><code lang="fsharp"><span onmouseout="hideTip(event, 'fs3', 55)" onmouseover="showTip(event, 'fs3', 55)" class="m">Direction2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs22', 56)" onmouseover="showTip(event, 'fs22', 56)" class="id">reverse</span>
+<span onmouseout="hideTip(event, 'fs3', 57)" onmouseover="showTip(event, 'fs3', 57)" class="m">Direction2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs23', 58)" onmouseover="showTip(event, 'fs23', 58)" class="id">rotateClockwise</span>
+<span onmouseout="hideTip(event, 'fs3', 59)" onmouseover="showTip(event, 'fs3', 59)" class="m">Direction2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs24', 60)" onmouseover="showTip(event, 'fs24', 60)" class="id">rotateCounterclockwise</span>
+<span onmouseout="hideTip(event, 'fs3', 61)" onmouseover="showTip(event, 'fs3', 61)" class="m">Direction2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs25', 62)" onmouseover="showTip(event, 'fs25', 62)" class="id">perpendicularTo</span>
+<span onmouseout="hideTip(event, 'fs3', 63)" onmouseover="showTip(event, 'fs3', 63)" class="m">Direction2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs26', 64)" onmouseover="showTip(event, 'fs26', 64)" class="id">mirrorAcross</span>
+<span onmouseout="hideTip(event, 'fs3', 65)" onmouseover="showTip(event, 'fs3', 65)" class="m">Direction2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs27', 66)" onmouseover="showTip(event, 'fs27', 66)" class="id">orthonormalize</span>
 </code></pre>
 <h1><a name="Queries" class="anchor" href="#Queries">Queries</a></h1>
-<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">Direction2D</span><span class="pn">.</span><span class="id">equalWithin</span>
-<span class="id">Direction2D</span><span class="pn">.</span><span class="id">componentIn</span>
-<span class="id">Direction2D</span><span class="pn">.</span><span class="id">angleFrom</span>
+<pre class="fssnip highlighted"><code lang="fsharp"><span onmouseout="hideTip(event, 'fs3', 67)" onmouseover="showTip(event, 'fs3', 67)" class="m">Direction2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs28', 68)" onmouseover="showTip(event, 'fs28', 68)" class="id">equalWithin</span>
+<span onmouseout="hideTip(event, 'fs3', 69)" onmouseover="showTip(event, 'fs3', 69)" class="m">Direction2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs29', 70)" onmouseover="showTip(event, 'fs29', 70)" class="id">componentIn</span>
+<span onmouseout="hideTip(event, 'fs3', 71)" onmouseover="showTip(event, 'fs3', 71)" class="m">Direction2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs30', 72)" onmouseover="showTip(event, 'fs30', 72)" class="id">angleFrom</span>
 </code></pre>
 <h1><a name="Coordinate-Conversions" class="anchor" href="#Coordinate-Conversions">Coordinate Conversions</a></h1>
-<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">Direction2D</span><span class="pn">.</span><span class="id">relativeTo</span>
-<span class="id">Direction2D</span><span class="pn">.</span><span class="id">placeIn</span>
+<pre class="fssnip highlighted"><code lang="fsharp"><span onmouseout="hideTip(event, 'fs3', 73)" onmouseover="showTip(event, 'fs3', 73)" class="m">Direction2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs31', 74)" onmouseover="showTip(event, 'fs31', 74)" class="id">relativeTo</span>
+<span onmouseout="hideTip(event, 'fs3', 75)" onmouseover="showTip(event, 'fs3', 75)" class="m">Direction2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs32', 76)" onmouseover="showTip(event, 'fs32', 76)" class="id">placeIn</span>
 </code></pre>
 
-            <div class="fsdocs-tip" id="fs1">Multiple items<br />union case Cartesian.Cartesian: Cartesian<br /><br />--------------------<br />type Cartesian = | Cartesian</div>
-<div class="fsdocs-tip" id="fs2">module Option
+            <div class="fsdocs-tip" id="fs1">namespace Geometry</div>
+<div class="fsdocs-tip" id="fs2">Multiple items<br />union case Cartesian.Cartesian: Cartesian<br /><br />--------------------<br />type Cartesian = | Cartesian</div>
+<div class="fsdocs-tip" id="fs3">Multiple items<br />module Direction2D
+
+from Geometry<br /><br />--------------------<br />type Direction2D&lt;&#39;Coordinates&gt; =
+  { X: float
+    Y: float }
+    interface IComparable
+    interface IComparable&lt;Direction2D&lt;&#39;Coordinates&gt;&gt;
+    member Comparison : other:Direction2D&lt;&#39;Coordinates&gt; -&gt; int
+    override Equals : obj:obj -&gt; bool + 1 overload
+    override GetHashCode : unit -&gt; int
+    member LessThan : other:Direction2D&lt;&#39;Coordinates&gt; -&gt; bool
+    static member xy : x:float -&gt; y:float -&gt; Direction2D&lt;&#39;Coordinates&gt; option
+    static member xyLength : Length&lt;&#39;Unit&gt; -&gt; Length&lt;&#39;Unit&gt; -&gt; Direction2D&lt;&#39;Coordinates&gt; option</div>
+<div class="fsdocs-tip" id="fs4">Multiple items<br />val xy : x:float -&gt; y:float -&gt; Direction2D&lt;&#39;Coordinates&gt; option<br /><em>&lt;summary&gt;
+ Get a direction vector from the x and y components. This function takes
+ care of normalizing the x and y components into the unit direction vector.
+ This function also checks for the edge case where the x and y components
+ are both zero. In that case, the function returns `None`.
+&lt;/summary&gt;</em><br /><br />--------------------<br />static member Direction2D.xy : x:float -&gt; y:float -&gt; Direction2D&lt;&#39;Coordinates&gt; option</div>
+<div class="fsdocs-tip" id="fs5">module Option
 
 from Microsoft.FSharp.Core<br /><em>&lt;summary&gt;Contains operations for working with options.&lt;/summary&gt;<br />&lt;category&gt;Options&lt;/category&gt;</em></div>
-<div class="fsdocs-tip" id="fs3">val map : mapping:(&#39;T -&gt; &#39;U) -&gt; option:&#39;T option -&gt; &#39;U option<br /><em>&lt;summary&gt;&lt;c&gt;map f inp&lt;/c&gt; evaluates to &lt;c&gt;match inp with None -&amp;gt; None | Some x -&amp;gt; Some (f x)&lt;/c&gt;.&lt;/summary&gt;<br />&lt;param name=&quot;mapping&quot;&gt;A function to apply to the option value.&lt;/param&gt;<br />&lt;param name=&quot;option&quot;&gt;The input option.&lt;/param&gt;<br />&lt;example&gt;&lt;code&gt;
+<div class="fsdocs-tip" id="fs6">val map : mapping:(&#39;T -&gt; &#39;U) -&gt; option:&#39;T option -&gt; &#39;U option<br /><em>&lt;summary&gt;&lt;c&gt;map f inp&lt;/c&gt; evaluates to &lt;c&gt;match inp with None -&amp;gt; None | Some x -&amp;gt; Some (f x)&lt;/c&gt;.&lt;/summary&gt;<br />&lt;param name=&quot;mapping&quot;&gt;A function to apply to the option value.&lt;/param&gt;<br />&lt;param name=&quot;option&quot;&gt;The input option.&lt;/param&gt;<br />&lt;example&gt;&lt;code&gt;
      None |&amp;gt; Option.map (fun x -&amp;gt; x * 2) // evaluates to None
      Some 42 |&amp;gt; Option.map (fun x -&amp;gt; x * 2) // evaluates to Some 84
  &lt;/code&gt;&lt;/example&gt;<br />&lt;returns&gt;An option of the input value after applying the mapping function, or None if the input is None.&lt;/returns&gt;</em></div>
-<div class="fsdocs-tip" id="fs4">val direction : obj</div>
+<div class="fsdocs-tip" id="fs7">val toTuple : d:Direction2D&lt;&#39;Coordinates&gt; -&gt; float * float<br /><em>&lt;summary&gt;
+ {-| Get the X and Y components of a direction as a tuple (X, Y).
+&lt;/summary&gt;</em></div>
+<div class="fsdocs-tip" id="fs8">val fromComponents : x:float * y:float -&gt; Direction2D&lt;&#39;Coordinates&gt; option</div>
+<div class="fsdocs-tip" id="fs9">val positiveY&lt;&#39;Coordinates&gt; : Direction2D&lt;&#39;Coordinates&gt;</div>
+<div class="fsdocs-tip" id="fs10">val toAngle : d:Direction2D&lt;&#39;Coordinates&gt; -&gt; Angle<br /><em>&lt;summary&gt;
+ Convert a direction to a polar angle (the counterclockwise angle from the
+ positive X direction). The result will be in the range -180 to 180 degrees.
+&lt;/summary&gt;</em></div>
+<div class="fsdocs-tip" id="fs11">val positiveX&lt;&#39;Coordinates&gt; : Direction2D&lt;&#39;Coordinates&gt;</div>
+<div class="fsdocs-tip" id="fs12">val x&lt;&#39;Coordinates&gt; : Direction2D&lt;&#39;Coordinates&gt;</div>
+<div class="fsdocs-tip" id="fs13">val y&lt;&#39;Coordinates&gt; : Direction2D&lt;&#39;Coordinates&gt;</div>
+<div class="fsdocs-tip" id="fs14">val negativeX&lt;&#39;Coordinates&gt; : Direction2D&lt;&#39;Coordinates&gt;</div>
+<div class="fsdocs-tip" id="fs15">val negativeY&lt;&#39;Coordinates&gt; : Direction2D&lt;&#39;Coordinates&gt;</div>
+<div class="fsdocs-tip" id="fs16">val direction : Direction2D&lt;Cartesian&gt;</div>
+<div class="fsdocs-tip" id="fs17">val xyUnsafe : x:float -&gt; y:float -&gt; Direction2D&lt;&#39;Coordinates&gt;<br /><em>&lt;summary&gt;
+ Create a direction vector from the x and y components. This function
+ doesn&#39;t perform either zero magnitude checks nor does it normalize the
+ input vectors. This function should only be used with input constants or
+ when you are sure that you aren&#39;t going to create a direction with an
+ invalid state.
+&lt;/summary&gt;</em></div>
+<div class="fsdocs-tip" id="fs18">val xComponent : d:Direction2D&lt;&#39;Coordinates&gt; -&gt; float<br /><em>&lt;summary&gt;
+ Get the X component of the direction.
+&lt;/summary&gt;</em></div>
+<div class="fsdocs-tip" id="fs19">Direction2D.X: float</div>
+<div class="fsdocs-tip" id="fs20">val yComponent : d:Direction2D&lt;&#39;Coordinates&gt; -&gt; float<br /><em>&lt;summary&gt;
+ Get the Y component of the direction.
+&lt;/summary&gt;</em></div>
+<div class="fsdocs-tip" id="fs21">Direction2D.Y: float</div>
+<div class="fsdocs-tip" id="fs22">val reverse : direction:Direction2D&lt;&#39;Coordinates&gt; -&gt; Direction2D&lt;&#39;Coordinates&gt;</div>
+<div class="fsdocs-tip" id="fs23">val rotateClockwise : direction:Direction2D&lt;&#39;Coordinates&gt; -&gt; Direction2D&lt;&#39;Coordinates&gt;</div>
+<div class="fsdocs-tip" id="fs24">val rotateCounterclockwise : direction:Direction2D&lt;&#39;Coordinates&gt; -&gt; Direction2D&lt;&#39;Coordinates&gt;</div>
+<div class="fsdocs-tip" id="fs25">val perpendicularTo : d:Direction2D&lt;&#39;Coordaintes&gt; -&gt; Direction2D&lt;&#39;Coordaintes&gt;<br /><em>&lt;summary&gt;
+ Construct a direction perpendicular to the given direction, by rotating the
+ given direction 90 degrees counterclockwise. This is the same
+ `Direction2D.rotateBy (Angle.degrees 90)` but is more efficient.
+ Alias for `rotateCounterclockwise`.
+&lt;/summary&gt;</em></div>
+<div class="fsdocs-tip" id="fs26">val mirrorAcross : axis:Axis2D&lt;&#39;Unit,&#39;Corodiantes&gt; -&gt; d:Direction2D&lt;&#39;Coordinates&gt; -&gt; Direction2D&lt;&#39;Coordinates&gt;<br /><em>&lt;summary&gt;
+ Mirror a direction across a particular axis. Note that only the direction of
+ the axis affects the result, since directions are position-independent.
+&lt;/summary&gt;</em></div>
+<div class="fsdocs-tip" id="fs27">val orthonormalize : xVector:Vector2D&lt;&#39;Unit,&#39;Coordinates&gt; -&gt; xyVector:Vector2D&lt;&#39;Unit,&#39;Coordinatres&gt; -&gt; (Direction2D&lt;&#39;Coordinates&gt; * Direction2D&lt;&#39;Coordinates&gt;) option<br /><em>&lt;summary&gt;
+ Attempt to form a pair of perpendicular directions from the two given
+ vectors by performing [Gram-Schmidt normalization](https://en.wikipedia.org/wiki/Gram%E2%80%93Schmidt_process):
+ * The first returned direction will be equal to the direction of the first
+   given vector
+ * The second returned direction will be as close as possible to the second
+   given vector while being perpendicular to the first returned direction
+&lt;/summary&gt;</em></div>
+<div class="fsdocs-tip" id="fs28">val equalWithin : angle:Angle -&gt; rhs:Direction2D&lt;&#39;Coordinates&gt; -&gt; lhs:Direction2D&lt;&#39;Coordinates&gt; -&gt; bool<br /><em>&lt;summary&gt;
+ Compare two directions within an angular tolerance. Returns true if the
+ absolute value of the angle between the two given directions is less than the
+ given tolerance.
+&lt;/summary&gt;</em></div>
+<div class="fsdocs-tip" id="fs29">val componentIn : d2:Direction2D&lt;&#39;Coordinates&gt; -&gt; d1:Direction2D&lt;&#39;Coordinates&gt; -&gt; float<br /><em>&lt;summary&gt;
+ Find the component of one direction in another direction. This is equal to
+ the cosine of the angle between the directions, or equivalently the dot product
+ of the two directions converted to unit vectors.
+ This is more general and flexible than using `xComponent` or `yComponent`, both
+ of which can be expressed in terms of `componentIn`; for example,
+     `Direction2d.xComponent direction`
+ is equivalent to
+     `Direction2d.componentIn Direction2d.x direction`.
+&lt;/summary&gt;</em></div>
+<div class="fsdocs-tip" id="fs30">val angleFrom : d1:Direction2D&lt;&#39;Coordinates&gt; -&gt; d2:Direction2D&lt;&#39;Coordinates&gt; -&gt; Angle<br /><em>&lt;summary&gt;
+  Find the counterclockwise angle from the first direction to the
+ second. The result will be in the range -180 to 180 degrees
+&lt;/summary&gt;</em></div>
+<div class="fsdocs-tip" id="fs31">val relativeTo : frame:Frame2D&lt;&#39;Unit,&#39;GlobalCoordaintes,&#39;Defines&gt; -&gt; d:Direction2D&lt;&#39;GlobalCoordinates&gt; -&gt; Direction2D&lt;&#39;LocalCoordaintes&gt;<br /><em>&lt;summary&gt;
+ Take a direction defined in global coordinates, and return it expressed in
+ local coordinates relative to a given reference frame.
+&lt;/summary&gt;</em></div>
+<div class="fsdocs-tip" id="fs32">val placeIn : reference:Frame2D&lt;&#39;Unit,&#39;GlobalCoordinates,&#39;Defines&gt; -&gt; direction:Direction2D&lt;&#39;GlobalCoordinates&gt; -&gt; Direction2D&lt;&#39;LocalCoordinates&gt;<br /><em>&lt;summary&gt;
+ Take a direction defined in local coordinates relative to a given reference
+ frame, and return that direction expressed in global coordinates.
+&lt;/summary&gt;</em></div>
 
         </div>
 
