@@ -1,7 +1,7 @@
 [<CompilationRepresentation(CompilationRepresentationFlags.ModuleSuffix)>]
-module Geometry.Size2D
+module Math.Geometry.Size2D
 
-open Units
+open Math.Units
 
 // ---- Builders ----
 

@@ -9,11 +9,11 @@
         <Authors>Thomas Waters</Authors>
         <Company />
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-        <PackageId>Fsharp.Geometry</PackageId>
+        <PackageId>Math.Geometry</PackageId>
         <Description>A functional geometry library for working with 2D spatial structures.</Description>
         <Copyright>Thomas Waters</Copyright>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
-        <RepositoryUrl>https://github.com/Evelios/fsharp-geometry</RepositoryUrl>
+        <RepositoryUrl>https://github.com/Evelios/Math.Geometry</RepositoryUrl>
         <PackageTags>geometry, fsharp, f#</PackageTags>
     </PropertyGroup>
 
@@ -47,6 +47,7 @@
 
     <ItemGroup>
         <PackageReference Include="FSharp.Json" Version="0.4.0" />
+        <PackageReference Include="Math.Units" Version="0.1.135" />
     </ItemGroup>
 
     <ItemGroup>

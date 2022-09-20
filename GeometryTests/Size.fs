@@ -1,4 +1,4 @@
-module GeometryTests.Size
+module Math.GeometryTests.Size
 
 open NUnit.Framework
 open FsCheck.NUnit

@@ -1,10 +1,10 @@
-module GeometryTests.Intersection2D
+module Math.GeometryTests.Intersection2D
 
 open NUnit.Framework
 open FsCheck.NUnit
 open FsCheck
 
-open Geometry
+open Math.Geometry
 
 [<SetUp>]
 let Setup () = Gen.ArbGeometry.Register()

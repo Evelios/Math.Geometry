@@ -1,12 +1,12 @@
-module GeometryTests.Arc2D
+module Math.GeometryTests.Arc2D
 
 open NUnit.Framework
 open FsCheck.NUnit
 open FsCheck
 
-open Geometry
-open Units
-open UnitsTests
+open Math.Geometry
+open Math.Units
+open Math.Units.Test
 
 [<SetUp>]
 let Setup () = Gen.ArbGeometry.Register()

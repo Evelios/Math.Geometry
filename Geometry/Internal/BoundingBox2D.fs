@@ -1,8 +1,8 @@
-module internal Geometry.Internal.BoundingBox2D
+module Math.Geometry.Internal.BoundingBox2D
 
-open Geometry
+open Math.Geometry
 
-open Units
+open Math.Units
 
 let from (firstPoint: Point2D<'Units, 'Coordinates>) (secondPoint: Point2D<'Units, 'Coordinates>) : BoundingBox2D<'Units, 'Coordinates> =
     let x1 = firstPoint.X

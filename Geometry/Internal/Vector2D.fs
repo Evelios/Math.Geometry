@@ -1,8 +1,8 @@
-module internal Geometry.Internal.Vector2D
+module Math.Geometry.Internal.Vector2D
 
-open Geometry
+open Math.Geometry
 
-open Units
+open Math.Units
 
 let componentIn (d: Direction2D<'Coordinates>) (v: Vector2D<'Units, 'Coordiantes>) : Quantity<'Units> =
     (v.X * d.X + v.Y * d.Y)

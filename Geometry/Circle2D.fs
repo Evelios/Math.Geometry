@@ -1,9 +1,9 @@
 [<CompilationRepresentation(CompilationRepresentationFlags.ModuleSuffix)>]
-module Geometry.Circle2D
+module Math.Geometry.Circle2D
 
 open System
 
-open Units
+open Math.Units
 
 // ---- Builders ----
 

@@ -1,9 +1,9 @@
 [<CompilationRepresentation(CompilationRepresentationFlags.ModuleSuffix)>]
-module Geometry.Triangle2D
+module Math.Geometry.Triangle2D
 
 open FSharp.Extensions
-open Geometry
-open Units
+open Math.Geometry
+open Math.Units
 
 // ---- Builders ----
 

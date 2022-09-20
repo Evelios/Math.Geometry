@@ -1,8 +1,8 @@
-module internal Geometry.Internal.Point2D
+module Math.Geometry.Internal.Point2D
 
-open Geometry
+open Math.Geometry
 
-open Units
+open Math.Units
 
 let placeIn<'Units, 'GlobalCoordinates, 'Defines, 'LocalCoordinates>
     (frame: Frame2D<'Units, 'GlobalCoordinates, 'Defines>)

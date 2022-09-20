@@ -25,8 +25,8 @@ functionality first before moving to expand into 3D objects.
 (**
 To use this framework you include the package through the namespace
 *)
-open Geometry
-open Units
+open Math.Geometry
+open Math.Units
 
 (**
 You can then create a variety of geometric objects like points, vectors, angles, ...

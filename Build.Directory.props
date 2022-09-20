@@ -3,21 +3,21 @@
     <PropertyGroup>
         <Version>0.0.1</Version>
         <PackageVersion>0.0.1</PackageVersion>
-        <Product>Fsharp.Geometry</Product>
+        <Product>Math.Geometry</Product>
         <Authors>Thomas Waters</Authors>
         <Copyright>Thomas Waters</Copyright>
         <Company/>
         <PackageTags>geometry, fsharp, f#</PackageTags>
         <PackageLicense>MIT</PackageLicense>
 
-        <RepositoryUrl>https://github.com/Evelios/fsharp-geometry</RepositoryUrl>
-        <PackageProjectUrl>https://evelios.github.io/fsharp-geometry/reference/index.html</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/Evelios/Math.Geometry</RepositoryUrl>
+        <PackageProjectUrl>https://evelios.github.io/Math.Geometry/reference/index.html</PackageProjectUrl>
 
         <RepositoryType>git</RepositoryType>
         <NeutralLanguage>en-US</NeutralLanguage>
         
         <FsDocsLicenseLink>https://opensource.org/licenses/MIT</FsDocsLicenseLink>
-        <FsDocsReleaseNotesLink>https://www.nuget.org/packages/Fsharp.Geometry/</FsDocsReleaseNotesLink>
+        <FsDocsReleaseNotesLink>https://www.nuget.org/packages/Math.Geometry/</FsDocsReleaseNotesLink>
         <FsDocsWarnOnMissingDocs>true</FsDocsWarnOnMissingDocs>
         <FsDocsTheme>default</FsDocsTheme>
     </PropertyGroup>

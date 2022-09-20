@@ -1,7 +1,7 @@
 [<CompilationRepresentation(CompilationRepresentationFlags.ModuleSuffix)>]
-module Geometry.Rectangle2D
+module Math.Geometry.Rectangle2D
 
-open Units
+open Math.Units
 
 let private axisAligned
     (x1: Quantity<'Units>)

@@ -1,7 +1,7 @@
 [<CompilationRepresentation(CompilationRepresentationFlags.ModuleSuffix)>]
-module Geometry.Arc2D
+module Math.Geometry.Arc2D
 
-open Units
+open Math.Units
 
 // ---- Builders ----
 

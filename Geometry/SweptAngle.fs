@@ -1,5 +1,5 @@
 [<CompilationRepresentation(CompilationRepresentationFlags.ModuleSuffix)>]
-module Geometry.SweptAngle
+module Math.Geometry.SweptAngle
 
 
 /// Construct a counterclockwise arc with a swept angle between 0 and 180

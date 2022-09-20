@@ -1,7 +1,7 @@
 [<CompilationRepresentation(CompilationRepresentationFlags.ModuleSuffix)>]
-module Geometry.Polyline2D
+module Math.Geometry.Polyline2D
 
-open Units
+open Math.Units
 
 let fromVertices (vertices: Point2D<'Units, 'Coordinates> list) : Polyline2D<'Units, 'Coordinates> = Polyline2D vertices
 

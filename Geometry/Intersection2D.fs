@@ -1,4 +1,4 @@
-﻿module Geometry.Intersection2D
+﻿module Math.Geometry.Intersection2D
 
 open FSharp.Extensions
 

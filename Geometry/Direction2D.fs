@@ -1,7 +1,7 @@
 [<CompilationRepresentation(CompilationRepresentationFlags.ModuleSuffix)>]
-module Geometry.Direction2D
+module Math.Geometry.Direction2D
 
-open Units
+open Math.Units
 
 
 // ---- Builders ----

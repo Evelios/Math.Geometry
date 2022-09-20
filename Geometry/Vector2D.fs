@@ -1,9 +1,9 @@
 ﻿[<CompilationRepresentation(CompilationRepresentationFlags.ModuleSuffix)>]
-module Geometry.Vector2D
+module Math.Geometry.Vector2D
 
 open FSharp.Json
 
-open Units
+open Math.Units
 
 // ---- Builders ----
 

@@ -1,12 +1,12 @@
-module GeometryTests.LineSegment2D
+module Math.GeometryTests.LineSegment2D
 
 open FsCheck
 open NUnit.Framework
 open FsCheck.NUnit
 
-open Geometry
-open Units
-open UnitsTests
+open Math.Geometry
+open Math.Units
+open Math.Units.Test
 
 [<SetUp>]
 let SetUp () = Gen.ArbGeometry.Register()

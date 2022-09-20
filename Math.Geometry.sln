@@ -32,15 +32,8 @@ ProjectSection(SolutionItems) = preProject
 	docs\line-segment.fsx = docs\line-segment.fsx
 	docs\polygon.fsx = docs\polygon.fsx
 	docs\length.fsx = docs\length.fsx
-	docs\digit-precision.fsx = docs\digit-precision.fsx
-	docs\angle.fsx = docs\angle.fsx
 	docs\interval.fsx = docs\interval.fsx
-	docs\quantity.fsx = docs\quantity.fsx
 EndProjectSection
-EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Units", "Units\Units.fsproj", "{4EA1E028-4FD7-484E-B29E-41CD28D1D806}"
-EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "UnitsTests", "UnitsTests\UnitsTests.fsproj", "{1F51E443-D97F-4DF8-9D77-6972E3445FFB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -56,14 +49,6 @@ Global
 		{DA99EA17-995B-4A49-8C77-9C26565AE5F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DA99EA17-995B-4A49-8C77-9C26565AE5F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DA99EA17-995B-4A49-8C77-9C26565AE5F6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4EA1E028-4FD7-484E-B29E-41CD28D1D806}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4EA1E028-4FD7-484E-B29E-41CD28D1D806}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4EA1E028-4FD7-484E-B29E-41CD28D1D806}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4EA1E028-4FD7-484E-B29E-41CD28D1D806}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1F51E443-D97F-4DF8-9D77-6972E3445FFB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1F51E443-D97F-4DF8-9D77-6972E3445FFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1F51E443-D97F-4DF8-9D77-6972E3445FFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1F51E443-D97F-4DF8-9D77-6972E3445FFB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 	EndGlobalSection

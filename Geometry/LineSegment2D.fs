@@ -1,9 +1,9 @@
 [<CompilationRepresentation(CompilationRepresentationFlags.ModuleSuffix)>]
-module Geometry.LineSegment2D
+module Math.Geometry.LineSegment2D
 
-open Geometry
+open Math.Geometry
 
-open Units
+open Math.Units
 
 // ---- Builders ----
 

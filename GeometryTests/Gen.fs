@@ -1,6 +1,6 @@
-namespace GeometryTests
+namespace Math.GeometryTests
 
-open UnitsTests
+open Math.Units.Test
 
 type 'a Positive = Positive of 'a
 
@@ -13,8 +13,8 @@ module Gen =
     open System
     open FsCheck
 
-    open Units
-    open Geometry
+    open Math.Units
+    open Math.Geometry
     open FSharp.Extensions
 
     let map7 fn a b c d e f g =

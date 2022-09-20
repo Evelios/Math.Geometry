@@ -1,4 +1,4 @@
-﻿module Geometry.Boolean2D
+﻿module Math.Geometry.Boolean2D
 
 let boundingBoxAndLine bbox line =
     match Intersection2D.boundingBoxAndLine bbox line with

@@ -1,6 +1,6 @@
-module Geometry.Ellipse2D
+module Math.Geometry.Ellipse2D
 
-open Units
+open Math.Units
 
 // ---- Builders ----
 

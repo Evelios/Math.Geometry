@@ -1,9 +1,9 @@
-module GeometryTests.Line2D
+module Math.GeometryTests.Line2D
 
 open NUnit.Framework
 
-open Geometry
-open Units
+open Math.Geometry
+open Math.Units
 
 [<SetUp>]
 let Setup () =

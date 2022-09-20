@@ -1,9 +1,9 @@
 [<CompilationRepresentation(CompilationRepresentationFlags.ModuleSuffix)>]
-module Geometry.BoundingBox2D
+module Math.Geometry.BoundingBox2D
 
-open Geometry
+open Math.Geometry
 
-open Units
+open Math.Units
 
 
 // ---- Builders ----

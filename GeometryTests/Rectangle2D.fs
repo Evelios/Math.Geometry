@@ -1,12 +1,12 @@
-module GeometryTests.Rectangle2D
+module Math.GeometryTests.Rectangle2D
 
 open NUnit.Framework
 open FsCheck.NUnit
 open FsCheck
 
-open Geometry
-open Units
-open UnitsTests
+open Math.Geometry
+open Math.Units
+open Math.Units.Test
 
 type Transformation =
     { Rectangle: Rectangle2D<Meters, TestSpace> -> Rectangle2D<Meters, TestSpace>

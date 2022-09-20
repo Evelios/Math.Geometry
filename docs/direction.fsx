@@ -18,8 +18,8 @@ index: 5
 #r "../Units/bin/Release/net6.0/Units.dll"
 
 
-open Geometry
-open Units
+open Math.Geometry
+open Math.Units
 
 type Cartesian = Cartesian
 (***)

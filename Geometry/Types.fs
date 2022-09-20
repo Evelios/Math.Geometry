@@ -1,8 +1,8 @@
-namespace Geometry
+namespace Math.Geometry
 
 open System
 
-open Units
+open Math.Units
 
 [<CustomEquality>]
 [<NoComparison>]

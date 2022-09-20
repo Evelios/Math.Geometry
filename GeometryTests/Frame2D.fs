@@ -1,4 +1,4 @@
-module GeometryTests.Frame2D
+module Math.GeometryTests.Frame2D
 
 open NUnit.Framework
 open FsCheck.NUnit

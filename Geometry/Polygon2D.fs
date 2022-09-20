@@ -1,7 +1,7 @@
 [<CompilationRepresentation(CompilationRepresentationFlags.ModuleSuffix)>]
-module Geometry.Polygon2D
+module Math.Geometry.Polygon2D
 
-open Units
+open Math.Units
 
 
 // ---- Builders ----

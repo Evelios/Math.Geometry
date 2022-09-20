@@ -1,10 +1,10 @@
-module GeometryTests.Test
+module Math.GeometryTests.Test
 
 open System
 
-open Geometry
-open Units
-open UnitsTests
+open Math.Geometry
+open Math.Units
+open Math.Units.Test
 
 let validFrame2D (frame: Frame2D<'Units, 'Coordinates, 'Defines>) : bool =
     let parallelComponent =
