@@ -13,7 +13,13 @@ index: 14
 
 #r "../Geometry/bin/Debug/net6.0/Geometry.dll"
 #r "../Geometry/bin/Release/net6.0/Geometry.dll"
-open Geometry
+
+#r "../Units/bin/Debug/net6.0/Units.dll"
+#r "../Units/bin/Release/net6.0/Units.dll"
+
+open Math.Geometry
+open Math.Units
+
 type Cartesian = Cartesian
 (***)
 
@@ -33,7 +39,7 @@ Vector2D.rTheta (Length.meters 5.) Angle.halfPi
 (**
 Using a vector __direction__ you can create a vector of a given length following that direction.
 *)
-Vector2D.withLength (Length.meters 5.) (Direction2D.fromAngle Angle.halfPi)
+Vector2D.withQuantity (Length.meters 5.) (Direction2D.fromAngle Angle.halfPi)
 
 (** # Accessors *)
 

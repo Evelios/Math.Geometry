@@ -1,10 +1,12 @@
-module GeometryTests.Triangle2D
+module Math.GeometryTests.Triangle2D
 
 open NUnit.Framework
 open FsCheck.NUnit
 open FsCheck
 
-open Geometry
+open Math.Geometry
+open Math.Units
+open Math.Units.Test
 
 
 [<SetUp>]
@@ -18,5 +20,5 @@ let ``non-zero area triangle contains its own centroid`` (triangle: Triangle2D<M
 
     Test.isTrue
         "non-zero area triangle did not contain its own centroid"
-        (area = Length.zero
+        (area = Quantity.zero
          || Triangle2D.contains centroid triangle)

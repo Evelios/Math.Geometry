@@ -1,8 +1,8 @@
-module GeometryTests.Assert
+module Math.GeometryTests.Assert
 
 open NUnit.Framework
 
-open Geometry
+open Math.Units
 
 let AlmostEqual expected actual : unit =
     if Float.almostEqual expected actual then

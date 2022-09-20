@@ -1,10 +1,12 @@
-module GeometryTests.Arc2D
+module Math.GeometryTests.Arc2D
 
 open NUnit.Framework
 open FsCheck.NUnit
 open FsCheck
 
-open Geometry
+open Math.Geometry
+open Math.Units
+open Math.Units.Test
 
 [<SetUp>]
 let Setup () = Gen.ArbGeometry.Register()
@@ -66,7 +68,7 @@ let ``Arc2D.from produces the expected endpoint``
 [<Property>]
 [<Ignore("I need to figure this out")>]
 let ``Arc2D.withRadius produces the expected endpoint``
-    (Positive radius: Length<Meters> Positive)
+    (Positive radius: Length Positive)
     (sweptAngle: SweptAngle)
     (startPoint: Point2D<Meters, TestSpace>)
     (endPoint: Point2D<Meters, TestSpace>)
@@ -79,7 +81,7 @@ let ``Arc2D.withRadius produces the expected endpoint``
     | None ->
         let distance = Point2D.distanceTo startPoint endPoint
 
-        if distance = Length.zero then
+        if distance = Quantity.zero then
             Test.pass
         else
             distance .>=. 2. * radius

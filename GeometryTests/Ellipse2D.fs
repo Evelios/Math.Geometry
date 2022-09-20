@@ -1,9 +1,9 @@
-module GeometryTests.Ellipse2D
+module Math.GeometryTests.Ellipse2D
 
 open NUnit.Framework
 open FsCheck.NUnit
 
-open Geometry
+open Math.Geometry
 
 
 [<SetUp>]

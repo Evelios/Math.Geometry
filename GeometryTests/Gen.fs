@@ -1,4 +1,6 @@
-namespace GeometryTests
+namespace Math.GeometryTests
+
+open Math.Units.Test
 
 type 'a Positive = Positive of 'a
 
@@ -6,11 +8,13 @@ module internal Tuple2 =
     let pair x y = x, y
     let map f (x, y) = f x y
     
+    
 module Gen =
     open System
     open FsCheck
 
-    open Geometry
+    open Math.Units
+    open Math.Geometry
     open FSharp.Extensions
 
     let map7 fn a b c d e f g =
@@ -31,17 +35,17 @@ module Gen =
 
     let positiveFloat = Gen.map abs float
 
-    let private epsilonLength<'Unit> () = Length<'Unit>.create Float.Epsilon
+    let private epsilonLength () = Length.meters Float.Epsilon
 
     let angle = Gen.map Angle.radians float
 
     let length = Gen.map Length.meters float
 
-    let positiveLength : Gen<Length<Meters> Positive> =
+    let positiveLength : Gen<Length Positive> =
         Gen.map (Length.meters >> Positive) positiveFloat
 
-    let lengthBetween (a: Length<'Unit>) (b: Length<'Unit>) : Gen<Length<'Unit>> =
-        Gen.map Length.create<'Unit> (floatBetween (Length.unpack a) (Length.unpack b))
+    let lengthBetween (a: Length) (b: Length) : Gen<Length> =
+        Gen.map Length.meters (floatBetween a.Value b.Value)
 
     let direction2D : Gen<Direction2D<TestSpace>> =
         Gen.two float
@@ -53,7 +57,7 @@ module Gen =
 
     let vector2D : Gen<Vector2D<Meters, TestSpace>> = Gen.map2 Vector2D.xy length length
 
-    let vector2DWithinRadius (radius: Length<'Unit>) : Gen<Vector2D<'Unit, 'Coordinates>> =
+    let vector2DWithinRadius (radius: Length) : Gen<Vector2D<Meters, TestSpace>> =
         Gen.map2 Vector2D.polar (lengthBetween Length.zero radius) angle
 
     let twoCloseVector2D =
@@ -61,7 +65,7 @@ module Gen =
 
     let point2D : Gen<Point2D<Meters, TestSpace>> = Gen.map2 Point2D.xy length length
 
-    let point2DWithinOffset radius (point: Point2D<'Unit, 'Coordinates>) =
+    let point2DWithinOffset radius (point: Point2D<Meters, TestSpace>) =
         Gen.map (fun offset -> point + offset) (vector2DWithinRadius radius)
 
     /// Generate two points that are within Epsilon of each other
@@ -86,7 +90,7 @@ module Gen =
     let boundingBox2D : Gen<BoundingBox2D<Meters, TestSpace>> =
         Gen.map2 BoundingBox2D.from point2D point2D
 
-    let point2DInBoundingBox2D (bbox: BoundingBox2D<Meters, TestSpace>) =
+    let point2DInBoundingBox2D (bbox: BoundingBox2D<Meters, TestSpace>): Gen<Point2D<Meters, TestSpace>> =
         Gen.map2 Point2D.xy (lengthBetween bbox.MinX bbox.MaxX) (lengthBetween bbox.MinY bbox.MaxY)
 
     let lineSegment2DInBoundingBox2D (bbox: BoundingBox2D<Meters, TestSpace>) =

@@ -1,5 +1,7 @@
 [<CompilationRepresentation(CompilationRepresentationFlags.ModuleSuffix)>]
-module Geometry.Direction2D
+module Math.Geometry.Direction2D
+
+open Math.Units
 
 
 // ---- Builders ----
@@ -33,8 +35,8 @@ let fromComponents (x: float, y: float) : Direction2D<'Coordinates> option =
 /// care of normalizing the x and y components into the unit direction vector.
 /// This function also checks for the edge case where the x and y components
 /// are both zero. In that case, the function returns `None`.
-let xyLength (Length.Length x: Length<'Unit>) (Length.Length y: Length<'Unit>) : Direction2D<'Coordinates> option =
-    xy x y
+let xyQuantity ( x: Quantity<'Units>) ( y: Quantity<'Units>) : Direction2D<'Coordinates> option =
+    xy x.Value y.Value
 
 /// Create a direction vector from the x and y components. This function
 /// doesn't perform either zero magnitude checks nor does it normalize the
@@ -53,11 +55,11 @@ let degrees (d: float) : Direction2D<'Coordinates> = Angle.degrees d |> fromAngl
 let radians (r: float) : Direction2D<'Coordinates> = Angle.radians r |> fromAngle
 
 let from
-    (first: Point2D<'Unit, 'Coordinates>)
-    (second: Point2D<'Unit, 'Coordinates>)
+    (first: Point2D<'Units, 'Coordinates>)
+    (second: Point2D<'Units, 'Coordinates>)
     : Direction2D<'Coordinates> option =
     let v = second - first
-    xyLength v.X v.Y
+    xyQuantity v.X v.Y
 
 // ---- Constants ----
 
@@ -88,8 +90,8 @@ let yComponent (d: Direction2D<'Coordinates>) : float = d.Y
 
 /// Convert a direction to a unitless vector of length 1.
 let toVector (d: Direction2D<'Coordiantes>) : Vector2D<Unitless, 'Coordinates> =
-    { X = Length.unitless d.X
-      Y = Length.unitless d.Y }
+    { X = Quantity<Unitless> d.X
+      Y = Quantity<Unitless> d.Y }
 
 
 // ---- Modifiers ----
@@ -119,7 +121,7 @@ let rotateBy (angle: Angle) (direction: Direction2D<'Coordinates>) : Direction2D
 
 /// Mirror a direction across a particular axis. Note that only the direction of
 /// the axis affects the result, since directions are position-independent.
-let mirrorAcross (axis: Axis2D<'Unit, 'Corodiantes>) (d: Direction2D<'Coordinates>) : Direction2D<'Coordinates> =
+let mirrorAcross (axis: Axis2D<'Units, 'Corodiantes>) (d: Direction2D<'Coordinates>) : Direction2D<'Coordinates> =
     let a = axis.Direction
     let yy = 1. - 2. * a.Y * a.Y
     let xy = 2. * a.X * a.Y
@@ -134,18 +136,18 @@ let mirrorAcross (axis: Axis2D<'Unit, 'Corodiantes>) (d: Direction2D<'Coordinate
 /// * The second returned direction will be as close as possible to the second
 ///   given vector while being perpendicular to the first returned direction
 let orthonormalize
-    (xVector: Vector2D<'Unit, 'Coordinates>)
-    (xyVector: Vector2D<'Unit, 'Coordinatres>)
+    (xVector: Vector2D<'Units, 'Coordinates>)
+    (xyVector: Vector2D<'Units, 'Coordinatres>)
     : (Direction2D<'Coordinates> * Direction2D<'Coordinates>) option =
-    let xDirectionOption = xyLength xVector.X xVector.Y
+    let xDirectionOption = xyQuantity xVector.X xVector.Y
 
     match xDirectionOption with
     | Some xDirection ->
         let yDirection = perpendicularTo xDirection
 
         match Internal.Vector2D.componentIn yDirection xyVector with
-        | p when p > Length.zero -> Some(xDirection, yDirection)
-        | p when p < Length.zero -> Some(xDirection, reverse yDirection)
+        | p when p > Quantity.zero -> Some(xDirection, yDirection)
+        | p when p < Quantity.zero -> Some(xDirection, reverse yDirection)
         | _ -> None
 
     | None -> None
@@ -187,7 +189,7 @@ let angleFrom (d1: Direction2D<'Coordinates>) (d2: Direction2D<'Coordinates>) : 
 /// Take a direction defined in global coordinates, and return it expressed in
 /// local coordinates relative to a given reference frame.
 let relativeTo
-    (frame: Frame2D<'Unit, 'GlobalCoordaintes, 'Defines>)
+    (frame: Frame2D<'Units, 'GlobalCoordaintes, 'Defines>)
     (d: Direction2D<'GlobalCoordinates>)
     : Direction2D<'LocalCoordaintes> =
 
@@ -198,7 +200,7 @@ let relativeTo
 /// Take a direction defined in local coordinates relative to a given reference
 /// frame, and return that direction expressed in global coordinates.
 let placeIn
-    (reference: Frame2D<'Unit, 'GlobalCoordinates, 'Defines>)
+    (reference: Frame2D<'Units, 'GlobalCoordinates, 'Defines>)
     (direction: Direction2D<'GlobalCoordinates>)
     : Direction2D<'LocalCoordinates> =
 

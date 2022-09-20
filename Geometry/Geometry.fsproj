@@ -9,23 +9,18 @@
         <Authors>Thomas Waters</Authors>
         <Company />
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-        <PackageId>Fsharp.Geometry</PackageId>
+        <PackageId>Math.Geometry</PackageId>
         <Description>A functional geometry library for working with 2D spatial structures.</Description>
         <Copyright>Thomas Waters</Copyright>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
-        <RepositoryUrl>https://github.com/Evelios/fsharp-geometry</RepositoryUrl>
+        <RepositoryUrl>https://github.com/Evelios/Math.Geometry</RepositoryUrl>
         <PackageTags>geometry, fsharp, f#</PackageTags>
     </PropertyGroup>
 
     <ItemGroup>
         <Compile Include="Extensions\TupleExtensions.fs" />
         <Compile Include="Extensions\ListExtensions.fs" />
-        <Compile Include="Float.fs" />
         <Compile Include="Types.fs" />
-        <Compile Include="Interval.fs" />
-        <Compile Include="Angle.fs" />
-        <Compile Include="Percent.fs" />
-        <Compile Include="Length.fs" />
         <Compile Include="Internal\Point2D.fs" />
         <Compile Include="Internal\Vector2D.fs" />
         <Compile Include="Internal\BoundingBox2D.fs" />
@@ -52,6 +47,11 @@
 
     <ItemGroup>
         <PackageReference Include="FSharp.Json" Version="0.4.0" />
+        <PackageReference Include="Math.Units" Version="0.1.135" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Units\Units.fsproj" />
     </ItemGroup>
 
 </Project>

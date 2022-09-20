@@ -14,7 +14,13 @@ index: 2
 
 #r "../Geometry/bin/Debug/net6.0/Geometry.dll"
 #r "../Geometry/bin/Release/net6.0/Geometry.dll"
-open Geometry
+
+#r "../Units/bin/Debug/net6.0/Units.dll"
+#r "../Units/bin/Release/net6.0/Units.dll"
+
+open Math.Geometry
+open Math.Units
+
 
 (***)
 
@@ -137,5 +143,4 @@ Length.sum [ Length.meters 1.; Length.meters 2. ]
 # Unsafe Operations
 *)
 
-Length.unpack (Length.meters 5.)
 (*** include-it ***)

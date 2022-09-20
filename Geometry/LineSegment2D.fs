@@ -1,76 +1,78 @@
 [<CompilationRepresentation(CompilationRepresentationFlags.ModuleSuffix)>]
-module Geometry.LineSegment2D
+module Math.Geometry.LineSegment2D
 
-open Geometry
+open Math.Geometry
+
+open Math.Units
 
 // ---- Builders ----
 
 /// Generate a segment segment from two points. This doesn't perform any checks ensuring that the points are not equal.
 /// If that is the behavior that you want you should use <see cref="safeFrom"/> function.
 let from
-    (start: Point2D<'Unit, 'Coordinates>)
-    (finish: Point2D<'Unit, 'Coordinates>)
-    : LineSegment2D<'Unit, 'Coordinates> =
+    (start: Point2D<'Units, 'Coordinates>)
+    (finish: Point2D<'Units, 'Coordinates>)
+    : LineSegment2D<'Units, 'Coordinates> =
     { Start = start; Finish = finish }
 
 /// Construct a segment segment from it's two endpoints as a tuple.
 let fromEndpoints
-    ((start, finish): Point2D<'Unit, 'Coordinates> * Point2D<'Unit, 'Coordinates>)
-    : LineSegment2D<'Unit, 'Coordinates> =
+    ((start, finish): Point2D<'Units, 'Coordinates> * Point2D<'Units, 'Coordinates>)
+    : LineSegment2D<'Units, 'Coordinates> =
     from start finish
 
 /// Safely create a segment segment. This function returns `None` when the two points are almost equal.
 /// This has to do with the <see cref="Geometry.Internal.Tolerance"/>.
-let safeFrom (start: Point2D<'Unit, 'Coordinates>) (finish: Point2D<'Unit, 'Coordinates>) =
+let safeFrom (start: Point2D<'Units, 'Coordinates>) (finish: Point2D<'Units, 'Coordinates>) =
     if start = finish then
         None
     else
         Some(from start finish)
 
 /// Create a segment segment starting at point in a particular direction and length
-let fromPointAndVector (start: Point2D<'Unit, 'Coordinates>) (direction: Vector2D<'Unit, 'Coordinates>) =
+let fromPointAndVector (start: Point2D<'Units, 'Coordinates>) (direction: Vector2D<'Units, 'Coordinates>) =
     { Start = start
       Finish = start + direction }
 
 /// Construct a segment segment lying on the given axis, with its endpoints at the
 /// given distances from the axis' origin point.
 let along
-    (axis: Axis2D<'Unit, 'Coordinates>)
-    (start: Length<'Unit>)
-    (finish: Length<'Unit>)
-    : LineSegment2D<'Unit, 'Coordinates> =
+    (axis: Axis2D<'Units, 'Coordinates>)
+    (start: Quantity<'Units>)
+    (finish: Quantity<'Units>)
+    : LineSegment2D<'Units, 'Coordinates> =
     from (Point2D.along axis start) (Point2D.along axis finish)
 
 // ---- Attributes ----
 
-let start (segment: LineSegment2D<'Unit, 'Coordinates>) : Point2D<'Unit, 'Coordinates> = segment.Start
+let start (segment: LineSegment2D<'Units, 'Coordinates>) : Point2D<'Units, 'Coordinates> = segment.Start
 
-let finish (segment: LineSegment2D<'Unit, 'Coordinates>) : Point2D<'Unit, 'Coordinates> = segment.Finish
+let finish (segment: LineSegment2D<'Units, 'Coordinates>) : Point2D<'Units, 'Coordinates> = segment.Finish
 
 let endpoints
-    (segment: LineSegment2D<'Unit, 'Coordinates>)
-    : Point2D<'Unit, 'Coordinates> * Point2D<'Unit, 'Coordinates> =
+    (segment: LineSegment2D<'Units, 'Coordinates>)
+    : Point2D<'Units, 'Coordinates> * Point2D<'Units, 'Coordinates> =
     (segment.Start, segment.Finish)
 
 /// Get the vector from the start point to the end point of the segment segment
-let vector (segment: LineSegment2D<'Unit, 'Coordinates>) : Vector2D<'Unit, 'Coordinates> =
+let vector (segment: LineSegment2D<'Units, 'Coordinates>) : Vector2D<'Units, 'Coordinates> =
     Vector2D.from segment.Start segment.Finish
 
-let direction (segment: LineSegment2D<'Unit, 'Coordinates>) : Direction2D<'Coordinates> option =
+let direction (segment: LineSegment2D<'Units, 'Coordinates>) : Direction2D<'Coordinates> option =
     Vector2D.direction (vector segment)
 
-let length (segment: LineSegment2D<'Unit, 'Coordinates>) : Length<'Unit> =
+let length (segment: LineSegment2D<'Units, 'Coordinates>) : Quantity<'Units> =
     Point2D.distanceTo segment.Start segment.Finish
 
-let axis (segment: LineSegment2D<'Unit, 'Coordinates>) : Axis2D<'Unit, 'Coordinates> option =
+let axis (segment: LineSegment2D<'Units, 'Coordinates>) : Axis2D<'Units, 'Coordinates> option =
     Axis2D.throughPoints segment.Start segment.Finish
 
 /// Get the direction perpendicular to a segment segment, pointing to the left. If
 /// the segment segment has zero length, returns `Nothing`.
-let perpendicularDirection (segment: LineSegment2D<'Unit, 'Coordinates>) : Direction2D<'Coordinates> option =
+let perpendicularDirection (segment: LineSegment2D<'Units, 'Coordinates>) : Direction2D<'Coordinates> option =
     Vector2D.direction (Vector2D.perpendicularTo (vector segment))
 
-let midpoint (segment: LineSegment2D<'Unit, 'Coordinates>) : Point2D<'Unit, 'Coordinates> =
+let midpoint (segment: LineSegment2D<'Units, 'Coordinates>) : Point2D<'Units, 'Coordinates> =
     Point2D.midpoint segment.Start segment.Finish
 
 
@@ -85,42 +87,42 @@ let mapEndpoints
     : LineSegment2D<'UnitB, 'CoordinatesB> =
     from (f segment.Start) (f segment.Finish)
 
-let reverse (segment: LineSegment2D<'Unit, 'Coordinates>) = from segment.Finish segment.Start
+let reverse (segment: LineSegment2D<'Units, 'Coordinates>) = from segment.Finish segment.Start
 
 
 /// Scale a line segment about the given center point by the given scale.
 let scaleAbout
-    (point: Point2D<'Unit, 'Coordinates>)
+    (point: Point2D<'Units, 'Coordinates>)
     (scale: float)
-    (segment: LineSegment2D<'Unit, 'Coordinates>)
-    : LineSegment2D<'Unit, 'Coordinates> =
+    (segment: LineSegment2D<'Units, 'Coordinates>)
+    : LineSegment2D<'Units, 'Coordinates> =
     mapEndpoints (Point2D.scaleAbout point scale) segment
 
 /// Rotate a line segment counterclockwise around a given center point by a
 /// given angle.
 let rotateAround
-    (centerPoint: Point2D<'Unit, 'Coordinates>)
+    (centerPoint: Point2D<'Units, 'Coordinates>)
     (angle: Angle)
-    (segment: LineSegment2D<'Unit, 'Coordinates>)
-    : LineSegment2D<'Unit, 'Coordinates> =
+    (segment: LineSegment2D<'Units, 'Coordinates>)
+    : LineSegment2D<'Units, 'Coordinates> =
     mapEndpoints (Point2D.rotateAround centerPoint angle) segment
 
 
 /// Translate a line segment by a given displacement.
 let translateBy
-    (displacementVector: Vector2D<'Unit, 'Coordinates>)
-    (segment: LineSegment2D<'Unit, 'Coordinates>)
-    : LineSegment2D<'Unit, 'Coordinates> =
+    (displacementVector: Vector2D<'Units, 'Coordinates>)
+    (segment: LineSegment2D<'Units, 'Coordinates>)
+    : LineSegment2D<'Units, 'Coordinates> =
     mapEndpoints (Point2D.translateBy displacementVector) segment
 
 
 /// Translate a line segment in a given direction by a given distance.
 let translateIn
     (translationDirection: Direction2D<'Coordinates>)
-    (distance: Length<'Unit>)
-    (lineSegment: LineSegment2D<'Unit, 'Coordinates>)
-    : LineSegment2D<'Unit, 'Coordinates> =
-    translateBy (Vector2D.withLength distance translationDirection) lineSegment
+    (distance: Quantity<'Units>)
+    (lineSegment: LineSegment2D<'Units, 'Coordinates>)
+    : LineSegment2D<'Units, 'Coordinates> =
+    translateBy (Vector2D.withQuantity distance translationDirection) lineSegment
 
 
 /// Mirror a line segment across an axis. Note that the endpoints of a mirrored
@@ -129,43 +131,43 @@ let translateIn
 /// mirrored normal direction of the original segment (since the normal direction is
 /// always considered to be 'to the left' of the line segment).
 let mirrorAcross
-    (axis: Axis2D<'Unit, 'Coordinates>)
-    (segment: LineSegment2D<'Unit, 'Coordinates>)
-    : LineSegment2D<'Unit, 'Coordinates> =
+    (axis: Axis2D<'Units, 'Coordinates>)
+    (segment: LineSegment2D<'Units, 'Coordinates>)
+    : LineSegment2D<'Units, 'Coordinates> =
     mapEndpoints (Point2D.mirrorAcross axis) segment
 
 
 /// Project a line segment onto an axis.
 let projectOnto
-    (axis: Axis2D<'Unit, 'Coordinates>)
-    (segment: LineSegment2D<'Unit, 'Coordinates>)
-    : LineSegment2D<'Unit, 'Coordinates> =
+    (axis: Axis2D<'Units, 'Coordinates>)
+    (segment: LineSegment2D<'Units, 'Coordinates>)
+    : LineSegment2D<'Units, 'Coordinates> =
     mapEndpoints (Point2D.projectOnto axis) segment
 
 
-let round (segment: LineSegment2D<'Unit, 'Coordinates>) =
+let round (segment: LineSegment2D<'Units, 'Coordinates>) =
     from (Point2D.round segment.Start) (Point2D.round segment.Finish)
 
 
 // ---- Queries ----
 
-let interpolate (segment: LineSegment2D<'Unit, 'Coordinates>) (t: float) : Point2D<'Unit, 'Coordinates> =
+let interpolate (segment: LineSegment2D<'Units, 'Coordinates>) (t: float) : Point2D<'Units, 'Coordinates> =
     Point2D.interpolateFrom segment.Start segment.Finish t
 
-let areParallel (first: LineSegment2D<'Unit, 'Coordinates>) (second: LineSegment2D<'Unit, 'Coordinates>) : bool =
+let areParallel (first: LineSegment2D<'Units, 'Coordinates>) (second: LineSegment2D<'Units, 'Coordinates>) : bool =
     match direction first, direction second with
     | Some d1, Some d2 -> d1 = d2 || Direction2D.reverse d1 = d2
     | _ -> false
 
-let isPointOnSegment (point: Point2D<'Unit, 'Coordinates>) (segment: LineSegment2D<'Unit, 'Coordinates>) =
+let isPointOnSegment (point: Point2D<'Units, 'Coordinates>) (segment: LineSegment2D<'Units, 'Coordinates>) =
     let firstDistance = Point2D.distanceTo segment.Start point
     let secondDistance = Point2D.distanceTo segment.Finish point
     (length segment) = (firstDistance + secondDistance)
 
 let distanceToPoint
-    (point: Point2D<'Unit, 'Coordinates>)
-    (segment: LineSegment2D<'Unit, 'Coordinates>)
-    : Length<'Unit> =
+    (point: Point2D<'Units, 'Coordinates>)
+    (segment: LineSegment2D<'Units, 'Coordinates>)
+    : Quantity<'Units> =
     match axis segment with
     | Some segmentAxis ->
         let perpendicular = Point2D.projectOnto segmentAxis point
@@ -184,9 +186,9 @@ let distanceToPoint
 
 /// Get the point on a line segment that is closest to the input point.
 let pointClosestTo
-    (point: Point2D<'Unit, 'Coordinates>)
-    (segment: LineSegment2D<'Unit, 'Coordinates>)
-    : Point2D<'Unit, 'Coordinates> =
+    (point: Point2D<'Units, 'Coordinates>)
+    (segment: LineSegment2D<'Units, 'Coordinates>)
+    : Point2D<'Units, 'Coordinates> =
     if point = segment.Start || point = segment.Finish then
         point
 
@@ -216,9 +218,9 @@ let pointClosestTo
 /// Try to find the intersection between two lines. If the lines are parallel (even if they are overlapping) then no
 /// intersection is returned
 let intersectionPoint
-    (lineSegment1: LineSegment2D<'Unit, 'Coordinates>)
-    (lineSegment2: LineSegment2D<'Unit, 'Coordinates>)
-    : Point2D<'Unit, 'Coordinates> option =
+    (lineSegment1: LineSegment2D<'Units, 'Coordinates>)
+    (lineSegment2: LineSegment2D<'Units, 'Coordinates>)
+    : Point2D<'Units, 'Coordinates> option =
     // The two line segments are:
     // p |--- r ---| p_
     // q |--- s ---| q_
@@ -237,11 +239,11 @@ let intersectionPoint
     let tDenominator = pqXs - sXqp_
     let uDenominator = pqXr + rXpq_
 
-    if tDenominator = Length.zero
-       || uDenominator = Length.zero then
+    if tDenominator = Quantity.zero
+       || uDenominator = Quantity.zero then
         // Segments are parallel or collinear.
         // In collinear case, we check if there is only one intersection point.
-        if Vector2D.dot s r < Length.zero then
+        if Vector2D.dot s r < Quantity.zero then
             if p_ = q_ then
                 // p |----- p_ | q_ -----| q
                 Some p_
@@ -292,16 +294,16 @@ let intersectionPoint
 /// axis. If there is no such point (the line segment does not touch the axis, or
 /// lies perfectly along it), returns `Nothing`.
 let intersectionWithAxis
-    (axis: Axis2D<'Unit, 'Coordinates>)
-    (lineSegment: LineSegment2D<'Unit, 'Coordinates>)
-    : Point2D<'Unit, 'Coordinates> option =
+    (axis: Axis2D<'Units, 'Coordinates>)
+    (lineSegment: LineSegment2D<'Units, 'Coordinates>)
+    : Point2D<'Units, 'Coordinates> option =
 
     let p1, p2 = endpoints lineSegment
     let d1 = Point2D.signedDistanceFrom axis p1
     let d2 = Point2D.signedDistanceFrom axis p2
     let product = d1 * d2
 
-    if product < Length.zero then
+    if product < Quantity.zero then
         // The two points are on opposite sides of the axis, so there is a
         // unique intersection point in between them
         let t = (d1 - d2) / d1
@@ -309,20 +311,20 @@ let intersectionWithAxis
 
     else
 
-    if product > Length.zero then
+    if product > Quantity.zero then
         // Both points are on the same side of the axis, so no intersection
         // point exists
         None
 
     else
 
-    if d1 <> Length.zero then
+    if d1 <> Quantity.zero then
         // d2 must be zero since the product is zero, so only p2 is on the axis
         Some p2
 
     else
 
-    if d2 <> Length.zero then
+    if d2 <> Quantity.zero then
         // d1 must be zero since the product is zero, so only p1 is on the axis
         Some p1
 
@@ -341,9 +343,9 @@ let intersectionWithAxis
 /// along the axis resulting from projecting the line segment perpendicularly onto the axis.
 /// Note that reversing the line segment will _not_ affect the result.
 let signedDistanceAlong
-    (axis: Axis2D<'Unit, 'Coordinates>)
-    (segment: LineSegment2D<'Unit, 'Coordinates>)
-    : Interval<Length<'Unit>> =
+    (axis: Axis2D<'Units, 'Coordinates>)
+    (segment: LineSegment2D<'Units, 'Coordinates>)
+    : Interval<'Units> =
     Interval.from (Point2D.signedDistanceAlong axis segment.Start) (Point2D.signedDistanceAlong axis segment.Finish)
 
 
@@ -353,28 +355,28 @@ let signedDistanceAlong
 ///  - contains zero, then the line segment crosses the axis
 /// Note that reversing the line segment will _not_ affect the result.
 let signedDistanceFrom
-    (axis: Axis2D<'Unit, 'Coordinates>)
-    (segment: LineSegment2D<'Unit, 'Coordinates>)
-    : Interval<Length<'Unit>> =
+    (axis: Axis2D<'Units, 'Coordinates>)
+    (segment: LineSegment2D<'Units, 'Coordinates>)
+    : Interval<'Units> =
     Interval.from (Point2D.signedDistanceFrom axis segment.Start) (Point2D.signedDistanceFrom axis segment.Finish)
 
 /// Take a line segment defined in global coordinates, and return it expressed
 /// in local coordinates relative to a given reference frame.
 let relativeTo
-    (frame: Frame2D<'Unit, 'GlobalCoordinates, 'Defines>)
-    (segment: LineSegment2D<'Unit, 'GlobalCoordinates>)
-    : LineSegment2D<'Unit, 'LocalCoordinates> =
+    (frame: Frame2D<'Units, 'GlobalCoordinates, 'Defines>)
+    (segment: LineSegment2D<'Units, 'GlobalCoordinates>)
+    : LineSegment2D<'Units, 'LocalCoordinates> =
     mapEndpoints (Point2D.relativeTo frame) segment
 
 /// Take a line segment considered to be defined in local coordinates relative
 /// to a given reference frame, and return that line segment expressed in global
 /// coordinates.
 let placeIn
-    (frame: Frame2D<'Unit, 'GlobalCoordinates, 'Defines>)
-    (segment: LineSegment2D<'Unit, 'GlobalCoordinates>)
-    : LineSegment2D<'Unit, 'LocalCoordinates> =
+    (frame: Frame2D<'Units, 'GlobalCoordinates, 'Defines>)
+    (segment: LineSegment2D<'Units, 'GlobalCoordinates>)
+    : LineSegment2D<'Units, 'LocalCoordinates> =
     mapEndpoints (Point2D.placeIn frame) segment
 
 /// Get the minimal bounding box containing a given line segment.
-let boundingBox (segment: LineSegment2D<'Unit, 'Coordinates>) : BoundingBox2D<'Unit, 'Coordinates> =
+let boundingBox (segment: LineSegment2D<'Units, 'Coordinates>) : BoundingBox2D<'Units, 'Coordinates> =
     Internal.BoundingBox2D.from segment.Start segment.Finish

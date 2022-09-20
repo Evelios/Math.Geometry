@@ -1,16 +1,18 @@
 [<CompilationRepresentation(CompilationRepresentationFlags.ModuleSuffix)>]
-module Geometry.Polygon2D
+module Math.Geometry.Polygon2D
+
+open Math.Units
 
 
 // ---- Builders ----
 
-let private counterclockwiseArea (vertices_: Point2D<'Unit, 'Coordinates> list) : Length<'Unit * 'Unit> =
+let private counterclockwiseArea (vertices_: Point2D<'Units, 'Coordinates> list) : Quantity<'Units Squared> =
     match vertices_ with
-    | [] -> Length.zero
+    | [] -> Quantity.zero
 
-    | [ _ ] -> Length.zero
+    | [ _ ] -> Quantity.zero
 
-    | [ _; _ ] -> Length.zero
+    | [ _; _ ] -> Quantity.zero
 
     | first :: rest ->
         let segmentArea start finish =
@@ -20,17 +22,17 @@ let private counterclockwiseArea (vertices_: Point2D<'Unit, 'Coordinates> list) 
             List.pairwise rest
             |> List.map (fun (start, finish) -> segmentArea start finish)
 
-        Length.sum segmentAreas
+        Quantity.sum segmentAreas
 
-let private makeOuterLoop (vertices_: Point2D<'Unit, 'Coordinates> list) : Point2D<'Unit, 'Coordinates> list =
-    if counterclockwiseArea vertices_ >= Length.zero then
+let private makeOuterLoop (vertices_: Point2D<'Units, 'Coordinates> list) : Point2D<'Units, 'Coordinates> list =
+    if counterclockwiseArea vertices_ >= Quantity.zero then
         vertices_
     else
         List.rev vertices_
 
 
-let private makeInnerLoop (vertices_: Point2D<'Unit, 'Coordinates> list) : Point2D<'Unit, 'Coordinates> list =
-    if counterclockwiseArea vertices_ <= Length.zero then
+let private makeInnerLoop (vertices_: Point2D<'Units, 'Coordinates> list) : Point2D<'Units, 'Coordinates> list =
+    if counterclockwiseArea vertices_ <= Quantity.zero then
         vertices_
     else
         List.rev vertices_
@@ -58,9 +60,9 @@ let private makeInnerLoop (vertices_: Point2D<'Unit, 'Coordinates> list) : Point
 /// provided in counterclockwise order and vertices of the inner loops should
 /// ideally be provided in clockwise order.
 let withHoles
-    (givenInnerLoops: Point2D<'Unit, 'Coordinates> list list)
-    (givenOuterLoop: Point2D<'Unit, 'Coordinates> list)
-    : Polygon2D<'Unit, 'Coordinates> =
+    (givenInnerLoops: Point2D<'Units, 'Coordinates> list list)
+    (givenOuterLoop: Point2D<'Units, 'Coordinates> list)
+    : Polygon2D<'Units, 'Coordinates> =
 
     { OuterLoop = makeOuterLoop givenOuterLoop
       InnerLoops = List.map makeInnerLoop givenInnerLoops }
@@ -82,23 +84,23 @@ let withHoles
 let singleLoop givenOuterLoop = withHoles [] givenOuterLoop
 
 let private counterclockwiseAround
-    (origin: Point2D<'Unit, 'Coordinates>)
-    (a: Point2D<'Unit, 'Coordinates>)
-    (b: Point2D<'Unit, 'Coordinates>)
+    (origin: Point2D<'Units, 'Coordinates>)
+    (a: Point2D<'Units, 'Coordinates>)
+    (b: Point2D<'Units, 'Coordinates>)
     : bool =
 
     let crossProduct =
         Vector2D.from origin a
         |> Vector2D.cross (Vector2D.from origin b)
 
-    crossProduct >= Length.zero
+    crossProduct >= Quantity.zero
 
-let private chain (acc: Point2D<'Unit, 'Coordinates> list) : Point2D<'Unit, 'Coordinates> list =
+let private chain (acc: Point2D<'Units, 'Coordinates> list) : Point2D<'Units, 'Coordinates> list =
 
     let rec chainHelp
-        (acc: Point2D<'Unit, 'Coordinates> list)
-        (list: Point2D<'Unit, 'Coordinates> list)
-        : Point2D<'Unit, 'Coordinates> list =
+        (acc: Point2D<'Units, 'Coordinates> list)
+        (list: Point2D<'Units, 'Coordinates> list)
+        : Point2D<'Units, 'Coordinates> list =
 
         match (acc, list) with
         | r1 :: r2 :: rs, x :: xs ->
@@ -116,7 +118,7 @@ let private chain (acc: Point2D<'Unit, 'Coordinates> list) : Point2D<'Unit, 'Coo
 
 /// Build the [convex hull](https://en.wikipedia.org/wiki/Convex_hull) of a list
 /// of points. This is an O(n log n) operation.
-let convexHull (points: Point2D<'Unit, 'Coordinates> list) : Polygon2D<'Unit, 'Coordinates> =
+let convexHull (points: Point2D<'Units, 'Coordinates> list) : Polygon2D<'Units, 'Coordinates> =
     match points with
     | [] -> singleLoop []
 
@@ -134,53 +136,53 @@ let convexHull (points: Point2D<'Unit, 'Coordinates> list) : Polygon2D<'Unit, 'C
 
 /// Get the list of vertices defining the outer loop (border) of a polygon.
 /// The vertices will be in counterclockwise order.
-let outerLoop (polygon: Polygon2D<'Unit, 'Coordinates>) : Point2D<'Unit, 'Coordinates> list = polygon.OuterLoop
+let outerLoop (polygon: Polygon2D<'Units, 'Coordinates>) : Point2D<'Units, 'Coordinates> list = polygon.OuterLoop
 
 /// Get the holes (if any) of a polygon, each defined by a list of vertices.
 /// Each list of vertices will be in clockwise order.
-let innerLoops (polygon: Polygon2D<'Unit, 'Coordinates>) : Point2D<'Unit, 'Coordinates> list list = polygon.InnerLoops
+let innerLoops (polygon: Polygon2D<'Units, 'Coordinates>) : Point2D<'Units, 'Coordinates> list list = polygon.InnerLoops
 
 /// Get all vertices of a polygon; this will include vertices from the outer
 /// loop of the polygon and all inner loops. The order of the returned vertices is
 /// undefined.
-let vertices (polygon: Polygon2D<'Unit, 'Coordinates>) : Point2D<'Unit, 'Coordinates> list =
+let vertices (polygon: Polygon2D<'Units, 'Coordinates>) : Point2D<'Units, 'Coordinates> list =
     List.concat (outerLoop polygon :: innerLoops polygon)
 
 
-let loopEdges (vertices_: Point2D<'Unit, 'Coordinates> list) : LineSegment2D<'Unit, 'Coordinates> list =
+let loopEdges (vertices_: Point2D<'Units, 'Coordinates> list) : LineSegment2D<'Units, 'Coordinates> list =
     match vertices_ with
     | [] -> []
     | first :: rest as all -> List.map2 LineSegment2D.from all (rest @ [ first ])
 
 /// Get all edges of a polygon. This will include both outer edges and inner
 /// (hole) edges.
-let edges (polygon: Polygon2D<'Unit, 'Coordinates>) : LineSegment2D<'Unit, 'Coordinates> list =
+let edges (polygon: Polygon2D<'Units, 'Coordinates>) : LineSegment2D<'Units, 'Coordinates> list =
     let outerEdges = loopEdges (outerLoop polygon)
     let innerEdges = List.map loopEdges (innerLoops polygon)
     List.concat (outerEdges :: innerEdges)
 
 /// Get the perimeter of a polygon (the sum of the lengths of its edges). This
 /// includes the outer perimeter and the perimeter of any holes.
-let perimeter (polygon: Polygon2D<'Unit, 'Coordinates>) : Length<'Unit> =
+let perimeter (polygon: Polygon2D<'Units, 'Coordinates>) : Quantity<'Units> =
     edges polygon
     |> List.map LineSegment2D.length
-    |> Length.sum
+    |> Quantity.sum
 
 /// Get the area of a polygon. This value will never be negative.
-let area (polygon: Polygon2D<'Unit, 'Coordinates>) : Length<'Unit * 'Unit> =
+let area (polygon: Polygon2D<'Units, 'Coordinates>) : Quantity<'Units Squared> =
     counterclockwiseArea (outerLoop polygon)
-    + (Length.sum (List.map counterclockwiseArea (innerLoops polygon)))
+    + (Quantity.sum (List.map counterclockwiseArea (innerLoops polygon)))
 
 let rec private centroidHelp
-    (x0: Length<'Unit>)
-    (y0: Length<'Unit>)
-    (firstPoint: Point2D<'Unit, 'Coordinates>)
-    (currentLoop: Point2D<'Unit, 'Coordinates> list)
-    (remainingLoops: Point2D<'Unit, 'Coordinates> list list)
-    (xSum: Length<'Unit>)
-    (ySum: Length<'Unit>)
-    (areaSum: Length<'Unit * 'Unit>)
-    : Point2D<'Unit, 'Coordinates> option =
+    (x0: Quantity<'Units>)
+    (y0: Quantity<'Units>)
+    (firstPoint: Point2D<'Units, 'Coordinates>)
+    (currentLoop: Point2D<'Units, 'Coordinates> list)
+    (remainingLoops: Point2D<'Units, 'Coordinates> list list)
+    (xSum: Quantity<'Units>)
+    (ySum: Quantity<'Units>)
+    (areaSum: Quantity<'Units Squared>)
+    : Point2D<'Units, 'Coordinates> option =
 
     match currentLoop with
     | [] ->
@@ -196,14 +198,14 @@ let rec private centroidHelp
                 centroidHelp x0 y0 firstPoint [] newRemainingLoops xSum ySum areaSum
 
         | [] ->
-            if areaSum > Length.zero then
+            if areaSum > Quantity.zero then
                 Some
                     { X =
                           xSum
-                          / ((Length.unpack areaSum * 3.) + Length.unpack x0)
+                          / ((areaSum * 3.).Value + x0.Value)
                       Y =
                           ySum
-                          / ((Length.unpack areaSum * 3.) + Length.unpack y0) }
+                          / ((areaSum * 3.).Value + y0.Value) }
 
 
             else
@@ -219,8 +221,8 @@ let rec private centroidHelp
             let p2x = p2.X - x0
             let p2y = p2.Y - y0
             let a = p1x * p2y - p2x * p1y
-            let newXSum = xSum + (p1x + p2x) * Length.unpack a
-            let newYSum = ySum + (p1y + p2y) * Length.unpack a
+            let newXSum = xSum + (p1x + p2x) * a.Value
+            let newYSum = ySum + (p1y + p2y) * a.Value
             let newAreaSum = areaSum + a
             centroidHelp x0 y0 firstPoint currentLoopRest remainingLoops newXSum newYSum newAreaSum
 
@@ -232,8 +234,8 @@ let rec private centroidHelp
             let p2x = p2.X - x0
             let p2y = p2.Y - y0
             let a = p1x * p2y - p2x * p1y
-            let newXSum = xSum + (p1x + p2x) * Length.unpack a
-            let newYSum = ySum + (p1y + p2y) * Length.unpack a
+            let newXSum = xSum + (p1x + p2x) * a.Value
+            let newYSum = ySum + (p1y + p2y) * a.Value
             let newAreaSum = areaSum + a
 
             match remainingLoops with
@@ -248,10 +250,10 @@ let rec private centroidHelp
                     centroidHelp x0 y0 firstPoint [] newRemainingLoops newXSum newYSum newAreaSum
 
             | [] ->
-                if newAreaSum > Length.zero then
+                if newAreaSum > Quantity.zero then
                     Some(
-                        { X = newXSum / (Length.unpack newAreaSum * 3.) + x0
-                          Y = newYSum / (Length.unpack newAreaSum * 3.) + y0 }
+                        { X = newXSum / (newAreaSum.Value * 3.) + x0
+                          Y = newYSum / (newAreaSum.Value * 3.) + y0 }
                     )
 
                 else
@@ -259,7 +261,7 @@ let rec private centroidHelp
 
 /// Get the centroid of a polygon. Returns `Nothing` if the polygon has no
 /// vertices or zero area.
-let centroid (polygon: Polygon2D<'Unit, 'Coordinates>) : Point2D<'Unit, 'Coordinates> option =
+let centroid (polygon: Polygon2D<'Units, 'Coordinates>) : Point2D<'Units, 'Coordinates> option =
     match outerLoop polygon with
     | first :: _ :: _ ->
         let offset = first
@@ -270,15 +272,15 @@ let centroid (polygon: Polygon2D<'Unit, 'Coordinates>) : Point2D<'Unit, 'Coordin
             first
             (outerLoop polygon)
             (innerLoops polygon)
-            Length.zero
-            Length.zero
-            Length.zero
+            Quantity.zero
+            Quantity.zero
+            Quantity.zero
 
     | _ -> None
     
 /// Get the minimal bounding box containing a given polygon. Returns `None`
 /// if the polygon has no vertices.
-let boundingBox (polygon: Polygon2D<'Unit, 'Coordinates>) : BoundingBox2D<'Unit, 'Coordinates> option =
+let boundingBox (polygon: Polygon2D<'Units, 'Coordinates>) : BoundingBox2D<'Units, 'Coordinates> option =
     BoundingBox2D.hullN (outerLoop polygon)
 
 
@@ -307,54 +309,54 @@ let mapVertices
 /// the resulting polygon still has its outer vertices in counterclockwise order and
 /// its inner vertices in clockwise order.
 let scaleAbout
-    (point: Point2D<'Unit, 'Coordinates>)
+    (point: Point2D<'Units, 'Coordinates>)
     (scale: float)
-    (polygon: Polygon2D<'Unit, 'Coordinates>)
-    : Polygon2D<'Unit, 'Coordinates> =
+    (polygon: Polygon2D<'Units, 'Coordinates>)
+    : Polygon2D<'Units, 'Coordinates> =
     mapVertices (Point2D.scaleAbout point scale) (scale < 0.) polygon
 
 
 /// Rotate a polygon around the given center point counterclockwise by the given
 /// angle.
 let rotateAround
-    (point: Point2D<'Unit, 'Coordinates>)
+    (point: Point2D<'Units, 'Coordinates>)
     (angle: Angle)
-    (polygon: Polygon2D<'Unit, 'Coordinates>)
-    : Polygon2D<'Unit, 'Coordinates> =
+    (polygon: Polygon2D<'Units, 'Coordinates>)
+    : Polygon2D<'Units, 'Coordinates> =
     mapVertices (Point2D.rotateAround point angle) false polygon
 
 
 /// Translate a polygon by the given displacement.
 let translateBy
-    (vector: Vector2D<'Unit, 'Coordinates>)
-    (polygon: Polygon2D<'Unit, 'Coordinates>)
-    : Polygon2D<'Unit, 'Coordinates> =
+    (vector: Vector2D<'Units, 'Coordinates>)
+    (polygon: Polygon2D<'Units, 'Coordinates>)
+    : Polygon2D<'Units, 'Coordinates> =
     mapVertices (Point2D.translateBy vector) false polygon
 
 
 /// Translate a polygon in a given direction by a given distance.
 let translateIn
     (direction: Direction2D<'Coordinates>)
-    (distance: Length<'Unit>)
-    (polygon: Polygon2D<'Unit, 'Coordinates>)
-    : Polygon2D<'Unit, 'Coordinates> =
-    translateBy (Vector2D.withLength distance direction) polygon
+    (distance: Quantity<'Units>)
+    (polygon: Polygon2D<'Units, 'Coordinates>)
+    : Polygon2D<'Units, 'Coordinates> =
+    translateBy (Vector2D.withQuantity distance direction) polygon
 
 
 /// Mirror a polygon across the given axis. The order of the polygon's vertices
 /// will be reversed so that the resulting polygon still has its outer vertices in
 /// counterclockwise order and its inner vertices in clockwise order.
 let mirrorAcross
-    (axis: Axis2D<'Unit, 'Coordinates>)
-    (polygon: Polygon2D<'Unit, 'Coordinates>)
-    : Polygon2D<'Unit, 'Coordinates> =
+    (axis: Axis2D<'Units, 'Coordinates>)
+    (polygon: Polygon2D<'Units, 'Coordinates>)
+    : Polygon2D<'Units, 'Coordinates> =
     mapVertices (Point2D.mirrorAcross axis) true polygon
 
 
 let translate
-    (amount: Vector2D<'Unit, 'Coordinates>)
-    (polygon: Polygon2D<'Unit, 'Coordinates>)
-    : Polygon2D<'Unit, 'Coordinates> =
+    (amount: Vector2D<'Units, 'Coordinates>)
+    (polygon: Polygon2D<'Units, 'Coordinates>)
+    : Polygon2D<'Units, 'Coordinates> =
 
     mapVertices (Point2D.translate amount) false polygon
 
@@ -364,9 +366,9 @@ let translate
 /// resulting polygon still has its outer vertices in counterclockwise order and its
 /// inner vertices in clockwise order.
 let relativeTo
-    (frame: Frame2D<'Unit, 'Coordinates, 'Defines>)
-    (polygon: Polygon2D<'Unit, 'Coordinates>)
-    : Polygon2D<'Unit, 'Coordinates> =
+    (frame: Frame2D<'Units, 'Coordinates, 'Defines>)
+    (polygon: Polygon2D<'Units, 'Coordinates>)
+    : Polygon2D<'Units, 'Coordinates> =
     mapVertices (Point2D.relativeTo frame) (not (Frame2D.isRightHanded frame)) polygon
 
 /// Take a polygon considered to be defined in local coordinates relative to a
@@ -375,9 +377,9 @@ let relativeTo
 /// reversed so that the resulting polygon still has its outer vertices in
 /// counterclockwise order and its inner vertices in clockwise order.
 let placeIn
-    (frame: Frame2D<'Unit, 'Coordinates, 'Defines>)
-    (polygon: Polygon2D<'Unit, 'Coordinates>)
-    : Polygon2D<'Unit, 'Coordinates> =
+    (frame: Frame2D<'Units, 'Coordinates, 'Defines>)
+    (polygon: Polygon2D<'Units, 'Coordinates>)
+    : Polygon2D<'Units, 'Coordinates> =
 
     mapVertices (Point2D.placeIn frame) false polygon
 
@@ -385,9 +387,9 @@ let placeIn
 // ---- Queries ----
 
 let rec private containsPointHelp
-    (edgeList: LineSegment2D<'Unit, 'Coordinates> list)
-    (xp: Length<'Unit>)
-    (yp: Length<'Unit>)
+    (edgeList: LineSegment2D<'Units, 'Coordinates> list)
+    (xp: Quantity<'Units>)
+    (yp: Quantity<'Units>)
     (k: int)
     : bool =
     // Based on Hao, J.; Sun, J.; Chen, Y.; Cai, Q.; Tan, L. Optimal Reliable Point-in-Polygon Test and
@@ -404,8 +406,8 @@ let rec private containsPointHelp
         let v1 = yi - yp
         let v2 = yi1 - yp
 
-        if (v1 < Length.zero && v2 < Length.zero)
-           || (v1 > Length.zero && v2 > Length.zero) then
+        if (v1 < Quantity.zero && v2 < Quantity.zero)
+           || (v1 > Quantity.zero && v2 > Quantity.zero) then
             // case 11 or 26
             containsPointHelp rest xp yp k
 
@@ -413,14 +415,14 @@ let rec private containsPointHelp
             let u1 = xi - xp
             let u2 = xi1 - xp
 
-            if v2 > Length.zero && v1 <= Length.zero then
+            if v2 > Quantity.zero && v1 <= Quantity.zero then
                 let f = u1 * v2 - u2 * v1
 
-                if f > Length.zero then
+                if f > Quantity.zero then
                     // case 3 or 9
                     containsPointHelp rest xp yp (k + 1)
 
-                else if f = Length.zero then
+                else if f = Quantity.zero then
                     // case 16 or 21
                     true
 
@@ -430,14 +432,14 @@ let rec private containsPointHelp
 
             else
 
-            if v1 > Length.zero && v2 <= Length.zero then
+            if v1 > Quantity.zero && v2 <= Quantity.zero then
                 let f = u1 * v2 - u2 * v1
 
-                if f < Length.zero then
+                if f < Quantity.zero then
                     // case 4 or 10
                     containsPointHelp rest xp yp (k + 1)
 
-                else if f = Length.zero then
+                else if f = Quantity.zero then
                     // case 19 or 20
                     true
 
@@ -447,10 +449,10 @@ let rec private containsPointHelp
 
             else
 
-            if v2 = Length.zero && v1 < Length.zero then
+            if v2 = Quantity.zero && v1 < Quantity.zero then
                 let f = u1 * v2 - u2 * v1
 
-                if f = Length.zero then
+                if f = Quantity.zero then
                     // case 17
                     true
 
@@ -460,10 +462,10 @@ let rec private containsPointHelp
 
             else
 
-            if v1 = Length.zero && v2 < Length.zero then
+            if v1 = Quantity.zero && v2 < Quantity.zero then
                 let f = u1 * v2 - u2 * v1
 
-                if f = Length.zero then
+                if f = Quantity.zero then
                     // case 18
                     true
 
@@ -473,12 +475,12 @@ let rec private containsPointHelp
 
             else
 
-            if v1 = Length.zero && v2 = Length.zero then
-                if u2 <= Length.zero && u1 >= Length.zero then
+            if v1 = Quantity.zero && v2 = Quantity.zero then
+                if u2 <= Quantity.zero && u1 >= Quantity.zero then
                     // case 1
                     true
 
-                else if u1 <= Length.zero && u2 >= Length.zero then
+                else if u1 <= Quantity.zero && u2 >= Quantity.zero then
                     // case 2
                     true
 
@@ -491,5 +493,5 @@ let rec private containsPointHelp
 
 /// Check if a polygon contains a given point.
 /// This is an O(n) operation. The polygon can have holes and does not need to be convex.
-let contains (point: Point2D<'Unit, 'Coordinates>) (polygon: Polygon2D<'Unit, 'Coordinates>) : bool =
+let contains (point: Point2D<'Units, 'Coordinates>) (polygon: Polygon2D<'Units, 'Coordinates>) : bool =
     containsPointHelp (edges polygon) point.X point.Y 0
