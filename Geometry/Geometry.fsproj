@@ -47,7 +47,7 @@
 
     <ItemGroup>
         <PackageReference Include="FSharp.Json" Version="0.4.0" />
-        <PackageReference Include="Math.Units" Version="0.1.135" />
+        <PackageReference Include="Math.Units" Version="0.1.136" />
     </ItemGroup>
 
     <ItemGroup>
