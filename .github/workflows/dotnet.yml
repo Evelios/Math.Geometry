@@ -46,11 +46,11 @@ jobs:
       - name: Package nuget
         run: dotnet pack Math.Geometry.sln --configuration Release -o:package /p:PackageVersion=${{ steps.gitversion.outputs.AssemblySemVer }}
 
-      - name: Push generated package to GitHub registry
-        run: dotnet nuget push ./package/Math.Geometry.*.nupkg --source https://nuget.pkg.github.com/evelios/index.json --api-key ${{ github.token }}
-        
       - name: Push generated package to Nuget regestry
         run: nuget push ./package/Math.Geometry.*.nupkg -Source 'https://api.nuget.org/v3/index.json' -ApiKey ${{secrets.NugetKey}}
+        
+      - name: Push generated package to GitHub registry
+        run: dotnet nuget push ./package/Math.Geometry.*.nupkg --source https://nuget.pkg.github.com/evelios/index.json --api-key ${{ github.token }} --skip-duplicate
      
       - name: Download fsdocs documentation tool
         run: dotnet tool restore
