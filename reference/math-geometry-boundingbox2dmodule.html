@@ -1,0 +1,4125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>BoundingBox2D (Math.Geometry)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="Thomas Waters">
+
+    <link rel="stylesheet" id="theme_link" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.6.0/materia/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+    <link type="text/css" rel="stylesheet" href="/Math.Geometry/content/navbar-fixed-left.css" />
+    <link type="text/css" rel="stylesheet" href="/Math.Geometry/content/fsdocs-default.css" />
+    <link type="text/css" rel="stylesheet" href="/Math.Geometry/content/fsdocs-custom.css" />
+    <script type="text/javascript" src="/Math.Geometry/content/fsdocs-tips.js"></script>
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!-- BEGIN SEARCH BOX: this adds support for the search box -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.css" />
+    <!-- END SEARCH BOX: this adds support for the search box -->
+    
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md navbar-light bg-secondary fixed-left" id="fsdocs-nav">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse navbar-nav-scroll" id="navbarsExampleDefault">
+            <a href="/Math.Geometry/"><img id="fsdocs-logo" src="/Math.Geometry/img/logo.png" /></a>
+            <!-- BEGIN SEARCH BOX: this adds support for the search box -->
+            <div id="header">
+                <div class="searchbox" id="fsdocs-searchbox">
+                    <label for="search-by">
+                        <i class="fas fa-search"></i>
+                    </label>
+                    <input data-search-input="" id="search-by" type="search" placeholder="Search..." />
+                    <span data-search-clear="">
+                        <i class="fas fa-times"></i>
+                    </span>
+                </div>
+            </div>
+
+            <!-- END SEARCH BOX: this adds support for the search box -->
+            <ul class="navbar-nav">
+                <li class="nav-header">Links</li>
+                <li class="nav-item" id="fsdocs-license-link"><a class="nav-link" href="https://github.com/Evelios/Math.Geometry/blob/master/LICENSE.md">License</a></li>
+                <li class="nav-item" id="fsdocs-release-notes-link"><a class="nav-link" href="https://github.com/Evelios/Math.Geometry/blob/master/RELEASE_NOTES.md">Release Notes</a></li>
+                <li class="nav-item" id="fsdocs-repository-link"><a class="nav-link" href="https://github.com/Evelios/Math.Geometry/">Source Repository</a></li>
+                <li class="nav-header">
+  Modules
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="/Math.Geometry/length.html">
+    Lengths
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="/Math.Geometry/interval.html">
+    Interval
+  </a>
+</li>             
+<li class="nav-header">
+  2D Modules
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="/Math.Geometry/arc.html">
+    2D Arc
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="/Math.Geometry/axes.html">
+    2D Axis
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="/Math.Geometry/bounding-box.html">
+    2D Bounding Box
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="/Math.Geometry/circle.html">
+    2D Circle
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="/Math.Geometry/direction.html">
+    2D Direction
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="/Math.Geometry/ellipse.html">
+    2D Ellipse
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="/Math.Geometry/frame.html">
+    2D Frame
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="/Math.Geometry/line-segment.html">
+    2D Line Segment
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="/Math.Geometry/point.html">
+    2D Points
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="/Math.Geometry/polygon.html">
+    2D Polygon
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="/Math.Geometry/polyline.html">
+    2D Poly-Line
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="/Math.Geometry/size.html">
+    2D Size
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="/Math.Geometry/triangle.html">
+    2D Triangle
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="/Math.Geometry/vector.html">
+    2D Vectors
+  </a>
+</li>
+                <li class="nav-header">
+  API Reference
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="/Math.Geometry/reference/index.html">
+    All Namespaces
+  </a>
+</li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="masthead">
+            <h3 class="muted"><a href="/Math.Geometry/">Math.Geometry</a></h3>
+        </div>
+        <hr />
+        <div class="container" id="fsdocs-content">
+            <div>
+  <h2>
+    BoundingBox2D Module
+  </h2>
+  <dl class="fsdocs-metadata">
+    <dt>
+      Namespace: 
+      <a href="/Math.Geometry/reference/math-geometry.html">
+        Math.Geometry
+      </a>
+    </dt>
+    <dt>
+      Assembly: Math.Geometry.dll
+    </dt>
+  </dl>
+  <div class="fsdocs-xmldoc">
+    <div>
+      <p class="fsdocs-summary">
+        
+      </p>
+    </div>
+  </div>
+  <div>
+    <h3>
+      Functions and values
+    </h3>
+    <table class="table outer-list fsdocs-member-list">
+      <thead>
+        <tr>
+          <td class="fsdocs-member-list-header">
+            Function or value
+          </td>
+          <td class="fsdocs-member-list-header">
+            Description
+          </td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '60', 60)" onmouseover="showTip(event, '60', 60)">
+                <p>
+                  <a id="aggregate">
+                    <a href="#aggregate">
+                      <code><span>aggregate&#32;<span>first&#32;rest</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="60">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>aggregate&#32;<span>first&#32;rest</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        first
+                      </b>
+                      :
+                      <code><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        rest
+                      </b>
+                      :
+                      <code><span><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span>&#32;list</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Math.Geometry.BoundingBox2DModule.aggregate``2```')">
+                <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Math.Geometry.BoundingBox2DModule.aggregate``2\'/>')">
+                <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/BoundingBox2D.fs#L327-327" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Find the bounding box containing one or more input boxes; works much like
+ [`hull`](#hull). See also [`aggregateN`](#aggregateN).
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  first
+                </span>
+                :
+                <code><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  rest
+                </span>
+                :
+                <code><span><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span>&#32;list</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '61', 61)" onmouseover="showTip(event, '61', 61)">
+                <p>
+                  <a id="aggregate3">
+                    <a href="#aggregate3">
+                      <code><span>aggregate3&#32;<span>b1&#32;b2&#32;b3</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="61">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>aggregate3&#32;<span>b1&#32;b2&#32;b3</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        b1
+                      </b>
+                      :
+                      <code><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        b2
+                      </b>
+                      :
+                      <code><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        b3
+                      </b>
+                      :
+                      <code><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Math.Geometry.BoundingBox2DModule.aggregate3``2```')">
+                <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Math.Geometry.BoundingBox2DModule.aggregate3``2\'/>')">
+                <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/BoundingBox2D.fs#L384-384" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Build a bounding box that contains all three of the given bounding boxes.
+ This is equivalent to running `aggregate` with three points but is more
+ efficient.
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  b1
+                </span>
+                :
+                <code><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  b2
+                </span>
+                :
+                <code><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  b3
+                </span>
+                :
+                <code><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '62', 62)" onmouseover="showTip(event, '62', 62)">
+                <p>
+                  <a id="aggregateN">
+                    <a href="#aggregateN">
+                      <code><span>aggregateN&#32;<span>boxes</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="62">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>aggregateN&#32;<span>boxes</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        boxes
+                      </b>
+                      :
+                      <code><span><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span>&#32;list</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span>&#32;option</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Math.Geometry.BoundingBox2DModule.aggregateN``2```')">
+                <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Math.Geometry.BoundingBox2DModule.aggregateN``2\'/>')">
+                <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/BoundingBox2D.fs#L398-398" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Construct a bounding box containing all bounding boxes in the given list. If
+ the list is empty, returns `Nothing`. If you know you have at least one bounding
+ box, you can use [`aggregate`](#aggregate) instead.
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  boxes
+                </span>
+                :
+                <code><span><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span>&#32;list</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span>&#32;option</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '63', 63)" onmouseover="showTip(event, '63', 63)">
+                <p>
+                  <a id="aggregateOf">
+                    <a href="#aggregateOf">
+                      <code><span>aggregateOf&#32;<span>getBoundingBox&#32;first&#32;rest</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="63">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>aggregateOf&#32;<span>getBoundingBox&#32;first&#32;rest</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        getBoundingBox
+                      </b>
+                      :
+                      <code><span>'a&#32;->&#32;<span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        first
+                      </b>
+                      :
+                      <code>'a</code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        rest
+                      </b>
+                      :
+                      <code><span>'a&#32;list</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Math.Geometry.BoundingBox2DModule.aggregateOf``3```')">
+                <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Math.Geometry.BoundingBox2DModule.aggregateOf``3\'/>')">
+                <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/BoundingBox2D.fs#L352-352" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Like [`aggregate`](#aggregate), but lets you work on any kind of item as
+ long as a bounding box can be extracted from it.
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  getBoundingBox
+                </span>
+                :
+                <code><span>'a&#32;->&#32;<span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  first
+                </span>
+                :
+                <code>'a</code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  rest
+                </span>
+                :
+                <code><span>'a&#32;list</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '64', 64)" onmouseover="showTip(event, '64', 64)">
+                <p>
+                  <a id="aggregateOfN">
+                    <a href="#aggregateOfN">
+                      <code><span>aggregateOfN&#32;<span>getBoundingBox&#32;items</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="64">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>aggregateOfN&#32;<span>getBoundingBox&#32;items</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        getBoundingBox
+                      </b>
+                      :
+                      <code><span>'a&#32;->&#32;<span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        items
+                      </b>
+                      :
+                      <code><span>'a&#32;list</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span>&#32;option</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Math.Geometry.BoundingBox2DModule.aggregateOfN``3```')">
+                <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Math.Geometry.BoundingBox2DModule.aggregateOfN``3\'/>')">
+                <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/BoundingBox2D.fs#L405-405" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Combination of [`aggregateOf`](#aggregateOf) and [`aggregateN`](#aggregateN).
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  getBoundingBox
+                </span>
+                :
+                <code><span>'a&#32;->&#32;<span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  items
+                </span>
+                :
+                <code><span>'a&#32;list</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span>&#32;option</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '65', 65)" onmouseover="showTip(event, '65', 65)">
+                <p>
+                  <a id="centerPoint">
+                    <a href="#centerPoint">
+                      <code><span>centerPoint&#32;<span>box</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="65">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>centerPoint&#32;<span>box</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        box
+                      </b>
+                      :
+                      <code><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordiantes</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="/Math.Geometry/reference/math-geometry-point2d-2.html">Point2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Math.Geometry.BoundingBox2DModule.centerPoint``3```')">
+                <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Math.Geometry.BoundingBox2DModule.centerPoint``3\'/>')">
+                <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/BoundingBox2D.fs#L87-87" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  box
+                </span>
+                :
+                <code><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordiantes</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="/Math.Geometry/reference/math-geometry-point2d-2.html">Point2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '66', 66)" onmouseover="showTip(event, '66', 66)">
+                <p>
+                  <a id="containingPoint">
+                    <a href="#containingPoint">
+                      <code><span>containingPoint&#32;<span>point&#32;box</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="66">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>containingPoint&#32;<span>point&#32;box</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        point
+                      </b>
+                      :
+                      <code><span><a href="/Math.Geometry/reference/math-geometry-point2d-2.html">Point2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        box
+                      </b>
+                      :
+                      <code><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Math.Geometry.BoundingBox2DModule.containingPoint``2```')">
+                <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Math.Geometry.BoundingBox2DModule.containingPoint``2\'/>')">
+                <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/BoundingBox2D.fs#L95-95" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Get a bounding box that contains the new point. If the box does not contain the new point, the box will grow
+ to fit the new point. If the point is within the box, the same bounding box is returned.
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  point
+                </span>
+                :
+                <code><span><a href="/Math.Geometry/reference/math-geometry-point2d-2.html">Point2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  box
+                </span>
+                :
+                <code><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '67', 67)" onmouseover="showTip(event, '67', 67)">
+                <p>
+                  <a id="containingPoints">
+                    <a href="#containingPoints">
+                      <code><span>containingPoints&#32;<span>points&#32;box</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="67">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>containingPoints&#32;<span>points&#32;box</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        points
+                      </b>
+                      :
+                      <code><span><span><a href="/Math.Geometry/reference/math-geometry-point2d-2.html">Point2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span>&#32;list</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        box
+                      </b>
+                      :
+                      <code><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Math.Geometry.BoundingBox2DModule.containingPoints``2```')">
+                <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Math.Geometry.BoundingBox2DModule.containingPoints``2\'/>')">
+                <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/BoundingBox2D.fs#L104-104" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  points
+                </span>
+                :
+                <code><span><span><a href="/Math.Geometry/reference/math-geometry-point2d-2.html">Point2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span>&#32;list</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  box
+                </span>
+                :
+                <code><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '68', 68)" onmouseover="showTip(event, '68', 68)">
+                <p>
+                  <a id="contains">
+                    <a href="#contains">
+                      <code><span>contains&#32;<span>target&#32;box</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="68">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>contains&#32;<span>target&#32;box</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        target
+                      </b>
+                      :
+                      <code><span><a href="/Math.Geometry/reference/math-geometry-point2d-2.html">Point2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        box
+                      </b>
+                      :
+                      <code><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code>bool</code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Math.Geometry.BoundingBox2DModule.contains``2```')">
+                <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Math.Geometry.BoundingBox2DModule.contains``2\'/>')">
+                <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/BoundingBox2D.fs#L422-422" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Test to see if the target bounding box is contained withing the bounding box
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  target
+                </span>
+                :
+                <code><span><a href="/Math.Geometry/reference/math-geometry-point2d-2.html">Point2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  box
+                </span>
+                :
+                <code><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code>bool</code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '69', 69)" onmouseover="showTip(event, '69', 69)">
+                <p>
+                  <a id="corners">
+                    <a href="#corners">
+                      <code><span>corners&#32;<span>box</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="69">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>corners&#32;<span>box</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        box
+                      </b>
+                      :
+                      <code><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><span><a href="/Math.Geometry/reference/math-geometry-point2d-2.html">Point2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span>&#32;list</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Math.Geometry.BoundingBox2DModule.corners``2```')">
+                <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Math.Geometry.BoundingBox2DModule.corners``2\'/>')">
+                <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/BoundingBox2D.fs#L61-61" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Returned in clockwise order from top left rotating around clockwise
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  box
+                </span>
+                :
+                <code><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><span><a href="/Math.Geometry/reference/math-geometry-point2d-2.html">Point2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span>&#32;list</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '70', 70)" onmouseover="showTip(event, '70', 70)">
+                <p>
+                  <a id="dimensions">
+                    <a href="#dimensions">
+                      <code><span>dimensions&#32;<span>boundingBox</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="70">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>dimensions&#32;<span>boundingBox</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        boundingBox
+                      </b>
+                      :
+                      <code><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><span><a href="https://docs.microsoft.com/dotnet/api/math.units.quantity-1">Quantity</a>&lt;'Units&gt;</span>&#32;*&#32;<span><a href="https://docs.microsoft.com/dotnet/api/math.units.quantity-1">Quantity</a>&lt;'Units&gt;</span></span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Math.Geometry.BoundingBox2DModule.dimensions``2```')">
+                <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Math.Geometry.BoundingBox2DModule.dimensions``2\'/>')">
+                <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/BoundingBox2D.fs#L80-80" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Get the X and Y dimensions (width and height) of a bounding box.
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  boundingBox
+                </span>
+                :
+                <code><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><span><a href="https://docs.microsoft.com/dotnet/api/math.units.quantity-1">Quantity</a>&lt;'Units&gt;</span>&#32;*&#32;<span><a href="https://docs.microsoft.com/dotnet/api/math.units.quantity-1">Quantity</a>&lt;'Units&gt;</span></span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '71', 71)" onmouseover="showTip(event, '71', 71)">
+                <p>
+                  <a id="empty">
+                    <a href="#empty">
+                      <code><span>empty&#32;<span></span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="71">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>empty&#32;<span></span></span></code>
+                  <br/>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Math.Geometry.BoundingBox2DModule.empty``2```')">
+                <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Math.Geometry.BoundingBox2DModule.empty``2\'/>')">
+                <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/BoundingBox2D.fs#L12-12" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Creates an infinitely small bounding box. This can be used when growing a bounding box around objects
+
+              </p>
+            </div>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '72', 72)" onmouseover="showTip(event, '72', 72)">
+                <p>
+                  <a id="expandBy">
+                    <a href="#expandBy">
+                      <code><span>expandBy&#32;<span>amount&#32;boundingBox</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="72">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>expandBy&#32;<span>amount&#32;boundingBox</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        amount
+                      </b>
+                      :
+                      <code><span><a href="https://docs.microsoft.com/dotnet/api/math.units.quantity-1">Quantity</a>&lt;'Units&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        boundingBox
+                      </b>
+                      :
+                      <code><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Math.Geometry.BoundingBox2DModule.expandBy``2```')">
+                <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Math.Geometry.BoundingBox2DModule.expandBy``2\'/>')">
+                <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/BoundingBox2D.fs#L200-200" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Expand the given bounding box in all directions by the given offset:
+ Negative offsets will be treated as positive (the absolute value will be used),
+ so the resulting box will always be at least as large as the original. If you
+ need to be able to contract a bounding box, use
+ [`offsetBy`](BoundingBox2d#offsetBy) instead.
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  amount
+                </span>
+                :
+                <code><span><a href="https://docs.microsoft.com/dotnet/api/math.units.quantity-1">Quantity</a>&lt;'Units&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  boundingBox
+                </span>
+                :
+                <code><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '73', 73)" onmouseover="showTip(event, '73', 73)">
+                <p>
+                  <a id="from">
+                    <a href="#from">
+                      <code><span>from&#32;<span>p1&#32;p2</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="73">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>from&#32;<span>p1&#32;p2</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        p1
+                      </b>
+                      :
+                      <code><span><a href="/Math.Geometry/reference/math-geometry-point2d-2.html">Point2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        p2
+                      </b>
+                      :
+                      <code><span><a href="/Math.Geometry/reference/math-geometry-point2d-2.html">Point2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'a</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Math.Geometry.BoundingBox2DModule.from``3```')">
+                <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Math.Geometry.BoundingBox2DModule.from``3\'/>')">
+                <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/BoundingBox2D.fs#L19-19" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Create a bounding box that contains the two points
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  p1
+                </span>
+                :
+                <code><span><a href="/Math.Geometry/reference/math-geometry-point2d-2.html">Point2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  p2
+                </span>
+                :
+                <code><span><a href="/Math.Geometry/reference/math-geometry-point2d-2.html">Point2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'a</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '74', 74)" onmouseover="showTip(event, '74', 74)">
+                <p>
+                  <a id="fromExtrema">
+                    <a href="#fromExtrema">
+                      <code><span>fromExtrema&#32;<span>given</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="74">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>fromExtrema&#32;<span>given</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        given
+                      </b>
+                      :
+                      <code><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Math.Geometry.BoundingBox2DModule.fromExtrema``2```')">
+                <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Math.Geometry.BoundingBox2DModule.fromExtrema``2\'/>')">
+                <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/BoundingBox2D.fs#L28-28" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ If the minimum and maximum values are provided in the wrong order (for example
+ if `minX` is greater than `maxX`), then they will be swapped so that the
+ resulting bounding box is valid.
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  given
+                </span>
+                :
+                <code><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '75', 75)" onmouseover="showTip(event, '75', 75)">
+                <p>
+                  <a id="height">
+                    <a href="#height">
+                      <code><span>height&#32;<span>box</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="75">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>height&#32;<span>box</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        box
+                      </b>
+                      :
+                      <code><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://docs.microsoft.com/dotnet/api/math.units.quantity-1">Quantity</a>&lt;'Units&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Math.Geometry.BoundingBox2DModule.height``2```')">
+                <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Math.Geometry.BoundingBox2DModule.height``2\'/>')">
+                <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/BoundingBox2D.fs#L69-69" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  box
+                </span>
+                :
+                <code><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="https://docs.microsoft.com/dotnet/api/math.units.quantity-1">Quantity</a>&lt;'Units&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '76', 76)" onmouseover="showTip(event, '76', 76)">
+                <p>
+                  <a id="hull">
+                    <a href="#hull">
+                      <code><span>hull&#32;<span>first&#32;rest</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="76">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>hull&#32;<span>first&#32;rest</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        first
+                      </b>
+                      :
+                      <code><span><a href="/Math.Geometry/reference/math-geometry-point2d-2.html">Point2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        rest
+                      </b>
+                      :
+                      <code><span><span><a href="/Math.Geometry/reference/math-geometry-point2d-2.html">Point2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span>&#32;list</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Math.Geometry.BoundingBox2DModule.hull``2```')">
+                <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Math.Geometry.BoundingBox2DModule.hull``2\'/>')">
+                <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/BoundingBox2D.fs#L222-222" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Find the bounding box containing one or more input points.
+ Often ends up being used within a match expression.
+ See also [`hullN`](#hullN).
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  first
+                </span>
+                :
+                <code><span><a href="/Math.Geometry/reference/math-geometry-point2d-2.html">Point2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  rest
+                </span>
+                :
+                <code><span><span><a href="/Math.Geometry/reference/math-geometry-point2d-2.html">Point2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span>&#32;list</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '77', 77)" onmouseover="showTip(event, '77', 77)">
+                <p>
+                  <a id="hull3">
+                    <a href="#hull3">
+                      <code><span>hull3&#32;<span>firstPoint&#32;secondPoint&#32;thirdPoint</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="77">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>hull3&#32;<span>firstPoint&#32;secondPoint&#32;thirdPoint</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        firstPoint
+                      </b>
+                      :
+                      <code><span><a href="/Math.Geometry/reference/math-geometry-point2d-2.html">Point2D</a>&lt;<span>'Units,&#32;'Coordiantes</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        secondPoint
+                      </b>
+                      :
+                      <code><span><a href="/Math.Geometry/reference/math-geometry-point2d-2.html">Point2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        thirdPoint
+                      </b>
+                      :
+                      <code><span><a href="/Math.Geometry/reference/math-geometry-point2d-2.html">Point2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Math.Geometry.BoundingBox2DModule.hull3``3```')">
+                <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Math.Geometry.BoundingBox2DModule.hull3``3\'/>')">
+                <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/BoundingBox2D.fs#L289-289" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Build a bounding box that contains all three of the given points.
+ This is equivalent to calling `hull` on three points but is more efficient.
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  firstPoint
+                </span>
+                :
+                <code><span><a href="/Math.Geometry/reference/math-geometry-point2d-2.html">Point2D</a>&lt;<span>'Units,&#32;'Coordiantes</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  secondPoint
+                </span>
+                :
+                <code><span><a href="/Math.Geometry/reference/math-geometry-point2d-2.html">Point2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  thirdPoint
+                </span>
+                :
+                <code><span><a href="/Math.Geometry/reference/math-geometry-point2d-2.html">Point2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '78', 78)" onmouseover="showTip(event, '78', 78)">
+                <p>
+                  <a id="hullN">
+                    <a href="#hullN">
+                      <code><span>hullN&#32;<span>points</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="78">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>hullN&#32;<span>points</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        points
+                      </b>
+                      :
+                      <code><span><span><a href="/Math.Geometry/reference/math-geometry-point2d-2.html">Point2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span>&#32;list</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span>&#32;option</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Math.Geometry.BoundingBox2DModule.hullN``2```')">
+                <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Math.Geometry.BoundingBox2DModule.hullN``2\'/>')">
+                <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/BoundingBox2D.fs#L311-311" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Construct a bounding box containing all _N_ points in the given list. If the
+ list is empty, returns `Nothing`. If you know you have at least one point, you
+ can use [`hull`](#hull) instead.
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  points
+                </span>
+                :
+                <code><span><span><a href="/Math.Geometry/reference/math-geometry-point2d-2.html">Point2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span>&#32;list</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span>&#32;option</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '79', 79)" onmouseover="showTip(event, '79', 79)">
+                <p>
+                  <a id="hullOf">
+                    <a href="#hullOf">
+                      <code><span>hullOf&#32;<span>getPoint&#32;first&#32;rest</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="79">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>hullOf&#32;<span>getPoint&#32;first&#32;rest</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        getPoint
+                      </b>
+                      :
+                      <code><span>'a&#32;->&#32;<span><a href="/Math.Geometry/reference/math-geometry-point2d-2.html">Point2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        first
+                      </b>
+                      :
+                      <code>'a</code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        rest
+                      </b>
+                      :
+                      <code><span>'a&#32;list</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Math.Geometry.BoundingBox2DModule.hullOf``3```')">
+                <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Math.Geometry.BoundingBox2DModule.hullOf``3\'/>')">
+                <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/BoundingBox2D.fs#L256-256" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Like [`hull`](#hull), but lets you work on any kind of item as long as a
+ point can be extracted from it. For example, if you had
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  getPoint
+                </span>
+                :
+                <code><span>'a&#32;->&#32;<span><a href="/Math.Geometry/reference/math-geometry-point2d-2.html">Point2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  first
+                </span>
+                :
+                <code>'a</code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  rest
+                </span>
+                :
+                <code><span>'a&#32;list</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '80', 80)" onmouseover="showTip(event, '80', 80)">
+                <p>
+                  <a id="hullOfN">
+                    <a href="#hullOfN">
+                      <code><span>hullOfN&#32;<span>getBoundingBox&#32;items</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="80">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>hullOfN&#32;<span>getBoundingBox&#32;items</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        getBoundingBox
+                      </b>
+                      :
+                      <code><span>'a&#32;->&#32;<span><a href="/Math.Geometry/reference/math-geometry-point2d-2.html">Point2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        items
+                      </b>
+                      :
+                      <code><span>'a&#32;list</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span>&#32;option</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Math.Geometry.BoundingBox2DModule.hullOfN``3```')">
+                <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Math.Geometry.BoundingBox2DModule.hullOfN``3\'/>')">
+                <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/BoundingBox2D.fs#L317-317" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Combination of [`hullOf`](#hullOf) and [`hullN`](#hullN).
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  getBoundingBox
+                </span>
+                :
+                <code><span>'a&#32;->&#32;<span><a href="/Math.Geometry/reference/math-geometry-point2d-2.html">Point2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  items
+                </span>
+                :
+                <code><span>'a&#32;list</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span>&#32;option</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '81', 81)" onmouseover="showTip(event, '81', 81)">
+                <p>
+                  <a id="intersection">
+                    <a href="#intersection">
+                      <code><span>intersection&#32;<span>first&#32;second</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="81">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>intersection&#32;<span>first&#32;second</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        first
+                      </b>
+                      :
+                      <code><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        second
+                      </b>
+                      :
+                      <code><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span>&#32;option</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Math.Geometry.BoundingBox2DModule.intersection``2```')">
+                <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Math.Geometry.BoundingBox2DModule.intersection``2\'/>')">
+                <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/BoundingBox2D.fs#L439-439" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Attempt to build a bounding box that contains all points common to both
+ given bounding boxes. If the given boxes do not intersect, returns `Nothing`.
+ If two boxes just touch along an edge or at a corner, they are still considered
+ to have an intersection, even though that intersection will have zero area (at
+ least one of its dimensions will be zero).
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  first
+                </span>
+                :
+                <code><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  second
+                </span>
+                :
+                <code><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span>&#32;option</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '82', 82)" onmouseover="showTip(event, '82', 82)">
+                <p>
+                  <a id="intersects">
+                    <a href="#intersects">
+                      <code><span>intersects&#32;<span>first&#32;second</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="82">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>intersects&#32;<span>first&#32;second</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        first
+                      </b>
+                      :
+                      <code><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        second
+                      </b>
+                      :
+                      <code><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code>bool</code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Math.Geometry.BoundingBox2DModule.intersects``2```')">
+                <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Math.Geometry.BoundingBox2DModule.intersects``2\'/>')">
+                <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/BoundingBox2D.fs#L428-428" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  first
+                </span>
+                :
+                <code><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  second
+                </span>
+                :
+                <code><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code>bool</code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '83', 83)" onmouseover="showTip(event, '83', 83)">
+                <p>
+                  <a id="isContainedIn">
+                    <a href="#isContainedIn">
+                      <code><span>isContainedIn&#32;<span>target&#32;box</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="83">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>isContainedIn&#32;<span>target&#32;box</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        target
+                      </b>
+                      :
+                      <code><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        box
+                      </b>
+                      :
+                      <code><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code>bool</code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Math.Geometry.BoundingBox2DModule.isContainedIn``2```')">
+                <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Math.Geometry.BoundingBox2DModule.isContainedIn``2\'/>')">
+                <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/BoundingBox2D.fs#L415-415" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Test to see if the target bounding box is contained withing the bounding box
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  target
+                </span>
+                :
+                <code><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  box
+                </span>
+                :
+                <code><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code>bool</code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '84', 84)" onmouseover="showTip(event, '84', 84)">
+                <p>
+                  <a id="lineSegments">
+                    <a href="#lineSegments">
+                      <code><span>lineSegments&#32;<span>box</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="84">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>lineSegments&#32;<span>box</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        box
+                      </b>
+                      :
+                      <code><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><span><a href="/Math.Geometry/reference/math-geometry-linesegment2d-2.html">LineSegment2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span>&#32;list</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Math.Geometry.BoundingBox2DModule.lineSegments``2```')">
+                <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Math.Geometry.BoundingBox2DModule.lineSegments``2\'/>')">
+                <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/BoundingBox2D.fs#L213-213" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Get the four line segments surrounding the bounding box. The lines are created from the top left point, creating
+ line segments around the bounding box clockwise.
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  box
+                </span>
+                :
+                <code><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><span><a href="/Math.Geometry/reference/math-geometry-linesegment2d-2.html">LineSegment2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span>&#32;list</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '85', 85)" onmouseover="showTip(event, '85', 85)">
+                <p>
+                  <a id="maxX">
+                    <a href="#maxX">
+                      <code><span>maxX&#32;<span>box</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="85">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>maxX&#32;<span>box</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        box
+                      </b>
+                      :
+                      <code><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://docs.microsoft.com/dotnet/api/math.units.quantity-1">Quantity</a>&lt;'Units&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Math.Geometry.BoundingBox2DModule.maxX``2```')">
+                <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Math.Geometry.BoundingBox2DModule.maxX``2\'/>')">
+                <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/BoundingBox2D.fs#L73-73" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  box
+                </span>
+                :
+                <code><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="https://docs.microsoft.com/dotnet/api/math.units.quantity-1">Quantity</a>&lt;'Units&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '86', 86)" onmouseover="showTip(event, '86', 86)">
+                <p>
+                  <a id="maxY">
+                    <a href="#maxY">
+                      <code><span>maxY&#32;<span>box</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="86">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>maxY&#32;<span>box</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        box
+                      </b>
+                      :
+                      <code><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://docs.microsoft.com/dotnet/api/math.units.quantity-1">Quantity</a>&lt;'Units&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Math.Geometry.BoundingBox2DModule.maxY``2```')">
+                <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Math.Geometry.BoundingBox2DModule.maxY``2\'/>')">
+                <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/BoundingBox2D.fs#L77-77" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  box
+                </span>
+                :
+                <code><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="https://docs.microsoft.com/dotnet/api/math.units.quantity-1">Quantity</a>&lt;'Units&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '87', 87)" onmouseover="showTip(event, '87', 87)">
+                <p>
+                  <a id="midX">
+                    <a href="#midX">
+                      <code><span>midX&#32;<span>box</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="87">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>midX&#32;<span>box</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        box
+                      </b>
+                      :
+                      <code><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordiantes</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://docs.microsoft.com/dotnet/api/math.units.quantity-1">Quantity</a>&lt;'Units&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Math.Geometry.BoundingBox2DModule.midX``2```')">
+                <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Math.Geometry.BoundingBox2DModule.midX``2\'/>')">
+                <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/BoundingBox2D.fs#L83-83" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  box
+                </span>
+                :
+                <code><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordiantes</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="https://docs.microsoft.com/dotnet/api/math.units.quantity-1">Quantity</a>&lt;'Units&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '88', 88)" onmouseover="showTip(event, '88', 88)">
+                <p>
+                  <a id="midY">
+                    <a href="#midY">
+                      <code><span>midY&#32;<span>box</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="88">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>midY&#32;<span>box</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        box
+                      </b>
+                      :
+                      <code><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordiantes</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://docs.microsoft.com/dotnet/api/math.units.quantity-1">Quantity</a>&lt;'Units&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Math.Geometry.BoundingBox2DModule.midY``2```')">
+                <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Math.Geometry.BoundingBox2DModule.midY``2\'/>')">
+                <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/BoundingBox2D.fs#L85-85" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  box
+                </span>
+                :
+                <code><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordiantes</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="https://docs.microsoft.com/dotnet/api/math.units.quantity-1">Quantity</a>&lt;'Units&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '89', 89)" onmouseover="showTip(event, '89', 89)">
+                <p>
+                  <a id="minX">
+                    <a href="#minX">
+                      <code><span>minX&#32;<span>box</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="89">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>minX&#32;<span>box</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        box
+                      </b>
+                      :
+                      <code><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://docs.microsoft.com/dotnet/api/math.units.quantity-1">Quantity</a>&lt;'Units&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Math.Geometry.BoundingBox2DModule.minX``2```')">
+                <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Math.Geometry.BoundingBox2DModule.minX``2\'/>')">
+                <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/BoundingBox2D.fs#L71-71" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  box
+                </span>
+                :
+                <code><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="https://docs.microsoft.com/dotnet/api/math.units.quantity-1">Quantity</a>&lt;'Units&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '90', 90)" onmouseover="showTip(event, '90', 90)">
+                <p>
+                  <a id="minY">
+                    <a href="#minY">
+                      <code><span>minY&#32;<span>box</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="90">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>minY&#32;<span>box</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        box
+                      </b>
+                      :
+                      <code><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://docs.microsoft.com/dotnet/api/math.units.quantity-1">Quantity</a>&lt;'Units&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Math.Geometry.BoundingBox2DModule.minY``2```')">
+                <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Math.Geometry.BoundingBox2DModule.minY``2\'/>')">
+                <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/BoundingBox2D.fs#L75-75" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  box
+                </span>
+                :
+                <code><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="https://docs.microsoft.com/dotnet/api/math.units.quantity-1">Quantity</a>&lt;'Units&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '91', 91)" onmouseover="showTip(event, '91', 91)">
+                <p>
+                  <a id="offsetBy">
+                    <a href="#offsetBy">
+                      <code><span>offsetBy&#32;<span>amount&#32;boundingBox</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="91">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>offsetBy&#32;<span>amount&#32;boundingBox</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        amount
+                      </b>
+                      :
+                      <code><span><a href="https://docs.microsoft.com/dotnet/api/math.units.quantity-1">Quantity</a>&lt;'Units&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        boundingBox
+                      </b>
+                      :
+                      <code><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span>&#32;option</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Math.Geometry.BoundingBox2DModule.offsetBy``2```')">
+                <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Math.Geometry.BoundingBox2DModule.offsetBy``2\'/>')">
+                <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/BoundingBox2D.fs#L182-182" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Expand or shrink the given bounding box in all the directions by the given
+ distance. A positive offset will cause the bounding box to expand and a negative
+ value will cause it to shrink.
+ Returns `None` if the offset is negative and large enough to cause the
+ bounding box to vanish (that is, if the offset is larger than half the height or
+ half the width of the bounding box, whichever is less).
+ If you only want to expand a bounding box, you can use
+ [`expandBy`](BoundingBox2d#expandBy) instead (which does not return an `Option`).
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  amount
+                </span>
+                :
+                <code><span><a href="https://docs.microsoft.com/dotnet/api/math.units.quantity-1">Quantity</a>&lt;'Units&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  boundingBox
+                </span>
+                :
+                <code><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span>&#32;option</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '92', 92)" onmouseover="showTip(event, '92', 92)">
+                <p>
+                  <a id="overlappingByAtLeast">
+                    <a href="#overlappingByAtLeast">
+                      <code><span>overlappingByAtLeast&#32;<span>tolerance&#32;firstBox&#32;secondBox</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="92">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>overlappingByAtLeast&#32;<span>tolerance&#32;firstBox&#32;secondBox</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        tolerance
+                      </b>
+                      :
+                      <code><span><a href="https://docs.microsoft.com/dotnet/api/math.units.quantity-1">Quantity</a>&lt;'Units&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        firstBox
+                      </b>
+                      :
+                      <code><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        secondBox
+                      </b>
+                      :
+                      <code><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code>bool</code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Math.Geometry.BoundingBox2DModule.overlappingByAtLeast``2```')">
+                <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Math.Geometry.BoundingBox2DModule.overlappingByAtLeast``2\'/>')">
+                <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/BoundingBox2D.fs#L461-461" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Check two boxes overlap by at least the given amount. For example, you could
+ implement a tolerant collision check (one that only returns true if the boxes
+ overlap by at least a millimeter, and ignores boxes that just barely touch each
+ other).
+
+ Overlap is defined as the _minimum_ distance one box would have to move so that
+ it did not touch the other. Boxes that just touch are considered to have an
+ overlap of zero.
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  tolerance
+                </span>
+                :
+                <code><span><a href="https://docs.microsoft.com/dotnet/api/math.units.quantity-1">Quantity</a>&lt;'Units&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  firstBox
+                </span>
+                :
+                <code><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  secondBox
+                </span>
+                :
+                <code><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code>bool</code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '93', 93)" onmouseover="showTip(event, '93', 93)">
+                <p>
+                  <a id="scaleAbout">
+                    <a href="#scaleAbout">
+                      <code><span>scaleAbout&#32;<span>point&#32;scale&#32;boundingBox</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="93">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>scaleAbout&#32;<span>point&#32;scale&#32;boundingBox</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        point
+                      </b>
+                      :
+                      <code><span><a href="/Math.Geometry/reference/math-geometry-point2d-2.html">Point2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        scale
+                      </b>
+                      :
+                      <code>float</code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        boundingBox
+                      </b>
+                      :
+                      <code><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Math.Geometry.BoundingBox2DModule.scaleAbout``2```')">
+                <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Math.Geometry.BoundingBox2DModule.scaleAbout``2\'/>')">
+                <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/BoundingBox2D.fs#L111-111" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Scale a bounding box about a given point by a given scale.
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  point
+                </span>
+                :
+                <code><span><a href="/Math.Geometry/reference/math-geometry-point2d-2.html">Point2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  scale
+                </span>
+                :
+                <code>float</code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  boundingBox
+                </span>
+                :
+                <code><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '94', 94)" onmouseover="showTip(event, '94', 94)">
+                <p>
+                  <a id="separatedByAtLeast">
+                    <a href="#separatedByAtLeast">
+                      <code><span>separatedByAtLeast&#32;<span>tolerance&#32;firstBox&#32;secondBox</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="94">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>separatedByAtLeast&#32;<span>tolerance&#32;firstBox&#32;secondBox</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        tolerance
+                      </b>
+                      :
+                      <code><span><a href="https://docs.microsoft.com/dotnet/api/math.units.quantity-1">Quantity</a>&lt;'Units&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        firstBox
+                      </b>
+                      :
+                      <code><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        secondBox
+                      </b>
+                      :
+                      <code><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code>bool</code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Math.Geometry.BoundingBox2DModule.separatedByAtLeast``2```')">
+                <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Math.Geometry.BoundingBox2DModule.separatedByAtLeast``2\'/>')">
+                <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/BoundingBox2D.fs#L488-488" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Check if two boxes are separated by at least the given amount. For example,
+ to perform clash detection between some objects, you could use `separatedBy` on
+ those objects' bounding boxes as a quick check to see if the objects had a gap
+ of at least 1 cm between them.
+ Separation is defined as the _minimum_ distance one box would have to move so
+ that it touched the other. (Note that this may be a _diagonal_ distance between
+ corners.) Boxes that just touch are considered to have a separation of zero.
+ will return true even if the two boxes just touch each other.
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  tolerance
+                </span>
+                :
+                <code><span><a href="https://docs.microsoft.com/dotnet/api/math.units.quantity-1">Quantity</a>&lt;'Units&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  firstBox
+                </span>
+                :
+                <code><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  secondBox
+                </span>
+                :
+                <code><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code>bool</code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '95', 95)" onmouseover="showTip(event, '95', 95)">
+                <p>
+                  <a id="singleton">
+                    <a href="#singleton">
+                      <code><span>singleton&#32;<span>p</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="95">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>singleton&#32;<span>p</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        p
+                      </b>
+                      :
+                      <code><span><a href="/Math.Geometry/reference/math-geometry-point2d-2.html">Point2D</a>&lt;<span>'Units,&#32;'Coordinastes</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Math.Geometry.BoundingBox2DModule.singleton``3```')">
+                <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Math.Geometry.BoundingBox2DModule.singleton``3\'/>')">
+                <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/BoundingBox2D.fs#L55-55" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  p
+                </span>
+                :
+                <code><span><a href="/Math.Geometry/reference/math-geometry-point2d-2.html">Point2D</a>&lt;<span>'Units,&#32;'Coordinastes</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '96', 96)" onmouseover="showTip(event, '96', 96)">
+                <p>
+                  <a id="translateBy">
+                    <a href="#translateBy">
+                      <code><span>translateBy&#32;<span>displacement&#32;boundingBox</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="96">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>translateBy&#32;<span>displacement&#32;boundingBox</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        displacement
+                      </b>
+                      :
+                      <code><span><a href="/Math.Geometry/reference/math-geometry-vector2d-2.html">Vector2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        boundingBox
+                      </b>
+                      :
+                      <code><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Math.Geometry.BoundingBox2DModule.translateBy``2```')">
+                <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Math.Geometry.BoundingBox2DModule.translateBy``2\'/>')">
+                <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/BoundingBox2D.fs#L139-139" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Translate a bounding box by a given displacement.
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  displacement
+                </span>
+                :
+                <code><span><a href="/Math.Geometry/reference/math-geometry-vector2d-2.html">Vector2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  boundingBox
+                </span>
+                :
+                <code><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '97', 97)" onmouseover="showTip(event, '97', 97)">
+                <p>
+                  <a id="translateIn">
+                    <a href="#translateIn">
+                      <code><span>translateIn&#32;<span>direction&#32;distance&#32;boundingBox</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="97">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>translateIn&#32;<span>direction&#32;distance&#32;boundingBox</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        direction
+                      </b>
+                      :
+                      <code><span><a href="/Math.Geometry/reference/math-geometry-direction2d-1.html">Direction2D</a>&lt;'Coordinates&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        distance
+                      </b>
+                      :
+                      <code><span><a href="https://docs.microsoft.com/dotnet/api/math.units.quantity-1">Quantity</a>&lt;'Units&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        boundingBox
+                      </b>
+                      :
+                      <code><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Math.Geometry.BoundingBox2DModule.translateIn``2```')">
+                <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Math.Geometry.BoundingBox2DModule.translateIn``2\'/>')">
+                <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/BoundingBox2D.fs#L154-154" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Translate a bounding box in a given direction by a given distance.
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  direction
+                </span>
+                :
+                <code><span><a href="/Math.Geometry/reference/math-geometry-direction2d-1.html">Direction2D</a>&lt;'Coordinates&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  distance
+                </span>
+                :
+                <code><span><a href="https://docs.microsoft.com/dotnet/api/math.units.quantity-1">Quantity</a>&lt;'Units&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  boundingBox
+                </span>
+                :
+                <code><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '98', 98)" onmouseover="showTip(event, '98', 98)">
+                <p>
+                  <a id="union">
+                    <a href="#union">
+                      <code><span>union&#32;<span>first&#32;second</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="98">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>union&#32;<span>first&#32;second</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        first
+                      </b>
+                      :
+                      <code><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        second
+                      </b>
+                      :
+                      <code><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Math.Geometry.BoundingBox2DModule.union``2```')">
+                <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Math.Geometry.BoundingBox2DModule.union``2\'/>')">
+                <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/BoundingBox2D.fs#L523-523" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Create a bounding box that contains both bounding boxes.
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  first
+                </span>
+                :
+                <code><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  second
+                </span>
+                :
+                <code><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '99', 99)" onmouseover="showTip(event, '99', 99)">
+                <p>
+                  <a id="unsafeOffsetBy">
+                    <a href="#unsafeOffsetBy">
+                      <code><span>unsafeOffsetBy&#32;<span>amount&#32;boundingBox</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="99">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>unsafeOffsetBy&#32;<span>amount&#32;boundingBox</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        amount
+                      </b>
+                      :
+                      <code><span><a href="https://docs.microsoft.com/dotnet/api/math.units.quantity-1">Quantity</a>&lt;'Units&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        boundingBox
+                      </b>
+                      :
+                      <code><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Math.Geometry.BoundingBox2DModule.unsafeOffsetBy``2```')">
+                <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Math.Geometry.BoundingBox2DModule.unsafeOffsetBy``2\'/>')">
+                <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/BoundingBox2D.fs#L164-164" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Offsets boundingBox irrespective of the resulting bounding box is valid or
+ not.
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  amount
+                </span>
+                :
+                <code><span><a href="https://docs.microsoft.com/dotnet/api/math.units.quantity-1">Quantity</a>&lt;'Units&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  boundingBox
+                </span>
+                :
+                <code><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '100', 100)" onmouseover="showTip(event, '100', 100)">
+                <p>
+                  <a id="width">
+                    <a href="#width">
+                      <code><span>width&#32;<span>box</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="100">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>width&#32;<span>box</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        box
+                      </b>
+                      :
+                      <code><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://docs.microsoft.com/dotnet/api/math.units.quantity-1">Quantity</a>&lt;'Units&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Math.Geometry.BoundingBox2DModule.width``2```')">
+                <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Math.Geometry.BoundingBox2DModule.width``2\'/>')">
+                <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/BoundingBox2D.fs#L67-67" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  box
+                </span>
+                :
+                <code><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="https://docs.microsoft.com/dotnet/api/math.units.quantity-1">Quantity</a>&lt;'Units&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '101', 101)" onmouseover="showTip(event, '101', 101)">
+                <p>
+                  <a id="withDimensions">
+                    <a href="#withDimensions">
+                      <code><span>withDimensions&#32;<span><span>(<span>givenWidth,&#32;givenHeight</span>)</span>&#32;givenCenterPoint</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="101">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>withDimensions&#32;<span><span>(<span>givenWidth,&#32;givenHeight</span>)</span>&#32;givenCenterPoint</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        givenWidth
+                      </b>
+                      :
+                      <code><span><a href="https://docs.microsoft.com/dotnet/api/math.units.quantity-1">Quantity</a>&lt;'Units&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        givenHeight
+                      </b>
+                      :
+                      <code><span><a href="https://docs.microsoft.com/dotnet/api/math.units.quantity-1">Quantity</a>&lt;'Units&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        givenCenterPoint
+                      </b>
+                      :
+                      <code><span><a href="/Math.Geometry/reference/math-geometry-point2d-2.html">Point2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Math.Geometry.BoundingBox2DModule.withDimensions``2```')">
+                <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Math.Geometry.BoundingBox2DModule.withDimensions``2\'/>')">
+                <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/BoundingBox2D.fs#L41-41" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  givenWidth
+                </span>
+                :
+                <code><span><a href="https://docs.microsoft.com/dotnet/api/math.units.quantity-1">Quantity</a>&lt;'Units&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  givenHeight
+                </span>
+                :
+                <code><span><a href="https://docs.microsoft.com/dotnet/api/math.units.quantity-1">Quantity</a>&lt;'Units&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  givenCenterPoint
+                </span>
+                :
+                <code><span><a href="/Math.Geometry/reference/math-geometry-point2d-2.html">Point2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+</div>
+            
+        </div>
+
+        <!-- BEGIN SEARCH BOX: this adds support for the search box -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.css" />
+        <script type="text/javascript">var fsdocs_search_baseurl = '/Math.Geometry/';</script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.8/lunr.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.min.js"></script>
+        <script type="text/javascript" src="/Math.Geometry/content/fsdocs-search.js"></script>
+        <!-- END SEARCH BOX: this adds support for the search box -->
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,2742 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Rectangle2D (Math.Geometry)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="Thomas Waters">
+
+    <link rel="stylesheet" id="theme_link" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.6.0/materia/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+    <link type="text/css" rel="stylesheet" href="/Math.Geometry/content/navbar-fixed-left.css" />
+    <link type="text/css" rel="stylesheet" href="/Math.Geometry/content/fsdocs-default.css" />
+    <link type="text/css" rel="stylesheet" href="/Math.Geometry/content/fsdocs-custom.css" />
+    <script type="text/javascript" src="/Math.Geometry/content/fsdocs-tips.js"></script>
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!-- BEGIN SEARCH BOX: this adds support for the search box -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.css" />
+    <!-- END SEARCH BOX: this adds support for the search box -->
+    
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md navbar-light bg-secondary fixed-left" id="fsdocs-nav">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse navbar-nav-scroll" id="navbarsExampleDefault">
+            <a href="/Math.Geometry/"><img id="fsdocs-logo" src="/Math.Geometry/img/logo.png" /></a>
+            <!-- BEGIN SEARCH BOX: this adds support for the search box -->
+            <div id="header">
+                <div class="searchbox" id="fsdocs-searchbox">
+                    <label for="search-by">
+                        <i class="fas fa-search"></i>
+                    </label>
+                    <input data-search-input="" id="search-by" type="search" placeholder="Search..." />
+                    <span data-search-clear="">
+                        <i class="fas fa-times"></i>
+                    </span>
+                </div>
+            </div>
+
+            <!-- END SEARCH BOX: this adds support for the search box -->
+            <ul class="navbar-nav">
+                <li class="nav-header">Links</li>
+                <li class="nav-item" id="fsdocs-license-link"><a class="nav-link" href="https://github.com/Evelios/Math.Geometry/blob/master/LICENSE.md">License</a></li>
+                <li class="nav-item" id="fsdocs-release-notes-link"><a class="nav-link" href="https://github.com/Evelios/Math.Geometry/blob/master/RELEASE_NOTES.md">Release Notes</a></li>
+                <li class="nav-item" id="fsdocs-repository-link"><a class="nav-link" href="https://github.com/Evelios/Math.Geometry/">Source Repository</a></li>
+                <li class="nav-header">
+  Modules
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="/Math.Geometry/length.html">
+    Lengths
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="/Math.Geometry/interval.html">
+    Interval
+  </a>
+</li>             
+<li class="nav-header">
+  2D Modules
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="/Math.Geometry/arc.html">
+    2D Arc
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="/Math.Geometry/axes.html">
+    2D Axis
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="/Math.Geometry/bounding-box.html">
+    2D Bounding Box
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="/Math.Geometry/circle.html">
+    2D Circle
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="/Math.Geometry/direction.html">
+    2D Direction
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="/Math.Geometry/ellipse.html">
+    2D Ellipse
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="/Math.Geometry/frame.html">
+    2D Frame
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="/Math.Geometry/line-segment.html">
+    2D Line Segment
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="/Math.Geometry/point.html">
+    2D Points
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="/Math.Geometry/polygon.html">
+    2D Polygon
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="/Math.Geometry/polyline.html">
+    2D Poly-Line
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="/Math.Geometry/size.html">
+    2D Size
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="/Math.Geometry/triangle.html">
+    2D Triangle
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="/Math.Geometry/vector.html">
+    2D Vectors
+  </a>
+</li>
+                <li class="nav-header">
+  API Reference
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="/Math.Geometry/reference/index.html">
+    All Namespaces
+  </a>
+</li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="masthead">
+            <h3 class="muted"><a href="/Math.Geometry/">Math.Geometry</a></h3>
+        </div>
+        <hr />
+        <div class="container" id="fsdocs-content">
+            <div>
+  <h2>
+    Rectangle2D Module
+  </h2>
+  <dl class="fsdocs-metadata">
+    <dt>
+      Namespace: 
+      <a href="/Math.Geometry/reference/math-geometry.html">
+        Math.Geometry
+      </a>
+    </dt>
+    <dt>
+      Assembly: Math.Geometry.dll
+    </dt>
+  </dl>
+  <div class="fsdocs-xmldoc">
+    <div>
+      <p class="fsdocs-summary">
+        
+      </p>
+    </div>
+  </div>
+  <div>
+    <h3>
+      Functions and values
+    </h3>
+    <table class="table outer-list fsdocs-member-list">
+      <thead>
+        <tr>
+          <td class="fsdocs-member-list-header">
+            Function or value
+          </td>
+          <td class="fsdocs-member-list-header">
+            Description
+          </td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '344', 344)" onmouseover="showTip(event, '344', 344)">
+                <p>
+                  <a id="area">
+                    <a href="#area">
+                      <code><span>area&#32;<span>rectangle</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="344">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>area&#32;<span>rectangle</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        rectangle
+                      </b>
+                      :
+                      <code><span><a href="/Math.Geometry/reference/math-geometry-rectangle2d-2.html">Rectangle2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://docs.microsoft.com/dotnet/api/math.units.quantity-1">Quantity</a>&lt;<span>Squared&lt;'Units&gt;</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Math.Geometry.Rectangle2DModule.area``2```')">
+                <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Math.Geometry.Rectangle2DModule.area``2\'/>')">
+                <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/Rectangle2D.fs#L190-190" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Get the area of a rectangle.
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  rectangle
+                </span>
+                :
+                <code><span><a href="/Math.Geometry/reference/math-geometry-rectangle2d-2.html">Rectangle2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="https://docs.microsoft.com/dotnet/api/math.units.quantity-1">Quantity</a>&lt;<span>Squared&lt;'Units&gt;</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '345', 345)" onmouseover="showTip(event, '345', 345)">
+                <p>
+                  <a id="axes">
+                    <a href="#axes">
+                      <code><span>axes&#32;<span>rectangle</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="345">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>axes&#32;<span>rectangle</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        rectangle
+                      </b>
+                      :
+                      <code><span><a href="/Math.Geometry/reference/math-geometry-rectangle2d-2.html">Rectangle2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="/Math.Geometry/reference/math-geometry-frame2d-3.html">Frame2D</a>&lt;<span>'Units,&#32;'Coordinates,&#32;'Defines</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Math.Geometry.Rectangle2DModule.axes``3```')">
+                <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Math.Geometry.Rectangle2DModule.axes``3\'/>')">
+                <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/Rectangle2D.fs#L160-160" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Get the central axes of a rectangle as a `Frame2D`:
+     rectangle =
+         Rectangle2D.with
+             (Length.meters 2)
+             (Length.meters 5)
+             (Length.meters 1)
+             (Length.meters 3)
+     Rectangle2D.axes rectangle
+     --> Frame2D.atPoint (Point2D.meters 3.5 2)
+ The origin point of the frame will be the center point of the rectangle.
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  rectangle
+                </span>
+                :
+                <code><span><a href="/Math.Geometry/reference/math-geometry-rectangle2d-2.html">Rectangle2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="/Math.Geometry/reference/math-geometry-frame2d-3.html">Frame2D</a>&lt;<span>'Units,&#32;'Coordinates,&#32;'Defines</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '346', 346)" onmouseover="showTip(event, '346', 346)">
+                <p>
+                  <a id="boundingBox">
+                    <a href="#boundingBox">
+                      <code><span>boundingBox&#32;<span>rectangle</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="346">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>boundingBox&#32;<span>rectangle</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        rectangle
+                      </b>
+                      :
+                      <code><span><a href="/Math.Geometry/reference/math-geometry-rectangle2d-2.html">Rectangle2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Math.Geometry.Rectangle2DModule.boundingBox``2```')">
+                <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Math.Geometry.Rectangle2DModule.boundingBox``2\'/>')">
+                <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/Rectangle2D.fs#L261-261" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Get the minimal bounding box containing a given rectangle. This will have
+ exactly the same shape and size as the rectangle itself if the rectangle is
+ axis-aligned, but will be larger than the rectangle if the rectangle is at an
+ angle.
+     square =
+         Rectangle2D.with
+             { x1 = Length.meters 0
+             , x2 = Length.meters 1
+             , y1 = Length.meters 0
+             , y2 = Length.meters 1
+             }
+     diamond =
+         square
+             |> Rectangle2D.rotateAround Point2D.origin
+                 (Angle.degrees 45)
+     Rectangle2D.boundingBox diamond
+     --> BoundingBox2D.from
+     -->     (Point2D.meters -0.7071 0)
+     -->     (Point2D.meters 0.7071 1.4142)
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  rectangle
+                </span>
+                :
+                <code><span><a href="/Math.Geometry/reference/math-geometry-rectangle2d-2.html">Rectangle2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '347', 347)" onmouseover="showTip(event, '347', 347)">
+                <p>
+                  <a id="centerPoint">
+                    <a href="#centerPoint">
+                      <code><span>centerPoint&#32;<span>rectangle</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="347">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>centerPoint&#32;<span>rectangle</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        rectangle
+                      </b>
+                      :
+                      <code><span><a href="/Math.Geometry/reference/math-geometry-rectangle2d-2.html">Rectangle2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="/Math.Geometry/reference/math-geometry-point2d-2.html">Point2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Math.Geometry.Rectangle2DModule.centerPoint``2```')">
+                <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Math.Geometry.Rectangle2DModule.centerPoint``2\'/>')">
+                <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/Rectangle2D.fs#L172-172" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Get the center point of a rectangle.
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  rectangle
+                </span>
+                :
+                <code><span><a href="/Math.Geometry/reference/math-geometry-rectangle2d-2.html">Rectangle2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="/Math.Geometry/reference/math-geometry-point2d-2.html">Point2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '348', 348)" onmouseover="showTip(event, '348', 348)">
+                <p>
+                  <a id="centeredOn">
+                    <a href="#centeredOn">
+                      <code><span>centeredOn&#32;<span>givenAxes&#32;dimensions</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="348">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>centeredOn&#32;<span>givenAxes&#32;dimensions</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        givenAxes
+                      </b>
+                      :
+                      <code><span><a href="/Math.Geometry/reference/math-geometry-frame2d-3.html">Frame2D</a>&lt;<span>'Units,&#32;'Coordinates,&#32;'Defines</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        dimensions
+                      </b>
+                      :
+                      <code><span><a href="/Math.Geometry/reference/math-geometry-size2d-1.html">Size2D</a>&lt;'Units&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="/Math.Geometry/reference/math-geometry-rectangle2d-2.html">Rectangle2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Math.Geometry.Rectangle2DModule.centeredOn``3```')">
+                <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Math.Geometry.Rectangle2DModule.centeredOn``3\'/>')">
+                <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/Rectangle2D.fs#L124-124" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Construct a frame centered on the given axes, with the given overall
+ dimensions;
+     Rectangle2D.withDimensions dimensions angle centerPoint
+ could be written as
+     Rectangle2D.centeredOn
+         (Frame2D.withAngle angle centerPoint)
+         dimensions
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  givenAxes
+                </span>
+                :
+                <code><span><a href="/Math.Geometry/reference/math-geometry-frame2d-3.html">Frame2D</a>&lt;<span>'Units,&#32;'Coordinates,&#32;'Defines</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  dimensions
+                </span>
+                :
+                <code><span><a href="/Math.Geometry/reference/math-geometry-size2d-1.html">Size2D</a>&lt;'Units&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="/Math.Geometry/reference/math-geometry-rectangle2d-2.html">Rectangle2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '349', 349)" onmouseover="showTip(event, '349', 349)">
+                <p>
+                  <a id="contains">
+                    <a href="#contains">
+                      <code><span>contains&#32;<span>point&#32;rectangle</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="349">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>contains&#32;<span>point&#32;rectangle</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        point
+                      </b>
+                      :
+                      <code><span><a href="/Math.Geometry/reference/math-geometry-point2d-2.html">Point2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        rectangle
+                      </b>
+                      :
+                      <code><span><a href="/Math.Geometry/reference/math-geometry-rectangle2d-2.html">Rectangle2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code>bool</code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Math.Geometry.Rectangle2DModule.contains``2```')">
+                <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Math.Geometry.Rectangle2DModule.contains``2\'/>')">
+                <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/Rectangle2D.fs#L215-215" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Check if a rectangle contains a given point.
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  point
+                </span>
+                :
+                <code><span><a href="/Math.Geometry/reference/math-geometry-point2d-2.html">Point2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  rectangle
+                </span>
+                :
+                <code><span><a href="/Math.Geometry/reference/math-geometry-rectangle2d-2.html">Rectangle2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code>bool</code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '350', 350)" onmouseover="showTip(event, '350', 350)">
+                <p>
+                  <a id="dimensions">
+                    <a href="#dimensions">
+                      <code><span>dimensions&#32;<span>rectangle</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="350">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>dimensions&#32;<span>rectangle</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        rectangle
+                      </b>
+                      :
+                      <code><span><a href="/Math.Geometry/reference/math-geometry-rectangle2d-2.html">Rectangle2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="/Math.Geometry/reference/math-geometry-size2d-1.html">Size2D</a>&lt;'Units&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Math.Geometry.Rectangle2DModule.dimensions``2```')">
+                <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Math.Geometry.Rectangle2DModule.dimensions``2\'/>')">
+                <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/Rectangle2D.fs#L186-186" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Get the overall dimensions (width and height) of a rectangle:
+     rectangle =
+         Rectangle2D.with
+             { x1 = Length.meters 2
+             , x2 = Length.meters 5
+             , y1 = Length.meters 1
+             , y2 = Length.meters 3
+             }
+     Rectangle2D.dimensions rectangle
+     --> ( Length.meters 3, Length.meters 2 )
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  rectangle
+                </span>
+                :
+                <code><span><a href="/Math.Geometry/reference/math-geometry-rectangle2d-2.html">Rectangle2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="/Math.Geometry/reference/math-geometry-size2d-1.html">Size2D</a>&lt;'Units&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '351', 351)" onmouseover="showTip(event, '351', 351)">
+                <p>
+                  <a id="edges">
+                    <a href="#edges">
+                      <code><span>edges&#32;<span>rectangle</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="351">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>edges&#32;<span>rectangle</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        rectangle
+                      </b>
+                      :
+                      <code><span><a href="/Math.Geometry/reference/math-geometry-rectangle2d-2.html">Rectangle2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><span><a href="/Math.Geometry/reference/math-geometry-linesegment2d-2.html">LineSegment2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span>&#32;list</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Math.Geometry.Rectangle2DModule.edges``2```')">
+                <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Math.Geometry.Rectangle2DModule.edges``2\'/>')">
+                <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/Rectangle2D.fs#L228-228" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Get the edges of a rectangle as a list. The edges will be returned
+ in counterclockwise order if the rectangle's axes are right-handed, and
+ clockwise order if the axes are left-handed.
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  rectangle
+                </span>
+                :
+                <code><span><a href="/Math.Geometry/reference/math-geometry-rectangle2d-2.html">Rectangle2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><span><a href="/Math.Geometry/reference/math-geometry-linesegment2d-2.html">LineSegment2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span>&#32;list</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '352', 352)" onmouseover="showTip(event, '352', 352)">
+                <p>
+                  <a id="from">
+                    <a href="#from">
+                      <code><span>from&#32;<span>x1&#32;y1&#32;x2&#32;y2</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="352">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>from&#32;<span>x1&#32;y1&#32;x2&#32;y2</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        x1
+                      </b>
+                      :
+                      <code><span><a href="https://docs.microsoft.com/dotnet/api/math.units.quantity-1">Quantity</a>&lt;<a href="https://docs.microsoft.com/dotnet/api/math.units.meters">Meters</a>&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        y1
+                      </b>
+                      :
+                      <code><span><a href="https://docs.microsoft.com/dotnet/api/math.units.quantity-1">Quantity</a>&lt;<a href="https://docs.microsoft.com/dotnet/api/math.units.meters">Meters</a>&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        x2
+                      </b>
+                      :
+                      <code><span><a href="https://docs.microsoft.com/dotnet/api/math.units.quantity-1">Quantity</a>&lt;<a href="https://docs.microsoft.com/dotnet/api/math.units.meters">Meters</a>&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        y2
+                      </b>
+                      :
+                      <code><span><a href="https://docs.microsoft.com/dotnet/api/math.units.quantity-1">Quantity</a>&lt;<a href="https://docs.microsoft.com/dotnet/api/math.units.meters">Meters</a>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="/Math.Geometry/reference/math-geometry-rectangle2d-2.html">Rectangle2D</a>&lt;<span><a href="https://docs.microsoft.com/dotnet/api/math.units.meters">Meters</a>,&#32;'Coordinates</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Math.Geometry.Rectangle2DModule.from``1```')">
+                <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Math.Geometry.Rectangle2DModule.from``1\'/>')">
+                <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/Rectangle2D.fs#L55-55" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Construct an axis-aligned rectangle given the X and Y coordinates of two
+ diagonally opposite vertices. The X and Y directions of the resulting rectangle
+ are determined by the order of the given values:
+   - If `x1 <= x2`, then the rectangle's X direction will be
+     `Direction2D.positiveX`, otherwise it will be `Direction2D.negativeX`
+   - If `y1 <= y2`, then the rectangle's Y direction will be
+     `Direction2D.positiveY`, otherwise it will be `Direction2D.negativeY`
+ Therefore, something like
+     Rectangle2D.from
+         (Pixels.pixels 0)
+         (Pixels.pixels 300)
+         (Pixels.pixels 500)
+         (Pixels.pixels 0)
+ would have its X direction equal to `Direction2D.positiveX` and its Y direction
+ equal to `Direction2D.negativeY`.
+ -}
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  x1
+                </span>
+                :
+                <code><span><a href="https://docs.microsoft.com/dotnet/api/math.units.quantity-1">Quantity</a>&lt;<a href="https://docs.microsoft.com/dotnet/api/math.units.meters">Meters</a>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  y1
+                </span>
+                :
+                <code><span><a href="https://docs.microsoft.com/dotnet/api/math.units.quantity-1">Quantity</a>&lt;<a href="https://docs.microsoft.com/dotnet/api/math.units.meters">Meters</a>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  x2
+                </span>
+                :
+                <code><span><a href="https://docs.microsoft.com/dotnet/api/math.units.quantity-1">Quantity</a>&lt;<a href="https://docs.microsoft.com/dotnet/api/math.units.meters">Meters</a>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  y2
+                </span>
+                :
+                <code><span><a href="https://docs.microsoft.com/dotnet/api/math.units.quantity-1">Quantity</a>&lt;<a href="https://docs.microsoft.com/dotnet/api/math.units.meters">Meters</a>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="/Math.Geometry/reference/math-geometry-rectangle2d-2.html">Rectangle2D</a>&lt;<span><a href="https://docs.microsoft.com/dotnet/api/math.units.meters">Meters</a>,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '353', 353)" onmouseover="showTip(event, '353', 353)">
+                <p>
+                  <a id="fromBoundingBox">
+                    <a href="#fromBoundingBox">
+                      <code><span>fromBoundingBox&#32;<span>box</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="353">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>fromBoundingBox&#32;<span>box</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        box
+                      </b>
+                      :
+                      <code><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span><a href="https://docs.microsoft.com/dotnet/api/math.units.meters">Meters</a>,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="/Math.Geometry/reference/math-geometry-rectangle2d-2.html">Rectangle2D</a>&lt;<span><a href="https://docs.microsoft.com/dotnet/api/math.units.meters">Meters</a>,&#32;'Coordinates</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Math.Geometry.Rectangle2DModule.fromBoundingBox``1```')">
+                <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Math.Geometry.Rectangle2DModule.fromBoundingBox``1\'/>')">
+                <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/Rectangle2D.fs#L144-144" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Convert a `BoundingBox2D` to the equivalent axis-aligned `Rectangle2D`.
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  box
+                </span>
+                :
+                <code><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span><a href="https://docs.microsoft.com/dotnet/api/math.units.meters">Meters</a>,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="/Math.Geometry/reference/math-geometry-rectangle2d-2.html">Rectangle2D</a>&lt;<span><a href="https://docs.microsoft.com/dotnet/api/math.units.meters">Meters</a>,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '354', 354)" onmouseover="showTip(event, '354', 354)">
+                <p>
+                  <a id="fromPoints">
+                    <a href="#fromPoints">
+                      <code><span>fromPoints&#32;<span>p1&#32;p2</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="354">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>fromPoints&#32;<span>p1&#32;p2</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        p1
+                      </b>
+                      :
+                      <code><span><a href="/Math.Geometry/reference/math-geometry-point2d-2.html">Point2D</a>&lt;<span><a href="https://docs.microsoft.com/dotnet/api/math.units.meters">Meters</a>,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        p2
+                      </b>
+                      :
+                      <code><span><a href="/Math.Geometry/reference/math-geometry-point2d-2.html">Point2D</a>&lt;<span><a href="https://docs.microsoft.com/dotnet/api/math.units.meters">Meters</a>,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="/Math.Geometry/reference/math-geometry-rectangle2d-2.html">Rectangle2D</a>&lt;<span><a href="https://docs.microsoft.com/dotnet/api/math.units.meters">Meters</a>,&#32;'Coordinates</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Math.Geometry.Rectangle2DModule.fromPoints``1```')">
+                <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Math.Geometry.Rectangle2DModule.fromPoints``1\'/>')">
+                <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/Rectangle2D.fs#L74-74" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Construct an axis-aligned rectangle stretching from one point to another;
+     Rectangle2D.from p1 p2
+ is equivalent to
+     Rectangle2D.with p1.X p1.Y p2.X p2.Y
+ and so the same logic about the resulting rectangle's X and Y directions
+ applies (see above for details). Therefore, assuming a Y-up coordinate system,
+ something like
+     Rectangle2D.from lowerLeftPoint upperRightPoint
+ would have positive X and Y directions, while
+     Rectangle2D.from upperLeftPoint lowerRightPoint
+ would have a positive X direction but a negative Y direction.
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  p1
+                </span>
+                :
+                <code><span><a href="/Math.Geometry/reference/math-geometry-point2d-2.html">Point2D</a>&lt;<span><a href="https://docs.microsoft.com/dotnet/api/math.units.meters">Meters</a>,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  p2
+                </span>
+                :
+                <code><span><a href="/Math.Geometry/reference/math-geometry-point2d-2.html">Point2D</a>&lt;<span><a href="https://docs.microsoft.com/dotnet/api/math.units.meters">Meters</a>,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="/Math.Geometry/reference/math-geometry-rectangle2d-2.html">Rectangle2D</a>&lt;<span><a href="https://docs.microsoft.com/dotnet/api/math.units.meters">Meters</a>,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '355', 355)" onmouseover="showTip(event, '355', 355)">
+                <p>
+                  <a id="interpolate">
+                    <a href="#interpolate">
+                      <code><span>interpolate&#32;<span>rectangle&#32;u&#32;v</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="355">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>interpolate&#32;<span>rectangle&#32;u&#32;v</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        rectangle
+                      </b>
+                      :
+                      <code><span><a href="/Math.Geometry/reference/math-geometry-rectangle2d-2.html">Rectangle2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        u
+                      </b>
+                      :
+                      <code>float</code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        v
+                      </b>
+                      :
+                      <code>float</code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="/Math.Geometry/reference/math-geometry-point2d-2.html">Point2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Math.Geometry.Rectangle2DModule.interpolate``2```')">
+                <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Math.Geometry.Rectangle2DModule.interpolate``2\'/>')">
+                <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/Rectangle2D.fs#L391-391" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Interpolate within a rectangle based on coordinates which range from 0 to 1.
+ For example, the four vertices of a given rectangle are
+     [ Rectangle2D.interpolate rectangle 0 0
+       Rectangle2D.interpolate rectangle 1 0
+       Rectangle2D.interpolate rectangle 1 1
+       Rectangle2D.interpolate rectangle 0 1
+     ]
+ and its center point is
+     Rectangle2D.interpolate rectangle 0.5 0.5
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  rectangle
+                </span>
+                :
+                <code><span><a href="/Math.Geometry/reference/math-geometry-rectangle2d-2.html">Rectangle2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  u
+                </span>
+                :
+                <code>float</code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  v
+                </span>
+                :
+                <code>float</code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="/Math.Geometry/reference/math-geometry-point2d-2.html">Point2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '356', 356)" onmouseover="showTip(event, '356', 356)">
+                <p>
+                  <a id="mirrorAcross">
+                    <a href="#mirrorAcross">
+                      <code><span>mirrorAcross&#32;<span>axis&#32;rectangle</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="356">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>mirrorAcross&#32;<span>axis&#32;rectangle</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        axis
+                      </b>
+                      :
+                      <code><span><a href="/Math.Geometry/reference/math-geometry-axis2d-2.html">Axis2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        rectangle
+                      </b>
+                      :
+                      <code><span><a href="/Math.Geometry/reference/math-geometry-rectangle2d-2.html">Rectangle2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="/Math.Geometry/reference/math-geometry-rectangle2d-2.html">Rectangle2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Math.Geometry.Rectangle2DModule.mirrorAcross``2```')">
+                <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Math.Geometry.Rectangle2DModule.mirrorAcross``2\'/>')">
+                <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/Rectangle2D.fs#L353-353" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Mirror a rectangle across a given axis. Note that this will flip the
+ handedness of the rectangle's axes, and therefore the order/direction of results
+ from `Rectangle2D.vertices` and `Rectangle2D.edges` will change.
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  axis
+                </span>
+                :
+                <code><span><a href="/Math.Geometry/reference/math-geometry-axis2d-2.html">Axis2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  rectangle
+                </span>
+                :
+                <code><span><a href="/Math.Geometry/reference/math-geometry-rectangle2d-2.html">Rectangle2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="/Math.Geometry/reference/math-geometry-rectangle2d-2.html">Rectangle2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '357', 357)" onmouseover="showTip(event, '357', 357)">
+                <p>
+                  <a id="placeIn">
+                    <a href="#placeIn">
+                      <code><span>placeIn&#32;<span>frame&#32;rectangle</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="357">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>placeIn&#32;<span>frame&#32;rectangle</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        frame
+                      </b>
+                      :
+                      <code><span><a href="/Math.Geometry/reference/math-geometry-frame2d-3.html">Frame2D</a>&lt;<span>'Units,&#32;'GlobalCoordinates,&#32;unit</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        rectangle
+                      </b>
+                      :
+                      <code><span><a href="/Math.Geometry/reference/math-geometry-rectangle2d-2.html">Rectangle2D</a>&lt;<span>'Units,&#32;'GlobalCoordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="/Math.Geometry/reference/math-geometry-rectangle2d-2.html">Rectangle2D</a>&lt;<span>'Units,&#32;'LocalCoordinates</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Math.Geometry.Rectangle2DModule.placeIn``3```')">
+                <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Math.Geometry.Rectangle2DModule.placeIn``3\'/>')">
+                <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/Rectangle2D.fs#L364-364" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Take a rectangle considered to be defined in local coordinates relative to a
+ given reference frame, and return that rectangle expressed in global
+ coordinates.
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  frame
+                </span>
+                :
+                <code><span><a href="/Math.Geometry/reference/math-geometry-frame2d-3.html">Frame2D</a>&lt;<span>'Units,&#32;'GlobalCoordinates,&#32;unit</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  rectangle
+                </span>
+                :
+                <code><span><a href="/Math.Geometry/reference/math-geometry-rectangle2d-2.html">Rectangle2D</a>&lt;<span>'Units,&#32;'GlobalCoordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="/Math.Geometry/reference/math-geometry-rectangle2d-2.html">Rectangle2D</a>&lt;<span>'Units,&#32;'LocalCoordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '358', 358)" onmouseover="showTip(event, '358', 358)">
+                <p>
+                  <a id="relativeTo">
+                    <a href="#relativeTo">
+                      <code><span>relativeTo&#32;<span>frame&#32;rectangle</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="358">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>relativeTo&#32;<span>frame&#32;rectangle</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        frame
+                      </b>
+                      :
+                      <code><span><a href="/Math.Geometry/reference/math-geometry-frame2d-3.html">Frame2D</a>&lt;<span>'Units,&#32;'GlobalCoordinates,&#32;unit</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        rectangle
+                      </b>
+                      :
+                      <code><span><a href="/Math.Geometry/reference/math-geometry-rectangle2d-2.html">Rectangle2D</a>&lt;<span>'Units,&#32;'GlobalCoordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="/Math.Geometry/reference/math-geometry-rectangle2d-2.html">Rectangle2D</a>&lt;<span>'Units,&#32;'LocalCoordinates</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Math.Geometry.Rectangle2DModule.relativeTo``3```')">
+                <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Math.Geometry.Rectangle2DModule.relativeTo``3\'/>')">
+                <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/Rectangle2D.fs#L374-374" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Take a rectangle defined in global coordinates, and return it expressed
+ in local coordinates relative to a given reference frame.
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  frame
+                </span>
+                :
+                <code><span><a href="/Math.Geometry/reference/math-geometry-frame2d-3.html">Frame2D</a>&lt;<span>'Units,&#32;'GlobalCoordinates,&#32;unit</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  rectangle
+                </span>
+                :
+                <code><span><a href="/Math.Geometry/reference/math-geometry-rectangle2d-2.html">Rectangle2D</a>&lt;<span>'Units,&#32;'GlobalCoordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="/Math.Geometry/reference/math-geometry-rectangle2d-2.html">Rectangle2D</a>&lt;<span>'Units,&#32;'LocalCoordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '359', 359)" onmouseover="showTip(event, '359', 359)">
+                <p>
+                  <a id="rotateAround">
+                    <a href="#rotateAround">
+                      <code><span>rotateAround&#32;<span>point&#32;angle&#32;rectangle</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="359">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>rotateAround&#32;<span>point&#32;angle&#32;rectangle</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        point
+                      </b>
+                      :
+                      <code><span><a href="/Math.Geometry/reference/math-geometry-point2d-2.html">Point2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        angle
+                      </b>
+                      :
+                      <code>Angle</code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        rectangle
+                      </b>
+                      :
+                      <code><span><a href="/Math.Geometry/reference/math-geometry-rectangle2d-2.html">Rectangle2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="/Math.Geometry/reference/math-geometry-rectangle2d-2.html">Rectangle2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Math.Geometry.Rectangle2DModule.rotateAround``2```')">
+                <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Math.Geometry.Rectangle2DModule.rotateAround``2\'/>')">
+                <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/Rectangle2D.fs#L323-323" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Rotate a rectangle around a given point by a given angle.
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  point
+                </span>
+                :
+                <code><span><a href="/Math.Geometry/reference/math-geometry-point2d-2.html">Point2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  angle
+                </span>
+                :
+                <code>Angle</code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  rectangle
+                </span>
+                :
+                <code><span><a href="/Math.Geometry/reference/math-geometry-rectangle2d-2.html">Rectangle2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="/Math.Geometry/reference/math-geometry-rectangle2d-2.html">Rectangle2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '360', 360)" onmouseover="showTip(event, '360', 360)">
+                <p>
+                  <a id="scaleAbout">
+                    <a href="#scaleAbout">
+                      <code><span>scaleAbout&#32;<span>point&#32;scale&#32;rectangle</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="360">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>scaleAbout&#32;<span>point&#32;scale&#32;rectangle</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        point
+                      </b>
+                      :
+                      <code><span><a href="/Math.Geometry/reference/math-geometry-point2d-2.html">Point2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        scale
+                      </b>
+                      :
+                      <code>float</code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        rectangle
+                      </b>
+                      :
+                      <code><span><a href="/Math.Geometry/reference/math-geometry-rectangle2d-2.html">Rectangle2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="/Math.Geometry/reference/math-geometry-rectangle2d-2.html">Rectangle2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Math.Geometry.Rectangle2DModule.scaleAbout``2```')">
+                <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Math.Geometry.Rectangle2DModule.scaleAbout``2\'/>')">
+                <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/Rectangle2D.fs#L289-289" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Scale a rectangle about a given point by a given scale. Note that scaling by
+ a negative value will flip the handedness of the rectangle's axes, and therefore
+ the order/direction of results from `Rectangle2D.vertices` and
+ `Rectangle2D.edges` will change.
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  point
+                </span>
+                :
+                <code><span><a href="/Math.Geometry/reference/math-geometry-point2d-2.html">Point2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  scale
+                </span>
+                :
+                <code>float</code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  rectangle
+                </span>
+                :
+                <code><span><a href="/Math.Geometry/reference/math-geometry-rectangle2d-2.html">Rectangle2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="/Math.Geometry/reference/math-geometry-rectangle2d-2.html">Rectangle2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '361', 361)" onmouseover="showTip(event, '361', 361)">
+                <p>
+                  <a id="toPolygon">
+                    <a href="#toPolygon">
+                      <code><span>toPolygon&#32;<span>rectangle</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="361">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>toPolygon&#32;<span>rectangle</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        rectangle
+                      </b>
+                      :
+                      <code><span><a href="/Math.Geometry/reference/math-geometry-rectangle2d-2.html">Rectangle2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="/Math.Geometry/reference/math-geometry-polygon2d-2.html">Polygon2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Math.Geometry.Rectangle2DModule.toPolygon``2```')">
+                <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Math.Geometry.Rectangle2DModule.toPolygon``2\'/>')">
+                <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/Rectangle2D.fs#L209-209" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Convert a rectangle to a [`Polygon2D`](Polygon2D#Polygon2D).
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  rectangle
+                </span>
+                :
+                <code><span><a href="/Math.Geometry/reference/math-geometry-rectangle2d-2.html">Rectangle2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="/Math.Geometry/reference/math-geometry-polygon2d-2.html">Polygon2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '362', 362)" onmouseover="showTip(event, '362', 362)">
+                <p>
+                  <a id="translateBy">
+                    <a href="#translateBy">
+                      <code><span>translateBy&#32;<span>displacement&#32;rectangle</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="362">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>translateBy&#32;<span>displacement&#32;rectangle</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        displacement
+                      </b>
+                      :
+                      <code><span><a href="/Math.Geometry/reference/math-geometry-vector2d-2.html">Vector2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        rectangle
+                      </b>
+                      :
+                      <code><span><a href="/Math.Geometry/reference/math-geometry-rectangle2d-2.html">Rectangle2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="/Math.Geometry/reference/math-geometry-rectangle2d-2.html">Rectangle2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Math.Geometry.Rectangle2DModule.translateBy``2```')">
+                <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Math.Geometry.Rectangle2DModule.translateBy``2\'/>')">
+                <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/Rectangle2D.fs#L333-333" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Translate a rectangle by a given displacement.
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  displacement
+                </span>
+                :
+                <code><span><a href="/Math.Geometry/reference/math-geometry-vector2d-2.html">Vector2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  rectangle
+                </span>
+                :
+                <code><span><a href="/Math.Geometry/reference/math-geometry-rectangle2d-2.html">Rectangle2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="/Math.Geometry/reference/math-geometry-rectangle2d-2.html">Rectangle2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '363', 363)" onmouseover="showTip(event, '363', 363)">
+                <p>
+                  <a id="translateIn">
+                    <a href="#translateIn">
+                      <code><span>translateIn&#32;<span>direction&#32;distance&#32;rectangle</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="363">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>translateIn&#32;<span>direction&#32;distance&#32;rectangle</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        direction
+                      </b>
+                      :
+                      <code><span><a href="/Math.Geometry/reference/math-geometry-direction2d-1.html">Direction2D</a>&lt;'Coordinates&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        distance
+                      </b>
+                      :
+                      <code><span><a href="https://docs.microsoft.com/dotnet/api/math.units.quantity-1">Quantity</a>&lt;'Units&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        rectangle
+                      </b>
+                      :
+                      <code><span><a href="/Math.Geometry/reference/math-geometry-rectangle2d-2.html">Rectangle2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="/Math.Geometry/reference/math-geometry-rectangle2d-2.html">Rectangle2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Math.Geometry.Rectangle2DModule.translateIn``2```')">
+                <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Math.Geometry.Rectangle2DModule.translateIn``2\'/>')">
+                <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/Rectangle2D.fs#L342-342" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Translate a rectangle in a given direction by a given distance.
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  direction
+                </span>
+                :
+                <code><span><a href="/Math.Geometry/reference/math-geometry-direction2d-1.html">Direction2D</a>&lt;'Coordinates&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  distance
+                </span>
+                :
+                <code><span><a href="https://docs.microsoft.com/dotnet/api/math.units.quantity-1">Quantity</a>&lt;'Units&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  rectangle
+                </span>
+                :
+                <code><span><a href="/Math.Geometry/reference/math-geometry-rectangle2d-2.html">Rectangle2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="/Math.Geometry/reference/math-geometry-rectangle2d-2.html">Rectangle2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '364', 364)" onmouseover="showTip(event, '364', 364)">
+                <p>
+                  <a id="vertices">
+                    <a href="#vertices">
+                      <code><span>vertices&#32;<span>rectangle</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="364">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>vertices&#32;<span>rectangle</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        rectangle
+                      </b>
+                      :
+                      <code><span><a href="/Math.Geometry/reference/math-geometry-rectangle2d-2.html">Rectangle2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><span><a href="/Math.Geometry/reference/math-geometry-point2d-2.html">Point2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span>&#32;list</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Math.Geometry.Rectangle2DModule.vertices``2```')">
+                <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Math.Geometry.Rectangle2DModule.vertices``2\'/>')">
+                <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/Rectangle2D.fs#L197-197" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Get the vertices of a rectangle as a list. The vertices will be returned
+ in counterclockwise order if the rectangle's axes are right-handed, and
+ clockwise order if the axes are left-handed.
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  rectangle
+                </span>
+                :
+                <code><span><a href="/Math.Geometry/reference/math-geometry-rectangle2d-2.html">Rectangle2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><span><a href="/Math.Geometry/reference/math-geometry-point2d-2.html">Point2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span>&#32;list</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '365', 365)" onmouseover="showTip(event, '365', 365)">
+                <p>
+                  <a id="withDimensions">
+                    <a href="#withDimensions">
+                      <code><span>withDimensions&#32;<span>size&#32;angle&#32;center</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="365">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>withDimensions&#32;<span>size&#32;angle&#32;center</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        size
+                      </b>
+                      :
+                      <code><span><a href="/Math.Geometry/reference/math-geometry-size2d-1.html">Size2D</a>&lt;'Units&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        angle
+                      </b>
+                      :
+                      <code>Angle</code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        center
+                      </b>
+                      :
+                      <code><span><a href="/Math.Geometry/reference/math-geometry-point2d-2.html">Point2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="/Math.Geometry/reference/math-geometry-rectangle2d-2.html">Rectangle2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Math.Geometry.Rectangle2DModule.withDimensions``2```')">
+                <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Math.Geometry.Rectangle2DModule.withDimensions``2\'/>')">
+                <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/Rectangle2D.fs#L108-108" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  size
+                </span>
+                :
+                <code><span><a href="/Math.Geometry/reference/math-geometry-size2d-1.html">Size2D</a>&lt;'Units&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  angle
+                </span>
+                :
+                <code>Angle</code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  center
+                </span>
+                :
+                <code><span><a href="/Math.Geometry/reference/math-geometry-point2d-2.html">Point2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="/Math.Geometry/reference/math-geometry-rectangle2d-2.html">Rectangle2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '366', 366)" onmouseover="showTip(event, '366', 366)">
+                <p>
+                  <a id="withXAxis">
+                    <a href="#withXAxis">
+                      <code><span>withXAxis&#32;<span>axis&#32;dimensions</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="366">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>withXAxis&#32;<span>axis&#32;dimensions</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        axis
+                      </b>
+                      :
+                      <code><span><a href="/Math.Geometry/reference/math-geometry-axis2d-2.html">Axis2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        dimensions
+                      </b>
+                      :
+                      <code><span><a href="/Math.Geometry/reference/math-geometry-size2d-1.html">Size2D</a>&lt;'Units&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="/Math.Geometry/reference/math-geometry-rectangle2d-2.html">Rectangle2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Math.Geometry.Rectangle2DModule.withXAxis``2```')">
+                <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Math.Geometry.Rectangle2DModule.withXAxis``2\'/>')">
+                <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/Rectangle2D.fs#L134-134" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Construct a rectangle with the given X axis and overall dimensions. The
+ rectangle will be centered on the axis' origin point.
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  axis
+                </span>
+                :
+                <code><span><a href="/Math.Geometry/reference/math-geometry-axis2d-2.html">Axis2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  dimensions
+                </span>
+                :
+                <code><span><a href="/Math.Geometry/reference/math-geometry-size2d-1.html">Size2D</a>&lt;'Units&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="/Math.Geometry/reference/math-geometry-rectangle2d-2.html">Rectangle2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '367', 367)" onmouseover="showTip(event, '367', 367)">
+                <p>
+                  <a id="withYAxis">
+                    <a href="#withYAxis">
+                      <code><span>withYAxis&#32;<span>axis&#32;dimensions</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="367">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>withYAxis&#32;<span>axis&#32;dimensions</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        axis
+                      </b>
+                      :
+                      <code><span><a href="/Math.Geometry/reference/math-geometry-axis2d-2.html">Axis2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        dimensions
+                      </b>
+                      :
+                      <code><span><a href="/Math.Geometry/reference/math-geometry-size2d-1.html">Size2D</a>&lt;'Units&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="/Math.Geometry/reference/math-geometry-rectangle2d-2.html">Rectangle2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Math.Geometry.Rectangle2DModule.withYAxis``2```')">
+                <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Math.Geometry.Rectangle2DModule.withYAxis``2\'/>')">
+                <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/Rectangle2D.fs#L140-140" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Construct a rectangle with the given Y axis and overall dimensions. The
+ rectangle will be centered on the axis' origin point.
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  axis
+                </span>
+                :
+                <code><span><a href="/Math.Geometry/reference/math-geometry-axis2d-2.html">Axis2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  dimensions
+                </span>
+                :
+                <code><span><a href="/Math.Geometry/reference/math-geometry-size2d-1.html">Size2D</a>&lt;'Units&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="/Math.Geometry/reference/math-geometry-rectangle2d-2.html">Rectangle2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '368', 368)" onmouseover="showTip(event, '368', 368)">
+                <p>
+                  <a id="xAxis">
+                    <a href="#xAxis">
+                      <code><span>xAxis&#32;<span>rectangle</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="368">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>xAxis&#32;<span>rectangle</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        rectangle
+                      </b>
+                      :
+                      <code><span><a href="/Math.Geometry/reference/math-geometry-rectangle2d-2.html">Rectangle2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="/Math.Geometry/reference/math-geometry-axis2d-2.html">Axis2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Math.Geometry.Rectangle2DModule.xAxis``2```')">
+                <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Math.Geometry.Rectangle2DModule.xAxis``2\'/>')">
+                <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/Rectangle2D.fs#L165-165" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Get the X axis of a rectangle.
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  rectangle
+                </span>
+                :
+                <code><span><a href="/Math.Geometry/reference/math-geometry-rectangle2d-2.html">Rectangle2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="/Math.Geometry/reference/math-geometry-axis2d-2.html">Axis2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '369', 369)" onmouseover="showTip(event, '369', 369)">
+                <p>
+                  <a id="yAxis">
+                    <a href="#yAxis">
+                      <code><span>yAxis&#32;<span>rectangle</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="369">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>yAxis&#32;<span>rectangle</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        rectangle
+                      </b>
+                      :
+                      <code><span><a href="/Math.Geometry/reference/math-geometry-rectangle2d-2.html">Rectangle2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="/Math.Geometry/reference/math-geometry-axis2d-2.html">Axis2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Math.Geometry.Rectangle2DModule.yAxis``2```')">
+                <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Math.Geometry.Rectangle2DModule.yAxis``2\'/>')">
+                <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/Rectangle2D.fs#L169-169" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Get the Y axis of a rectangle.
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  rectangle
+                </span>
+                :
+                <code><span><a href="/Math.Geometry/reference/math-geometry-rectangle2d-2.html">Rectangle2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="/Math.Geometry/reference/math-geometry-axis2d-2.html">Axis2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+</div>
+            
+        </div>
+
+        <!-- BEGIN SEARCH BOX: this adds support for the search box -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.css" />
+        <script type="text/javascript">var fsdocs_search_baseurl = '/Math.Geometry/';</script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.8/lunr.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.min.js"></script>
+        <script type="text/javascript" src="/Math.Geometry/content/fsdocs-search.js"></script>
+        <!-- END SEARCH BOX: this adds support for the search box -->
+    </div>
+</body>
+
+</html>

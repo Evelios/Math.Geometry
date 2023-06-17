@@ -1,0 +1,2275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Polygon2D (Math.Geometry)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="Thomas Waters">
+
+    <link rel="stylesheet" id="theme_link" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.6.0/materia/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+    <link type="text/css" rel="stylesheet" href="/Math.Geometry/content/navbar-fixed-left.css" />
+    <link type="text/css" rel="stylesheet" href="/Math.Geometry/content/fsdocs-default.css" />
+    <link type="text/css" rel="stylesheet" href="/Math.Geometry/content/fsdocs-custom.css" />
+    <script type="text/javascript" src="/Math.Geometry/content/fsdocs-tips.js"></script>
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!-- BEGIN SEARCH BOX: this adds support for the search box -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.css" />
+    <!-- END SEARCH BOX: this adds support for the search box -->
+    
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md navbar-light bg-secondary fixed-left" id="fsdocs-nav">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse navbar-nav-scroll" id="navbarsExampleDefault">
+            <a href="/Math.Geometry/"><img id="fsdocs-logo" src="/Math.Geometry/img/logo.png" /></a>
+            <!-- BEGIN SEARCH BOX: this adds support for the search box -->
+            <div id="header">
+                <div class="searchbox" id="fsdocs-searchbox">
+                    <label for="search-by">
+                        <i class="fas fa-search"></i>
+                    </label>
+                    <input data-search-input="" id="search-by" type="search" placeholder="Search..." />
+                    <span data-search-clear="">
+                        <i class="fas fa-times"></i>
+                    </span>
+                </div>
+            </div>
+
+            <!-- END SEARCH BOX: this adds support for the search box -->
+            <ul class="navbar-nav">
+                <li class="nav-header">Links</li>
+                <li class="nav-item" id="fsdocs-license-link"><a class="nav-link" href="https://github.com/Evelios/Math.Geometry/blob/master/LICENSE.md">License</a></li>
+                <li class="nav-item" id="fsdocs-release-notes-link"><a class="nav-link" href="https://github.com/Evelios/Math.Geometry/blob/master/RELEASE_NOTES.md">Release Notes</a></li>
+                <li class="nav-item" id="fsdocs-repository-link"><a class="nav-link" href="https://github.com/Evelios/Math.Geometry/">Source Repository</a></li>
+                <li class="nav-header">
+  Modules
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="/Math.Geometry/length.html">
+    Lengths
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="/Math.Geometry/interval.html">
+    Interval
+  </a>
+</li>             
+<li class="nav-header">
+  2D Modules
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="/Math.Geometry/arc.html">
+    2D Arc
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="/Math.Geometry/axes.html">
+    2D Axis
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="/Math.Geometry/bounding-box.html">
+    2D Bounding Box
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="/Math.Geometry/circle.html">
+    2D Circle
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="/Math.Geometry/direction.html">
+    2D Direction
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="/Math.Geometry/ellipse.html">
+    2D Ellipse
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="/Math.Geometry/frame.html">
+    2D Frame
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="/Math.Geometry/line-segment.html">
+    2D Line Segment
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="/Math.Geometry/point.html">
+    2D Points
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="/Math.Geometry/polygon.html">
+    2D Polygon
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="/Math.Geometry/polyline.html">
+    2D Poly-Line
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="/Math.Geometry/size.html">
+    2D Size
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="/Math.Geometry/triangle.html">
+    2D Triangle
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="/Math.Geometry/vector.html">
+    2D Vectors
+  </a>
+</li>
+                <li class="nav-header">
+  API Reference
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="/Math.Geometry/reference/index.html">
+    All Namespaces
+  </a>
+</li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="masthead">
+            <h3 class="muted"><a href="/Math.Geometry/">Math.Geometry</a></h3>
+        </div>
+        <hr />
+        <div class="container" id="fsdocs-content">
+            <div>
+  <h2>
+    Polygon2D Module
+  </h2>
+  <dl class="fsdocs-metadata">
+    <dt>
+      Namespace: 
+      <a href="/Math.Geometry/reference/math-geometry.html">
+        Math.Geometry
+      </a>
+    </dt>
+    <dt>
+      Assembly: Math.Geometry.dll
+    </dt>
+  </dl>
+  <div class="fsdocs-xmldoc">
+    <div>
+      <p class="fsdocs-summary">
+        
+      </p>
+    </div>
+  </div>
+  <div>
+    <h3>
+      Functions and values
+    </h3>
+    <table class="table outer-list fsdocs-member-list">
+      <thead>
+        <tr>
+          <td class="fsdocs-member-list-header">
+            Function or value
+          </td>
+          <td class="fsdocs-member-list-header">
+            Description
+          </td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '307', 307)" onmouseover="showTip(event, '307', 307)">
+                <p>
+                  <a id="area">
+                    <a href="#area">
+                      <code><span>area&#32;<span>polygon</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="307">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>area&#32;<span>polygon</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        polygon
+                      </b>
+                      :
+                      <code><span><a href="/Math.Geometry/reference/math-geometry-polygon2d-2.html">Polygon2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://docs.microsoft.com/dotnet/api/math.units.quantity-1">Quantity</a>&lt;<span>Squared&lt;'Units&gt;</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Math.Geometry.Polygon2DModule.area``2```')">
+                <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Math.Geometry.Polygon2DModule.area``2\'/>')">
+                <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/Polygon2D.fs#L172-172" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Get the area of a polygon. This value will never be negative.
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  polygon
+                </span>
+                :
+                <code><span><a href="/Math.Geometry/reference/math-geometry-polygon2d-2.html">Polygon2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="https://docs.microsoft.com/dotnet/api/math.units.quantity-1">Quantity</a>&lt;<span>Squared&lt;'Units&gt;</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '308', 308)" onmouseover="showTip(event, '308', 308)">
+                <p>
+                  <a id="boundingBox">
+                    <a href="#boundingBox">
+                      <code><span>boundingBox&#32;<span>polygon</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="308">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>boundingBox&#32;<span>polygon</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        polygon
+                      </b>
+                      :
+                      <code><span><a href="/Math.Geometry/reference/math-geometry-polygon2d-2.html">Polygon2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span>&#32;option</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Math.Geometry.Polygon2DModule.boundingBox``2```')">
+                <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Math.Geometry.Polygon2DModule.boundingBox``2\'/>')">
+                <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/Polygon2D.fs#L283-283" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Get the minimal bounding box containing a given polygon. Returns `None`
+ if the polygon has no vertices.
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  polygon
+                </span>
+                :
+                <code><span><a href="/Math.Geometry/reference/math-geometry-polygon2d-2.html">Polygon2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span>&#32;option</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '309', 309)" onmouseover="showTip(event, '309', 309)">
+                <p>
+                  <a id="centroid">
+                    <a href="#centroid">
+                      <code><span>centroid&#32;<span>polygon</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="309">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>centroid&#32;<span>polygon</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        polygon
+                      </b>
+                      :
+                      <code><span><a href="/Math.Geometry/reference/math-geometry-polygon2d-2.html">Polygon2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><span><a href="/Math.Geometry/reference/math-geometry-point2d-2.html">Point2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span>&#32;option</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Math.Geometry.Polygon2DModule.centroid``2```')">
+                <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Math.Geometry.Polygon2DModule.centroid``2\'/>')">
+                <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/Polygon2D.fs#L264-264" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Get the centroid of a polygon. Returns `Nothing` if the polygon has no
+ vertices or zero area.
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  polygon
+                </span>
+                :
+                <code><span><a href="/Math.Geometry/reference/math-geometry-polygon2d-2.html">Polygon2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><span><a href="/Math.Geometry/reference/math-geometry-point2d-2.html">Point2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span>&#32;option</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '310', 310)" onmouseover="showTip(event, '310', 310)">
+                <p>
+                  <a id="contains">
+                    <a href="#contains">
+                      <code><span>contains&#32;<span>point&#32;polygon</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="310">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>contains&#32;<span>point&#32;polygon</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        point
+                      </b>
+                      :
+                      <code><span><a href="/Math.Geometry/reference/math-geometry-point2d-2.html">Point2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        polygon
+                      </b>
+                      :
+                      <code><span><a href="/Math.Geometry/reference/math-geometry-polygon2d-2.html">Polygon2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code>bool</code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Math.Geometry.Polygon2DModule.contains``2```')">
+                <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Math.Geometry.Polygon2DModule.contains``2\'/>')">
+                <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/Polygon2D.fs#L496-496" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Check if a polygon contains a given point.
+ This is an O(n) operation. The polygon can have holes and does not need to be convex.
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  point
+                </span>
+                :
+                <code><span><a href="/Math.Geometry/reference/math-geometry-point2d-2.html">Point2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  polygon
+                </span>
+                :
+                <code><span><a href="/Math.Geometry/reference/math-geometry-polygon2d-2.html">Polygon2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code>bool</code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '311', 311)" onmouseover="showTip(event, '311', 311)">
+                <p>
+                  <a id="convexHull">
+                    <a href="#convexHull">
+                      <code><span>convexHull&#32;<span>points</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="311">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>convexHull&#32;<span>points</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        points
+                      </b>
+                      :
+                      <code><span><span><a href="/Math.Geometry/reference/math-geometry-point2d-2.html">Point2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span>&#32;list</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="/Math.Geometry/reference/math-geometry-polygon2d-2.html">Polygon2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Math.Geometry.Polygon2DModule.convexHull``2```')">
+                <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Math.Geometry.Polygon2DModule.convexHull``2\'/>')">
+                <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/Polygon2D.fs#L121-121" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Build the [convex hull](https://en.wikipedia.org/wiki/Convex_hull) of a list
+ of points. This is an O(n log n) operation.
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  points
+                </span>
+                :
+                <code><span><span><a href="/Math.Geometry/reference/math-geometry-point2d-2.html">Point2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span>&#32;list</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="/Math.Geometry/reference/math-geometry-polygon2d-2.html">Polygon2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '312', 312)" onmouseover="showTip(event, '312', 312)">
+                <p>
+                  <a id="edges">
+                    <a href="#edges">
+                      <code><span>edges&#32;<span>polygon</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="312">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>edges&#32;<span>polygon</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        polygon
+                      </b>
+                      :
+                      <code><span><a href="/Math.Geometry/reference/math-geometry-polygon2d-2.html">Polygon2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><span><a href="/Math.Geometry/reference/math-geometry-linesegment2d-2.html">LineSegment2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span>&#32;list</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Math.Geometry.Polygon2DModule.edges``2```')">
+                <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Math.Geometry.Polygon2DModule.edges``2\'/>')">
+                <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/Polygon2D.fs#L159-159" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Get all edges of a polygon. This will include both outer edges and inner
+ (hole) edges.
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  polygon
+                </span>
+                :
+                <code><span><a href="/Math.Geometry/reference/math-geometry-polygon2d-2.html">Polygon2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><span><a href="/Math.Geometry/reference/math-geometry-linesegment2d-2.html">LineSegment2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span>&#32;list</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '313', 313)" onmouseover="showTip(event, '313', 313)">
+                <p>
+                  <a id="innerLoops">
+                    <a href="#innerLoops">
+                      <code><span>innerLoops&#32;<span>polygon</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="313">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>innerLoops&#32;<span>polygon</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        polygon
+                      </b>
+                      :
+                      <code><span><a href="/Math.Geometry/reference/math-geometry-polygon2d-2.html">Polygon2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><span><span><a href="/Math.Geometry/reference/math-geometry-point2d-2.html">Point2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span>&#32;list</span>&#32;list</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Math.Geometry.Polygon2DModule.innerLoops``2```')">
+                <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Math.Geometry.Polygon2DModule.innerLoops``2\'/>')">
+                <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/Polygon2D.fs#L143-143" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Get the holes (if any) of a polygon, each defined by a list of vertices.
+ Each list of vertices will be in clockwise order.
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  polygon
+                </span>
+                :
+                <code><span><a href="/Math.Geometry/reference/math-geometry-polygon2d-2.html">Polygon2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><span><span><a href="/Math.Geometry/reference/math-geometry-point2d-2.html">Point2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span>&#32;list</span>&#32;list</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '314', 314)" onmouseover="showTip(event, '314', 314)">
+                <p>
+                  <a id="loopEdges">
+                    <a href="#loopEdges">
+                      <code><span>loopEdges&#32;<span>vertices_</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="314">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>loopEdges&#32;<span>vertices_</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        vertices_
+                      </b>
+                      :
+                      <code><span><span><a href="/Math.Geometry/reference/math-geometry-point2d-2.html">Point2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span>&#32;list</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><span><a href="/Math.Geometry/reference/math-geometry-linesegment2d-2.html">LineSegment2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span>&#32;list</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Math.Geometry.Polygon2DModule.loopEdges``2```')">
+                <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Math.Geometry.Polygon2DModule.loopEdges``2\'/>')">
+                <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/Polygon2D.fs#L152-152" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  vertices_
+                </span>
+                :
+                <code><span><span><a href="/Math.Geometry/reference/math-geometry-point2d-2.html">Point2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span>&#32;list</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><span><a href="/Math.Geometry/reference/math-geometry-linesegment2d-2.html">LineSegment2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span>&#32;list</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '315', 315)" onmouseover="showTip(event, '315', 315)">
+                <p>
+                  <a id="mapVertices">
+                    <a href="#mapVertices">
+                      <code><span>mapVertices&#32;<span>f&#32;invert&#32;polygon</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="315">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>mapVertices&#32;<span>f&#32;invert&#32;polygon</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        f
+                      </b>
+                      :
+                      <code><span><span><a href="/Math.Geometry/reference/math-geometry-point2d-2.html">Point2D</a>&lt;<span>'UnitA,&#32;'CoordinatesA</span>&gt;</span>&#32;->&#32;<span><a href="/Math.Geometry/reference/math-geometry-point2d-2.html">Point2D</a>&lt;<span>'UnitB,&#32;'CoordinatesB</span>&gt;</span></span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        invert
+                      </b>
+                      :
+                      <code>bool</code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        polygon
+                      </b>
+                      :
+                      <code><span><a href="/Math.Geometry/reference/math-geometry-polygon2d-2.html">Polygon2D</a>&lt;<span>'UnitA,&#32;'CoordinatesA</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="/Math.Geometry/reference/math-geometry-polygon2d-2.html">Polygon2D</a>&lt;<span>'UnitB,&#32;'CoordinatesB</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Math.Geometry.Polygon2DModule.mapVertices``4```')">
+                <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Math.Geometry.Polygon2DModule.mapVertices``4\'/>')">
+                <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/Polygon2D.fs#L289-289" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  f
+                </span>
+                :
+                <code><span><span><a href="/Math.Geometry/reference/math-geometry-point2d-2.html">Point2D</a>&lt;<span>'UnitA,&#32;'CoordinatesA</span>&gt;</span>&#32;->&#32;<span><a href="/Math.Geometry/reference/math-geometry-point2d-2.html">Point2D</a>&lt;<span>'UnitB,&#32;'CoordinatesB</span>&gt;</span></span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  invert
+                </span>
+                :
+                <code>bool</code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  polygon
+                </span>
+                :
+                <code><span><a href="/Math.Geometry/reference/math-geometry-polygon2d-2.html">Polygon2D</a>&lt;<span>'UnitA,&#32;'CoordinatesA</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="/Math.Geometry/reference/math-geometry-polygon2d-2.html">Polygon2D</a>&lt;<span>'UnitB,&#32;'CoordinatesB</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '316', 316)" onmouseover="showTip(event, '316', 316)">
+                <p>
+                  <a id="mirrorAcross">
+                    <a href="#mirrorAcross">
+                      <code><span>mirrorAcross&#32;<span>axis&#32;polygon</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="316">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>mirrorAcross&#32;<span>axis&#32;polygon</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        axis
+                      </b>
+                      :
+                      <code><span><a href="/Math.Geometry/reference/math-geometry-axis2d-2.html">Axis2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        polygon
+                      </b>
+                      :
+                      <code><span><a href="/Math.Geometry/reference/math-geometry-polygon2d-2.html">Polygon2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="/Math.Geometry/reference/math-geometry-polygon2d-2.html">Polygon2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Math.Geometry.Polygon2DModule.mirrorAcross``2```')">
+                <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Math.Geometry.Polygon2DModule.mirrorAcross``2\'/>')">
+                <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/Polygon2D.fs#L349-349" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Mirror a polygon across the given axis. The order of the polygon's vertices
+ will be reversed so that the resulting polygon still has its outer vertices in
+ counterclockwise order and its inner vertices in clockwise order.
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  axis
+                </span>
+                :
+                <code><span><a href="/Math.Geometry/reference/math-geometry-axis2d-2.html">Axis2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  polygon
+                </span>
+                :
+                <code><span><a href="/Math.Geometry/reference/math-geometry-polygon2d-2.html">Polygon2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="/Math.Geometry/reference/math-geometry-polygon2d-2.html">Polygon2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '317', 317)" onmouseover="showTip(event, '317', 317)">
+                <p>
+                  <a id="outerLoop">
+                    <a href="#outerLoop">
+                      <code><span>outerLoop&#32;<span>polygon</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="317">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>outerLoop&#32;<span>polygon</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        polygon
+                      </b>
+                      :
+                      <code><span><a href="/Math.Geometry/reference/math-geometry-polygon2d-2.html">Polygon2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><span><a href="/Math.Geometry/reference/math-geometry-point2d-2.html">Point2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span>&#32;list</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Math.Geometry.Polygon2DModule.outerLoop``2```')">
+                <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Math.Geometry.Polygon2DModule.outerLoop``2\'/>')">
+                <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/Polygon2D.fs#L139-139" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Get the list of vertices defining the outer loop (border) of a polygon.
+ The vertices will be in counterclockwise order.
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  polygon
+                </span>
+                :
+                <code><span><a href="/Math.Geometry/reference/math-geometry-polygon2d-2.html">Polygon2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><span><a href="/Math.Geometry/reference/math-geometry-point2d-2.html">Point2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span>&#32;list</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '318', 318)" onmouseover="showTip(event, '318', 318)">
+                <p>
+                  <a id="perimeter">
+                    <a href="#perimeter">
+                      <code><span>perimeter&#32;<span>polygon</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="318">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>perimeter&#32;<span>polygon</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        polygon
+                      </b>
+                      :
+                      <code><span><a href="/Math.Geometry/reference/math-geometry-polygon2d-2.html">Polygon2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://docs.microsoft.com/dotnet/api/math.units.quantity-1">Quantity</a>&lt;'Units&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Math.Geometry.Polygon2DModule.perimeter``2```')">
+                <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Math.Geometry.Polygon2DModule.perimeter``2\'/>')">
+                <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/Polygon2D.fs#L166-166" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Get the perimeter of a polygon (the sum of the lengths of its edges). This
+ includes the outer perimeter and the perimeter of any holes.
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  polygon
+                </span>
+                :
+                <code><span><a href="/Math.Geometry/reference/math-geometry-polygon2d-2.html">Polygon2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="https://docs.microsoft.com/dotnet/api/math.units.quantity-1">Quantity</a>&lt;'Units&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '319', 319)" onmouseover="showTip(event, '319', 319)">
+                <p>
+                  <a id="placeIn">
+                    <a href="#placeIn">
+                      <code><span>placeIn&#32;<span>frame&#32;polygon</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="319">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>placeIn&#32;<span>frame&#32;polygon</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        frame
+                      </b>
+                      :
+                      <code><span><a href="/Math.Geometry/reference/math-geometry-frame2d-3.html">Frame2D</a>&lt;<span>'Units,&#32;'Coordinates,&#32;'Defines</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        polygon
+                      </b>
+                      :
+                      <code><span><a href="/Math.Geometry/reference/math-geometry-polygon2d-2.html">Polygon2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="/Math.Geometry/reference/math-geometry-polygon2d-2.html">Polygon2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Math.Geometry.Polygon2DModule.placeIn``3```')">
+                <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Math.Geometry.Polygon2DModule.placeIn``3\'/>')">
+                <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/Polygon2D.fs#L379-379" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Take a polygon considered to be defined in local coordinates relative to a
+ given reference frame, and return that polygon expressed in global coordinates.
+ If the given frame is left-handed, the order of the polygon's vertices will be
+ reversed so that the resulting polygon still has its outer vertices in
+ counterclockwise order and its inner vertices in clockwise order.
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  frame
+                </span>
+                :
+                <code><span><a href="/Math.Geometry/reference/math-geometry-frame2d-3.html">Frame2D</a>&lt;<span>'Units,&#32;'Coordinates,&#32;'Defines</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  polygon
+                </span>
+                :
+                <code><span><a href="/Math.Geometry/reference/math-geometry-polygon2d-2.html">Polygon2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="/Math.Geometry/reference/math-geometry-polygon2d-2.html">Polygon2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '320', 320)" onmouseover="showTip(event, '320', 320)">
+                <p>
+                  <a id="relativeTo">
+                    <a href="#relativeTo">
+                      <code><span>relativeTo&#32;<span>frame&#32;polygon</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="320">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>relativeTo&#32;<span>frame&#32;polygon</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        frame
+                      </b>
+                      :
+                      <code><span><a href="/Math.Geometry/reference/math-geometry-frame2d-3.html">Frame2D</a>&lt;<span>'Units,&#32;'Coordinates,&#32;'Defines</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        polygon
+                      </b>
+                      :
+                      <code><span><a href="/Math.Geometry/reference/math-geometry-polygon2d-2.html">Polygon2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="/Math.Geometry/reference/math-geometry-polygon2d-2.html">Polygon2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Math.Geometry.Polygon2DModule.relativeTo``3```')">
+                <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Math.Geometry.Polygon2DModule.relativeTo``3\'/>')">
+                <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/Polygon2D.fs#L368-368" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Take a polygon defined in global coordinates, and return it expressed in
+ local coordinates relative to a given reference frame. If the given frame is
+ left-handed, the order of the polygon's vertices will be reversed so that the
+ resulting polygon still has its outer vertices in counterclockwise order and its
+ inner vertices in clockwise order.
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  frame
+                </span>
+                :
+                <code><span><a href="/Math.Geometry/reference/math-geometry-frame2d-3.html">Frame2D</a>&lt;<span>'Units,&#32;'Coordinates,&#32;'Defines</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  polygon
+                </span>
+                :
+                <code><span><a href="/Math.Geometry/reference/math-geometry-polygon2d-2.html">Polygon2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="/Math.Geometry/reference/math-geometry-polygon2d-2.html">Polygon2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '321', 321)" onmouseover="showTip(event, '321', 321)">
+                <p>
+                  <a id="rotateAround">
+                    <a href="#rotateAround">
+                      <code><span>rotateAround&#32;<span>point&#32;angle&#32;polygon</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="321">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>rotateAround&#32;<span>point&#32;angle&#32;polygon</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        point
+                      </b>
+                      :
+                      <code><span><a href="/Math.Geometry/reference/math-geometry-point2d-2.html">Point2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        angle
+                      </b>
+                      :
+                      <code>Angle</code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        polygon
+                      </b>
+                      :
+                      <code><span><a href="/Math.Geometry/reference/math-geometry-polygon2d-2.html">Polygon2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="/Math.Geometry/reference/math-geometry-polygon2d-2.html">Polygon2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Math.Geometry.Polygon2DModule.rotateAround``2```')">
+                <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Math.Geometry.Polygon2DModule.rotateAround``2\'/>')">
+                <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/Polygon2D.fs#L321-321" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Rotate a polygon around the given center point counterclockwise by the given
+ angle.
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  point
+                </span>
+                :
+                <code><span><a href="/Math.Geometry/reference/math-geometry-point2d-2.html">Point2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  angle
+                </span>
+                :
+                <code>Angle</code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  polygon
+                </span>
+                :
+                <code><span><a href="/Math.Geometry/reference/math-geometry-polygon2d-2.html">Polygon2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="/Math.Geometry/reference/math-geometry-polygon2d-2.html">Polygon2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '322', 322)" onmouseover="showTip(event, '322', 322)">
+                <p>
+                  <a id="scaleAbout">
+                    <a href="#scaleAbout">
+                      <code><span>scaleAbout&#32;<span>point&#32;scale&#32;polygon</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="322">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>scaleAbout&#32;<span>point&#32;scale&#32;polygon</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        point
+                      </b>
+                      :
+                      <code><span><a href="/Math.Geometry/reference/math-geometry-point2d-2.html">Point2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        scale
+                      </b>
+                      :
+                      <code>float</code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        polygon
+                      </b>
+                      :
+                      <code><span><a href="/Math.Geometry/reference/math-geometry-polygon2d-2.html">Polygon2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="/Math.Geometry/reference/math-geometry-polygon2d-2.html">Polygon2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Math.Geometry.Polygon2DModule.scaleAbout``2```')">
+                <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Math.Geometry.Polygon2DModule.scaleAbout``2\'/>')">
+                <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/Polygon2D.fs#L311-311" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Scale a polygon about a given center point by a given scale. If the given
+ scale is negative, the order of the polygon's vertices will be reversed so that
+ the resulting polygon still has its outer vertices in counterclockwise order and
+ its inner vertices in clockwise order.
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  point
+                </span>
+                :
+                <code><span><a href="/Math.Geometry/reference/math-geometry-point2d-2.html">Point2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  scale
+                </span>
+                :
+                <code>float</code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  polygon
+                </span>
+                :
+                <code><span><a href="/Math.Geometry/reference/math-geometry-polygon2d-2.html">Polygon2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="/Math.Geometry/reference/math-geometry-polygon2d-2.html">Polygon2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '323', 323)" onmouseover="showTip(event, '323', 323)">
+                <p>
+                  <a id="singleLoop">
+                    <a href="#singleLoop">
+                      <code><span>singleLoop&#32;<span>givenOuterLoop</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="323">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>singleLoop&#32;<span>givenOuterLoop</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        givenOuterLoop
+                      </b>
+                      :
+                      <code><span><span><a href="/Math.Geometry/reference/math-geometry-point2d-2.html">Point2D</a>&lt;<span>'a,&#32;'b</span>&gt;</span>&#32;list</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="/Math.Geometry/reference/math-geometry-polygon2d-2.html">Polygon2D</a>&lt;<span>'a,&#32;'b</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Math.Geometry.Polygon2DModule.singleLoop``2```')">
+                <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Math.Geometry.Polygon2DModule.singleLoop``2\'/>')">
+                <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/Polygon2D.fs#L84-84" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Construct a polygon without holes from a list of its vertices:
+
+     let rectangle =
+         Polygon2D.singleLoop
+             [ Point2D.meters 1. 1.
+               Point2D.meters 3. 1.
+               Point2D.meters 3. 2.
+               Point2D.meters 1. 2.
+             ]
+
+ The last vertex is implicitly considered to be connected back to the first
+ vertex (you do not have to close the polygon explicitly). Vertices should
+ ideally be provided in counterclockwise order; if they are provided in clockwise
+ order they will be reversed.
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  givenOuterLoop
+                </span>
+                :
+                <code><span><span><a href="/Math.Geometry/reference/math-geometry-point2d-2.html">Point2D</a>&lt;<span>'a,&#32;'b</span>&gt;</span>&#32;list</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="/Math.Geometry/reference/math-geometry-polygon2d-2.html">Polygon2D</a>&lt;<span>'a,&#32;'b</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '324', 324)" onmouseover="showTip(event, '324', 324)">
+                <p>
+                  <a id="translate">
+                    <a href="#translate">
+                      <code><span>translate&#32;<span>amount&#32;polygon</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="324">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>translate&#32;<span>amount&#32;polygon</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        amount
+                      </b>
+                      :
+                      <code><span><a href="/Math.Geometry/reference/math-geometry-vector2d-2.html">Vector2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        polygon
+                      </b>
+                      :
+                      <code><span><a href="/Math.Geometry/reference/math-geometry-polygon2d-2.html">Polygon2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="/Math.Geometry/reference/math-geometry-polygon2d-2.html">Polygon2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Math.Geometry.Polygon2DModule.translate``2```')">
+                <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Math.Geometry.Polygon2DModule.translate``2\'/>')">
+                <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/Polygon2D.fs#L356-356" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  amount
+                </span>
+                :
+                <code><span><a href="/Math.Geometry/reference/math-geometry-vector2d-2.html">Vector2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  polygon
+                </span>
+                :
+                <code><span><a href="/Math.Geometry/reference/math-geometry-polygon2d-2.html">Polygon2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="/Math.Geometry/reference/math-geometry-polygon2d-2.html">Polygon2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '325', 325)" onmouseover="showTip(event, '325', 325)">
+                <p>
+                  <a id="translateBy">
+                    <a href="#translateBy">
+                      <code><span>translateBy&#32;<span>vector&#32;polygon</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="325">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>translateBy&#32;<span>vector&#32;polygon</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        vector
+                      </b>
+                      :
+                      <code><span><a href="/Math.Geometry/reference/math-geometry-vector2d-2.html">Vector2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        polygon
+                      </b>
+                      :
+                      <code><span><a href="/Math.Geometry/reference/math-geometry-polygon2d-2.html">Polygon2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="/Math.Geometry/reference/math-geometry-polygon2d-2.html">Polygon2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Math.Geometry.Polygon2DModule.translateBy``2```')">
+                <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Math.Geometry.Polygon2DModule.translateBy``2\'/>')">
+                <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/Polygon2D.fs#L330-330" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Translate a polygon by the given displacement.
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  vector
+                </span>
+                :
+                <code><span><a href="/Math.Geometry/reference/math-geometry-vector2d-2.html">Vector2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  polygon
+                </span>
+                :
+                <code><span><a href="/Math.Geometry/reference/math-geometry-polygon2d-2.html">Polygon2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="/Math.Geometry/reference/math-geometry-polygon2d-2.html">Polygon2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '326', 326)" onmouseover="showTip(event, '326', 326)">
+                <p>
+                  <a id="translateIn">
+                    <a href="#translateIn">
+                      <code><span>translateIn&#32;<span>direction&#32;distance&#32;polygon</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="326">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>translateIn&#32;<span>direction&#32;distance&#32;polygon</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        direction
+                      </b>
+                      :
+                      <code><span><a href="/Math.Geometry/reference/math-geometry-direction2d-1.html">Direction2D</a>&lt;'Coordinates&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        distance
+                      </b>
+                      :
+                      <code><span><a href="https://docs.microsoft.com/dotnet/api/math.units.quantity-1">Quantity</a>&lt;'Units&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        polygon
+                      </b>
+                      :
+                      <code><span><a href="/Math.Geometry/reference/math-geometry-polygon2d-2.html">Polygon2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="/Math.Geometry/reference/math-geometry-polygon2d-2.html">Polygon2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Math.Geometry.Polygon2DModule.translateIn``2```')">
+                <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Math.Geometry.Polygon2DModule.translateIn``2\'/>')">
+                <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/Polygon2D.fs#L338-338" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Translate a polygon in a given direction by a given distance.
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  direction
+                </span>
+                :
+                <code><span><a href="/Math.Geometry/reference/math-geometry-direction2d-1.html">Direction2D</a>&lt;'Coordinates&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  distance
+                </span>
+                :
+                <code><span><a href="https://docs.microsoft.com/dotnet/api/math.units.quantity-1">Quantity</a>&lt;'Units&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  polygon
+                </span>
+                :
+                <code><span><a href="/Math.Geometry/reference/math-geometry-polygon2d-2.html">Polygon2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="/Math.Geometry/reference/math-geometry-polygon2d-2.html">Polygon2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '327', 327)" onmouseover="showTip(event, '327', 327)">
+                <p>
+                  <a id="vertices">
+                    <a href="#vertices">
+                      <code><span>vertices&#32;<span>polygon</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="327">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>vertices&#32;<span>polygon</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        polygon
+                      </b>
+                      :
+                      <code><span><a href="/Math.Geometry/reference/math-geometry-polygon2d-2.html">Polygon2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><span><a href="/Math.Geometry/reference/math-geometry-point2d-2.html">Point2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span>&#32;list</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Math.Geometry.Polygon2DModule.vertices``2```')">
+                <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Math.Geometry.Polygon2DModule.vertices``2\'/>')">
+                <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/Polygon2D.fs#L148-148" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Get all vertices of a polygon; this will include vertices from the outer
+ loop of the polygon and all inner loops. The order of the returned vertices is
+ undefined.
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  polygon
+                </span>
+                :
+                <code><span><a href="/Math.Geometry/reference/math-geometry-polygon2d-2.html">Polygon2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><span><a href="/Math.Geometry/reference/math-geometry-point2d-2.html">Point2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span>&#32;list</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '328', 328)" onmouseover="showTip(event, '328', 328)">
+                <p>
+                  <a id="withHoles">
+                    <a href="#withHoles">
+                      <code><span>withHoles&#32;<span>givenInnerLoops&#32;givenOuterLoop</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="328">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>withHoles&#32;<span>givenInnerLoops&#32;givenOuterLoop</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        givenInnerLoops
+                      </b>
+                      :
+                      <code><span><span><span><a href="/Math.Geometry/reference/math-geometry-point2d-2.html">Point2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span>&#32;list</span>&#32;list</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        givenOuterLoop
+                      </b>
+                      :
+                      <code><span><span><a href="/Math.Geometry/reference/math-geometry-point2d-2.html">Point2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span>&#32;list</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="/Math.Geometry/reference/math-geometry-polygon2d-2.html">Polygon2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Math.Geometry.Polygon2DModule.withHoles``2```')">
+                <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Math.Geometry.Polygon2DModule.withHoles``2\'/>')">
+                <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/Polygon2D.fs#L62-62" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+ Construct a polygon with holes from one outer loop and a list of inner
+ loops. The loops must not touch or intersect each other.
+
+     let outerLoop =
+         [ Point2D.meters 0. 0.
+           Point2D.meters 3. 0.
+           Point2D.meters 3. 3.
+           Point2D.meters 0. 3.
+         ]
+     let innerLoop =
+         [ Point2D.meters 1. 1.
+           Point2D.meters 1. 2.
+           Point2D.meters 2. 2.
+           Point2D.meters 2. 1.
+         ]
+     let squareWithHole =
+         Polygon2D.withHoles [ innerLoop ] outerLoop
+
+ As with `Polygon2D.singleLoop`, the last vertex of each loop is considered to be
+ connected back to the first. Vertices of the outer loop should ideally be
+ provided in counterclockwise order and vertices of the inner loops should
+ ideally be provided in clockwise order.
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  givenInnerLoops
+                </span>
+                :
+                <code><span><span><span><a href="/Math.Geometry/reference/math-geometry-point2d-2.html">Point2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span>&#32;list</span>&#32;list</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  givenOuterLoop
+                </span>
+                :
+                <code><span><span><a href="/Math.Geometry/reference/math-geometry-point2d-2.html">Point2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span>&#32;list</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="/Math.Geometry/reference/math-geometry-polygon2d-2.html">Polygon2D</a>&lt;<span>'Units,&#32;'Coordinates</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+</div>
+            
+        </div>
+
+        <!-- BEGIN SEARCH BOX: this adds support for the search box -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.css" />
+        <script type="text/javascript">var fsdocs_search_baseurl = '/Math.Geometry/';</script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.8/lunr.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.min.js"></script>
+        <script type="text/javascript" src="/Math.Geometry/content/fsdocs-search.js"></script>
+        <!-- END SEARCH BOX: this adds support for the search box -->
+    </div>
+</body>
+
+</html>

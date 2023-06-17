@@ -160,26 +160,49 @@
             
 <h1><a name="Builders" class="anchor" href="#Builders">Builders</a></h1>
 <p>Create a size with zero length and zero height.</p>
-<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">Size2D</span><span class="pn">.</span><span class="id">empty</span>
+<pre class="fssnip highlighted"><code lang="fsharp"><span onmouseout="hideTip(event, 'fs5', 7)" onmouseover="showTip(event, 'fs5', 7)" class="m">Size2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs6', 8)" onmouseover="showTip(event, 'fs6', 8)" class="id">empty</span>
 </code></pre>
 <table class="pre"><tr><td><pre><code>No value returned by any evaluator</code></pre></td></tr></table>
-<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">Size2D</span><span class="pn">.</span><span class="id">create</span> <span class="pn">(</span><span class="id">Length</span><span class="pn">.</span><span class="id">meters</span> <span class="n">4.</span><span class="pn">)</span> <span class="pn">(</span><span class="id">Length</span><span class="pn">.</span><span class="id">meters</span> <span class="n">3.</span><span class="pn">)</span>
+<pre class="fssnip highlighted"><code lang="fsharp"><span onmouseout="hideTip(event, 'fs5', 9)" onmouseover="showTip(event, 'fs5', 9)" class="m">Size2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs7', 10)" onmouseover="showTip(event, 'fs7', 10)" class="id">create</span> <span class="pn">(</span><span onmouseout="hideTip(event, 'fs8', 11)" onmouseover="showTip(event, 'fs8', 11)" class="m">Length</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs9', 12)" onmouseover="showTip(event, 'fs9', 12)" class="id">meters</span> <span class="n">4.</span><span class="pn">)</span> <span class="pn">(</span><span onmouseout="hideTip(event, 'fs8', 13)" onmouseover="showTip(event, 'fs8', 13)" class="m">Length</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs9', 14)" onmouseover="showTip(event, 'fs9', 14)" class="id">meters</span> <span class="n">3.</span><span class="pn">)</span>
 </code></pre>
 <h1><a name="Modifiers" class="anchor" href="#Modifiers">Modifiers</a></h1>
-<pre class="fssnip highlighted"><code lang="fsharp"><span class="k">let</span> <span onmouseout="hideTip(event, 'fs2', 3)" onmouseover="showTip(event, 'fs2', 3)" class="id">size</span> <span class="o">=</span> <span class="id">Size2D</span><span class="pn">.</span><span class="id">create</span> <span class="pn">(</span><span class="id">Length</span><span class="pn">.</span><span class="id">meters</span> <span class="n">2.</span><span class="pn">)</span> <span class="pn">(</span><span class="id">Length</span><span class="pn">.</span><span class="id">meters</span> <span class="n">7.</span><span class="pn">)</span>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="k">let</span> <span onmouseout="hideTip(event, 'fs10', 15)" onmouseover="showTip(event, 'fs10', 15)" class="id">size</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs5', 16)" onmouseover="showTip(event, 'fs5', 16)" class="m">Size2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs7', 17)" onmouseover="showTip(event, 'fs7', 17)" class="id">create</span> <span class="pn">(</span><span onmouseout="hideTip(event, 'fs8', 18)" onmouseover="showTip(event, 'fs8', 18)" class="m">Length</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs9', 19)" onmouseover="showTip(event, 'fs9', 19)" class="id">meters</span> <span class="n">2.</span><span class="pn">)</span> <span class="pn">(</span><span onmouseout="hideTip(event, 'fs8', 20)" onmouseover="showTip(event, 'fs8', 20)" class="m">Length</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs9', 21)" onmouseover="showTip(event, 'fs9', 21)" class="id">meters</span> <span class="n">7.</span><span class="pn">)</span>
 </code></pre>
-<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">Size2D</span><span class="pn">.</span><span class="id">scale</span> <span class="n">1.5</span> <span onmouseout="hideTip(event, 'fs2', 4)" onmouseover="showTip(event, 'fs2', 4)" class="id">size</span>
-</code></pre>
-<table class="pre"><tr><td><pre><code>No value returned by any evaluator</code></pre></td></tr></table>
-<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">Size2D</span><span class="pn">.</span><span class="id">normalizeBelowOne</span> <span onmouseout="hideTip(event, 'fs2', 5)" onmouseover="showTip(event, 'fs2', 5)" class="id">size</span>
+<pre class="fssnip highlighted"><code lang="fsharp"><span onmouseout="hideTip(event, 'fs5', 22)" onmouseover="showTip(event, 'fs5', 22)" class="m">Size2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs11', 23)" onmouseover="showTip(event, 'fs11', 23)" class="id">scale</span> <span class="n">1.5</span> <span onmouseout="hideTip(event, 'fs10', 24)" onmouseover="showTip(event, 'fs10', 24)" class="id">size</span>
 </code></pre>
 <table class="pre"><tr><td><pre><code>No value returned by any evaluator</code></pre></td></tr></table>
-<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">Size2D</span><span class="pn">.</span><span class="id">withMaxSize</span> <span class="pn">(</span><span class="id">Length</span><span class="pn">.</span><span class="id">meters</span> <span class="n">14.</span><span class="pn">)</span> <span onmouseout="hideTip(event, 'fs2', 6)" onmouseover="showTip(event, 'fs2', 6)" class="id">size</span>
+<pre class="fssnip highlighted"><code lang="fsharp"><span onmouseout="hideTip(event, 'fs5', 25)" onmouseover="showTip(event, 'fs5', 25)" class="m">Size2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs12', 26)" onmouseover="showTip(event, 'fs12', 26)" class="id">normalizeBelowOne</span> <span onmouseout="hideTip(event, 'fs10', 27)" onmouseover="showTip(event, 'fs10', 27)" class="id">size</span>
+</code></pre>
+<table class="pre"><tr><td><pre><code>No value returned by any evaluator</code></pre></td></tr></table>
+<pre class="fssnip highlighted"><code lang="fsharp"><span onmouseout="hideTip(event, 'fs5', 28)" onmouseover="showTip(event, 'fs5', 28)" class="m">Size2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs13', 29)" onmouseover="showTip(event, 'fs13', 29)" class="id">withMaxSize</span> <span class="pn">(</span><span onmouseout="hideTip(event, 'fs8', 30)" onmouseover="showTip(event, 'fs8', 30)" class="m">Length</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs9', 31)" onmouseover="showTip(event, 'fs9', 31)" class="id">meters</span> <span class="n">14.</span><span class="pn">)</span> <span onmouseout="hideTip(event, 'fs10', 32)" onmouseover="showTip(event, 'fs10', 32)" class="id">size</span>
 </code></pre>
 <table class="pre"><tr><td><pre><code>No value returned by any evaluator</code></pre></td></tr></table>
 
-            <div class="fsdocs-tip" id="fs1">Multiple items<br />union case Cartesian.Cartesian: Cartesian<br /><br />--------------------<br />type Cartesian = | Cartesian</div>
-<div class="fsdocs-tip" id="fs2">val size : obj</div>
+            <div class="fsdocs-tip" id="fs1">namespace Math</div>
+<div class="fsdocs-tip" id="fs2">namespace Math.Geometry</div>
+<div class="fsdocs-tip" id="fs3">namespace Math.Units</div>
+<div class="fsdocs-tip" id="fs4">Multiple items<br />union case Cartesian.Cartesian: Cartesian<br /><br />--------------------<br />type Cartesian = | Cartesian</div>
+<div class="fsdocs-tip" id="fs5">Multiple items<br />module Size2D
+
+from Math.Geometry<br /><br />--------------------<br />[&lt;Struct&gt;]
+type Size2D&lt;&#39;Units&gt; =
+  { Width: Quantity&lt;&#39;Units&gt;
+    Height: Quantity&lt;&#39;Units&gt; }
+    override Equals : obj:obj -&gt; bool
+    override GetHashCode : unit -&gt; int</div>
+<div class="fsdocs-tip" id="fs6">val empty&lt;&#39;Units&gt; : Size2D&lt;&#39;Units&gt;</div>
+<div class="fsdocs-tip" id="fs7">val create : width:Quantity&lt;&#39;Units&gt; -&gt; height:Quantity&lt;&#39;Units&gt; -&gt; Size2D&lt;&#39;Units&gt;</div>
+<div class="fsdocs-tip" id="fs8">Multiple items<br />module Length
+
+from Math.Units<br /><em>&lt;category&gt;Module: Unit System&lt;/category&gt;<br />&lt;summary&gt;
+ A &lt;c&gt;Length&lt;/c&gt; represents a length in meters, feet, centimeters, miles etc. It
+ is stored as a number of meters.
+ &lt;/summary&gt;</em><br /><br />--------------------<br />type Length = Quantity&lt;Meters&gt;<br /><em>&lt;category&gt;Unit System&lt;/category&gt;</em></div>
+<div class="fsdocs-tip" id="fs9">val meters : m:float -&gt; Length<br /><em>&lt;category index=&quot;2&quot;&gt;Metric&lt;/category&gt;</em></div>
+<div class="fsdocs-tip" id="fs10">val size : Size2D&lt;Meters&gt;</div>
+<div class="fsdocs-tip" id="fs11">val scale : scale:float -&gt; size:Size2D&lt;&#39;Units&gt; -&gt; Size2D&lt;&#39;Units&gt;</div>
+<div class="fsdocs-tip" id="fs12">val normalizeBelowOne : size:Size2D&lt;&#39;Units&gt; -&gt; Size2D&lt;&#39;Units&gt;</div>
+<div class="fsdocs-tip" id="fs13">val withMaxSize : maxSize:Length -&gt; size:Size2D&lt;&#39;Units&gt; -&gt; Size2D&lt;&#39;Units&gt;</div>
 
         </div>
 

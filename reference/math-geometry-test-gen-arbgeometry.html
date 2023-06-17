@@ -1,0 +1,1115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>ArbGeometry (Math.Geometry)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="Thomas Waters">
+
+    <link rel="stylesheet" id="theme_link" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.6.0/materia/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+    <link type="text/css" rel="stylesheet" href="/Math.Geometry/content/navbar-fixed-left.css" />
+    <link type="text/css" rel="stylesheet" href="/Math.Geometry/content/fsdocs-default.css" />
+    <link type="text/css" rel="stylesheet" href="/Math.Geometry/content/fsdocs-custom.css" />
+    <script type="text/javascript" src="/Math.Geometry/content/fsdocs-tips.js"></script>
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!-- BEGIN SEARCH BOX: this adds support for the search box -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.css" />
+    <!-- END SEARCH BOX: this adds support for the search box -->
+    
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md navbar-light bg-secondary fixed-left" id="fsdocs-nav">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse navbar-nav-scroll" id="navbarsExampleDefault">
+            <a href="/Math.Geometry/"><img id="fsdocs-logo" src="/Math.Geometry/img/logo.png" /></a>
+            <!-- BEGIN SEARCH BOX: this adds support for the search box -->
+            <div id="header">
+                <div class="searchbox" id="fsdocs-searchbox">
+                    <label for="search-by">
+                        <i class="fas fa-search"></i>
+                    </label>
+                    <input data-search-input="" id="search-by" type="search" placeholder="Search..." />
+                    <span data-search-clear="">
+                        <i class="fas fa-times"></i>
+                    </span>
+                </div>
+            </div>
+
+            <!-- END SEARCH BOX: this adds support for the search box -->
+            <ul class="navbar-nav">
+                <li class="nav-header">Links</li>
+                <li class="nav-item" id="fsdocs-license-link"><a class="nav-link" href="https://github.com/Evelios/Math.Geometry/blob/master/LICENSE.md">License</a></li>
+                <li class="nav-item" id="fsdocs-release-notes-link"><a class="nav-link" href="https://github.com/Evelios/Math.Geometry/blob/master/RELEASE_NOTES.md">Release Notes</a></li>
+                <li class="nav-item" id="fsdocs-repository-link"><a class="nav-link" href="https://github.com/Evelios/Math.Geometry/">Source Repository</a></li>
+                <li class="nav-header">
+  Modules
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="/Math.Geometry/length.html">
+    Lengths
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="/Math.Geometry/interval.html">
+    Interval
+  </a>
+</li>             
+<li class="nav-header">
+  2D Modules
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="/Math.Geometry/arc.html">
+    2D Arc
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="/Math.Geometry/axes.html">
+    2D Axis
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="/Math.Geometry/bounding-box.html">
+    2D Bounding Box
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="/Math.Geometry/circle.html">
+    2D Circle
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="/Math.Geometry/direction.html">
+    2D Direction
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="/Math.Geometry/ellipse.html">
+    2D Ellipse
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="/Math.Geometry/frame.html">
+    2D Frame
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="/Math.Geometry/line-segment.html">
+    2D Line Segment
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="/Math.Geometry/point.html">
+    2D Points
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="/Math.Geometry/polygon.html">
+    2D Polygon
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="/Math.Geometry/polyline.html">
+    2D Poly-Line
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="/Math.Geometry/size.html">
+    2D Size
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="/Math.Geometry/triangle.html">
+    2D Triangle
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="/Math.Geometry/vector.html">
+    2D Vectors
+  </a>
+</li>
+                <li class="nav-header">
+  API Reference
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="/Math.Geometry/reference/index.html">
+    All Namespaces
+  </a>
+</li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="masthead">
+            <h3 class="muted"><a href="/Math.Geometry/">Math.Geometry</a></h3>
+        </div>
+        <hr />
+        <div class="container" id="fsdocs-content">
+            <div>
+  <h2>
+    ArbGeometry Type
+  </h2>
+  <dl class="fsdocs-metadata">
+    <dt>
+      Namespace: 
+      <a href="/Math.Geometry/reference/math-geometry-test.html">
+        Math.Geometry.Test
+      </a>
+    </dt>
+    <dt>
+      Assembly: Math.Geometry.dll
+    </dt>
+    <dt>
+      Parent Module: 
+      <a href="/Math.Geometry/reference/math-geometry-test-gen.html">
+        Gen
+      </a>
+    </dt>
+    <dt>
+      Base Type: 
+      <code>obj</code>
+    </dt>
+  </dl>
+  <div class="fsdocs-xmldoc">
+    <div>
+      <p class="fsdocs-summary">
+        
+      </p>
+    </div>
+  </div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div>
+    <h3>
+      Static members
+    </h3>
+    <table class="table outer-list fsdocs-member-list">
+      <thead>
+        <tr>
+          <td class="fsdocs-member-list-header">
+            Static member
+          </td>
+          <td class="fsdocs-member-list-header">
+            Description
+          </td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '573', 573)" onmouseover="showTip(event, '573', 573)">
+                <p>
+                  <a id="Angle">
+                    <a href="#Angle">
+                      <code><span>ArbGeometry.Angle<span>()</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="573">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>ArbGeometry.Angle<span>()</span></span></code>
+                  <br/>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://docs.microsoft.com/dotnet/api/fscheck.arbitrary-1">Arbitrary</a>&lt;Angle&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Math.Geometry.Test.Gen.ArbGeometry.Angle`')">
+                <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Math.Geometry.Test.Gen.ArbGeometry.Angle\'/>')">
+                <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/Test/Gen.fs#L134-134" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+              </p>
+            </div>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="https://docs.microsoft.com/dotnet/api/fscheck.arbitrary-1">Arbitrary</a>&lt;Angle&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '574', 574)" onmouseover="showTip(event, '574', 574)">
+                <p>
+                  <a id="Arc2D">
+                    <a href="#Arc2D">
+                      <code><span>ArbGeometry.Arc2D<span>()</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="574">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>ArbGeometry.Arc2D<span>()</span></span></code>
+                  <br/>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://docs.microsoft.com/dotnet/api/fscheck.arbitrary-1">Arbitrary</a>&lt;<span><a href="/Math.Geometry/reference/math-geometry-arc2d-2.html">Arc2D</a>&lt;<span><a href="https://docs.microsoft.com/dotnet/api/math.units.meters">Meters</a>,&#32;<a href="https://docs.microsoft.com/dotnet/api/math.units.test.testspace">TestSpace</a></span>&gt;</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Math.Geometry.Test.Gen.ArbGeometry.Arc2D`')">
+                <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Math.Geometry.Test.Gen.ArbGeometry.Arc2D\'/>')">
+                <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/Test/Gen.fs#L136-136" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+              </p>
+            </div>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="https://docs.microsoft.com/dotnet/api/fscheck.arbitrary-1">Arbitrary</a>&lt;<span><a href="/Math.Geometry/reference/math-geometry-arc2d-2.html">Arc2D</a>&lt;<span><a href="https://docs.microsoft.com/dotnet/api/math.units.meters">Meters</a>,&#32;<a href="https://docs.microsoft.com/dotnet/api/math.units.test.testspace">TestSpace</a></span>&gt;</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '575', 575)" onmouseover="showTip(event, '575', 575)">
+                <p>
+                  <a id="Axis2D">
+                    <a href="#Axis2D">
+                      <code><span>ArbGeometry.Axis2D<span>()</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="575">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>ArbGeometry.Axis2D<span>()</span></span></code>
+                  <br/>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://docs.microsoft.com/dotnet/api/fscheck.arbitrary-1">Arbitrary</a>&lt;<span><a href="/Math.Geometry/reference/math-geometry-axis2d-2.html">Axis2D</a>&lt;<span><a href="https://docs.microsoft.com/dotnet/api/math.units.meters">Meters</a>,&#32;<a href="https://docs.microsoft.com/dotnet/api/math.units.test.testspace">TestSpace</a></span>&gt;</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Math.Geometry.Test.Gen.ArbGeometry.Axis2D`')">
+                <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Math.Geometry.Test.Gen.ArbGeometry.Axis2D\'/>')">
+                <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/Test/Gen.fs#L142-142" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+              </p>
+            </div>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="https://docs.microsoft.com/dotnet/api/fscheck.arbitrary-1">Arbitrary</a>&lt;<span><a href="/Math.Geometry/reference/math-geometry-axis2d-2.html">Axis2D</a>&lt;<span><a href="https://docs.microsoft.com/dotnet/api/math.units.meters">Meters</a>,&#32;<a href="https://docs.microsoft.com/dotnet/api/math.units.test.testspace">TestSpace</a></span>&gt;</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '576', 576)" onmouseover="showTip(event, '576', 576)">
+                <p>
+                  <a id="BoundingBox2D">
+                    <a href="#BoundingBox2D">
+                      <code><span>ArbGeometry.BoundingBox2D<span>()</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="576">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>ArbGeometry.BoundingBox2D<span>()</span></span></code>
+                  <br/>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://docs.microsoft.com/dotnet/api/fscheck.arbitrary-1">Arbitrary</a>&lt;<span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span><a href="https://docs.microsoft.com/dotnet/api/math.units.meters">Meters</a>,&#32;<a href="https://docs.microsoft.com/dotnet/api/math.units.test.testspace">TestSpace</a></span>&gt;</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Math.Geometry.Test.Gen.ArbGeometry.BoundingBox2D`')">
+                <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Math.Geometry.Test.Gen.ArbGeometry.BoundingBox2D\'/>')">
+                <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/Test/Gen.fs#L145-145" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+              </p>
+            </div>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="https://docs.microsoft.com/dotnet/api/fscheck.arbitrary-1">Arbitrary</a>&lt;<span><a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">BoundingBox2D</a>&lt;<span><a href="https://docs.microsoft.com/dotnet/api/math.units.meters">Meters</a>,&#32;<a href="https://docs.microsoft.com/dotnet/api/math.units.test.testspace">TestSpace</a></span>&gt;</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '577', 577)" onmouseover="showTip(event, '577', 577)">
+                <p>
+                  <a id="Direction2D">
+                    <a href="#Direction2D">
+                      <code><span>ArbGeometry.Direction2D<span>()</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="577">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>ArbGeometry.Direction2D<span>()</span></span></code>
+                  <br/>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://docs.microsoft.com/dotnet/api/fscheck.arbitrary-1">Arbitrary</a>&lt;<span><a href="/Math.Geometry/reference/math-geometry-direction2d-1.html">Direction2D</a>&lt;<a href="https://docs.microsoft.com/dotnet/api/math.units.test.testspace">TestSpace</a>&gt;</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Math.Geometry.Test.Gen.ArbGeometry.Direction2D`')">
+                <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Math.Geometry.Test.Gen.ArbGeometry.Direction2D\'/>')">
+                <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/Test/Gen.fs#L139-139" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+              </p>
+            </div>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="https://docs.microsoft.com/dotnet/api/fscheck.arbitrary-1">Arbitrary</a>&lt;<span><a href="/Math.Geometry/reference/math-geometry-direction2d-1.html">Direction2D</a>&lt;<a href="https://docs.microsoft.com/dotnet/api/math.units.test.testspace">TestSpace</a>&gt;</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '578', 578)" onmouseover="showTip(event, '578', 578)">
+                <p>
+                  <a id="Float">
+                    <a href="#Float">
+                      <code><span>ArbGeometry.Float<span>()</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="578">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>ArbGeometry.Float<span>()</span></span></code>
+                  <br/>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://docs.microsoft.com/dotnet/api/fscheck.arbitrary-1">Arbitrary</a>&lt;float&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Math.Geometry.Test.Gen.ArbGeometry.Float`')">
+                <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Math.Geometry.Test.Gen.ArbGeometry.Float\'/>')">
+                <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/Test/Gen.fs#L133-133" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+              </p>
+            </div>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="https://docs.microsoft.com/dotnet/api/fscheck.arbitrary-1">Arbitrary</a>&lt;float&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '579', 579)" onmouseover="showTip(event, '579', 579)">
+                <p>
+                  <a id="Frame2D">
+                    <a href="#Frame2D">
+                      <code><span>ArbGeometry.Frame2D<span>()</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="579">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>ArbGeometry.Frame2D<span>()</span></span></code>
+                  <br/>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://docs.microsoft.com/dotnet/api/fscheck.arbitrary-1">Arbitrary</a>&lt;<span><a href="/Math.Geometry/reference/math-geometry-frame2d-3.html">Frame2D</a>&lt;<span><a href="https://docs.microsoft.com/dotnet/api/math.units.meters">Meters</a>,&#32;<a href="https://docs.microsoft.com/dotnet/api/math.units.test.testspace">TestSpace</a>,&#32;<a href="https://docs.microsoft.com/dotnet/api/math.units.test.testdefines">TestDefines</a></span>&gt;</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Math.Geometry.Test.Gen.ArbGeometry.Frame2D`')">
+                <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Math.Geometry.Test.Gen.ArbGeometry.Frame2D\'/>')">
+                <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/Test/Gen.fs#L146-146" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+              </p>
+            </div>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="https://docs.microsoft.com/dotnet/api/fscheck.arbitrary-1">Arbitrary</a>&lt;<span><a href="/Math.Geometry/reference/math-geometry-frame2d-3.html">Frame2D</a>&lt;<span><a href="https://docs.microsoft.com/dotnet/api/math.units.meters">Meters</a>,&#32;<a href="https://docs.microsoft.com/dotnet/api/math.units.test.testspace">TestSpace</a>,&#32;<a href="https://docs.microsoft.com/dotnet/api/math.units.test.testdefines">TestDefines</a></span>&gt;</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '580', 580)" onmouseover="showTip(event, '580', 580)">
+                <p>
+                  <a id="Length">
+                    <a href="#Length">
+                      <code><span>ArbGeometry.Length<span>()</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="580">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>ArbGeometry.Length<span>()</span></span></code>
+                  <br/>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://docs.microsoft.com/dotnet/api/fscheck.arbitrary-1">Arbitrary</a>&lt;Length&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Math.Geometry.Test.Gen.ArbGeometry.Length`')">
+                <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Math.Geometry.Test.Gen.ArbGeometry.Length\'/>')">
+                <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/Test/Gen.fs#L137-137" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+              </p>
+            </div>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="https://docs.microsoft.com/dotnet/api/fscheck.arbitrary-1">Arbitrary</a>&lt;Length&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '581', 581)" onmouseover="showTip(event, '581', 581)">
+                <p>
+                  <a id="Line2D">
+                    <a href="#Line2D">
+                      <code><span>ArbGeometry.Line2D<span>()</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="581">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>ArbGeometry.Line2D<span>()</span></span></code>
+                  <br/>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://docs.microsoft.com/dotnet/api/fscheck.arbitrary-1">Arbitrary</a>&lt;<span><a href="/Math.Geometry/reference/math-geometry-line2d-2.html">Line2D</a>&lt;<span><a href="https://docs.microsoft.com/dotnet/api/math.units.meters">Meters</a>,&#32;<a href="https://docs.microsoft.com/dotnet/api/math.units.test.testspace">TestSpace</a></span>&gt;</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Math.Geometry.Test.Gen.ArbGeometry.Line2D`')">
+                <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Math.Geometry.Test.Gen.ArbGeometry.Line2D\'/>')">
+                <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/Test/Gen.fs#L143-143" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+              </p>
+            </div>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="https://docs.microsoft.com/dotnet/api/fscheck.arbitrary-1">Arbitrary</a>&lt;<span><a href="/Math.Geometry/reference/math-geometry-line2d-2.html">Line2D</a>&lt;<span><a href="https://docs.microsoft.com/dotnet/api/math.units.meters">Meters</a>,&#32;<a href="https://docs.microsoft.com/dotnet/api/math.units.test.testspace">TestSpace</a></span>&gt;</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '582', 582)" onmouseover="showTip(event, '582', 582)">
+                <p>
+                  <a id="LineSegment2D">
+                    <a href="#LineSegment2D">
+                      <code><span>ArbGeometry.LineSegment2D<span>()</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="582">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>ArbGeometry.LineSegment2D<span>()</span></span></code>
+                  <br/>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://docs.microsoft.com/dotnet/api/fscheck.arbitrary-1">Arbitrary</a>&lt;<span><a href="/Math.Geometry/reference/math-geometry-linesegment2d-2.html">LineSegment2D</a>&lt;<span><a href="https://docs.microsoft.com/dotnet/api/math.units.meters">Meters</a>,&#32;<a href="https://docs.microsoft.com/dotnet/api/math.units.test.testspace">TestSpace</a></span>&gt;</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Math.Geometry.Test.Gen.ArbGeometry.LineSegment2D`')">
+                <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Math.Geometry.Test.Gen.ArbGeometry.LineSegment2D\'/>')">
+                <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/Test/Gen.fs#L144-144" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+              </p>
+            </div>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="https://docs.microsoft.com/dotnet/api/fscheck.arbitrary-1">Arbitrary</a>&lt;<span><a href="/Math.Geometry/reference/math-geometry-linesegment2d-2.html">LineSegment2D</a>&lt;<span><a href="https://docs.microsoft.com/dotnet/api/math.units.meters">Meters</a>,&#32;<a href="https://docs.microsoft.com/dotnet/api/math.units.test.testspace">TestSpace</a></span>&gt;</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '583', 583)" onmouseover="showTip(event, '583', 583)">
+                <p>
+                  <a id="Point2D">
+                    <a href="#Point2D">
+                      <code><span>ArbGeometry.Point2D<span>()</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="583">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>ArbGeometry.Point2D<span>()</span></span></code>
+                  <br/>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://docs.microsoft.com/dotnet/api/fscheck.arbitrary-1">Arbitrary</a>&lt;<span><a href="/Math.Geometry/reference/math-geometry-point2d-2.html">Point2D</a>&lt;<span><a href="https://docs.microsoft.com/dotnet/api/math.units.meters">Meters</a>,&#32;<a href="https://docs.microsoft.com/dotnet/api/math.units.test.testspace">TestSpace</a></span>&gt;</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Math.Geometry.Test.Gen.ArbGeometry.Point2D`')">
+                <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Math.Geometry.Test.Gen.ArbGeometry.Point2D\'/>')">
+                <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/Test/Gen.fs#L141-141" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+              </p>
+            </div>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="https://docs.microsoft.com/dotnet/api/fscheck.arbitrary-1">Arbitrary</a>&lt;<span><a href="/Math.Geometry/reference/math-geometry-point2d-2.html">Point2D</a>&lt;<span><a href="https://docs.microsoft.com/dotnet/api/math.units.meters">Meters</a>,&#32;<a href="https://docs.microsoft.com/dotnet/api/math.units.test.testspace">TestSpace</a></span>&gt;</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '584', 584)" onmouseover="showTip(event, '584', 584)">
+                <p>
+                  <a id="Polygon2D">
+                    <a href="#Polygon2D">
+                      <code><span>ArbGeometry.Polygon2D<span>()</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="584">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>ArbGeometry.Polygon2D<span>()</span></span></code>
+                  <br/>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://docs.microsoft.com/dotnet/api/fscheck.arbitrary-1">Arbitrary</a>&lt;<span><a href="/Math.Geometry/reference/math-geometry-polygon2d-2.html">Polygon2D</a>&lt;<span><a href="https://docs.microsoft.com/dotnet/api/math.units.meters">Meters</a>,&#32;<a href="https://docs.microsoft.com/dotnet/api/math.units.test.testspace">TestSpace</a></span>&gt;</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Math.Geometry.Test.Gen.ArbGeometry.Polygon2D`')">
+                <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Math.Geometry.Test.Gen.ArbGeometry.Polygon2D\'/>')">
+                <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/Test/Gen.fs#L147-147" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+              </p>
+            </div>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="https://docs.microsoft.com/dotnet/api/fscheck.arbitrary-1">Arbitrary</a>&lt;<span><a href="/Math.Geometry/reference/math-geometry-polygon2d-2.html">Polygon2D</a>&lt;<span><a href="https://docs.microsoft.com/dotnet/api/math.units.meters">Meters</a>,&#32;<a href="https://docs.microsoft.com/dotnet/api/math.units.test.testspace">TestSpace</a></span>&gt;</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '585', 585)" onmouseover="showTip(event, '585', 585)">
+                <p>
+                  <a id="PositiveLength">
+                    <a href="#PositiveLength">
+                      <code><span>ArbGeometry.PositiveLength<span>()</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="585">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>ArbGeometry.PositiveLength<span>()</span></span></code>
+                  <br/>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://docs.microsoft.com/dotnet/api/fscheck.arbitrary-1">Arbitrary</a>&lt;<span>Length&#32;<a href="/Math.Geometry/reference/math-geometry-test-positive-1.html">Positive</a></span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Math.Geometry.Test.Gen.ArbGeometry.PositiveLength`')">
+                <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Math.Geometry.Test.Gen.ArbGeometry.PositiveLength\'/>')">
+                <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/Test/Gen.fs#L138-138" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+              </p>
+            </div>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="https://docs.microsoft.com/dotnet/api/fscheck.arbitrary-1">Arbitrary</a>&lt;<span>Length&#32;<a href="/Math.Geometry/reference/math-geometry-test-positive-1.html">Positive</a></span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '586', 586)" onmouseover="showTip(event, '586', 586)">
+                <p>
+                  <a id="Register">
+                    <a href="#Register">
+                      <code><span>ArbGeometry.Register<span>()</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="586">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>ArbGeometry.Register<span>()</span></span></code>
+                  <br/>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Math.Geometry.Test.Gen.ArbGeometry.Register`')">
+                <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Math.Geometry.Test.Gen.ArbGeometry.Register\'/>')">
+                <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/Test/Gen.fs#L149-149" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+              </p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '587', 587)" onmouseover="showTip(event, '587', 587)">
+                <p>
+                  <a id="SweptAngle">
+                    <a href="#SweptAngle">
+                      <code><span>ArbGeometry.SweptAngle<span>()</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="587">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>ArbGeometry.SweptAngle<span>()</span></span></code>
+                  <br/>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://docs.microsoft.com/dotnet/api/fscheck.arbitrary-1">Arbitrary</a>&lt;<a href="/Math.Geometry/reference/math-geometry-sweptangle.html">SweptAngle</a>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Math.Geometry.Test.Gen.ArbGeometry.SweptAngle`')">
+                <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Math.Geometry.Test.Gen.ArbGeometry.SweptAngle\'/>')">
+                <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/Test/Gen.fs#L135-135" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+              </p>
+            </div>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="https://docs.microsoft.com/dotnet/api/fscheck.arbitrary-1">Arbitrary</a>&lt;<a href="/Math.Geometry/reference/math-geometry-sweptangle.html">SweptAngle</a>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '588', 588)" onmouseover="showTip(event, '588', 588)">
+                <p>
+                  <a id="Vector2D">
+                    <a href="#Vector2D">
+                      <code><span>ArbGeometry.Vector2D<span>()</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="588">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>ArbGeometry.Vector2D<span>()</span></span></code>
+                  <br/>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://docs.microsoft.com/dotnet/api/fscheck.arbitrary-1">Arbitrary</a>&lt;<span><a href="/Math.Geometry/reference/math-geometry-vector2d-2.html">Vector2D</a>&lt;<span><a href="https://docs.microsoft.com/dotnet/api/math.units.meters">Meters</a>,&#32;<a href="https://docs.microsoft.com/dotnet/api/math.units.test.testspace">TestSpace</a></span>&gt;</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Math.Geometry.Test.Gen.ArbGeometry.Vector2D`')">
+                <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Math.Geometry.Test.Gen.ArbGeometry.Vector2D\'/>')">
+                <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/Test/Gen.fs#L140-140" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+                <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+              </p>
+            </div>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="https://docs.microsoft.com/dotnet/api/fscheck.arbitrary-1">Arbitrary</a>&lt;<span><a href="/Math.Geometry/reference/math-geometry-vector2d-2.html">Vector2D</a>&lt;<span><a href="https://docs.microsoft.com/dotnet/api/math.units.meters">Meters</a>,&#32;<a href="https://docs.microsoft.com/dotnet/api/math.units.test.testspace">TestSpace</a></span>&gt;</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+            
+        </div>
+
+        <!-- BEGIN SEARCH BOX: this adds support for the search box -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.css" />
+        <script type="text/javascript">var fsdocs_search_baseurl = '/Math.Geometry/';</script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.8/lunr.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.min.js"></script>
+        <script type="text/javascript" src="/Math.Geometry/content/fsdocs-search.js"></script>
+        <!-- END SEARCH BOX: this adds support for the search box -->
+    </div>
+</body>
+
+</html>

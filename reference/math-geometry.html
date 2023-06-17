@@ -1,0 +1,1303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Math.Geometry</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="Thomas Waters">
+
+    <link rel="stylesheet" id="theme_link" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.6.0/materia/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+    <link type="text/css" rel="stylesheet" href="/Math.Geometry/content/navbar-fixed-left.css" />
+    <link type="text/css" rel="stylesheet" href="/Math.Geometry/content/fsdocs-default.css" />
+    <link type="text/css" rel="stylesheet" href="/Math.Geometry/content/fsdocs-custom.css" />
+    <script type="text/javascript" src="/Math.Geometry/content/fsdocs-tips.js"></script>
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!-- BEGIN SEARCH BOX: this adds support for the search box -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.css" />
+    <!-- END SEARCH BOX: this adds support for the search box -->
+    
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md navbar-light bg-secondary fixed-left" id="fsdocs-nav">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse navbar-nav-scroll" id="navbarsExampleDefault">
+            <a href="/Math.Geometry/"><img id="fsdocs-logo" src="/Math.Geometry/img/logo.png" /></a>
+            <!-- BEGIN SEARCH BOX: this adds support for the search box -->
+            <div id="header">
+                <div class="searchbox" id="fsdocs-searchbox">
+                    <label for="search-by">
+                        <i class="fas fa-search"></i>
+                    </label>
+                    <input data-search-input="" id="search-by" type="search" placeholder="Search..." />
+                    <span data-search-clear="">
+                        <i class="fas fa-times"></i>
+                    </span>
+                </div>
+            </div>
+
+            <!-- END SEARCH BOX: this adds support for the search box -->
+            <ul class="navbar-nav">
+                <li class="nav-header">Links</li>
+                <li class="nav-item" id="fsdocs-license-link"><a class="nav-link" href="https://github.com/Evelios/Math.Geometry/blob/master/LICENSE.md">License</a></li>
+                <li class="nav-item" id="fsdocs-release-notes-link"><a class="nav-link" href="https://github.com/Evelios/Math.Geometry/blob/master/RELEASE_NOTES.md">Release Notes</a></li>
+                <li class="nav-item" id="fsdocs-repository-link"><a class="nav-link" href="https://github.com/Evelios/Math.Geometry/">Source Repository</a></li>
+                <li class="nav-header">
+  Modules
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="/Math.Geometry/length.html">
+    Lengths
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="/Math.Geometry/interval.html">
+    Interval
+  </a>
+</li>             
+<li class="nav-header">
+  2D Modules
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="/Math.Geometry/arc.html">
+    2D Arc
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="/Math.Geometry/axes.html">
+    2D Axis
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="/Math.Geometry/bounding-box.html">
+    2D Bounding Box
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="/Math.Geometry/circle.html">
+    2D Circle
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="/Math.Geometry/direction.html">
+    2D Direction
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="/Math.Geometry/ellipse.html">
+    2D Ellipse
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="/Math.Geometry/frame.html">
+    2D Frame
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="/Math.Geometry/line-segment.html">
+    2D Line Segment
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="/Math.Geometry/point.html">
+    2D Points
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="/Math.Geometry/polygon.html">
+    2D Polygon
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="/Math.Geometry/polyline.html">
+    2D Poly-Line
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="/Math.Geometry/size.html">
+    2D Size
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="/Math.Geometry/triangle.html">
+    2D Triangle
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="/Math.Geometry/vector.html">
+    2D Vectors
+  </a>
+</li>
+                <li class="nav-header">
+  API Reference
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="/Math.Geometry/reference/index.html">
+    All Namespaces
+  </a>
+</li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="masthead">
+            <h3 class="muted"><a href="/Math.Geometry/">Math.Geometry</a></h3>
+        </div>
+        <hr />
+        <div class="container" id="fsdocs-content">
+            <div>
+  <h2 id="math-geometry">
+    Math.Geometry Namespace
+  </h2>
+  <div class="fsdocs-xmldoc"></div>
+  <table class="table outer-list fsdocs-entity-list">
+    <thead>
+      <tr>
+        <td>
+          Type/Module
+        </td>
+        <td>
+          Description
+        </td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="Arc2D">
+              <a href="/Math.Geometry/reference/math-geometry-arc2dmodule.html">
+                Arc2D
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-entity-xmldoc">
+          <div>
+            <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:T:Math.Geometry.Arc2DModule`')">
+              <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+              <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+            </div>
+            <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'T:Math.Geometry.Arc2DModule\'/>')">
+              <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+              <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+            </div>
+            <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/Arc2D.fs#L2-2" class="fsdocs-source-link" title="Source on GitHub">
+              <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+              <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+            </a>
+            <p class="fsdocs-summary">
+              
+            </p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="Arc2D<'Units, 'Coordinates>">
+              <a href="/Math.Geometry/reference/math-geometry-arc2d-2.html">
+                Arc2D<'Units, 'Coordinates>
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-entity-xmldoc">
+          <div>
+            <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('``cref:T:Math.Geometry.Arc2D`2``')">
+              <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+              <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+            </div>
+            <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'T:Math.Geometry.Arc2D`2\'/>')">
+              <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+              <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+            </div>
+            <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/Types.fs#L462-462" class="fsdocs-source-link" title="Source on GitHub">
+              <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+              <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+            </a>
+            <p class="fsdocs-summary">
+              
+            </p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="Axis2D">
+              <a href="/Math.Geometry/reference/math-geometry-axis2dmodule.html">
+                Axis2D
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-entity-xmldoc">
+          <div>
+            <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:T:Math.Geometry.Axis2DModule`')">
+              <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+              <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+            </div>
+            <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'T:Math.Geometry.Axis2DModule\'/>')">
+              <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+              <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+            </div>
+            <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/Axis2D.fs#L2-2" class="fsdocs-source-link" title="Source on GitHub">
+              <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+              <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+            </a>
+            <p class="fsdocs-summary">
+              
+            </p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="Axis2D<'Units, 'Coordinates>">
+              <a href="/Math.Geometry/reference/math-geometry-axis2d-2.html">
+                Axis2D<'Units, 'Coordinates>
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-entity-xmldoc">
+          <div>
+            <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('``cref:T:Math.Geometry.Axis2D`2``')">
+              <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+              <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+            </div>
+            <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'T:Math.Geometry.Axis2D`2\'/>')">
+              <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+              <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+            </div>
+            <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/Types.fs#L226-226" class="fsdocs-source-link" title="Source on GitHub">
+              <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+              <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+            </a>
+            <p class="fsdocs-summary">
+              
+            </p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="Boolean2D">
+              <a href="/Math.Geometry/reference/math-geometry-boolean2d.html">
+                Boolean2D
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-entity-xmldoc">
+          <div>
+            <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:T:Math.Geometry.Boolean2D`')">
+              <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+              <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+            </div>
+            <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'T:Math.Geometry.Boolean2D\'/>')">
+              <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+              <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+            </div>
+            <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/Boolean2D.fs#L1-1" class="fsdocs-source-link" title="Source on GitHub">
+              <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+              <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+            </a>
+            <p class="fsdocs-summary">
+              
+            </p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="BoundingBox2D">
+              <a href="/Math.Geometry/reference/math-geometry-boundingbox2dmodule.html">
+                BoundingBox2D
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-entity-xmldoc">
+          <div>
+            <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:T:Math.Geometry.BoundingBox2DModule`')">
+              <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+              <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+            </div>
+            <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'T:Math.Geometry.BoundingBox2DModule\'/>')">
+              <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+              <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+            </div>
+            <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/BoundingBox2D.fs#L2-2" class="fsdocs-source-link" title="Source on GitHub">
+              <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+              <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+            </a>
+            <p class="fsdocs-summary">
+              
+            </p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="BoundingBox2D<'Units, 'Coordinates>">
+              <a href="/Math.Geometry/reference/math-geometry-boundingbox2d-2.html">
+                BoundingBox2D<'Units, 'Coordinates>
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-entity-xmldoc">
+          <div>
+            <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('``cref:T:Math.Geometry.BoundingBox2D`2``')">
+              <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+              <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+            </div>
+            <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'T:Math.Geometry.BoundingBox2D`2\'/>')">
+              <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+              <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+            </div>
+            <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/Types.fs#L380-380" class="fsdocs-source-link" title="Source on GitHub">
+              <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+              <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+            </a>
+            <p class="fsdocs-summary">
+              
+            </p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="Circle2D">
+              <a href="/Math.Geometry/reference/math-geometry-circle2dmodule.html">
+                Circle2D
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-entity-xmldoc">
+          <div>
+            <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:T:Math.Geometry.Circle2DModule`')">
+              <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+              <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+            </div>
+            <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'T:Math.Geometry.Circle2DModule\'/>')">
+              <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+              <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+            </div>
+            <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/Circle2D.fs#L2-2" class="fsdocs-source-link" title="Source on GitHub">
+              <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+              <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+            </a>
+            <p class="fsdocs-summary">
+              
+            </p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="Circle2D<'Units, 'Coordinates>">
+              <a href="/Math.Geometry/reference/math-geometry-circle2d-2.html">
+                Circle2D<'Units, 'Coordinates>
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-entity-xmldoc">
+          <div>
+            <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('``cref:T:Math.Geometry.Circle2D`2``')">
+              <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+              <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+            </div>
+            <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'T:Math.Geometry.Circle2D`2\'/>')">
+              <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+              <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+            </div>
+            <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/Types.fs#L423-423" class="fsdocs-source-link" title="Source on GitHub">
+              <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+              <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+            </a>
+            <p class="fsdocs-summary">
+              
+            </p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="Direction2D">
+              <a href="/Math.Geometry/reference/math-geometry-direction2dmodule.html">
+                Direction2D
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-entity-xmldoc">
+          <div>
+            <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:T:Math.Geometry.Direction2DModule`')">
+              <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+              <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+            </div>
+            <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'T:Math.Geometry.Direction2DModule\'/>')">
+              <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+              <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+            </div>
+            <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/Direction2D.fs#L2-2" class="fsdocs-source-link" title="Source on GitHub">
+              <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+              <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+            </a>
+            <p class="fsdocs-summary">
+              
+            </p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="Direction2D<'Coordinates>">
+              <a href="/Math.Geometry/reference/math-geometry-direction2d-1.html">
+                Direction2D<'Coordinates>
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-entity-xmldoc">
+          <div>
+            <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('``cref:T:Math.Geometry.Direction2D`1``')">
+              <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+              <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+            </div>
+            <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'T:Math.Geometry.Direction2D`1\'/>')">
+              <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+              <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+            </div>
+            <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/Types.fs#L33-33" class="fsdocs-source-link" title="Source on GitHub">
+              <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+              <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+            </a>
+            <p class="fsdocs-summary">
+              
+            </p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="Ellipse2D">
+              <a href="/Math.Geometry/reference/math-geometry-ellipse2d.html">
+                Ellipse2D
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-entity-xmldoc">
+          <div>
+            <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:T:Math.Geometry.Ellipse2D`')">
+              <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+              <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+            </div>
+            <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'T:Math.Geometry.Ellipse2D\'/>')">
+              <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+              <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+            </div>
+            <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/Ellipse2D.fs#L1-1" class="fsdocs-source-link" title="Source on GitHub">
+              <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+              <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+            </a>
+            <p class="fsdocs-summary">
+              
+            </p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="Ellipse2D<'Units, 'Coordinates>">
+              <a href="/Math.Geometry/reference/math-geometry-ellipse2d-2.html">
+                Ellipse2D<'Units, 'Coordinates>
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-entity-xmldoc">
+          <div>
+            <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('``cref:T:Math.Geometry.Ellipse2D`2``')">
+              <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+              <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+            </div>
+            <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'T:Math.Geometry.Ellipse2D`2\'/>')">
+              <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+              <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+            </div>
+            <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/Types.fs#L439-439" class="fsdocs-source-link" title="Source on GitHub">
+              <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+              <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+            </a>
+            <p class="fsdocs-summary">
+              
+            </p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="Frame2D">
+              <a href="/Math.Geometry/reference/math-geometry-frame2dmodule.html">
+                Frame2D
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-entity-xmldoc">
+          <div>
+            <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:T:Math.Geometry.Frame2DModule`')">
+              <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+              <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+            </div>
+            <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'T:Math.Geometry.Frame2DModule\'/>')">
+              <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+              <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+            </div>
+            <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/Frame2D.fs#L2-2" class="fsdocs-source-link" title="Source on GitHub">
+              <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+              <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+            </a>
+            <p class="fsdocs-summary">
+              
+            </p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="Frame2D<'Units, 'Coordinates, 'Defines>">
+              <a href="/Math.Geometry/reference/math-geometry-frame2d-3.html">
+                Frame2D<'Units, 'Coordinates, 'Defines>
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-entity-xmldoc">
+          <div>
+            <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('``cref:T:Math.Geometry.Frame2D`3``')">
+              <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+              <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+            </div>
+            <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'T:Math.Geometry.Frame2D`3\'/>')">
+              <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+              <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+            </div>
+            <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/Types.fs#L241-241" class="fsdocs-source-link" title="Source on GitHub">
+              <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+              <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+            </a>
+            <p class="fsdocs-summary">
+              
+            </p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="Intersection2D">
+              <a href="/Math.Geometry/reference/math-geometry-intersection2d.html">
+                Intersection2D
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-entity-xmldoc">
+          <div>
+            <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:T:Math.Geometry.Intersection2D`')">
+              <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+              <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+            </div>
+            <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'T:Math.Geometry.Intersection2D\'/>')">
+              <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+              <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+            </div>
+            <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/Intersection2D.fs#L1-1" class="fsdocs-source-link" title="Source on GitHub">
+              <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+              <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+            </a>
+            <p class="fsdocs-summary">
+              
+            </p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="Line2D">
+              <a href="/Math.Geometry/reference/math-geometry-line2dmodule.html">
+                Line2D
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-entity-xmldoc">
+          <div>
+            <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:T:Math.Geometry.Line2DModule`')">
+              <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+              <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+            </div>
+            <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'T:Math.Geometry.Line2DModule\'/>')">
+              <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+              <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+            </div>
+            <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/Line2D.fs#L2-2" class="fsdocs-source-link" title="Source on GitHub">
+              <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+              <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+            </a>
+            <p class="fsdocs-summary">
+              
+            </p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="Line2D<'Units, 'Coordinates>">
+              <a href="/Math.Geometry/reference/math-geometry-line2d-2.html">
+                Line2D<'Units, 'Coordinates>
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-entity-xmldoc">
+          <div>
+            <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('``cref:T:Math.Geometry.Line2D`2``')">
+              <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+              <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+            </div>
+            <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'T:Math.Geometry.Line2D`2\'/>')">
+              <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+              <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+            </div>
+            <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/Types.fs#L313-313" class="fsdocs-source-link" title="Source on GitHub">
+              <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+              <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+            </a>
+            <p class="fsdocs-summary">
+              
+            </p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="LineSegment2D">
+              <a href="/Math.Geometry/reference/math-geometry-linesegment2dmodule.html">
+                LineSegment2D
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-entity-xmldoc">
+          <div>
+            <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:T:Math.Geometry.LineSegment2DModule`')">
+              <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+              <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+            </div>
+            <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'T:Math.Geometry.LineSegment2DModule\'/>')">
+              <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+              <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+            </div>
+            <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/LineSegment2D.fs#L2-2" class="fsdocs-source-link" title="Source on GitHub">
+              <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+              <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+            </a>
+            <p class="fsdocs-summary">
+              
+            </p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="LineSegment2D<'Units, 'Coordinates>">
+              <a href="/Math.Geometry/reference/math-geometry-linesegment2d-2.html">
+                LineSegment2D<'Units, 'Coordinates>
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-entity-xmldoc">
+          <div>
+            <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('``cref:T:Math.Geometry.LineSegment2D`2``')">
+              <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+              <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+            </div>
+            <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'T:Math.Geometry.LineSegment2D`2\'/>')">
+              <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+              <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+            </div>
+            <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/Types.fs#L250-250" class="fsdocs-source-link" title="Source on GitHub">
+              <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+              <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+            </a>
+            <p class="fsdocs-summary">
+              
+            </p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="Nondegenerate<'Units, 'Coordinates>">
+              <a href="/Math.Geometry/reference/math-geometry-nondegenerate-2.html">
+                Nondegenerate<'Units, 'Coordinates>
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-entity-xmldoc">
+          <div>
+            <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('``cref:T:Math.Geometry.Nondegenerate`2``')">
+              <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+              <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+            </div>
+            <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'T:Math.Geometry.Nondegenerate`2\'/>')">
+              <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+              <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+            </div>
+            <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/Types.fs#L480-480" class="fsdocs-source-link" title="Source on GitHub">
+              <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+              <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+            </a>
+            <p class="fsdocs-summary">
+              
+            </p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="Point2D">
+              <a href="/Math.Geometry/reference/math-geometry-point2dmodule.html">
+                Point2D
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-entity-xmldoc">
+          <div>
+            <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:T:Math.Geometry.Point2DModule`')">
+              <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+              <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+            </div>
+            <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'T:Math.Geometry.Point2DModule\'/>')">
+              <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+              <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+            </div>
+            <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/Point2D.fs#L2-2" class="fsdocs-source-link" title="Source on GitHub">
+              <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+              <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+            </a>
+            <p class="fsdocs-summary">
+              
+            </p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="Point2D<'Units, 'Coordinates>">
+              <a href="/Math.Geometry/reference/math-geometry-point2d-2.html">
+                Point2D<'Units, 'Coordinates>
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-entity-xmldoc">
+          <div>
+            <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('``cref:T:Math.Geometry.Point2D`2``')">
+              <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+              <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+            </div>
+            <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'T:Math.Geometry.Point2D`2\'/>')">
+              <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+              <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+            </div>
+            <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/Types.fs#L154-154" class="fsdocs-source-link" title="Source on GitHub">
+              <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+              <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+            </a>
+            <p class="fsdocs-summary">
+              
+            </p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="Polygon2D">
+              <a href="/Math.Geometry/reference/math-geometry-polygon2dmodule.html">
+                Polygon2D
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-entity-xmldoc">
+          <div>
+            <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:T:Math.Geometry.Polygon2DModule`')">
+              <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+              <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+            </div>
+            <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'T:Math.Geometry.Polygon2DModule\'/>')">
+              <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+              <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+            </div>
+            <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/Polygon2D.fs#L2-2" class="fsdocs-source-link" title="Source on GitHub">
+              <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+              <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+            </a>
+            <p class="fsdocs-summary">
+              
+            </p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="Polygon2D<'Units, 'Coordinates>">
+              <a href="/Math.Geometry/reference/math-geometry-polygon2d-2.html">
+                Polygon2D<'Units, 'Coordinates>
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-entity-xmldoc">
+          <div>
+            <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('``cref:T:Math.Geometry.Polygon2D`2``')">
+              <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+              <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+            </div>
+            <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'T:Math.Geometry.Polygon2D`2\'/>')">
+              <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+              <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+            </div>
+            <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/Types.fs#L485-485" class="fsdocs-source-link" title="Source on GitHub">
+              <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+              <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+            </a>
+            <p class="fsdocs-summary">
+              
+            </p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="Polyline2D">
+              <a href="/Math.Geometry/reference/math-geometry-polyline2dmodule.html">
+                Polyline2D
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-entity-xmldoc">
+          <div>
+            <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:T:Math.Geometry.Polyline2DModule`')">
+              <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+              <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+            </div>
+            <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'T:Math.Geometry.Polyline2DModule\'/>')">
+              <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+              <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+            </div>
+            <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/Polyline2D.fs#L2-2" class="fsdocs-source-link" title="Source on GitHub">
+              <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+              <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+            </a>
+            <p class="fsdocs-summary">
+              
+            </p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="Polyline2D<'Units, 'Coordinates>">
+              <a href="/Math.Geometry/reference/math-geometry-polyline2d-2.html">
+                Polyline2D<'Units, 'Coordinates>
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-entity-xmldoc">
+          <div>
+            <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('``cref:T:Math.Geometry.Polyline2D`2``')">
+              <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+              <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+            </div>
+            <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'T:Math.Geometry.Polyline2D`2\'/>')">
+              <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+              <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+            </div>
+            <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/Types.fs#L522-522" class="fsdocs-source-link" title="Source on GitHub">
+              <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+              <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+            </a>
+            <p class="fsdocs-summary">
+              
+            </p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="Rectangle2D">
+              <a href="/Math.Geometry/reference/math-geometry-rectangle2dmodule.html">
+                Rectangle2D
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-entity-xmldoc">
+          <div>
+            <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:T:Math.Geometry.Rectangle2DModule`')">
+              <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+              <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+            </div>
+            <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'T:Math.Geometry.Rectangle2DModule\'/>')">
+              <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+              <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+            </div>
+            <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/Rectangle2D.fs#L2-2" class="fsdocs-source-link" title="Source on GitHub">
+              <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+              <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+            </a>
+            <p class="fsdocs-summary">
+              
+            </p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="Rectangle2D<'Units, 'Coordinates>">
+              <a href="/Math.Geometry/reference/math-geometry-rectangle2d-2.html">
+                Rectangle2D<'Units, 'Coordinates>
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-entity-xmldoc">
+          <div>
+            <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('``cref:T:Math.Geometry.Rectangle2D`2``')">
+              <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+              <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+            </div>
+            <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'T:Math.Geometry.Rectangle2D`2\'/>')">
+              <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+              <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+            </div>
+            <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/Types.fs#L407-407" class="fsdocs-source-link" title="Source on GitHub">
+              <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+              <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+            </a>
+            <p class="fsdocs-summary">
+              
+            </p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="Size2D">
+              <a href="/Math.Geometry/reference/math-geometry-size2dmodule.html">
+                Size2D
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-entity-xmldoc">
+          <div>
+            <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:T:Math.Geometry.Size2DModule`')">
+              <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+              <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+            </div>
+            <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'T:Math.Geometry.Size2DModule\'/>')">
+              <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+              <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+            </div>
+            <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/Size.fs#L2-2" class="fsdocs-source-link" title="Source on GitHub">
+              <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+              <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+            </a>
+            <p class="fsdocs-summary">
+              
+            </p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="Size2D<'Units>">
+              <a href="/Math.Geometry/reference/math-geometry-size2d-1.html">
+                Size2D<'Units>
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-entity-xmldoc">
+          <div>
+            <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('``cref:T:Math.Geometry.Size2D`1``')">
+              <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+              <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+            </div>
+            <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'T:Math.Geometry.Size2D`1\'/>')">
+              <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+              <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+            </div>
+            <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/Types.fs#L10-10" class="fsdocs-source-link" title="Source on GitHub">
+              <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+              <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+            </a>
+            <p class="fsdocs-summary">
+              
+            </p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="SweptAngle">
+              <a href="/Math.Geometry/reference/math-geometry-sweptanglemodule.html">
+                SweptAngle (Module)
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-entity-xmldoc">
+          <div>
+            <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:T:Math.Geometry.SweptAngleModule`')">
+              <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+              <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+            </div>
+            <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'T:Math.Geometry.SweptAngleModule\'/>')">
+              <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+              <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+            </div>
+            <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/SweptAngle.fs#L2-2" class="fsdocs-source-link" title="Source on GitHub">
+              <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+              <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+            </a>
+            <p class="fsdocs-summary">
+              
+            </p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="SweptAngle">
+              <a href="/Math.Geometry/reference/math-geometry-sweptangle.html">
+                SweptAngle (Type)
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-entity-xmldoc">
+          <div>
+            <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:T:Math.Geometry.SweptAngle`')">
+              <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+              <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+            </div>
+            <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'T:Math.Geometry.SweptAngle\'/>')">
+              <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+              <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+            </div>
+            <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/Types.fs#L454-454" class="fsdocs-source-link" title="Source on GitHub">
+              <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+              <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+            </a>
+            <p class="fsdocs-summary">
+              
+            </p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="Triangle2D">
+              <a href="/Math.Geometry/reference/math-geometry-triangle2dmodule.html">
+                Triangle2D
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-entity-xmldoc">
+          <div>
+            <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:T:Math.Geometry.Triangle2DModule`')">
+              <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+              <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+            </div>
+            <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'T:Math.Geometry.Triangle2DModule\'/>')">
+              <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+              <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+            </div>
+            <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/Triangle2D.fs#L2-2" class="fsdocs-source-link" title="Source on GitHub">
+              <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+              <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+            </a>
+            <p class="fsdocs-summary">
+              
+            </p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="Triangle2D<'Units, 'Coordinates>">
+              <a href="/Math.Geometry/reference/math-geometry-triangle2d-2.html">
+                Triangle2D<'Units, 'Coordinates>
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-entity-xmldoc">
+          <div>
+            <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('``cref:T:Math.Geometry.Triangle2D`2``')">
+              <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+              <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+            </div>
+            <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'T:Math.Geometry.Triangle2D`2\'/>')">
+              <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+              <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+            </div>
+            <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/Types.fs#L361-361" class="fsdocs-source-link" title="Source on GitHub">
+              <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+              <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+            </a>
+            <p class="fsdocs-summary">
+              
+            </p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="Vector2D">
+              <a href="/Math.Geometry/reference/math-geometry-vector2dmodule.html">
+                Vector2D
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-entity-xmldoc">
+          <div>
+            <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:T:Math.Geometry.Vector2DModule`')">
+              <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+              <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+            </div>
+            <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'T:Math.Geometry.Vector2DModule\'/>')">
+              <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+              <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+            </div>
+            <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/Vector2D.fs#L2-2" class="fsdocs-source-link" title="Source on GitHub">
+              <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+              <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+            </a>
+            <p class="fsdocs-summary">
+              
+            </p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="Vector2D<'Units, 'Coordinates>">
+              <a href="/Math.Geometry/reference/math-geometry-vector2d-2.html">
+                Vector2D<'Units, 'Coordinates>
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-entity-xmldoc">
+          <div>
+            <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('``cref:T:Math.Geometry.Vector2D`2``')">
+              <img src="/Math.Geometry/content/img/copy-md.png" class="normal"/>
+              <img src="/Math.Geometry/content/img/copy-md-hover.png" class="hover"/>
+            </div>
+            <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'T:Math.Geometry.Vector2D`2\'/>')">
+              <img src="/Math.Geometry/content/img/copy-xml.png" class="normal"/>
+              <img src="/Math.Geometry/content/img/copy-xml-hover.png" class="hover"/>
+            </div>
+            <a href="https://github.com/Evelios/Math.Geometry/Math.Geometry/Types.fs#L87-87" class="fsdocs-source-link" title="Source on GitHub">
+              <img src="/Math.Geometry/content/img/github.png" class="normal"/>
+              <img src="/Math.Geometry/content/img/github-hover.png" class="hover"/>
+            </a>
+            <p class="fsdocs-summary">
+              
+            </p>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+            
+        </div>
+
+        <!-- BEGIN SEARCH BOX: this adds support for the search box -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.css" />
+        <script type="text/javascript">var fsdocs_search_baseurl = '/Math.Geometry/';</script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.8/lunr.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.min.js"></script>
+        <script type="text/javascript" src="/Math.Geometry/content/fsdocs-search.js"></script>
+        <!-- END SEARCH BOX: this adds support for the search box -->
+    </div>
+</body>
+
+</html>
