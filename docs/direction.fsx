@@ -11,11 +11,10 @@ index: 5
 *)
 (*** hide ***)
 
-#r "../Geometry/bin/Debug/net6.0/Geometry.dll"
-#r "../Geometry/bin/Release/net6.0/Geometry.dll"
+#r "../Math.Geometry/bin/Debug/net6.0/Math.Geometry.dll"
+#r "../Math.Geometry/bin/Release/net6.0/Math.Geometry.dll"
 
-#r "../Units/bin/Debug/net6.0/Units.dll"
-#r "../Units/bin/Release/net6.0/Units.dll"
+#r "nuget: Math.Units"
 
 
 open Math.Geometry
