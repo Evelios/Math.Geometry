@@ -160,119 +160,63 @@
             
 <h1><a name="Ellipse-2D" class="anchor" href="#Ellipse-2D">Ellipse 2D</a></h1>
 <h1><a name="Builders" class="anchor" href="#Builders">Builders</a></h1>
-<pre class="fssnip highlighted"><code lang="fsharp"><span onmouseout="hideTip(event, 'fs4', 6)" onmouseover="showTip(event, 'fs4', 6)" class="id">Ellipse2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs5', 7)" onmouseover="showTip(event, 'fs5', 7)" class="id">from</span>
-    <span class="pn">(</span><span onmouseout="hideTip(event, 'fs6', 8)" onmouseover="showTip(event, 'fs6', 8)" class="id">Point2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs5', 9)" onmouseover="showTip(event, 'fs5', 9)" class="id">meters</span> <span class="n">4.</span> <span class="n">4.</span><span class="pn">)</span>
-    <span onmouseout="hideTip(event, 'fs7', 10)" onmouseover="showTip(event, 'fs7', 10)" class="id">Direction2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs8', 11)" onmouseover="showTip(event, 'fs8', 11)" class="id">x</span>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">Ellipse2D</span><span class="pn">.</span><span class="id">from</span>
+    <span class="pn">(</span><span class="id">Point2D</span><span class="pn">.</span><span class="id">meters</span> <span class="n">4.</span> <span class="n">4.</span><span class="pn">)</span>
+    <span class="id">Direction2D</span><span class="pn">.</span><span class="id">x</span>
     <span class="pn">(</span><span class="id">Length</span><span class="pn">.</span><span class="id">meters</span> <span class="n">2.</span><span class="pn">)</span>
     <span class="pn">(</span><span class="id">Length</span><span class="pn">.</span><span class="id">meters</span> <span class="n">4.</span><span class="pn">)</span>
 </code></pre>
 <table class="pre"><tr><td><pre><code>No value returned by any evaluator</code></pre></td></tr></table>
 <h1><a name="Accessors" class="anchor" href="#Accessors">Accessors</a></h1>
-<pre class="fssnip highlighted"><code lang="fsharp"><span class="k">let</span> <span onmouseout="hideTip(event, 'fs9', 12)" onmouseover="showTip(event, 'fs9', 12)" class="id">ellipse</span><span class="pn">:</span> <span onmouseout="hideTip(event, 'fs4', 13)" onmouseover="showTip(event, 'fs4', 13)" class="id">Ellipse2D</span><span class="pn">&lt;</span><span class="id">Meters</span><span class="pn">,</span> <span onmouseout="hideTip(event, 'fs3', 14)" onmouseover="showTip(event, 'fs3', 14)" class="id">Cartesian</span><span class="pn">&gt;</span> <span class="o">=</span>
-    <span onmouseout="hideTip(event, 'fs4', 15)" onmouseover="showTip(event, 'fs4', 15)" class="id">Ellipse2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs5', 16)" onmouseover="showTip(event, 'fs5', 16)" class="id">from</span>
-        <span class="pn">(</span><span onmouseout="hideTip(event, 'fs6', 17)" onmouseover="showTip(event, 'fs6', 17)" class="id">Point2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs5', 18)" onmouseover="showTip(event, 'fs5', 18)" class="id">meters</span> <span class="n">4.</span> <span class="n">4.</span><span class="pn">)</span>
-        <span onmouseout="hideTip(event, 'fs7', 19)" onmouseover="showTip(event, 'fs7', 19)" class="id">Direction2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs8', 20)" onmouseover="showTip(event, 'fs8', 20)" class="id">x</span>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="k">let</span> <span onmouseout="hideTip(event, 'fs2', 3)" onmouseover="showTip(event, 'fs2', 3)" class="id">ellipse</span><span class="pn">:</span> <span class="id">Ellipse2D</span><span class="pn">&lt;</span><span class="id">Meters</span><span class="pn">,</span> <span onmouseout="hideTip(event, 'fs1', 4)" onmouseover="showTip(event, 'fs1', 4)" class="id">Cartesian</span><span class="pn">&gt;</span> <span class="o">=</span>
+    <span class="id">Ellipse2D</span><span class="pn">.</span><span class="id">from</span>
+        <span class="pn">(</span><span class="id">Point2D</span><span class="pn">.</span><span class="id">meters</span> <span class="n">4.</span> <span class="n">4.</span><span class="pn">)</span>
+        <span class="id">Direction2D</span><span class="pn">.</span><span class="id">x</span>
         <span class="pn">(</span><span class="id">Length</span><span class="pn">.</span><span class="id">meters</span> <span class="n">2.</span><span class="pn">)</span>
         <span class="pn">(</span><span class="id">Length</span><span class="pn">.</span><span class="id">meters</span> <span class="n">4.</span><span class="pn">)</span>
 </code></pre>
-<pre class="fssnip highlighted"><code lang="fsharp"><span onmouseout="hideTip(event, 'fs4', 21)" onmouseover="showTip(event, 'fs4', 21)" class="id">Ellipse2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs10', 22)" onmouseover="showTip(event, 'fs10', 22)" class="id">axes</span> <span onmouseout="hideTip(event, 'fs9', 23)" onmouseover="showTip(event, 'fs9', 23)" class="id">ellipse</span>  <span class="c">// or</span>
-<span onmouseout="hideTip(event, 'fs9', 24)" onmouseover="showTip(event, 'fs9', 24)" class="id">ellipse</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs11', 25)" onmouseover="showTip(event, 'fs11', 25)" class="id">Axes</span>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">Ellipse2D</span><span class="pn">.</span><span class="id">axes</span> <span onmouseout="hideTip(event, 'fs2', 5)" onmouseover="showTip(event, 'fs2', 5)" class="id">ellipse</span>  <span class="c">// or</span>
+<span onmouseout="hideTip(event, 'fs2', 6)" onmouseover="showTip(event, 'fs2', 6)" class="id">ellipse</span><span class="pn">.</span><span class="id">Axes</span>
 </code></pre>
 <table class="pre"><tr><td><pre><code>No value returned by any evaluator</code></pre></td></tr></table>
-<pre class="fssnip highlighted"><code lang="fsharp"><span onmouseout="hideTip(event, 'fs4', 26)" onmouseover="showTip(event, 'fs4', 26)" class="id">Ellipse2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs5', 27)" onmouseover="showTip(event, 'fs5', 27)" class="id">xRadius</span> <span onmouseout="hideTip(event, 'fs9', 28)" onmouseover="showTip(event, 'fs9', 28)" class="id">ellipse</span>  <span class="c">// or</span>
-<span onmouseout="hideTip(event, 'fs9', 29)" onmouseover="showTip(event, 'fs9', 29)" class="id">ellipse</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs5', 30)" onmouseover="showTip(event, 'fs5', 30)" class="id">XRadius</span>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">Ellipse2D</span><span class="pn">.</span><span class="id">xRadius</span> <span onmouseout="hideTip(event, 'fs2', 7)" onmouseover="showTip(event, 'fs2', 7)" class="id">ellipse</span>  <span class="c">// or</span>
+<span onmouseout="hideTip(event, 'fs2', 8)" onmouseover="showTip(event, 'fs2', 8)" class="id">ellipse</span><span class="pn">.</span><span class="id">XRadius</span>
 </code></pre>
 <table class="pre"><tr><td><pre><code>No value returned by any evaluator</code></pre></td></tr></table>
-<pre class="fssnip highlighted"><code lang="fsharp"><span onmouseout="hideTip(event, 'fs4', 31)" onmouseover="showTip(event, 'fs4', 31)" class="id">Ellipse2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs5', 32)" onmouseover="showTip(event, 'fs5', 32)" class="id">yRadius</span> <span onmouseout="hideTip(event, 'fs9', 33)" onmouseover="showTip(event, 'fs9', 33)" class="id">ellipse</span>  <span class="c">// or</span>
-<span onmouseout="hideTip(event, 'fs9', 34)" onmouseover="showTip(event, 'fs9', 34)" class="id">ellipse</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs5', 35)" onmouseover="showTip(event, 'fs5', 35)" class="id">YRadius</span>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">Ellipse2D</span><span class="pn">.</span><span class="id">yRadius</span> <span onmouseout="hideTip(event, 'fs2', 9)" onmouseover="showTip(event, 'fs2', 9)" class="id">ellipse</span>  <span class="c">// or</span>
+<span onmouseout="hideTip(event, 'fs2', 10)" onmouseover="showTip(event, 'fs2', 10)" class="id">ellipse</span><span class="pn">.</span><span class="id">YRadius</span>
 </code></pre>
 <table class="pre"><tr><td><pre><code>No value returned by any evaluator</code></pre></td></tr></table>
-<pre class="fssnip highlighted"><code lang="fsharp"><span onmouseout="hideTip(event, 'fs4', 36)" onmouseover="showTip(event, 'fs4', 36)" class="id">Ellipse2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs12', 37)" onmouseover="showTip(event, 'fs12', 37)" class="id">centerPoint</span> <span onmouseout="hideTip(event, 'fs9', 38)" onmouseover="showTip(event, 'fs9', 38)" class="id">ellipse</span>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">Ellipse2D</span><span class="pn">.</span><span class="id">centerPoint</span> <span onmouseout="hideTip(event, 'fs2', 11)" onmouseover="showTip(event, 'fs2', 11)" class="id">ellipse</span>
 </code></pre>
 <table class="pre"><tr><td><pre><code>No value returned by any evaluator</code></pre></td></tr></table>
-<pre class="fssnip highlighted"><code lang="fsharp"><span onmouseout="hideTip(event, 'fs4', 39)" onmouseover="showTip(event, 'fs4', 39)" class="id">Ellipse2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs13', 40)" onmouseover="showTip(event, 'fs13', 40)" class="id">xAxis</span> <span onmouseout="hideTip(event, 'fs9', 41)" onmouseover="showTip(event, 'fs9', 41)" class="id">ellipse</span>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">Ellipse2D</span><span class="pn">.</span><span class="id">xAxis</span> <span onmouseout="hideTip(event, 'fs2', 12)" onmouseover="showTip(event, 'fs2', 12)" class="id">ellipse</span>
 </code></pre>
 <table class="pre"><tr><td><pre><code>No value returned by any evaluator</code></pre></td></tr></table>
-<pre class="fssnip highlighted"><code lang="fsharp"><span onmouseout="hideTip(event, 'fs4', 42)" onmouseover="showTip(event, 'fs4', 42)" class="id">Ellipse2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs14', 43)" onmouseover="showTip(event, 'fs14', 43)" class="id">yAxis</span> <span onmouseout="hideTip(event, 'fs9', 44)" onmouseover="showTip(event, 'fs9', 44)" class="id">ellipse</span>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">Ellipse2D</span><span class="pn">.</span><span class="id">yAxis</span> <span onmouseout="hideTip(event, 'fs2', 13)" onmouseover="showTip(event, 'fs2', 13)" class="id">ellipse</span>
 </code></pre>
 <table class="pre"><tr><td><pre><code>No value returned by any evaluator</code></pre></td></tr></table>
-<pre class="fssnip highlighted"><code lang="fsharp"><span onmouseout="hideTip(event, 'fs4', 45)" onmouseover="showTip(event, 'fs4', 45)" class="id">Ellipse2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs15', 46)" onmouseover="showTip(event, 'fs15', 46)" class="id">xDirection</span> <span onmouseout="hideTip(event, 'fs9', 47)" onmouseover="showTip(event, 'fs9', 47)" class="id">ellipse</span>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">Ellipse2D</span><span class="pn">.</span><span class="id">xDirection</span> <span onmouseout="hideTip(event, 'fs2', 14)" onmouseover="showTip(event, 'fs2', 14)" class="id">ellipse</span>
 </code></pre>
 <table class="pre"><tr><td><pre><code>No value returned by any evaluator</code></pre></td></tr></table>
-<pre class="fssnip highlighted"><code lang="fsharp"><span onmouseout="hideTip(event, 'fs4', 48)" onmouseover="showTip(event, 'fs4', 48)" class="id">Ellipse2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs16', 49)" onmouseover="showTip(event, 'fs16', 49)" class="id">yDirection</span> <span onmouseout="hideTip(event, 'fs9', 50)" onmouseover="showTip(event, 'fs9', 50)" class="id">ellipse</span>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">Ellipse2D</span><span class="pn">.</span><span class="id">yDirection</span> <span onmouseout="hideTip(event, 'fs2', 15)" onmouseover="showTip(event, 'fs2', 15)" class="id">ellipse</span>
 </code></pre>
 <table class="pre"><tr><td><pre><code>No value returned by any evaluator</code></pre></td></tr></table>
-<pre class="fssnip highlighted"><code lang="fsharp"><span onmouseout="hideTip(event, 'fs4', 51)" onmouseover="showTip(event, 'fs4', 51)" class="id">Ellipse2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs5', 52)" onmouseover="showTip(event, 'fs5', 52)" class="id">area</span> <span onmouseout="hideTip(event, 'fs9', 53)" onmouseover="showTip(event, 'fs9', 53)" class="id">ellipse</span>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">Ellipse2D</span><span class="pn">.</span><span class="id">area</span> <span onmouseout="hideTip(event, 'fs2', 16)" onmouseover="showTip(event, 'fs2', 16)" class="id">ellipse</span>
 </code></pre>
 <table class="pre"><tr><td><pre><code>No value returned by any evaluator</code></pre></td></tr></table>
 <h1><a name="Modifiers" class="anchor" href="#Modifiers">Modifiers</a></h1>
-<pre class="fssnip highlighted"><code lang="fsharp"><span onmouseout="hideTip(event, 'fs4', 54)" onmouseover="showTip(event, 'fs4', 54)" class="id">Ellipse2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs17', 55)" onmouseover="showTip(event, 'fs17', 55)" class="id">scaleAbout</span>
-<span onmouseout="hideTip(event, 'fs4', 56)" onmouseover="showTip(event, 'fs4', 56)" class="id">Ellipse2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs18', 57)" onmouseover="showTip(event, 'fs18', 57)" class="id">transformBy</span>
-<span onmouseout="hideTip(event, 'fs4', 58)" onmouseover="showTip(event, 'fs4', 58)" class="id">Ellipse2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs5', 59)" onmouseover="showTip(event, 'fs5', 59)" class="id">rotateAround</span>
-<span onmouseout="hideTip(event, 'fs4', 60)" onmouseover="showTip(event, 'fs4', 60)" class="id">Ellipse2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs19', 61)" onmouseover="showTip(event, 'fs19', 61)" class="id">translateBy</span>
-<span onmouseout="hideTip(event, 'fs4', 62)" onmouseover="showTip(event, 'fs4', 62)" class="id">Ellipse2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs5', 63)" onmouseover="showTip(event, 'fs5', 63)" class="id">translateIn</span>
-<span onmouseout="hideTip(event, 'fs4', 64)" onmouseover="showTip(event, 'fs4', 64)" class="id">Ellipse2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs20', 65)" onmouseover="showTip(event, 'fs20', 65)" class="id">relativeTo</span>
-<span onmouseout="hideTip(event, 'fs4', 66)" onmouseover="showTip(event, 'fs4', 66)" class="id">Ellipse2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs21', 67)" onmouseover="showTip(event, 'fs21', 67)" class="id">placeIn</span>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">Ellipse2D</span><span class="pn">.</span><span class="id">scaleAbout</span>
+<span class="id">Ellipse2D</span><span class="pn">.</span><span class="id">transformBy</span>
+<span class="id">Ellipse2D</span><span class="pn">.</span><span class="id">rotateAround</span>
+<span class="id">Ellipse2D</span><span class="pn">.</span><span class="id">translateBy</span>
+<span class="id">Ellipse2D</span><span class="pn">.</span><span class="id">translateIn</span>
+<span class="id">Ellipse2D</span><span class="pn">.</span><span class="id">relativeTo</span>
+<span class="id">Ellipse2D</span><span class="pn">.</span><span class="id">placeIn</span>
 </code></pre>
 
-            <div class="fsdocs-tip" id="fs1">namespace Math</div>
-<div class="fsdocs-tip" id="fs2">namespace Math.Geometry</div>
-<div class="fsdocs-tip" id="fs3">Multiple items<br />union case Cartesian.Cartesian: Cartesian<br /><br />--------------------<br />type Cartesian = | Cartesian</div>
-<div class="fsdocs-tip" id="fs4">Multiple items<br />module Ellipse2D
-
-from Math.Geometry<br /><br />--------------------</div>
-<div class="fsdocs-tip" id="fs5"></div>
-<div class="fsdocs-tip" id="fs6">Multiple items<br />module Point2D
-
-from Math.Geometry<br /><br />--------------------</div>
-<div class="fsdocs-tip" id="fs7">Multiple items<br />module Direction2D
-
-from Math.Geometry<br /><br />--------------------<br />type Direction2D&lt;&#39;Coordinates&gt; =
-  { X: float
-    Y: float }
-    interface IComparable
-    interface IComparable&lt;Direction2D&lt;&#39;Coordinates&gt;&gt;
-    member Comparison : other:Direction2D&lt;&#39;Coordinates&gt; -&gt; int
-    override Equals : obj:obj -&gt; bool + 1 overload
-    override GetHashCode : unit -&gt; int
-    member LessThan : other:Direction2D&lt;&#39;Coordinates&gt; -&gt; bool
-    static member xy : x:float -&gt; y:float -&gt; Direction2D&lt;&#39;Coordinates&gt; option</div>
-<div class="fsdocs-tip" id="fs8">val x&lt;&#39;Coordinates&gt; : Direction2D&lt;&#39;Coordinates&gt;</div>
-<div class="fsdocs-tip" id="fs9">val ellipse : Ellipse2D&lt;obj,obj&gt;</div>
-<div class="fsdocs-tip" id="fs10">val axes : ellipse:Ellipse2D&lt;&#39;Units,&#39;Coordinates&gt; -&gt; Frame2D&lt;&#39;Units,&#39;Coordinates,&#39;Defines&gt;<br /><em>&lt;summary&gt;
- Get the X and Y axes of an ellipse as a `Frame2D`.
-&lt;/summary&gt;</em></div>
-<div class="fsdocs-tip" id="fs11">Ellipse2D.Axes: Frame2D&lt;obj,obj,unit&gt;</div>
-<div class="fsdocs-tip" id="fs12">val centerPoint : ellipse:Ellipse2D&lt;&#39;Units,&#39;Coordinates&gt; -&gt; Point2D&lt;&#39;Units,&#39;Coordinates&gt;<br /><em>&lt;summary&gt;
- Get the center point of an ellipse.
-&lt;/summary&gt;</em></div>
-<div class="fsdocs-tip" id="fs13">val xAxis : ellipse:Ellipse2D&lt;&#39;Units,&#39;Coordinates&gt; -&gt; Axis2D&lt;&#39;Units,&#39;Coordinates&gt;<br /><em>&lt;summary&gt;
- Get the X axis of an ellipse.
-&lt;/summary&gt;</em></div>
-<div class="fsdocs-tip" id="fs14">val yAxis : ellipse:Ellipse2D&lt;&#39;Units,&#39;Coordinates&gt; -&gt; Axis2D&lt;&#39;Units,&#39;Coordinates&gt;<br /><em>&lt;summary&gt;
- Get the Y axis of an ellipse.
-&lt;/summary&gt;</em></div>
-<div class="fsdocs-tip" id="fs15">val xDirection : ellipse:Ellipse2D&lt;&#39;Units,&#39;Coordinates&gt; -&gt; Direction2D&lt;&#39;Coordinates&gt;<br /><em>&lt;summary&gt;
- Get the direction of the ellipse&#39;s X axis.
-&lt;/summary&gt;</em></div>
-<div class="fsdocs-tip" id="fs16">val yDirection : ellipse:Ellipse2D&lt;&#39;Units,&#39;Coordinates&gt; -&gt; Direction2D&lt;&#39;Coordinates&gt;<br /><em>&lt;summary&gt;
- Get the direction of an ellipse&#39;s Y axis.
-&lt;/summary&gt;</em></div>
-<div class="fsdocs-tip" id="fs17">val scaleAbout : point:Point2D&lt;&#39;Units,&#39;Coordinates&gt; -&gt; scale:float -&gt; ellipse:Ellipse2D&lt;&#39;Units,&#39;Coordinates&gt; -&gt; Ellipse2D&lt;&#39;Units,&#39;Coordinates&gt;<br /><em>&lt;summary&gt;
- Scale an ellipse about a given point by a given scale.
-&lt;/summary&gt;</em></div>
-<div class="fsdocs-tip" id="fs18">val transformBy : axesTransformation:(Frame2D&lt;&#39;Units,&#39;CoordinatesA,unit&gt; -&gt; Frame2D&lt;&#39;Units,&#39;CoordinatesB,unit&gt;) -&gt; ellipse:Ellipse2D&lt;&#39;Units,&#39;CoordinatesA&gt; -&gt; Ellipse2D&lt;&#39;Units,&#39;CoordinatesB&gt;</div>
-<div class="fsdocs-tip" id="fs19">val translateBy : displacement:Vector2D&lt;&#39;Units,&#39;Coordinates&gt; -&gt; ellipse:Ellipse2D&lt;&#39;Units,&#39;Coordinates&gt; -&gt; Ellipse2D&lt;&#39;Units,&#39;Coordinates&gt;<br /><em>&lt;summary&gt;
- Translate an ellipse by a given displacement.
-&lt;/summary&gt;</em></div>
-<div class="fsdocs-tip" id="fs20">val relativeTo : frame:Frame2D&lt;&#39;Units,&#39;GlobalCoordinates,unit&gt; -&gt; ellipse:Ellipse2D&lt;&#39;Units,&#39;GlobalCoordinates&gt; -&gt; Ellipse2D&lt;&#39;Units,&#39;LocalCoordinates&gt;<br /><em>&lt;summary&gt;
- Take an ellipse defined in global coordinates, and return it expressed in
- local coordinates relative to a given reference frame.
-&lt;/summary&gt;</em></div>
-<div class="fsdocs-tip" id="fs21">val placeIn : frame:Frame2D&lt;&#39;Units,&#39;GlobalCoordinates,unit&gt; -&gt; ellipse:Ellipse2D&lt;&#39;Units,&#39;GlobalCoordinates&gt; -&gt; Ellipse2D&lt;&#39;Units,&#39;LocalCoordinates&gt;<br /><em>&lt;summary&gt;
- Take an ellipse considered to be defined in local coordinates relative to a
- given reference frame, and return that circle expressed in global coordinates.
-&lt;/summary&gt;</em></div>
+            <div class="fsdocs-tip" id="fs1">Multiple items<br />union case Cartesian.Cartesian: Cartesian<br /><br />--------------------<br />type Cartesian = | Cartesian</div>
+<div class="fsdocs-tip" id="fs2">val ellipse : obj</div>
 
         </div>
 

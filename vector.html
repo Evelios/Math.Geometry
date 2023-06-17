@@ -160,22 +160,22 @@
             
 <h1><a name="Constructors" class="anchor" href="#Constructors">Constructors</a></h1>
 <p>Vectors can be created from the <strong>x</strong> and <strong>y</strong> components.</p>
-<pre class="fssnip highlighted"><code lang="fsharp"><span onmouseout="hideTip(event, 'fs4', 6)" onmouseover="showTip(event, 'fs4', 6)" class="m">Vector2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs5', 7)" onmouseover="showTip(event, 'fs5', 7)" class="id">xy</span> <span class="pn">(</span><span class="id">Length</span><span class="pn">.</span><span class="id">meters</span> <span class="n">3.</span><span class="pn">)</span> <span class="pn">(</span><span class="id">Length</span><span class="pn">.</span><span class="id">meters</span> <span class="n">4.</span><span class="pn">)</span>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">Vector2D</span><span class="pn">.</span><span class="id">xy</span> <span class="pn">(</span><span class="id">Length</span><span class="pn">.</span><span class="id">meters</span> <span class="n">3.</span><span class="pn">)</span> <span class="pn">(</span><span class="id">Length</span><span class="pn">.</span><span class="id">meters</span> <span class="n">4.</span><span class="pn">)</span>
 </code></pre>
 <p>You can also create a vector in polar coordinates.</p>
-<pre class="fssnip highlighted"><code lang="fsharp"><span onmouseout="hideTip(event, 'fs4', 8)" onmouseover="showTip(event, 'fs4', 8)" class="m">Vector2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs5', 9)" onmouseover="showTip(event, 'fs5', 9)" class="id">rTheta</span> <span class="pn">(</span><span class="id">Length</span><span class="pn">.</span><span class="id">meters</span> <span class="n">5.</span><span class="pn">)</span> <span class="id">Angle</span><span class="pn">.</span><span class="id">halfPi</span>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">Vector2D</span><span class="pn">.</span><span class="id">rTheta</span> <span class="pn">(</span><span class="id">Length</span><span class="pn">.</span><span class="id">meters</span> <span class="n">5.</span><span class="pn">)</span> <span class="id">Angle</span><span class="pn">.</span><span class="id">halfPi</span>
 </code></pre>
 <p>Using a vector <strong>direction</strong> you can create a vector of a given length following that direction.</p>
-<pre class="fssnip highlighted"><code lang="fsharp"><span onmouseout="hideTip(event, 'fs4', 10)" onmouseover="showTip(event, 'fs4', 10)" class="m">Vector2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs5', 11)" onmouseover="showTip(event, 'fs5', 11)" class="id">withQuantity</span> <span class="pn">(</span><span class="id">Length</span><span class="pn">.</span><span class="id">meters</span> <span class="n">5.</span><span class="pn">)</span> <span class="pn">(</span><span onmouseout="hideTip(event, 'fs6', 12)" onmouseover="showTip(event, 'fs6', 12)" class="id">Direction2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs5', 13)" onmouseover="showTip(event, 'fs5', 13)" class="id">fromAngle</span> <span class="id">Angle</span><span class="pn">.</span><span class="id">halfPi</span><span class="pn">)</span>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">Vector2D</span><span class="pn">.</span><span class="id">withQuantity</span> <span class="pn">(</span><span class="id">Length</span><span class="pn">.</span><span class="id">meters</span> <span class="n">5.</span><span class="pn">)</span> <span class="pn">(</span><span class="id">Direction2D</span><span class="pn">.</span><span class="id">fromAngle</span> <span class="id">Angle</span><span class="pn">.</span><span class="id">halfPi</span><span class="pn">)</span>
 </code></pre>
 <h1><a name="Accessors" class="anchor" href="#Accessors">Accessors</a></h1>
-<pre class="fssnip highlighted"><code lang="fsharp"><span class="k">let</span> <span onmouseout="hideTip(event, 'fs7', 14)" onmouseover="showTip(event, 'fs7', 14)" class="id">vec</span> <span class="pn">:</span> <span onmouseout="hideTip(event, 'fs4', 15)" onmouseover="showTip(event, 'fs4', 15)" class="vt">Vector2D</span><span class="pn">&lt;</span><span class="id">Meters</span><span class="pn">,</span> <span onmouseout="hideTip(event, 'fs3', 16)" onmouseover="showTip(event, 'fs3', 16)" class="id">Cartesian</span><span class="pn">&gt;</span> <span class="o">=</span>
-    <span onmouseout="hideTip(event, 'fs4', 17)" onmouseover="showTip(event, 'fs4', 17)" class="m">Vector2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs5', 18)" onmouseover="showTip(event, 'fs5', 18)" class="id">xy</span> <span class="pn">(</span><span class="id">Length</span><span class="pn">.</span><span class="id">meters</span> <span class="n">3.</span><span class="pn">)</span> <span class="pn">(</span><span class="id">Length</span><span class="pn">.</span><span class="id">meters</span> <span class="n">4.</span><span class="pn">)</span>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="k">let</span> <span onmouseout="hideTip(event, 'fs2', 3)" onmouseover="showTip(event, 'fs2', 3)" class="id">vec</span> <span class="pn">:</span> <span class="id">Vector2D</span><span class="pn">&lt;</span><span class="id">Meters</span><span class="pn">,</span> <span onmouseout="hideTip(event, 'fs1', 4)" onmouseover="showTip(event, 'fs1', 4)" class="id">Cartesian</span><span class="pn">&gt;</span> <span class="o">=</span>
+    <span class="id">Vector2D</span><span class="pn">.</span><span class="id">xy</span> <span class="pn">(</span><span class="id">Length</span><span class="pn">.</span><span class="id">meters</span> <span class="n">3.</span><span class="pn">)</span> <span class="pn">(</span><span class="id">Length</span><span class="pn">.</span><span class="id">meters</span> <span class="n">4.</span><span class="pn">)</span>
 
-<span onmouseout="hideTip(event, 'fs7', 19)" onmouseover="showTip(event, 'fs7', 19)" class="id">vec</span><span class="pn">.</span><span class="id">X</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs4', 20)" onmouseover="showTip(event, 'fs4', 20)" class="m">Vector2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs5', 21)" onmouseover="showTip(event, 'fs5', 21)" class="id">x</span> <span onmouseout="hideTip(event, 'fs7', 22)" onmouseover="showTip(event, 'fs7', 22)" class="id">vec</span>
-<span onmouseout="hideTip(event, 'fs7', 23)" onmouseover="showTip(event, 'fs7', 23)" class="id">vec</span><span class="pn">.</span><span class="id">Y</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs4', 24)" onmouseover="showTip(event, 'fs4', 24)" class="m">Vector2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs5', 25)" onmouseover="showTip(event, 'fs5', 25)" class="id">y</span> <span onmouseout="hideTip(event, 'fs7', 26)" onmouseover="showTip(event, 'fs7', 26)" class="id">vec</span>
+<span onmouseout="hideTip(event, 'fs2', 5)" onmouseover="showTip(event, 'fs2', 5)" class="id">vec</span><span class="pn">.</span><span class="id">X</span> <span class="o">=</span> <span class="id">Vector2D</span><span class="pn">.</span><span class="id">x</span> <span onmouseout="hideTip(event, 'fs2', 6)" onmouseover="showTip(event, 'fs2', 6)" class="id">vec</span>
+<span onmouseout="hideTip(event, 'fs2', 7)" onmouseover="showTip(event, 'fs2', 7)" class="id">vec</span><span class="pn">.</span><span class="id">Y</span> <span class="o">=</span> <span class="id">Vector2D</span><span class="pn">.</span><span class="id">y</span> <span onmouseout="hideTip(event, 'fs2', 8)" onmouseover="showTip(event, 'fs2', 8)" class="id">vec</span>
 </code></pre>
-<pre class="fssnip highlighted"><code lang="fsharp"><span onmouseout="hideTip(event, 'fs4', 27)" onmouseover="showTip(event, 'fs4', 27)" class="m">Vector2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs5', 28)" onmouseover="showTip(event, 'fs5', 28)" class="id">magnitude</span> <span onmouseout="hideTip(event, 'fs7', 29)" onmouseover="showTip(event, 'fs7', 29)" class="id">vec</span>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">Vector2D</span><span class="pn">.</span><span class="id">magnitude</span> <span onmouseout="hideTip(event, 'fs2', 9)" onmouseover="showTip(event, 'fs2', 9)" class="id">vec</span>
 </code></pre>
 <table class="pre"><tr><td><pre><code>No value returned by any evaluator</code></pre></td></tr></table>
 <h1><a name="Operators" class="anchor" href="#Operators">Operators</a></h1>
@@ -185,7 +185,7 @@ well. These are often used when using functions like <code>List.map</code> or wh
 in piping operations (<code>|&gt;</code>). Pay attention to the order of the arguments!
 Because these functions are intended to be used in pipes the order goes like
 <code>Vector2D.add rhs lhs</code>.</p>
-<pre class="fssnip highlighted"><code lang="fsharp"><span onmouseout="hideTip(event, 'fs8', 40)" onmouseover="showTip(event, 'fs8', 40)" class="id">lhs</span> <span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs4', 41)" onmouseover="showTip(event, 'fs4', 41)" class="m">Vector2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs10', 42)" onmouseover="showTip(event, 'fs10', 42)" class="id">plus</span> <span onmouseout="hideTip(event, 'fs9', 43)" onmouseover="showTip(event, 'fs9', 43)" class="id">rhs</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs8', 44)" onmouseover="showTip(event, 'fs8', 44)" class="id">lhs</span> <span class="o">+</span> <span onmouseout="hideTip(event, 'fs9', 45)" onmouseover="showTip(event, 'fs9', 45)" class="id">rhs</span>
+<pre class="fssnip highlighted"><code lang="fsharp"><span onmouseout="hideTip(event, 'fs3', 14)" onmouseover="showTip(event, 'fs3', 14)" class="id">lhs</span> <span class="o">|&gt;</span> <span class="id">Vector2D</span><span class="pn">.</span><span class="id">plus</span> <span onmouseout="hideTip(event, 'fs4', 15)" onmouseover="showTip(event, 'fs4', 15)" class="id">rhs</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs3', 16)" onmouseover="showTip(event, 'fs3', 16)" class="id">lhs</span> <span class="o">+</span> <span onmouseout="hideTip(event, 'fs4', 17)" onmouseover="showTip(event, 'fs4', 17)" class="id">rhs</span>
 </code></pre>
 <table class="pre"><tr><td><pre><code>No value returned by any evaluator</code></pre></td></tr></table>
 <p>The following table is the complete list of operators that can be used on
@@ -255,39 +255,18 @@ vector objects.</p>
 
 <p># Trigonometry</p>
 <p><span class="math">\[lhs \cdot rhs\]</span></p>
-<pre class="fssnip highlighted"><code lang="fsharp"><span onmouseout="hideTip(event, 'fs4', 46)" onmouseover="showTip(event, 'fs4', 46)" class="m">Vector2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs5', 47)" onmouseover="showTip(event, 'fs5', 47)" class="id">dot</span> <span onmouseout="hideTip(event, 'fs8', 48)" onmouseover="showTip(event, 'fs8', 48)" class="id">lhs</span> <span onmouseout="hideTip(event, 'fs9', 49)" onmouseover="showTip(event, 'fs9', 49)" class="id">rhs</span>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">Vector2D</span><span class="pn">.</span><span class="id">dot</span> <span onmouseout="hideTip(event, 'fs3', 18)" onmouseover="showTip(event, 'fs3', 18)" class="id">lhs</span> <span onmouseout="hideTip(event, 'fs4', 19)" onmouseover="showTip(event, 'fs4', 19)" class="id">rhs</span>
 </code></pre>
 <table class="pre"><tr><td><pre><code>No value returned by any evaluator</code></pre></td></tr></table>
 <p><span class="math">\[ lhs \times rhs \]</span></p>
-<pre class="fssnip highlighted"><code lang="fsharp"><span onmouseout="hideTip(event, 'fs4', 50)" onmouseover="showTip(event, 'fs4', 50)" class="m">Vector2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs5', 51)" onmouseover="showTip(event, 'fs5', 51)" class="id">cross</span> <span onmouseout="hideTip(event, 'fs8', 52)" onmouseover="showTip(event, 'fs8', 52)" class="id">lhs</span> <span onmouseout="hideTip(event, 'fs9', 53)" onmouseover="showTip(event, 'fs9', 53)" class="id">rhs</span>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">Vector2D</span><span class="pn">.</span><span class="id">cross</span> <span onmouseout="hideTip(event, 'fs3', 20)" onmouseover="showTip(event, 'fs3', 20)" class="id">lhs</span> <span onmouseout="hideTip(event, 'fs4', 21)" onmouseover="showTip(event, 'fs4', 21)" class="id">rhs</span>
 </code></pre>
 <table class="pre"><tr><td><pre><code>No value returned by any evaluator</code></pre></td></tr></table>
 
-            <div class="fsdocs-tip" id="fs1">namespace Math</div>
-<div class="fsdocs-tip" id="fs2">namespace Math.Geometry</div>
-<div class="fsdocs-tip" id="fs3">Multiple items<br />union case Cartesian.Cartesian: Cartesian<br /><br />--------------------<br />type Cartesian = | Cartesian</div>
-<div class="fsdocs-tip" id="fs4">Multiple items<br />module Vector2D
-
-from Math.Geometry<br /><br />--------------------</div>
-<div class="fsdocs-tip" id="fs5"></div>
-<div class="fsdocs-tip" id="fs6">Multiple items<br />module Direction2D
-
-from Math.Geometry<br /><br />--------------------<br />type Direction2D&lt;&#39;Coordinates&gt; =
-  { X: float
-    Y: float }
-    interface IComparable
-    interface IComparable&lt;Direction2D&lt;&#39;Coordinates&gt;&gt;
-    member Comparison : other:Direction2D&lt;&#39;Coordinates&gt; -&gt; int
-    override Equals : obj:obj -&gt; bool + 1 overload
-    override GetHashCode : unit -&gt; int
-    member LessThan : other:Direction2D&lt;&#39;Coordinates&gt; -&gt; bool
-    static member xy : x:float -&gt; y:float -&gt; Direction2D&lt;&#39;Coordinates&gt; option</div>
-<div class="fsdocs-tip" id="fs7">val vec : obj</div>
-<div class="fsdocs-tip" id="fs8">val lhs : Vector2D&lt;obj,obj&gt;</div>
-<div class="fsdocs-tip" id="fs9">val rhs : Vector2D&lt;obj,obj&gt;</div>
-<div class="fsdocs-tip" id="fs10">val plus : rhs:Vector2D&lt;&#39;Units,&#39;Coordinates&gt; -&gt; lhs:Vector2D&lt;&#39;Units,&#39;Coordinates&gt; -&gt; Vector2D&lt;&#39;Units,&#39;Coordinates&gt;<br /><em>&lt;summary&gt;
- This function is designed to be used in piping operators.
-&lt;/summary&gt;</em></div>
+            <div class="fsdocs-tip" id="fs1">Multiple items<br />union case Cartesian.Cartesian: Cartesian<br /><br />--------------------<br />type Cartesian = | Cartesian</div>
+<div class="fsdocs-tip" id="fs2">val vec : obj</div>
+<div class="fsdocs-tip" id="fs3">val lhs : obj</div>
+<div class="fsdocs-tip" id="fs4">val rhs : obj</div>
 
         </div>
 

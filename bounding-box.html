@@ -160,187 +160,99 @@
             
 <h1><a name="Bounding-Box-2D" class="anchor" href="#Bounding-Box-2D">Bounding Box 2D</a></h1>
 <h1><a name="Builders" class="anchor" href="#Builders">Builders</a></h1>
-<pre class="fssnip highlighted"><code lang="fsharp"><span onmouseout="hideTip(event, 'fs4', 6)" onmouseover="showTip(event, 'fs4', 6)" class="id">BoundingBox2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs5', 7)" onmouseover="showTip(event, 'fs5', 7)" class="id">singleton</span> <span class="pn">(</span><span onmouseout="hideTip(event, 'fs6', 8)" onmouseover="showTip(event, 'fs6', 8)" class="id">Point2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs7', 9)" onmouseover="showTip(event, 'fs7', 9)" class="id">meters</span> <span class="n">3.</span> <span class="n">5.</span><span class="pn">)</span>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">BoundingBox2D</span><span class="pn">.</span><span class="id">singleton</span> <span class="pn">(</span><span class="id">Point2D</span><span class="pn">.</span><span class="id">meters</span> <span class="n">3.</span> <span class="n">5.</span><span class="pn">)</span>
 </code></pre>
 <table class="pre"><tr><td><pre><code>No value returned by any evaluator</code></pre></td></tr></table>
-<pre class="fssnip highlighted"><code lang="fsharp"><span onmouseout="hideTip(event, 'fs4', 10)" onmouseover="showTip(event, 'fs4', 10)" class="id">BoundingBox2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs8', 11)" onmouseover="showTip(event, 'fs8', 11)" class="id">from</span>
-    <span class="pn">(</span><span onmouseout="hideTip(event, 'fs6', 12)" onmouseover="showTip(event, 'fs6', 12)" class="id">Point2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs7', 13)" onmouseover="showTip(event, 'fs7', 13)" class="id">meters</span> <span class="n">1.</span> <span class="o">-</span><span class="n">3.</span><span class="pn">)</span>
-    <span class="pn">(</span><span onmouseout="hideTip(event, 'fs6', 14)" onmouseover="showTip(event, 'fs6', 14)" class="id">Point2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs7', 15)" onmouseover="showTip(event, 'fs7', 15)" class="id">meters</span> <span class="o">-</span><span class="n">5.</span> <span class="n">2.</span><span class="pn">)</span>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">BoundingBox2D</span><span class="pn">.</span><span class="id">from</span>
+    <span class="pn">(</span><span class="id">Point2D</span><span class="pn">.</span><span class="id">meters</span> <span class="n">1.</span> <span class="o">-</span><span class="n">3.</span><span class="pn">)</span>
+    <span class="pn">(</span><span class="id">Point2D</span><span class="pn">.</span><span class="id">meters</span> <span class="o">-</span><span class="n">5.</span> <span class="n">2.</span><span class="pn">)</span>
 </code></pre>
 <table class="pre"><tr><td><pre><code>No value returned by any evaluator</code></pre></td></tr></table>
-<pre class="fssnip highlighted"><code lang="fsharp"><span onmouseout="hideTip(event, 'fs4', 16)" onmouseover="showTip(event, 'fs4', 16)" class="id">BoundingBox2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs9', 17)" onmouseover="showTip(event, 'fs9', 17)" class="id">fromExtrema</span>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">BoundingBox2D</span><span class="pn">.</span><span class="id">fromExtrema</span>
     <span class="pn">{</span> <span class="id">MinX</span> <span class="o">=</span> <span class="id">Length</span><span class="pn">.</span><span class="id">meters</span> <span class="n">2.</span>
       <span class="id">MaxX</span> <span class="o">=</span> <span class="id">Length</span><span class="pn">.</span><span class="id">meters</span> <span class="n">4.</span>
       <span class="id">MinY</span> <span class="o">=</span> <span class="id">Length</span><span class="pn">.</span><span class="id">meters</span> <span class="o">-</span><span class="n">1.</span>
       <span class="id">MaxY</span> <span class="o">=</span> <span class="id">Length</span><span class="pn">.</span><span class="id">meters</span> <span class="n">1.</span> <span class="pn">}</span>
 </code></pre>
 <table class="pre"><tr><td><pre><code>No value returned by any evaluator</code></pre></td></tr></table>
-<pre class="fssnip highlighted"><code lang="fsharp"><span onmouseout="hideTip(event, 'fs4', 18)" onmouseover="showTip(event, 'fs4', 18)" class="id">BoundingBox2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs7', 19)" onmouseover="showTip(event, 'fs7', 19)" class="id">withDimensions</span>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">BoundingBox2D</span><span class="pn">.</span><span class="id">withDimensions</span>
     <span class="pn">(</span><span class="id">Length</span><span class="pn">.</span><span class="id">meters</span> <span class="n">7.</span><span class="pn">,</span> <span class="id">Length</span><span class="pn">.</span><span class="id">meters</span> <span class="n">2.</span><span class="pn">)</span>
-    <span class="pn">(</span><span onmouseout="hideTip(event, 'fs6', 20)" onmouseover="showTip(event, 'fs6', 20)" class="id">Point2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs7', 21)" onmouseover="showTip(event, 'fs7', 21)" class="id">meters</span> <span class="o">-</span><span class="n">3.</span> <span class="n">5.</span><span class="pn">)</span>
+    <span class="pn">(</span><span class="id">Point2D</span><span class="pn">.</span><span class="id">meters</span> <span class="o">-</span><span class="n">3.</span> <span class="n">5.</span><span class="pn">)</span>
 </code></pre>
 <table class="pre"><tr><td><pre><code>No value returned by any evaluator</code></pre></td></tr></table>
 <h1><a name="Accessors" class="anchor" href="#Accessors">Accessors</a></h1>
-<pre class="fssnip highlighted"><code lang="fsharp"><span class="k">let</span> <span onmouseout="hideTip(event, 'fs10', 22)" onmouseover="showTip(event, 'fs10', 22)" class="id">boundingBox</span> <span class="pn">:</span> <span onmouseout="hideTip(event, 'fs4', 23)" onmouseover="showTip(event, 'fs4', 23)" class="id">BoundingBox2D</span><span class="pn">&lt;</span><span class="id">Meters</span><span class="pn">,</span> <span onmouseout="hideTip(event, 'fs3', 24)" onmouseover="showTip(event, 'fs3', 24)" class="id">Cartesian</span><span class="pn">&gt;</span> <span class="o">=</span>
-    <span onmouseout="hideTip(event, 'fs4', 25)" onmouseover="showTip(event, 'fs4', 25)" class="id">BoundingBox2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs9', 26)" onmouseover="showTip(event, 'fs9', 26)" class="id">fromExtrema</span>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="k">let</span> <span onmouseout="hideTip(event, 'fs2', 3)" onmouseover="showTip(event, 'fs2', 3)" class="id">boundingBox</span> <span class="pn">:</span> <span class="id">BoundingBox2D</span><span class="pn">&lt;</span><span class="id">Meters</span><span class="pn">,</span> <span onmouseout="hideTip(event, 'fs1', 4)" onmouseover="showTip(event, 'fs1', 4)" class="id">Cartesian</span><span class="pn">&gt;</span> <span class="o">=</span>
+    <span class="id">BoundingBox2D</span><span class="pn">.</span><span class="id">fromExtrema</span>
         <span class="pn">{</span> <span class="id">MinX</span> <span class="o">=</span> <span class="id">Length</span><span class="pn">.</span><span class="id">meters</span> <span class="n">2.</span>
           <span class="id">MaxX</span> <span class="o">=</span> <span class="id">Length</span><span class="pn">.</span><span class="id">meters</span> <span class="n">4.</span>
           <span class="id">MinY</span> <span class="o">=</span> <span class="id">Length</span><span class="pn">.</span><span class="id">meters</span> <span class="o">-</span><span class="n">1.</span>
           <span class="id">MaxY</span> <span class="o">=</span> <span class="id">Length</span><span class="pn">.</span><span class="id">meters</span> <span class="n">1.</span> <span class="pn">}</span>
 </code></pre>
-<pre class="fssnip highlighted"><code lang="fsharp"><span onmouseout="hideTip(event, 'fs10', 27)" onmouseover="showTip(event, 'fs10', 27)" class="id">boundingBox</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs7', 28)" onmouseover="showTip(event, 'fs7', 28)" class="id">MinX</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs4', 29)" onmouseover="showTip(event, 'fs4', 29)" class="id">BoundingBox2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs7', 30)" onmouseover="showTip(event, 'fs7', 30)" class="id">minX</span> <span onmouseout="hideTip(event, 'fs10', 31)" onmouseover="showTip(event, 'fs10', 31)" class="id">boundingBox</span>
-<span onmouseout="hideTip(event, 'fs10', 32)" onmouseover="showTip(event, 'fs10', 32)" class="id">boundingBox</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs7', 33)" onmouseover="showTip(event, 'fs7', 33)" class="id">MaxX</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs4', 34)" onmouseover="showTip(event, 'fs4', 34)" class="id">BoundingBox2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs7', 35)" onmouseover="showTip(event, 'fs7', 35)" class="id">maxX</span> <span onmouseout="hideTip(event, 'fs10', 36)" onmouseover="showTip(event, 'fs10', 36)" class="id">boundingBox</span>
-<span onmouseout="hideTip(event, 'fs10', 37)" onmouseover="showTip(event, 'fs10', 37)" class="id">boundingBox</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs7', 38)" onmouseover="showTip(event, 'fs7', 38)" class="id">MinY</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs4', 39)" onmouseover="showTip(event, 'fs4', 39)" class="id">BoundingBox2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs7', 40)" onmouseover="showTip(event, 'fs7', 40)" class="id">minY</span> <span onmouseout="hideTip(event, 'fs10', 41)" onmouseover="showTip(event, 'fs10', 41)" class="id">boundingBox</span>
-<span onmouseout="hideTip(event, 'fs10', 42)" onmouseover="showTip(event, 'fs10', 42)" class="id">boundingBox</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs7', 43)" onmouseover="showTip(event, 'fs7', 43)" class="id">MaxY</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs4', 44)" onmouseover="showTip(event, 'fs4', 44)" class="id">BoundingBox2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs7', 45)" onmouseover="showTip(event, 'fs7', 45)" class="id">maxY</span> <span onmouseout="hideTip(event, 'fs10', 46)" onmouseover="showTip(event, 'fs10', 46)" class="id">boundingBox</span>
+<pre class="fssnip highlighted"><code lang="fsharp"><span onmouseout="hideTip(event, 'fs2', 5)" onmouseover="showTip(event, 'fs2', 5)" class="id">boundingBox</span><span class="pn">.</span><span class="id">MinX</span> <span class="o">=</span> <span class="id">BoundingBox2D</span><span class="pn">.</span><span class="id">minX</span> <span onmouseout="hideTip(event, 'fs2', 6)" onmouseover="showTip(event, 'fs2', 6)" class="id">boundingBox</span>
+<span onmouseout="hideTip(event, 'fs2', 7)" onmouseover="showTip(event, 'fs2', 7)" class="id">boundingBox</span><span class="pn">.</span><span class="id">MaxX</span> <span class="o">=</span> <span class="id">BoundingBox2D</span><span class="pn">.</span><span class="id">maxX</span> <span onmouseout="hideTip(event, 'fs2', 8)" onmouseover="showTip(event, 'fs2', 8)" class="id">boundingBox</span>
+<span onmouseout="hideTip(event, 'fs2', 9)" onmouseover="showTip(event, 'fs2', 9)" class="id">boundingBox</span><span class="pn">.</span><span class="id">MinY</span> <span class="o">=</span> <span class="id">BoundingBox2D</span><span class="pn">.</span><span class="id">minY</span> <span onmouseout="hideTip(event, 'fs2', 10)" onmouseover="showTip(event, 'fs2', 10)" class="id">boundingBox</span>
+<span onmouseout="hideTip(event, 'fs2', 11)" onmouseover="showTip(event, 'fs2', 11)" class="id">boundingBox</span><span class="pn">.</span><span class="id">MaxY</span> <span class="o">=</span> <span class="id">BoundingBox2D</span><span class="pn">.</span><span class="id">maxY</span> <span onmouseout="hideTip(event, 'fs2', 12)" onmouseover="showTip(event, 'fs2', 12)" class="id">boundingBox</span>
 </code></pre>
-<pre class="fssnip highlighted"><code lang="fsharp"><span onmouseout="hideTip(event, 'fs4', 47)" onmouseover="showTip(event, 'fs4', 47)" class="id">BoundingBox2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs11', 48)" onmouseover="showTip(event, 'fs11', 48)" class="id">corners</span> <span onmouseout="hideTip(event, 'fs10', 49)" onmouseover="showTip(event, 'fs10', 49)" class="id">boundingBox</span>
-</code></pre>
-<table class="pre"><tr><td><pre><code>No value returned by any evaluator</code></pre></td></tr></table>
-<pre class="fssnip highlighted"><code lang="fsharp"><span onmouseout="hideTip(event, 'fs4', 50)" onmouseover="showTip(event, 'fs4', 50)" class="id">BoundingBox2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs7', 51)" onmouseover="showTip(event, 'fs7', 51)" class="id">width</span> <span onmouseout="hideTip(event, 'fs10', 52)" onmouseover="showTip(event, 'fs10', 52)" class="id">boundingBox</span>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">BoundingBox2D</span><span class="pn">.</span><span class="id">corners</span> <span onmouseout="hideTip(event, 'fs2', 13)" onmouseover="showTip(event, 'fs2', 13)" class="id">boundingBox</span>
 </code></pre>
 <table class="pre"><tr><td><pre><code>No value returned by any evaluator</code></pre></td></tr></table>
-<pre class="fssnip highlighted"><code lang="fsharp"><span onmouseout="hideTip(event, 'fs4', 53)" onmouseover="showTip(event, 'fs4', 53)" class="id">BoundingBox2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs7', 54)" onmouseover="showTip(event, 'fs7', 54)" class="id">height</span> <span onmouseout="hideTip(event, 'fs10', 55)" onmouseover="showTip(event, 'fs10', 55)" class="id">boundingBox</span>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">BoundingBox2D</span><span class="pn">.</span><span class="id">width</span> <span onmouseout="hideTip(event, 'fs2', 14)" onmouseover="showTip(event, 'fs2', 14)" class="id">boundingBox</span>
 </code></pre>
 <table class="pre"><tr><td><pre><code>No value returned by any evaluator</code></pre></td></tr></table>
-<pre class="fssnip highlighted"><code lang="fsharp"><span onmouseout="hideTip(event, 'fs4', 56)" onmouseover="showTip(event, 'fs4', 56)" class="id">BoundingBox2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs7', 57)" onmouseover="showTip(event, 'fs7', 57)" class="id">dimensions</span> <span onmouseout="hideTip(event, 'fs10', 58)" onmouseover="showTip(event, 'fs10', 58)" class="id">boundingBox</span>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">BoundingBox2D</span><span class="pn">.</span><span class="id">height</span> <span onmouseout="hideTip(event, 'fs2', 15)" onmouseover="showTip(event, 'fs2', 15)" class="id">boundingBox</span>
 </code></pre>
 <table class="pre"><tr><td><pre><code>No value returned by any evaluator</code></pre></td></tr></table>
-<pre class="fssnip highlighted"><code lang="fsharp"><span onmouseout="hideTip(event, 'fs4', 59)" onmouseover="showTip(event, 'fs4', 59)" class="id">BoundingBox2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs7', 60)" onmouseover="showTip(event, 'fs7', 60)" class="id">midX</span> <span onmouseout="hideTip(event, 'fs10', 61)" onmouseover="showTip(event, 'fs10', 61)" class="id">boundingBox</span>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">BoundingBox2D</span><span class="pn">.</span><span class="id">dimensions</span> <span onmouseout="hideTip(event, 'fs2', 16)" onmouseover="showTip(event, 'fs2', 16)" class="id">boundingBox</span>
 </code></pre>
 <table class="pre"><tr><td><pre><code>No value returned by any evaluator</code></pre></td></tr></table>
-<pre class="fssnip highlighted"><code lang="fsharp"><span onmouseout="hideTip(event, 'fs4', 62)" onmouseover="showTip(event, 'fs4', 62)" class="id">BoundingBox2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs7', 63)" onmouseover="showTip(event, 'fs7', 63)" class="id">midY</span> <span onmouseout="hideTip(event, 'fs10', 64)" onmouseover="showTip(event, 'fs10', 64)" class="id">boundingBox</span>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">BoundingBox2D</span><span class="pn">.</span><span class="id">midX</span> <span onmouseout="hideTip(event, 'fs2', 17)" onmouseover="showTip(event, 'fs2', 17)" class="id">boundingBox</span>
 </code></pre>
 <table class="pre"><tr><td><pre><code>No value returned by any evaluator</code></pre></td></tr></table>
-<pre class="fssnip highlighted"><code lang="fsharp"><span onmouseout="hideTip(event, 'fs4', 65)" onmouseover="showTip(event, 'fs4', 65)" class="id">BoundingBox2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs12', 66)" onmouseover="showTip(event, 'fs12', 66)" class="id">centerPoint</span> <span onmouseout="hideTip(event, 'fs10', 67)" onmouseover="showTip(event, 'fs10', 67)" class="id">boundingBox</span>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">BoundingBox2D</span><span class="pn">.</span><span class="id">midY</span> <span onmouseout="hideTip(event, 'fs2', 18)" onmouseover="showTip(event, 'fs2', 18)" class="id">boundingBox</span>
+</code></pre>
+<table class="pre"><tr><td><pre><code>No value returned by any evaluator</code></pre></td></tr></table>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">BoundingBox2D</span><span class="pn">.</span><span class="id">centerPoint</span> <span onmouseout="hideTip(event, 'fs2', 19)" onmouseover="showTip(event, 'fs2', 19)" class="id">boundingBox</span>
 </code></pre>
 <table class="pre"><tr><td><pre><code>No value returned by any evaluator</code></pre></td></tr></table>
 <h1><a name="Modifiers" class="anchor" href="#Modifiers">Modifiers</a></h1>
-<pre class="fssnip highlighted"><code lang="fsharp"><span onmouseout="hideTip(event, 'fs4', 68)" onmouseover="showTip(event, 'fs4', 68)" class="id">BoundingBox2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs13', 69)" onmouseover="showTip(event, 'fs13', 69)" class="id">containingPoint</span> <span class="pn">(</span><span onmouseout="hideTip(event, 'fs6', 70)" onmouseover="showTip(event, 'fs6', 70)" class="id">Point2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs7', 71)" onmouseover="showTip(event, 'fs7', 71)" class="id">meters</span> <span class="n">10.</span> <span class="n">10.</span><span class="pn">)</span> <span onmouseout="hideTip(event, 'fs10', 72)" onmouseover="showTip(event, 'fs10', 72)" class="id">boundingBox</span>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">BoundingBox2D</span><span class="pn">.</span><span class="id">containingPoint</span> <span class="pn">(</span><span class="id">Point2D</span><span class="pn">.</span><span class="id">meters</span> <span class="n">10.</span> <span class="n">10.</span><span class="pn">)</span> <span onmouseout="hideTip(event, 'fs2', 20)" onmouseover="showTip(event, 'fs2', 20)" class="id">boundingBox</span>
 </code></pre>
 <table class="pre"><tr><td><pre><code>No value returned by any evaluator</code></pre></td></tr></table>
-<pre class="fssnip highlighted"><code lang="fsharp"><span onmouseout="hideTip(event, 'fs4', 73)" onmouseover="showTip(event, 'fs4', 73)" class="id">BoundingBox2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs14', 74)" onmouseover="showTip(event, 'fs14', 74)" class="id">containingPoints</span>
-    <span class="pn">[</span> <span onmouseout="hideTip(event, 'fs6', 75)" onmouseover="showTip(event, 'fs6', 75)" class="id">Point2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs7', 76)" onmouseover="showTip(event, 'fs7', 76)" class="id">meters</span> <span class="n">10.</span> <span class="n">10.</span>
-      <span onmouseout="hideTip(event, 'fs6', 77)" onmouseover="showTip(event, 'fs6', 77)" class="id">Point2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs7', 78)" onmouseover="showTip(event, 'fs7', 78)" class="id">meters</span> <span class="o">-</span><span class="n">10.</span> <span class="o">-</span><span class="n">10.</span> <span class="pn">]</span>
-    <span onmouseout="hideTip(event, 'fs10', 79)" onmouseover="showTip(event, 'fs10', 79)" class="id">boundingBox</span>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">BoundingBox2D</span><span class="pn">.</span><span class="id">containingPoints</span>
+    <span class="pn">[</span> <span class="id">Point2D</span><span class="pn">.</span><span class="id">meters</span> <span class="n">10.</span> <span class="n">10.</span>
+      <span class="id">Point2D</span><span class="pn">.</span><span class="id">meters</span> <span class="o">-</span><span class="n">10.</span> <span class="o">-</span><span class="n">10.</span> <span class="pn">]</span>
+    <span onmouseout="hideTip(event, 'fs2', 21)" onmouseover="showTip(event, 'fs2', 21)" class="id">boundingBox</span>
 </code></pre>
 <table class="pre"><tr><td><pre><code>No value returned by any evaluator</code></pre></td></tr></table>
-<pre class="fssnip highlighted"><code lang="fsharp"><span onmouseout="hideTip(event, 'fs4', 80)" onmouseover="showTip(event, 'fs4', 80)" class="id">BoundingBox2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs15', 81)" onmouseover="showTip(event, 'fs15', 81)" class="id">scaleAbout</span>
-<span onmouseout="hideTip(event, 'fs4', 82)" onmouseover="showTip(event, 'fs4', 82)" class="id">BoundingBox2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs16', 83)" onmouseover="showTip(event, 'fs16', 83)" class="id">translateBy</span>
-<span onmouseout="hideTip(event, 'fs4', 84)" onmouseover="showTip(event, 'fs4', 84)" class="id">BoundingBox2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs7', 85)" onmouseover="showTip(event, 'fs7', 85)" class="id">translateIn</span>
-<span onmouseout="hideTip(event, 'fs4', 86)" onmouseover="showTip(event, 'fs4', 86)" class="id">BoundingBox2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs7', 87)" onmouseover="showTip(event, 'fs7', 87)" class="id">unsafeOffsetBy</span>
-<span onmouseout="hideTip(event, 'fs4', 88)" onmouseover="showTip(event, 'fs4', 88)" class="id">BoundingBox2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs7', 89)" onmouseover="showTip(event, 'fs7', 89)" class="id">offsetBy</span>
-<span onmouseout="hideTip(event, 'fs4', 90)" onmouseover="showTip(event, 'fs4', 90)" class="id">BoundingBox2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs7', 91)" onmouseover="showTip(event, 'fs7', 91)" class="id">expandBy</span>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">BoundingBox2D</span><span class="pn">.</span><span class="id">scaleAbout</span>
+<span class="id">BoundingBox2D</span><span class="pn">.</span><span class="id">translateBy</span>
+<span class="id">BoundingBox2D</span><span class="pn">.</span><span class="id">translateIn</span>
+<span class="id">BoundingBox2D</span><span class="pn">.</span><span class="id">unsafeOffsetBy</span>
+<span class="id">BoundingBox2D</span><span class="pn">.</span><span class="id">offsetBy</span>
+<span class="id">BoundingBox2D</span><span class="pn">.</span><span class="id">expandBy</span>
 </code></pre>
 <h1><a name="Queries" class="anchor" href="#Queries">Queries</a></h1>
-<pre class="fssnip highlighted"><code lang="fsharp"><span onmouseout="hideTip(event, 'fs4', 92)" onmouseover="showTip(event, 'fs4', 92)" class="id">BoundingBox2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs17', 93)" onmouseover="showTip(event, 'fs17', 93)" class="id">lineSegments</span>
-<span onmouseout="hideTip(event, 'fs4', 94)" onmouseover="showTip(event, 'fs4', 94)" class="id">BoundingBox2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs18', 95)" onmouseover="showTip(event, 'fs18', 95)" class="id">hull</span>
-<span onmouseout="hideTip(event, 'fs4', 96)" onmouseover="showTip(event, 'fs4', 96)" class="id">BoundingBox2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs19', 97)" onmouseover="showTip(event, 'fs19', 97)" class="id">hullOf</span>
-<span onmouseout="hideTip(event, 'fs4', 98)" onmouseover="showTip(event, 'fs4', 98)" class="id">BoundingBox2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs20', 99)" onmouseover="showTip(event, 'fs20', 99)" class="id">hull3</span>
-<span onmouseout="hideTip(event, 'fs4', 100)" onmouseover="showTip(event, 'fs4', 100)" class="id">BoundingBox2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs21', 101)" onmouseover="showTip(event, 'fs21', 101)" class="id">hullN</span>
-<span onmouseout="hideTip(event, 'fs4', 102)" onmouseover="showTip(event, 'fs4', 102)" class="id">BoundingBox2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs22', 103)" onmouseover="showTip(event, 'fs22', 103)" class="id">hullOfN</span>
-<span onmouseout="hideTip(event, 'fs4', 104)" onmouseover="showTip(event, 'fs4', 104)" class="id">BoundingBox2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs23', 105)" onmouseover="showTip(event, 'fs23', 105)" class="id">aggregate</span>
-<span onmouseout="hideTip(event, 'fs4', 106)" onmouseover="showTip(event, 'fs4', 106)" class="id">BoundingBox2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs24', 107)" onmouseover="showTip(event, 'fs24', 107)" class="id">aggregateOf</span>
-<span onmouseout="hideTip(event, 'fs4', 108)" onmouseover="showTip(event, 'fs4', 108)" class="id">BoundingBox2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs25', 109)" onmouseover="showTip(event, 'fs25', 109)" class="id">aggregate3</span>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">BoundingBox2D</span><span class="pn">.</span><span class="id">lineSegments</span>
+<span class="id">BoundingBox2D</span><span class="pn">.</span><span class="id">hull</span>
+<span class="id">BoundingBox2D</span><span class="pn">.</span><span class="id">hullOf</span>
+<span class="id">BoundingBox2D</span><span class="pn">.</span><span class="id">hull3</span>
+<span class="id">BoundingBox2D</span><span class="pn">.</span><span class="id">hullN</span>
+<span class="id">BoundingBox2D</span><span class="pn">.</span><span class="id">hullOfN</span>
+<span class="id">BoundingBox2D</span><span class="pn">.</span><span class="id">aggregate</span>
+<span class="id">BoundingBox2D</span><span class="pn">.</span><span class="id">aggregateOf</span>
+<span class="id">BoundingBox2D</span><span class="pn">.</span><span class="id">aggregate3</span>
 
-<span onmouseout="hideTip(event, 'fs4', 110)" onmouseover="showTip(event, 'fs4', 110)" class="id">BoundingBox2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs26', 111)" onmouseover="showTip(event, 'fs26', 111)" class="id">isContainedIn</span>
-<span onmouseout="hideTip(event, 'fs4', 112)" onmouseover="showTip(event, 'fs4', 112)" class="id">BoundingBox2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs27', 113)" onmouseover="showTip(event, 'fs27', 113)" class="id">contains</span>
-<span onmouseout="hideTip(event, 'fs4', 114)" onmouseover="showTip(event, 'fs4', 114)" class="id">BoundingBox2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs28', 115)" onmouseover="showTip(event, 'fs28', 115)" class="id">intersects</span>
-<span onmouseout="hideTip(event, 'fs4', 116)" onmouseover="showTip(event, 'fs4', 116)" class="id">BoundingBox2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs29', 117)" onmouseover="showTip(event, 'fs29', 117)" class="id">intersection</span>
-<span onmouseout="hideTip(event, 'fs4', 118)" onmouseover="showTip(event, 'fs4', 118)" class="id">BoundingBox2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs7', 119)" onmouseover="showTip(event, 'fs7', 119)" class="id">overlappingByAtLeast</span>
-<span onmouseout="hideTip(event, 'fs4', 120)" onmouseover="showTip(event, 'fs4', 120)" class="id">BoundingBox2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs7', 121)" onmouseover="showTip(event, 'fs7', 121)" class="id">separatedByAtLeast</span>
-<span onmouseout="hideTip(event, 'fs4', 122)" onmouseover="showTip(event, 'fs4', 122)" class="id">BoundingBox2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs30', 123)" onmouseover="showTip(event, 'fs30', 123)" class="id">union</span>
+<span class="id">BoundingBox2D</span><span class="pn">.</span><span class="id">isContainedIn</span>
+<span class="id">BoundingBox2D</span><span class="pn">.</span><span class="id">contains</span>
+<span class="id">BoundingBox2D</span><span class="pn">.</span><span class="id">intersects</span>
+<span class="id">BoundingBox2D</span><span class="pn">.</span><span class="id">intersection</span>
+<span class="id">BoundingBox2D</span><span class="pn">.</span><span class="id">overlappingByAtLeast</span>
+<span class="id">BoundingBox2D</span><span class="pn">.</span><span class="id">separatedByAtLeast</span>
+<span class="id">BoundingBox2D</span><span class="pn">.</span><span class="id">union</span>
 </code></pre>
 
-            <div class="fsdocs-tip" id="fs1">namespace Math</div>
-<div class="fsdocs-tip" id="fs2">namespace Math.Geometry</div>
-<div class="fsdocs-tip" id="fs3">Multiple items<br />union case Cartesian.Cartesian: Cartesian<br /><br />--------------------<br />type Cartesian = | Cartesian</div>
-<div class="fsdocs-tip" id="fs4">Multiple items<br />module BoundingBox2D
-
-from Math.Geometry<br /><br />--------------------</div>
-<div class="fsdocs-tip" id="fs5">val singleton : p:Point2D&lt;&#39;Units,&#39;Coordinastes&gt; -&gt; BoundingBox2D&lt;&#39;Units,&#39;Coordinates&gt;</div>
-<div class="fsdocs-tip" id="fs6">Multiple items<br />module Point2D
-
-from Math.Geometry<br /><br />--------------------</div>
-<div class="fsdocs-tip" id="fs7"></div>
-<div class="fsdocs-tip" id="fs8">val from : p1:Point2D&lt;&#39;Units,&#39;Coordinates&gt; -&gt; p2:Point2D&lt;&#39;Units,&#39;Coordinates&gt; -&gt; BoundingBox2D&lt;&#39;Units,&#39;a&gt;<br /><em>&lt;summary&gt;
- Create a bounding box that contains the two points
-&lt;/summary&gt;</em></div>
-<div class="fsdocs-tip" id="fs9">val fromExtrema : given:BoundingBox2D&lt;&#39;Units,&#39;Coordinates&gt; -&gt; BoundingBox2D&lt;&#39;Units,&#39;Coordinates&gt;<br /><em>&lt;summary&gt;
- If the minimum and maximum values are provided in the wrong order (for example
- if `minX` is greater than `maxX`), then they will be swapped so that the
- resulting bounding box is valid.
-&lt;/summary&gt;</em></div>
-<div class="fsdocs-tip" id="fs10">val boundingBox : BoundingBox2D&lt;obj,obj&gt;</div>
-<div class="fsdocs-tip" id="fs11">val corners : box:BoundingBox2D&lt;&#39;Units,&#39;Coordinates&gt; -&gt; Point2D&lt;&#39;Units,&#39;Coordinates&gt; list<br /><em>&lt;summary&gt;
- Returned in clockwise order from top left rotating around clockwise
-&lt;/summary&gt;</em></div>
-<div class="fsdocs-tip" id="fs12">val centerPoint : box:BoundingBox2D&lt;&#39;Units,&#39;Coordiantes&gt; -&gt; Point2D&lt;&#39;Units,&#39;Coordinates&gt;</div>
-<div class="fsdocs-tip" id="fs13">val containingPoint : point:Point2D&lt;&#39;Units,&#39;Coordinates&gt; -&gt; box:BoundingBox2D&lt;&#39;Units,&#39;Coordinates&gt; -&gt; BoundingBox2D&lt;&#39;Units,&#39;Coordinates&gt;<br /><em>&lt;summary&gt;
- Get a bounding box that contains the new point. If the box does not contain the new point, the box will grow
- to fit the new point. If the point is within the box, the same bounding box is returned.
-&lt;/summary&gt;</em></div>
-<div class="fsdocs-tip" id="fs14">val containingPoints : points:Point2D&lt;&#39;Units,&#39;Coordinates&gt; list -&gt; box:BoundingBox2D&lt;&#39;Units,&#39;Coordinates&gt; -&gt; BoundingBox2D&lt;&#39;Units,&#39;Coordinates&gt;</div>
-<div class="fsdocs-tip" id="fs15">val scaleAbout : point:Point2D&lt;&#39;Units,&#39;Coordinates&gt; -&gt; scale:float -&gt; boundingBox:BoundingBox2D&lt;&#39;Units,&#39;Coordinates&gt; -&gt; BoundingBox2D&lt;&#39;Units,&#39;Coordinates&gt;<br /><em>&lt;summary&gt;
- Scale a bounding box about a given point by a given scale.
-&lt;/summary&gt;</em></div>
-<div class="fsdocs-tip" id="fs16">val translateBy : displacement:Vector2D&lt;&#39;Units,&#39;Coordinates&gt; -&gt; boundingBox:BoundingBox2D&lt;&#39;Units,&#39;Coordinates&gt; -&gt; BoundingBox2D&lt;&#39;Units,&#39;Coordinates&gt;<br /><em>&lt;summary&gt;
- Translate a bounding box by a given displacement.
-&lt;/summary&gt;</em></div>
-<div class="fsdocs-tip" id="fs17">val lineSegments : box:BoundingBox2D&lt;&#39;Units,&#39;Coordinates&gt; -&gt; LineSegment2D&lt;&#39;Units,&#39;Coordinates&gt; list<br /><em>&lt;summary&gt;
- Get the four line segments surrounding the bounding box. The lines are created from the top left point, creating
- line segments around the bounding box clockwise.
-&lt;/summary&gt;</em></div>
-<div class="fsdocs-tip" id="fs18">val hull : first:Point2D&lt;&#39;Units,&#39;Coordinates&gt; -&gt; rest:Point2D&lt;&#39;Units,&#39;Coordinates&gt; list -&gt; BoundingBox2D&lt;&#39;Units,&#39;Coordinates&gt;<br /><em>&lt;summary&gt;
- Find the bounding box containing one or more input points.
- Often ends up being used within a match expression.
- See also [`hullN`](#hullN).
-&lt;/summary&gt;</em></div>
-<div class="fsdocs-tip" id="fs19">val hullOf : getPoint:(&#39;a -&gt; Point2D&lt;&#39;Units,&#39;Coordinates&gt;) -&gt; first:&#39;a -&gt; rest:&#39;a list -&gt; BoundingBox2D&lt;&#39;Units,&#39;Coordinates&gt;<br /><em>&lt;summary&gt;
- Like [`hull`](#hull), but lets you work on any kind of item as long as a
- point can be extracted from it. For example, if you had
-&lt;/summary&gt;</em></div>
-<div class="fsdocs-tip" id="fs20">val hull3 : firstPoint:Point2D&lt;&#39;Units,&#39;Coordiantes&gt; -&gt; secondPoint:Point2D&lt;&#39;Units,&#39;Coordinates&gt; -&gt; thirdPoint:Point2D&lt;&#39;Units,&#39;Coordinates&gt; -&gt; BoundingBox2D&lt;&#39;Units,&#39;Coordinates&gt;<br /><em>&lt;summary&gt;
- Build a bounding box that contains all three of the given points.
- This is equivalent to calling `hull` on three points but is more efficient.
-&lt;/summary&gt;</em></div>
-<div class="fsdocs-tip" id="fs21">val hullN : points:Point2D&lt;&#39;Units,&#39;Coordinates&gt; list -&gt; BoundingBox2D&lt;&#39;Units,&#39;Coordinates&gt; option<br /><em>&lt;summary&gt;
- Construct a bounding box containing all _N_ points in the given list. If the
- list is empty, returns `Nothing`. If you know you have at least one point, you
- can use [`hull`](#hull) instead.
-&lt;/summary&gt;</em></div>
-<div class="fsdocs-tip" id="fs22">val hullOfN : getBoundingBox:(&#39;a -&gt; Point2D&lt;&#39;Units,&#39;Coordinates&gt;) -&gt; items:&#39;a list -&gt; BoundingBox2D&lt;&#39;Units,&#39;Coordinates&gt; option<br /><em>&lt;summary&gt;
- Combination of [`hullOf`](#hullOf) and [`hullN`](#hullN).
-&lt;/summary&gt;</em></div>
-<div class="fsdocs-tip" id="fs23">val aggregate : first:BoundingBox2D&lt;&#39;Units,&#39;Coordinates&gt; -&gt; rest:BoundingBox2D&lt;&#39;Units,&#39;Coordinates&gt; list -&gt; BoundingBox2D&lt;&#39;Units,&#39;Coordinates&gt;<br /><em>&lt;summary&gt;
- Find the bounding box containing one or more input boxes; works much like
- [`hull`](#hull). See also [`aggregateN`](#aggregateN).
-&lt;/summary&gt;</em></div>
-<div class="fsdocs-tip" id="fs24">val aggregateOf : getBoundingBox:(&#39;a -&gt; BoundingBox2D&lt;&#39;Units,&#39;Coordinates&gt;) -&gt; first:&#39;a -&gt; rest:&#39;a list -&gt; BoundingBox2D&lt;&#39;Units,&#39;Coordinates&gt;<br /><em>&lt;summary&gt;
- Like [`aggregate`](#aggregate), but lets you work on any kind of item as
- long as a bounding box can be extracted from it.
-&lt;/summary&gt;</em></div>
-<div class="fsdocs-tip" id="fs25">val aggregate3 : b1:BoundingBox2D&lt;&#39;Units,&#39;Coordinates&gt; -&gt; b2:BoundingBox2D&lt;&#39;Units,&#39;Coordinates&gt; -&gt; b3:BoundingBox2D&lt;&#39;Units,&#39;Coordinates&gt; -&gt; BoundingBox2D&lt;&#39;Units,&#39;Coordinates&gt;<br /><em>&lt;summary&gt;
- Build a bounding box that contains all three of the given bounding boxes.
- This is equivalent to running `aggregate` with three points but is more
- efficient.
-&lt;/summary&gt;</em></div>
-<div class="fsdocs-tip" id="fs26">val isContainedIn : target:BoundingBox2D&lt;&#39;Units,&#39;Coordinates&gt; -&gt; box:BoundingBox2D&lt;&#39;Units,&#39;Coordinates&gt; -&gt; bool<br /><em>&lt;summary&gt;
- Test to see if the target bounding box is contained withing the bounding box
-&lt;/summary&gt;</em></div>
-<div class="fsdocs-tip" id="fs27">val contains : target:Point2D&lt;&#39;Units,&#39;Coordinates&gt; -&gt; box:BoundingBox2D&lt;&#39;Units,&#39;Coordinates&gt; -&gt; bool<br /><em>&lt;summary&gt;
- Test to see if the target bounding box is contained withing the bounding box
-&lt;/summary&gt;</em></div>
-<div class="fsdocs-tip" id="fs28">val intersects : first:BoundingBox2D&lt;&#39;Units,&#39;Coordinates&gt; -&gt; second:BoundingBox2D&lt;&#39;Units,&#39;Coordinates&gt; -&gt; bool</div>
-<div class="fsdocs-tip" id="fs29">val intersection : first:BoundingBox2D&lt;&#39;Units,&#39;Coordinates&gt; -&gt; second:BoundingBox2D&lt;&#39;Units,&#39;Coordinates&gt; -&gt; BoundingBox2D&lt;&#39;Units,&#39;Coordinates&gt; option<br /><em>&lt;summary&gt;
- Attempt to build a bounding box that contains all points common to both
- given bounding boxes. If the given boxes do not intersect, returns `Nothing`.
- If two boxes just touch along an edge or at a corner, they are still considered
- to have an intersection, even though that intersection will have zero area (at
- least one of its dimensions will be zero).
-&lt;/summary&gt;</em></div>
-<div class="fsdocs-tip" id="fs30">val union : first:BoundingBox2D&lt;&#39;Units,&#39;Coordinates&gt; -&gt; second:BoundingBox2D&lt;&#39;Units,&#39;Coordinates&gt; -&gt; BoundingBox2D&lt;&#39;Units,&#39;Coordinates&gt;<br /><em>&lt;summary&gt;
- Create a bounding box that contains both bounding boxes.
-&lt;/summary&gt;</em></div>
+            <div class="fsdocs-tip" id="fs1">Multiple items<br />union case Cartesian.Cartesian: Cartesian<br /><br />--------------------<br />type Cartesian = | Cartesian</div>
+<div class="fsdocs-tip" id="fs2">val boundingBox : obj</div>
 
         </div>
 

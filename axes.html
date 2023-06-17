@@ -161,128 +161,63 @@
 <h1><a name="Axis-2D" class="anchor" href="#Axis-2D">Axis 2D</a></h1>
 <p>An axis is a line that goes through a point at a particular angle.</p>
 <h1><a name="Constants" class="anchor" href="#Constants">Constants</a></h1>
-<pre class="fssnip highlighted"><code lang="fsharp"><span onmouseout="hideTip(event, 'fs4', 6)" onmouseover="showTip(event, 'fs4', 6)" class="m">Axis2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs5', 7)" onmouseover="showTip(event, 'fs5', 7)" class="id">x</span>
-<span onmouseout="hideTip(event, 'fs4', 8)" onmouseover="showTip(event, 'fs4', 8)" class="m">Axis2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs6', 9)" onmouseover="showTip(event, 'fs6', 9)" class="id">y</span>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">Axis2D</span><span class="pn">.</span><span class="id">x</span>
+<span class="id">Axis2D</span><span class="pn">.</span><span class="id">y</span>
 </code></pre>
 <h1><a name="Builders" class="anchor" href="#Builders">Builders</a></h1>
 <p>For the following, the input direction that will be used is</p>
-<pre class="fssnip highlighted"><code lang="fsharp"><span class="k">let</span> <span onmouseout="hideTip(event, 'fs7', 10)" onmouseover="showTip(event, 'fs7', 10)" class="id">direction</span><span class="pn">:</span> <span onmouseout="hideTip(event, 'fs8', 11)" onmouseover="showTip(event, 'fs8', 11)" class="rt">Direction2D</span><span class="pn">&lt;</span><span onmouseout="hideTip(event, 'fs3', 12)" onmouseover="showTip(event, 'fs3', 12)" class="rt">Cartesian</span><span class="pn">&gt;</span> <span class="o">=</span>
-    <span onmouseout="hideTip(event, 'fs8', 13)" onmouseover="showTip(event, 'fs8', 13)" class="m">Direction2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs9', 14)" onmouseover="showTip(event, 'fs9', 14)" class="id">fromAngle</span> <span class="pn">(</span><span class="id">Angle</span><span class="pn">.</span><span class="id">degrees</span> <span class="n">45.</span><span class="pn">)</span>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="k">let</span> <span onmouseout="hideTip(event, 'fs2', 3)" onmouseover="showTip(event, 'fs2', 3)" class="id">direction</span><span class="pn">:</span> <span class="id">Direction2D</span><span class="pn">&lt;</span><span onmouseout="hideTip(event, 'fs1', 4)" onmouseover="showTip(event, 'fs1', 4)" class="id">Cartesian</span><span class="pn">&gt;</span> <span class="o">=</span>
+    <span class="id">Direction2D</span><span class="pn">.</span><span class="id">fromAngle</span> <span class="pn">(</span><span class="id">Angle</span><span class="pn">.</span><span class="id">degrees</span> <span class="n">45.</span><span class="pn">)</span>
 </code></pre>
 <table class="pre"><tr><td><pre><code>No value returned by any evaluator</code></pre></td></tr></table>
-<pre class="fssnip highlighted"><code lang="fsharp"><span onmouseout="hideTip(event, 'fs4', 16)" onmouseover="showTip(event, 'fs4', 16)" class="m">Axis2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs10', 17)" onmouseover="showTip(event, 'fs10', 17)" class="id">through</span> <span class="pn">(</span><span onmouseout="hideTip(event, 'fs11', 18)" onmouseover="showTip(event, 'fs11', 18)" class="m">Point2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs9', 19)" onmouseover="showTip(event, 'fs9', 19)" class="id">meters</span> <span class="n">3.</span> <span class="n">3.</span><span class="pn">)</span> <span onmouseout="hideTip(event, 'fs7', 20)" onmouseover="showTip(event, 'fs7', 20)" class="id">direction</span>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">Axis2D</span><span class="pn">.</span><span class="id">through</span> <span class="pn">(</span><span class="id">Point2D</span><span class="pn">.</span><span class="id">meters</span> <span class="n">3.</span> <span class="n">3.</span><span class="pn">)</span> <span onmouseout="hideTip(event, 'fs2', 6)" onmouseover="showTip(event, 'fs2', 6)" class="id">direction</span>
 </code></pre>
 <table class="pre"><tr><td><pre><code>No value returned by any evaluator</code></pre></td></tr></table>
-<pre class="fssnip highlighted"><code lang="fsharp"><span onmouseout="hideTip(event, 'fs4', 21)" onmouseover="showTip(event, 'fs4', 21)" class="m">Axis2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs12', 22)" onmouseover="showTip(event, 'fs12', 22)" class="id">withDirection</span> <span onmouseout="hideTip(event, 'fs7', 23)" onmouseover="showTip(event, 'fs7', 23)" class="id">direction</span> <span class="pn">(</span><span onmouseout="hideTip(event, 'fs11', 24)" onmouseover="showTip(event, 'fs11', 24)" class="m">Point2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs9', 25)" onmouseover="showTip(event, 'fs9', 25)" class="id">meters</span> <span class="n">3.</span> <span class="n">3.</span><span class="pn">)</span>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">Axis2D</span><span class="pn">.</span><span class="id">withDirection</span> <span onmouseout="hideTip(event, 'fs2', 7)" onmouseover="showTip(event, 'fs2', 7)" class="id">direction</span> <span class="pn">(</span><span class="id">Point2D</span><span class="pn">.</span><span class="id">meters</span> <span class="n">3.</span> <span class="n">3.</span><span class="pn">)</span>
 </code></pre>
 <table class="pre"><tr><td><pre><code>No value returned by any evaluator</code></pre></td></tr></table>
-<pre class="fssnip highlighted"><code lang="fsharp"><span onmouseout="hideTip(event, 'fs4', 26)" onmouseover="showTip(event, 'fs4', 26)" class="m">Axis2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs13', 27)" onmouseover="showTip(event, 'fs13', 27)" class="id">throughPoints</span>
-    <span class="pn">(</span><span onmouseout="hideTip(event, 'fs11', 28)" onmouseover="showTip(event, 'fs11', 28)" class="m">Point2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs9', 29)" onmouseover="showTip(event, 'fs9', 29)" class="id">meters</span> <span class="n">3.</span> <span class="n">3.</span><span class="pn">)</span>
-    <span class="pn">(</span><span onmouseout="hideTip(event, 'fs11', 30)" onmouseover="showTip(event, 'fs11', 30)" class="m">Point2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs9', 31)" onmouseover="showTip(event, 'fs9', 31)" class="id">meters</span> <span class="n">5.</span> <span class="n">5.</span><span class="pn">)</span>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">Axis2D</span><span class="pn">.</span><span class="id">throughPoints</span>
+    <span class="pn">(</span><span class="id">Point2D</span><span class="pn">.</span><span class="id">meters</span> <span class="n">3.</span> <span class="n">3.</span><span class="pn">)</span>
+    <span class="pn">(</span><span class="id">Point2D</span><span class="pn">.</span><span class="id">meters</span> <span class="n">5.</span> <span class="n">5.</span><span class="pn">)</span>
 </code></pre>
 <table class="pre"><tr><td><pre><code>No value returned by any evaluator</code></pre></td></tr></table>
 <h1><a name="Accessors" class="anchor" href="#Accessors">Accessors</a></h1>
 <p>To show the output of the accessor methods, the following axis will be used.</p>
-<pre class="fssnip highlighted"><code lang="fsharp"><span class="k">let</span> <span onmouseout="hideTip(event, 'fs14', 32)" onmouseover="showTip(event, 'fs14', 32)" class="id">axis</span> <span class="o">=</span>
-   <span onmouseout="hideTip(event, 'fs4', 33)" onmouseover="showTip(event, 'fs4', 33)" class="m">Axis2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs10', 34)" onmouseover="showTip(event, 'fs10', 34)" class="id">through</span>
-       <span class="pn">(</span><span onmouseout="hideTip(event, 'fs11', 35)" onmouseover="showTip(event, 'fs11', 35)" class="m">Point2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs9', 36)" onmouseover="showTip(event, 'fs9', 36)" class="id">meters</span> <span class="n">3.</span> <span class="n">3.</span><span class="pn">)</span>
-       <span onmouseout="hideTip(event, 'fs7', 37)" onmouseover="showTip(event, 'fs7', 37)" class="id">direction</span>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="k">let</span> <span onmouseout="hideTip(event, 'fs3', 8)" onmouseover="showTip(event, 'fs3', 8)" class="id">axis</span> <span class="o">=</span>
+   <span class="id">Axis2D</span><span class="pn">.</span><span class="id">through</span>
+       <span class="pn">(</span><span class="id">Point2D</span><span class="pn">.</span><span class="id">meters</span> <span class="n">3.</span> <span class="n">3.</span><span class="pn">)</span>
+       <span onmouseout="hideTip(event, 'fs2', 9)" onmouseover="showTip(event, 'fs2', 9)" class="id">direction</span>
 </code></pre>
 <table class="pre"><tr><td><pre><code>No value returned by any evaluator</code></pre></td></tr></table>
-<pre class="fssnip highlighted"><code lang="fsharp"><span onmouseout="hideTip(event, 'fs4', 39)" onmouseover="showTip(event, 'fs4', 39)" class="m">Axis2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs15', 40)" onmouseover="showTip(event, 'fs15', 40)" class="id">originPoint</span> <span onmouseout="hideTip(event, 'fs14', 41)" onmouseover="showTip(event, 'fs14', 41)" class="id">axis</span>  <span class="c">// or</span>
-<span onmouseout="hideTip(event, 'fs14', 42)" onmouseover="showTip(event, 'fs14', 42)" class="id">axis</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs16', 43)" onmouseover="showTip(event, 'fs16', 43)" class="id">Origin</span>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">Axis2D</span><span class="pn">.</span><span class="id">originPoint</span> <span onmouseout="hideTip(event, 'fs3', 11)" onmouseover="showTip(event, 'fs3', 11)" class="id">axis</span>  <span class="c">// or</span>
+<span onmouseout="hideTip(event, 'fs3', 12)" onmouseover="showTip(event, 'fs3', 12)" class="id">axis</span><span class="pn">.</span><span class="id">Origin</span>
 </code></pre>
 <table class="pre"><tr><td><pre><code>No value returned by any evaluator</code></pre></td></tr></table>
-<pre class="fssnip highlighted"><code lang="fsharp"><span onmouseout="hideTip(event, 'fs4', 44)" onmouseover="showTip(event, 'fs4', 44)" class="m">Axis2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs17', 45)" onmouseover="showTip(event, 'fs17', 45)" class="id">direction</span> <span onmouseout="hideTip(event, 'fs14', 46)" onmouseover="showTip(event, 'fs14', 46)" class="id">axis</span>  <span class="c">// or</span>
-<span onmouseout="hideTip(event, 'fs14', 47)" onmouseover="showTip(event, 'fs14', 47)" class="id">axis</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs18', 48)" onmouseover="showTip(event, 'fs18', 48)" class="id">Direction</span>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">Axis2D</span><span class="pn">.</span><span class="id">direction</span> <span onmouseout="hideTip(event, 'fs3', 13)" onmouseover="showTip(event, 'fs3', 13)" class="id">axis</span>  <span class="c">// or</span>
+<span onmouseout="hideTip(event, 'fs3', 14)" onmouseover="showTip(event, 'fs3', 14)" class="id">axis</span><span class="pn">.</span><span class="id">Direction</span>
 </code></pre>
 <table class="pre"><tr><td><pre><code>No value returned by any evaluator</code></pre></td></tr></table>
 <h1><a name="Modifiers" class="anchor" href="#Modifiers">Modifiers</a></h1>
-<pre class="fssnip highlighted"><code lang="fsharp"><span onmouseout="hideTip(event, 'fs4', 49)" onmouseover="showTip(event, 'fs4', 49)" class="m">Axis2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs19', 50)" onmouseover="showTip(event, 'fs19', 50)" class="id">reverse</span> <span onmouseout="hideTip(event, 'fs14', 51)" onmouseover="showTip(event, 'fs14', 51)" class="id">axis</span>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">Axis2D</span><span class="pn">.</span><span class="id">reverse</span> <span onmouseout="hideTip(event, 'fs3', 15)" onmouseover="showTip(event, 'fs3', 15)" class="id">axis</span>
 </code></pre>
 <table class="pre"><tr><td><pre><code>No value returned by any evaluator</code></pre></td></tr></table>
-<pre class="fssnip highlighted"><code lang="fsharp"><span onmouseout="hideTip(event, 'fs4', 52)" onmouseover="showTip(event, 'fs4', 52)" class="m">Axis2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs20', 53)" onmouseover="showTip(event, 'fs20', 53)" class="id">moveTo</span> <span class="pn">(</span><span onmouseout="hideTip(event, 'fs11', 54)" onmouseover="showTip(event, 'fs11', 54)" class="m">Point2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs9', 55)" onmouseover="showTip(event, 'fs9', 55)" class="id">meters</span> <span class="o">-</span><span class="n">1.</span> <span class="n">4.</span><span class="pn">)</span> <span onmouseout="hideTip(event, 'fs14', 56)" onmouseover="showTip(event, 'fs14', 56)" class="id">axis</span>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">Axis2D</span><span class="pn">.</span><span class="id">moveTo</span> <span class="pn">(</span><span class="id">Point2D</span><span class="pn">.</span><span class="id">meters</span> <span class="o">-</span><span class="n">1.</span> <span class="n">4.</span><span class="pn">)</span> <span onmouseout="hideTip(event, 'fs3', 16)" onmouseover="showTip(event, 'fs3', 16)" class="id">axis</span>
 </code></pre>
 <table class="pre"><tr><td><pre><code>No value returned by any evaluator</code></pre></td></tr></table>
-<pre class="fssnip highlighted"><code lang="fsharp"><span onmouseout="hideTip(event, 'fs4', 57)" onmouseover="showTip(event, 'fs4', 57)" class="m">Axis2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs9', 58)" onmouseover="showTip(event, 'fs9', 58)" class="id">rotateAround</span> <span onmouseout="hideTip(event, 'fs11', 59)" onmouseover="showTip(event, 'fs11', 59)" class="id">Point2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs21', 60)" onmouseover="showTip(event, 'fs21', 60)" class="id">origin</span> <span class="id">Angle</span><span class="pn">.</span><span class="id">pi</span> <span onmouseout="hideTip(event, 'fs14', 61)" onmouseover="showTip(event, 'fs14', 61)" class="id">axis</span>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">Axis2D</span><span class="pn">.</span><span class="id">rotateAround</span> <span class="id">Point2D</span><span class="pn">.</span><span class="id">origin</span> <span class="id">Angle</span><span class="pn">.</span><span class="id">pi</span> <span onmouseout="hideTip(event, 'fs3', 17)" onmouseover="showTip(event, 'fs3', 17)" class="id">axis</span>
 </code></pre>
 <table class="pre"><tr><td><pre><code>No value returned by any evaluator</code></pre></td></tr></table>
-<pre class="fssnip highlighted"><code lang="fsharp"><span onmouseout="hideTip(event, 'fs4', 62)" onmouseover="showTip(event, 'fs4', 62)" class="m">Axis2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs9', 63)" onmouseover="showTip(event, 'fs9', 63)" class="id">rotateBy</span>
-<span onmouseout="hideTip(event, 'fs4', 64)" onmouseover="showTip(event, 'fs4', 64)" class="m">Axis2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs22', 65)" onmouseover="showTip(event, 'fs22', 65)" class="id">translateBy</span>
-<span onmouseout="hideTip(event, 'fs4', 66)" onmouseover="showTip(event, 'fs4', 66)" class="m">Axis2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs9', 67)" onmouseover="showTip(event, 'fs9', 67)" class="id">translateIn</span>
-<span onmouseout="hideTip(event, 'fs4', 68)" onmouseover="showTip(event, 'fs4', 68)" class="m">Axis2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs23', 69)" onmouseover="showTip(event, 'fs23', 69)" class="id">mirrorAcross</span>
-<span onmouseout="hideTip(event, 'fs4', 70)" onmouseover="showTip(event, 'fs4', 70)" class="m">Axis2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs24', 71)" onmouseover="showTip(event, 'fs24', 71)" class="id">relativeTo</span>
-<span onmouseout="hideTip(event, 'fs4', 72)" onmouseover="showTip(event, 'fs4', 72)" class="m">Axis2D</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs25', 73)" onmouseover="showTip(event, 'fs25', 73)" class="id">placeIn</span>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">Axis2D</span><span class="pn">.</span><span class="id">rotateBy</span>
+<span class="id">Axis2D</span><span class="pn">.</span><span class="id">translateBy</span>
+<span class="id">Axis2D</span><span class="pn">.</span><span class="id">translateIn</span>
+<span class="id">Axis2D</span><span class="pn">.</span><span class="id">mirrorAcross</span>
+<span class="id">Axis2D</span><span class="pn">.</span><span class="id">relativeTo</span>
+<span class="id">Axis2D</span><span class="pn">.</span><span class="id">placeIn</span>
 </code></pre>
 
-            <div class="fsdocs-tip" id="fs1">namespace Math</div>
-<div class="fsdocs-tip" id="fs2">namespace Math.Geometry</div>
-<div class="fsdocs-tip" id="fs3">Multiple items<br />union case Cartesian.Cartesian: Cartesian<br /><br />--------------------<br />type Cartesian = | Cartesian</div>
-<div class="fsdocs-tip" id="fs4">Multiple items<br />module Axis2D
-
-from Math.Geometry<br /><br />--------------------<br />[&lt;Struct&gt;]
-type Axis2D&lt;&#39;Units,&#39;Coordinates&gt; =
-  { Origin: Point2D&lt;&#39;Units,&#39;Coordinates&gt;
-    Direction: Direction2D&lt;&#39;Coordinates&gt; }
-    override Equals : obj:obj -&gt; bool
-    override GetHashCode : unit -&gt; int</div>
-<div class="fsdocs-tip" id="fs5">val x&lt;&#39;Units,&#39;Coordinates&gt; : Axis2D&lt;&#39;Units,&#39;Coordinates&gt;</div>
-<div class="fsdocs-tip" id="fs6">val y&lt;&#39;Units,&#39;Coordinates&gt; : Axis2D&lt;&#39;Units,&#39;Coordinates&gt;</div>
-<div class="fsdocs-tip" id="fs7">val direction : Direction2D&lt;Cartesian&gt;</div>
-<div class="fsdocs-tip" id="fs8">Multiple items<br />module Direction2D
-
-from Math.Geometry<br /><br />--------------------<br />type Direction2D&lt;&#39;Coordinates&gt; =
-  { X: float
-    Y: float }
-    interface IComparable
-    interface IComparable&lt;Direction2D&lt;&#39;Coordinates&gt;&gt;
-    member Comparison : other:Direction2D&lt;&#39;Coordinates&gt; -&gt; int
-    override Equals : obj:obj -&gt; bool + 1 overload
-    override GetHashCode : unit -&gt; int
-    member LessThan : other:Direction2D&lt;&#39;Coordinates&gt; -&gt; bool
-    static member xy : x:float -&gt; y:float -&gt; Direction2D&lt;&#39;Coordinates&gt; option</div>
-<div class="fsdocs-tip" id="fs9"></div>
-<div class="fsdocs-tip" id="fs10">val through : origin:Point2D&lt;&#39;Units,&#39;Coordinates&gt; -&gt; direction:Direction2D&lt;&#39;Coordinates&gt; -&gt; Axis2D&lt;&#39;Units,&#39;Coordinates&gt;</div>
-<div class="fsdocs-tip" id="fs11">Multiple items<br />module Point2D
-
-from Math.Geometry<br /><br />--------------------</div>
-<div class="fsdocs-tip" id="fs12">val withDirection : direction:Direction2D&lt;&#39;Coordinates&gt; -&gt; point:Point2D&lt;&#39;Units,&#39;Coordinates&gt; -&gt; Axis2D&lt;&#39;Units,&#39;Coordinates&gt;</div>
-<div class="fsdocs-tip" id="fs13">val throughPoints : first:Point2D&lt;&#39;Units,&#39;Coordinates&gt; -&gt; second:Point2D&lt;&#39;Units,&#39;Coordinates&gt; -&gt; Axis2D&lt;&#39;Units,&#39;Coordinates&gt; option</div>
-<div class="fsdocs-tip" id="fs14">val axis : Axis2D&lt;obj,Cartesian&gt;</div>
-<div class="fsdocs-tip" id="fs15">val originPoint : axis:Axis2D&lt;&#39;Units,&#39;Coordinates&gt; -&gt; Point2D&lt;&#39;Units,&#39;Coordinates&gt;<br /><em>&lt;summary&gt;
- Get the origin point of the axis.
-&lt;/summary&gt;</em></div>
-<div class="fsdocs-tip" id="fs16">Axis2D.Origin: Point2D&lt;obj,Cartesian&gt;</div>
-<div class="fsdocs-tip" id="fs17">val direction : axis:Axis2D&lt;&#39;Units,&#39;Coordinates&gt; -&gt; Direction2D&lt;&#39;Coordinates&gt;<br /><em>&lt;summary&gt;
- Get the direction of the axis.
-&lt;/summary&gt;</em></div>
-<div class="fsdocs-tip" id="fs18">Axis2D.Direction: Direction2D&lt;Cartesian&gt;</div>
-<div class="fsdocs-tip" id="fs19">val reverse : axis:Axis2D&lt;&#39;Units,&#39;Coordaintes&gt; -&gt; Axis2D&lt;&#39;Units,&#39;Coordaintes&gt;<br /><em>&lt;summary&gt;
- Reverse the direction of the axis.
-&lt;/summary&gt;</em></div>
-<div class="fsdocs-tip" id="fs20">val moveTo : point:Point2D&lt;&#39;Units,&#39;Coordinates&gt; -&gt; axis:Axis2D&lt;&#39;Units,&#39;Coordinates&gt; -&gt; Axis2D&lt;&#39;Units,&#39;Coordinates&gt;<br /><em>&lt;summary&gt;
- Move the origin to have a different origin point but the same direction.
-&lt;/summary&gt;</em></div>
-<div class="fsdocs-tip" id="fs21">val origin&lt;&#39;Units,&#39;Coordinates&gt; : Point2D&lt;&#39;Units,&#39;Coordinates&gt;</div>
-<div class="fsdocs-tip" id="fs22">val translateBy : vector:Vector2D&lt;&#39;Units,&#39;Coordinates&gt; -&gt; axis:Axis2D&lt;&#39;Units,&#39;Coordinates&gt; -&gt; Axis2D&lt;&#39;Units,&#39;Coordinates&gt;<br /><em>&lt;summary&gt;
- Translate an axis by a given displacement. Applies the given displacement to
- the axis&#39; origin point and leaves the direction unchanged.
-&lt;/summary&gt;</em></div>
-<div class="fsdocs-tip" id="fs23">val mirrorAcross : otherAxis:Axis2D&lt;&#39;Units,&#39;Coordinates&gt; -&gt; axis:Axis2D&lt;&#39;Units,&#39;Coordinates&gt; -&gt; Axis2D&lt;&#39;Units,&#39;Coordinates&gt;<br /><em>&lt;summary&gt;
- Mirror one axis across another. The axis to mirror across is given first and
- the axis to mirror is given second.
-     Axis2D.mirrorAcross Axis2D.x exampleAxis
-     --&amp;gt; Axis2D.through (Point2D.meters 1. -3.)
-     --&amp;gt;     (Direction2D.degrees -30.)
-&lt;/summary&gt;</em></div>
-<div class="fsdocs-tip" id="fs24">val relativeTo : frame:Frame2D&lt;&#39;Units,&#39;Coordinates,&#39;Defines&gt; -&gt; axis:Axis2D&lt;&#39;Units,&#39;Coordinates&gt; -&gt; Axis2D&lt;&#39;Units,&#39;Coordinates&gt;<br /><em>&lt;summary&gt;
- Take an axis defined in global coordinates, and return it expressed in local
- coordinates relative to a given reference frame.
-&lt;/summary&gt;</em></div>
-<div class="fsdocs-tip" id="fs25">val placeIn : frame:Frame2D&lt;&#39;Units,&#39;Coordinates,&#39;Defines&gt; -&gt; axis:Axis2D&lt;&#39;Units,&#39;Coordinates&gt; -&gt; Axis2D&lt;&#39;Units,&#39;Coordinates&gt;<br /><em>&lt;summary&gt;
- Take an axis defined in local coordinates relative to a given reference
- frame, and return that axis expressed in global coordinates.
-&lt;/summary&gt;</em></div>
+            <div class="fsdocs-tip" id="fs1">Multiple items<br />union case Cartesian.Cartesian: Cartesian<br /><br />--------------------<br />type Cartesian = | Cartesian</div>
+<div class="fsdocs-tip" id="fs2">val direction : obj</div>
+<div class="fsdocs-tip" id="fs3">val axis : obj</div>
 
         </div>
 
