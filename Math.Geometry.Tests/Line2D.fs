@@ -1,8 +1,9 @@
-module Math.GeometryTests.Line2D
+module Math.Geometry.Tests.Line2D
 
 open NUnit.Framework
 
 open Math.Geometry
+open Math.Geometry.Test
 open Math.Units
 
 [<SetUp>]

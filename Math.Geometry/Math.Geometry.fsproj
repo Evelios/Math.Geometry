@@ -15,6 +15,9 @@
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <RepositoryUrl>https://github.com/Evelios/Math.Geometry</RepositoryUrl>
         <PackageTags>geometry, fsharp, f#</PackageTags>
+        <AssemblyName>Math.Geometry</AssemblyName>
+        <RootNamespace>Math.Geometry</RootNamespace>
+        <Product>Math.Geometry</Product>
     </PropertyGroup>
 
     <ItemGroup>
@@ -43,15 +46,13 @@
         <Compile Include="Polygon2D.fs" />
         <Compile Include="Intersection2D.fs" />
         <Compile Include="Boolean2D.fs" />
+        <Compile Include="Test\Test.fs" />
+        <Compile Include="Test\Assert.fs" />
+        <Compile Include="Test\Gen.fs" />
     </ItemGroup>
 
     <ItemGroup>
         <PackageReference Include="FSharp.Json" Version="0.4.0" />
         <PackageReference Include="Math.Units" Version="0.1.136" />
     </ItemGroup>
-
-    <ItemGroup>
-      <ProjectReference Include="..\Units\Units.fsproj" />
-    </ItemGroup>
-
 </Project>

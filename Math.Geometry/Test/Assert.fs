@@ -1,4 +1,4 @@
-module Math.GeometryTests.Assert
+module Math.Geometry.Test.Assert
 
 open NUnit.Framework
 

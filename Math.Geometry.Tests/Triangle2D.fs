@@ -1,10 +1,11 @@
-module Math.GeometryTests.Triangle2D
+module Math.Geometry.Tests.Triangle2D
 
 open NUnit.Framework
 open FsCheck.NUnit
 open FsCheck
 
 open Math.Geometry
+open Math.Geometry.Test
 open Math.Units
 open Math.Units.Test
 

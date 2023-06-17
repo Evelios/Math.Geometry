@@ -1,4 +1,4 @@
-namespace Math.GeometryTests
+namespace Math.Geometry.Test
 
 open Math.Units.Test
 

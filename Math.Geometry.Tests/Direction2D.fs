@@ -1,12 +1,13 @@
-module Math.GeometryTests.Direction2D
+module Math.Geometry.Tests.Direction2D
 
 open NUnit.Framework
 open FsCheck.NUnit
 open FsCheck
 
 open Math.Units.Test
-open Math.Geometry
 open Math.Units
+open Math.Geometry
+open Math.Geometry.Test
 
 
 [<SetUp>]

@@ -1,9 +1,10 @@
-module Math.GeometryTests.BoundingBox2D
+module Math.Geometry.Tests.BoundingBox2D
 
 open NUnit.Framework
 open FsCheck.NUnit
 
 open Math.Geometry
+open Math.Geometry.Test
 open Math.Units
 open Math.Units.Test
 

@@ -1,4 +1,4 @@
-module Math.GeometryTests.Test
+module Math.Geometry.Test.Test
 
 open System
 

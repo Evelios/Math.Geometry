@@ -10,9 +10,9 @@ ProjectSection(SolutionItems) = preProject
 	.gitattributes = .gitattributes
 EndProjectSection
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Geometry", "Geometry\Geometry.fsproj", "{90C0C281-8D44-438E-9914-83D91E297080}"
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Math.Geometry", "Math.Geometry\Math.Geometry.fsproj", "{90C0C281-8D44-438E-9914-83D91E297080}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "GeometryTests", "GeometryTests\GeometryTests.fsproj", "{DA99EA17-995B-4A49-8C77-9C26565AE5F6}"
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Math.Geometry.Tests", "Math.Geometry.Tests\Math.Geometry.Tests.fsproj", "{DA99EA17-995B-4A49-8C77-9C26565AE5F6}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Geometry Docs", "Geometry Docs", "{8B986EA4-771E-4527-B19A-2D98FAE3FAF7}"
 ProjectSection(SolutionItems) = preProject

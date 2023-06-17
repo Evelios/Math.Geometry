@@ -1,10 +1,11 @@
-module Math.GeometryTests.LineSegment2D
+module Math.Geometry.Tests.LineSegment2D
 
 open FsCheck
 open NUnit.Framework
 open FsCheck.NUnit
 
 open Math.Geometry
+open Math.Geometry.Test
 open Math.Units
 open Math.Units.Test
 
