@@ -45,6 +45,12 @@ jobs:
 
       - name: Package nuget
         run: dotnet pack Math.Geometry.sln --configuration Release -o:package /p:PackageVersion=${{ steps.gitversion.outputs.AssemblySemVer }}
+        
+      - name: Download fsdocs documentation tool
+        run: dotnet tool restore
+
+      - name: Build documentation
+        run: dotnet fsdocs build --strict --eval --properties Configuration=Release
 
       - name: Push generated package to Nuget regestry
         run: nuget push ./package/Math.Geometry.*.nupkg -Source 'https://api.nuget.org/v3/index.json' -ApiKey ${{secrets.NugetKey}}
@@ -52,12 +58,6 @@ jobs:
       - name: Push generated package to GitHub registry
         run: dotnet nuget push ./package/Math.Geometry.*.nupkg --source https://nuget.pkg.github.com/evelios/index.json --api-key ${{ github.token }} --skip-duplicate
      
-      - name: Download fsdocs documentation tool
-        run: dotnet tool restore
-        
-      - name: Build documentation
-        run: dotnet fsdocs build --eval
-        
       - name: Push documentation
         uses: s0/git-publish-subdir-action@develop
         env:
