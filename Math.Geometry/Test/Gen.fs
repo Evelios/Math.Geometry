@@ -7,8 +7,8 @@ type 'a Positive = Positive of 'a
 module internal Tuple2 =
     let pair x y = x, y
     let map f (x, y) = f x y
-    
-    
+
+
 module Gen =
     open System
     open FsCheck
@@ -25,98 +25,100 @@ module Gen =
         Gen.choose (0, Int32.MaxValue)
         |> Gen.map (fun x -> float x / (float Int32.MaxValue))
 
-    let intBetween low high = Gen.choose (low, high)
+    let intBetween (low: int) (high: int) : Gen<int> = Gen.choose (low, high)
 
-    let floatBetween low high =
+    let floatBetween (low: float) (high: float) : Gen<float> =
         Gen.map (fun scale -> (low + (high - low)) * scale) rand
 
-    let float =
-        Arb.generate<NormalFloat> |> Gen.map float
+    let float: Gen<float> = Arb.generate<NormalFloat> |> Gen.map float
 
-    let positiveFloat = Gen.map abs float
+    let positiveFloat: Gen<float> = Gen.map abs float
 
-    let private epsilonLength () = Length.meters Float.Epsilon
+    let private epsilonLength () = Quantity.create Float.Epsilon
 
-    let angle = Gen.map Angle.radians float
+    let angle: Gen<Angle> = Gen.map Angle.radians float
 
-    let length = Gen.map Length.meters float
+    let length: Gen<Length> = Gen.map Length.meters float
 
-    let positiveLength : Gen<Length Positive> =
+    let positiveLength: Gen<Length Positive> =
         Gen.map (Length.meters >> Positive) positiveFloat
 
-    let lengthBetween (a: Length) (b: Length) : Gen<Length> =
-        Gen.map Length.meters (floatBetween a.Value b.Value)
+    let lengthBetween (a: Quantity<'Units>) (b: Quantity<'Units>) : Gen<Quantity<'Units>> =
+        Gen.map Quantity.create<'Units> (floatBetween a.Value b.Value)
 
-    let direction2D : Gen<Direction2D<TestSpace>> =
+    let direction2D<'Coordinates> : Gen<Direction2D<'Coordinates>> =
         Gen.two float
         |> Gen.where (fun (x, y) -> x <> 0. || y <> 0.)
-        |> Gen.map
-            (fun (x, y) ->
-                let magnitude = sqrt ((x * x) + (y * y))
-                { X = x / magnitude; Y = y / magnitude })
+        |> Gen.map (fun (x, y) ->
+            let magnitude = sqrt ((x * x) + (y * y))
+            { X = x / magnitude; Y = y / magnitude })
 
-    let vector2D : Gen<Vector2D<Meters, TestSpace>> = Gen.map2 Vector2D.xy length length
+    let vector2D<'Units, 'Coordinates> : Gen<Vector2D<'Units, 'Coordinates>> =
+        Gen.map2 Vector2D.xy Gen.quantity Gen.quantity
 
-    let vector2DWithinRadius (radius: Length) : Gen<Vector2D<Meters, TestSpace>> =
-        Gen.map2 Vector2D.polar (lengthBetween Length.zero radius) angle
+    let vector2DWithinRadius (radius: Quantity<'Units>) : Gen<Vector2D<'Units, 'Coordinates>> =
+        Gen.map2 Vector2D.polar (lengthBetween Quantity.zero radius) angle
 
-    let twoCloseVector2D =
+    let twoCloseVector2D<'Units, 'Coordinates> : Gen<Vector2D<'Units, 'Coordinates> * Vector2D<'Units, 'Coordinates>> =
         Gen.map2 (fun first offset -> (first, first + offset)) vector2D (vector2DWithinRadius (epsilonLength ()))
 
-    let point2D : Gen<Point2D<Meters, TestSpace>> = Gen.map2 Point2D.xy length length
+    let point2D<'Units, 'Coordinates> : Gen<Point2D<'Units, 'Coordinates>> = Gen.map2 Point2D.xy Gen.quantity Gen.quantity
 
-    let point2DWithinOffset radius (point: Point2D<Meters, TestSpace>) =
+    let point2DWithinOffset
+        (radius: Quantity<'Units>)
+        (point: Point2D<'Units, 'Coordinates>)
+        : Gen<Point2D<'Units, 'Coordinates>> =
+
         Gen.map (fun offset -> point + offset) (vector2DWithinRadius radius)
 
     /// Generate two points that are within Epsilon of each other
-    let twoClosePoint2D =
+    let twoClosePoint2D<'Units, 'Coordinates> : Gen<Point2D<'Units, 'Coordinates> * Point2D<'Units, 'Coordiantes>> =
         Gen.map2 (fun first offset -> (first, first + offset)) point2D (vector2DWithinRadius (epsilonLength ()))
 
-    let axis2D =
-        Gen.map2 Axis2D.through point2D direction2D
+    let axis2D<'Units, 'Coordinates> : Gen<Axis2D<'Units, 'Coordinates>> = Gen.map2 Axis2D.through point2D direction2D
 
-    let frame2D : Gen<Frame2D<Meters, TestSpace, TestDefines>> = Gen.map2 Frame2D.withAngle angle point2D
+    let frame2D<'Units, 'Coordiantes> : Gen<Frame2D<'Units, 'Coordinates, TestDefines>> =
+        Gen.map2 Frame2D.withAngle angle point2D
 
-    let line2D =
+    let line2D<'Units, 'Coordianates> : Gen<Line2D<'Units, 'Coordinates>> =
         Gen.map2 Tuple2.pair point2D point2D
         |> Gen.filter (fun (p1, p2) -> p1 <> p2)
         |> Gen.map (Tuple2.map Line2D.through)
 
-    let lineSegment2D =
+    let lineSegment2D<'Units, 'Coordianates> :  Gen<LineSegment2D<'Units, 'Coordinates>>  =
         Gen.map2 Tuple2.pair point2D point2D
         |> Gen.filter (fun (p1, p2) -> p1 <> p2)
         |> Gen.map (Tuple2.map LineSegment2D.from)
 
-    let boundingBox2D : Gen<BoundingBox2D<Meters, TestSpace>> =
+    let boundingBox2D<'Units, 'Coordinates> : Gen<BoundingBox2D<Meters, 'Coordinates>> =
         Gen.map2 BoundingBox2D.from point2D point2D
 
-    let point2DInBoundingBox2D (bbox: BoundingBox2D<Meters, TestSpace>): Gen<Point2D<Meters, TestSpace>> =
+    let point2DInBoundingBox2D<'Units, 'Coordinates> (bbox: BoundingBox2D<'Units, 'Coordinates>) : Gen<Point2D<'Units, 'Coordinates>> =
         Gen.map2 Point2D.xy (lengthBetween bbox.MinX bbox.MaxX) (lengthBetween bbox.MinY bbox.MaxY)
 
-    let lineSegment2DInBoundingBox2D (bbox: BoundingBox2D<Meters, TestSpace>) =
+    let lineSegment2DInBoundingBox2D<'Units, 'Coordinates> (bbox: BoundingBox2D<'Units, 'Coordinates>) =
         Gen.two (point2DInBoundingBox2D bbox)
         |> Gen.where (fun (a, b) -> a <> b)
         |> Gen.map (Tuple2.map LineSegment2D.from)
 
-    let sweptAngle : Gen<SweptAngle> =
-        Gen.oneof [
-            Gen.constant SweptAngle.smallPositive
-            Gen.constant SweptAngle.smallNegative
-            Gen.constant SweptAngle.largePositive
-            Gen.constant SweptAngle.largeNegative
-        ]
+    let sweptAngle: Gen<SweptAngle> =
+        Gen.oneof
+            [ Gen.constant SweptAngle.smallPositive
+              Gen.constant SweptAngle.smallNegative
+              Gen.constant SweptAngle.largePositive
+              Gen.constant SweptAngle.largeNegative ]
 
-    let arc2D =
-        Gen.map3 Arc2D.from point2D point2D angle
+    let arc2D<'Units, 'Coordinates> : Gen<Arc2D<'Units, 'Coordinates>> = Gen.map3 Arc2D.from point2D point2D angle
 
-    let polygon2D =
+    let polygon2D<'Units, 'Coordinates> : Gen<Polygon2D<'Units, 'Coordinates>> =
         let boundingBox =
-            { MinX = Length.meters -10.
-              MaxX = Length.meters 10.
-              MinY = Length.meters -10.
-              MaxY = Length.meters 10. }
+            { MinX = Quantity.create -10.
+              MaxX = Quantity.create 10.
+              MinY = Quantity.create -10.
+              MaxY = Quantity.create 10. }
 
-        let genPoint2D : Gen<Point2D<Meters, TestSpace>> = point2DInBoundingBox2D boundingBox
+        let genPoint2D: Gen<Point2D<'Units, 'Coordinates>> =
+            point2DInBoundingBox2D boundingBox
 
         let genPolygonPointList =
             Gen.map3
