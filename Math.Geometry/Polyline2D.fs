@@ -3,21 +3,16 @@ module Math.Geometry.Polyline2D
 
 open Math.Units
 
-let fromVertices (vertices: Point2D<'Units, 'Coordinates> list) : Polyline2D<'Units, 'Coordinates> = Polyline2D vertices
+let fromVertices (vertices: Point2D<'Units, 'Coordinates> list) : Polyline2D<'Units, 'Coordinates> =
+    { Vertices = vertices }
 
-let vertices (polyline: Polyline2D<'Units, 'Coordinates>) : Point2D<'Units, 'Coordinates> list =
-    match polyline with
-    | Polyline2D vertices -> vertices
+let vertices (polyline: Polyline2D<'Units, 'Coordinates>) : Point2D<'Units, 'Coordinates> list = polyline.Vertices
 
 let segments (polyline: Polyline2D<'Units, 'Coordinates>) : LineSegment2D<'Units, 'Coordinates> list =
-    vertices polyline
-    |> List.pairwise
-    |> List.map LineSegment2D.fromEndpoints
+    vertices polyline |> List.pairwise |> List.map LineSegment2D.fromEndpoints
 
 let length (polyline: Polyline2D<'Units, 'Coordinates>) : Quantity<'Units> =
-    segments polyline
-    |> List.map LineSegment2D.length
-    |> Quantity.sum
+    segments polyline |> List.map LineSegment2D.length |> Quantity.sum
 
 // Transform each vertex of a polyline by the given function. All other
 // transformations can be defined in terms of `mapVertices`; for example,
@@ -126,9 +121,6 @@ let centroid (polyline: Polyline2D<'Units, 'Coordinates>) : Point2D<'Units, 'Coo
         else
             let roughCentroid = BoundingBox2D.centerPoint box
 
-            let helper =
-                refineBySegment polylineLength roughCentroid
+            let helper = refineBySegment polylineLength roughCentroid
 
-            segments polyline
-            |> List.fold helper roughCentroid
-            |> Some
+            segments polyline |> List.fold helper roughCentroid |> Some
