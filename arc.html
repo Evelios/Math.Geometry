@@ -265,6 +265,7 @@ from Math.Geometry<br /><br />--------------------<br />type Arc2D&lt;&#39;Units
     XDirection: Direction2D&lt;&#39;Coordinates&gt;
     SignedLength: Quantity&lt;&#39;Units&gt;
     SweptAngle: Angle }
+    interface IGeometry
     override Equals : obj:obj -&gt; bool
     override GetHashCode : unit -&gt; int</div>
 <div class="fsdocs-tip" id="fs6">val from : givenStartPoint:Point2D&lt;&#39;Units,&#39;Coordinates&gt; -&gt; givenEndPoint:Point2D&lt;&#39;Units,&#39;Coordinates&gt; -&gt; givenSweptAngle:Angle -&gt; Arc2D&lt;&#39;Units,&#39;Coordinates&gt;<br /><em>&lt;summary&gt;
@@ -278,6 +279,7 @@ type Point2D&lt;&#39;Units,&#39;Coordinates&gt; =
     Y: Quantity&lt;&#39;Units&gt; }
     interface IComparable
     interface IComparable&lt;Point2D&lt;&#39;Units,&#39;Coordinates&gt;&gt;
+    interface IGeometry
     member Comparison : other:Point2D&lt;&#39;Units,&#39;Coordinates&gt; -&gt; int
     override Equals : obj:obj -&gt; bool + 1 overload
     override GetHashCode : unit -&gt; int
@@ -285,7 +287,6 @@ type Point2D&lt;&#39;Units,&#39;Coordinates&gt; =
     static member ( * ) : lhs:Point2D&lt;&#39;Units,&#39;Coordinates&gt; * rhs:float -&gt; Point2D&lt;&#39;Units,&#39;Coordinates&gt; + 1 overload
     static member ( + ) : lhs:Point2D&lt;&#39;Units,&#39;Coordinates&gt; * rhs:Vector2D&lt;&#39;Units,&#39;Coordinates&gt; -&gt; Point2D&lt;&#39;Units,&#39;Coordinates&gt;
     static member ( - ) : lhs:Point2D&lt;&#39;Units,&#39;Coordinates&gt; * rhs:Point2D&lt;&#39;Units,&#39;Coordinates&gt; -&gt; Vector2D&lt;&#39;Units,&#39;Coordinates&gt; + 1 overload
-    static member ( / ) : lhs:Point2D&lt;&#39;Units,&#39;Coordinates&gt; * rhs:float -&gt; Point2D&lt;&#39;Units,&#39;Coordinates&gt;
     ...</div>
 <div class="fsdocs-tip" id="fs8">val meters : x:float -&gt; y:float -&gt; Point2D&lt;Meters,&#39;Coordinates&gt;</div>
 <div class="fsdocs-tip" id="fs9">Multiple items<br />module Angle

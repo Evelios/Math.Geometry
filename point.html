@@ -268,6 +268,7 @@ type Point2D&lt;&#39;Units,&#39;Coordinates&gt; =
     Y: Quantity&lt;&#39;Units&gt; }
     interface IComparable
     interface IComparable&lt;Point2D&lt;&#39;Units,&#39;Coordinates&gt;&gt;
+    interface IGeometry
     member Comparison : other:Point2D&lt;&#39;Units,&#39;Coordinates&gt; -&gt; int
     override Equals : obj:obj -&gt; bool + 1 overload
     override GetHashCode : unit -&gt; int
@@ -275,7 +276,6 @@ type Point2D&lt;&#39;Units,&#39;Coordinates&gt; =
     static member ( * ) : lhs:Point2D&lt;&#39;Units,&#39;Coordinates&gt; * rhs:float -&gt; Point2D&lt;&#39;Units,&#39;Coordinates&gt; + 1 overload
     static member ( + ) : lhs:Point2D&lt;&#39;Units,&#39;Coordinates&gt; * rhs:Vector2D&lt;&#39;Units,&#39;Coordinates&gt; -&gt; Point2D&lt;&#39;Units,&#39;Coordinates&gt;
     static member ( - ) : lhs:Point2D&lt;&#39;Units,&#39;Coordinates&gt; * rhs:Point2D&lt;&#39;Units,&#39;Coordinates&gt; -&gt; Vector2D&lt;&#39;Units,&#39;Coordinates&gt; + 1 overload
-    static member ( / ) : lhs:Point2D&lt;&#39;Units,&#39;Coordinates&gt; * rhs:float -&gt; Point2D&lt;&#39;Units,&#39;Coordinates&gt;
     ...</div>
 <div class="fsdocs-tip" id="fs5">val xy : x:Quantity&lt;&#39;Units&gt; -&gt; y:Quantity&lt;&#39;Units&gt; -&gt; Point2D&lt;&#39;Units,&#39;Coordinates&gt;</div>
 <div class="fsdocs-tip" id="fs6">Multiple items<br />module Length
@@ -320,6 +320,7 @@ type Vector2D&lt;&#39;Units,&#39;Coordinates&gt; =
     Y: Quantity&lt;&#39;Units&gt; }
     interface IComparable
     interface IComparable&lt;Vector2D&lt;&#39;Units,&#39;Coordinates&gt;&gt;
+    interface IGeometry
     member Comparison : other:Vector2D&lt;&#39;Units,&#39;Coordinates&gt; -&gt; int
     override Equals : obj:obj -&gt; bool + 1 overload
     override GetHashCode : unit -&gt; int
@@ -327,7 +328,6 @@ type Vector2D&lt;&#39;Units,&#39;Coordinates&gt; =
     static member ( * ) : vector:Vector2D&lt;&#39;Units,&#39;Coordinates&gt; * scale:float -&gt; Vector2D&lt;&#39;Units,&#39;Coordinates&gt; + 1 overload
     static member ( + ) : lhs:Vector2D&lt;&#39;Units,&#39;Coordinates&gt; * rhs:Vector2D&lt;&#39;Units,&#39;Coordinates&gt; -&gt; Vector2D&lt;&#39;Units,&#39;Coordinates&gt;
     static member ( - ) : lhs:Vector2D&lt;&#39;Units,&#39;Coordinates&gt; * rhs:Vector2D&lt;&#39;Units,&#39;Coordinates&gt; -&gt; Vector2D&lt;&#39;Units,&#39;Coordinates&gt;
-    static member ( / ) : vector:Vector2D&lt;&#39;Units,&#39;Coordinates&gt; * scale:float -&gt; Vector2D&lt;&#39;Units,&#39;Coordinates&gt;
     ...</div>
 <div class="fsdocs-tip" id="fs19">val meters : x:float -&gt; y:float -&gt; Vector2D&lt;Meters,&#39;Coordinates&gt;</div>
 <div class="fsdocs-tip" id="fs20">val translate : v:Vector2D&lt;&#39;Units,&#39;Coordinates&gt; -&gt; p:Point2D&lt;&#39;Units,&#39;Coordinates&gt; -&gt; Point2D&lt;&#39;Units,&#39;Coordinates&gt;</div>

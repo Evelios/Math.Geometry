@@ -225,6 +225,7 @@ from Math.Geometry<br /><br />--------------------<br />type Ellipse2D&lt;&#39;U
   { Axes: Frame2D&lt;&#39;Units,&#39;Coordinates,unit&gt;
     XRadius: Quantity&lt;&#39;Units&gt;
     YRadius: Quantity&lt;&#39;Units&gt; }
+    interface IGeometry
     override Equals : obj:obj -&gt; bool
     override GetHashCode : unit -&gt; int</div>
 <div class="fsdocs-tip" id="fs6">val from : centerPoint:Point2D&lt;&#39;Units,&#39;Coordinates&gt; -&gt; xDirection:Direction2D&lt;&#39;Coordinates&gt; -&gt; xRadius:Quantity&lt;&#39;Units&gt; -&gt; yRadius:Quantity&lt;&#39;Units&gt; -&gt; Ellipse2D&lt;&#39;Units,&#39;Coordinates&gt;</div>
@@ -236,6 +237,7 @@ type Point2D&lt;&#39;Units,&#39;Coordinates&gt; =
     Y: Quantity&lt;&#39;Units&gt; }
     interface IComparable
     interface IComparable&lt;Point2D&lt;&#39;Units,&#39;Coordinates&gt;&gt;
+    interface IGeometry
     member Comparison : other:Point2D&lt;&#39;Units,&#39;Coordinates&gt; -&gt; int
     override Equals : obj:obj -&gt; bool + 1 overload
     override GetHashCode : unit -&gt; int
@@ -243,7 +245,6 @@ type Point2D&lt;&#39;Units,&#39;Coordinates&gt; =
     static member ( * ) : lhs:Point2D&lt;&#39;Units,&#39;Coordinates&gt; * rhs:float -&gt; Point2D&lt;&#39;Units,&#39;Coordinates&gt; + 1 overload
     static member ( + ) : lhs:Point2D&lt;&#39;Units,&#39;Coordinates&gt; * rhs:Vector2D&lt;&#39;Units,&#39;Coordinates&gt; -&gt; Point2D&lt;&#39;Units,&#39;Coordinates&gt;
     static member ( - ) : lhs:Point2D&lt;&#39;Units,&#39;Coordinates&gt; * rhs:Point2D&lt;&#39;Units,&#39;Coordinates&gt; -&gt; Vector2D&lt;&#39;Units,&#39;Coordinates&gt; + 1 overload
-    static member ( / ) : lhs:Point2D&lt;&#39;Units,&#39;Coordinates&gt; * rhs:float -&gt; Point2D&lt;&#39;Units,&#39;Coordinates&gt;
     ...</div>
 <div class="fsdocs-tip" id="fs8">val meters : x:float -&gt; y:float -&gt; Point2D&lt;Meters,&#39;Coordinates&gt;</div>
 <div class="fsdocs-tip" id="fs9">Multiple items<br />module Direction2D
@@ -253,6 +254,7 @@ from Math.Geometry<br /><br />--------------------<br />type Direction2D&lt;&#39
     Y: float }
     interface IComparable
     interface IComparable&lt;Direction2D&lt;&#39;Coordinates&gt;&gt;
+    interface IGeometry
     member Comparison : other:Direction2D&lt;&#39;Coordinates&gt; -&gt; int
     override Equals : obj:obj -&gt; bool + 1 overload
     override GetHashCode : unit -&gt; int

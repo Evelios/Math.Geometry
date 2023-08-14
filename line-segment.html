@@ -281,6 +281,7 @@ type LineSegment2D&lt;&#39;Units,&#39;Coordinates&gt; =
     Finish: Point2D&lt;&#39;Units,&#39;Coordinates&gt; }
     interface IComparable
     interface IComparable&lt;LineSegment2D&lt;&#39;Units,&#39;Coordinates&gt;&gt;
+    interface IGeometry
     member Comparison : other:LineSegment2D&lt;&#39;Units,&#39;Coordinates&gt; -&gt; int
     override Equals : obj:obj -&gt; bool
     override GetHashCode : unit -&gt; int
@@ -299,6 +300,7 @@ type Point2D&lt;&#39;Units,&#39;Coordinates&gt; =
     Y: Quantity&lt;&#39;Units&gt; }
     interface IComparable
     interface IComparable&lt;Point2D&lt;&#39;Units,&#39;Coordinates&gt;&gt;
+    interface IGeometry
     member Comparison : other:Point2D&lt;&#39;Units,&#39;Coordinates&gt; -&gt; int
     override Equals : obj:obj -&gt; bool + 1 overload
     override GetHashCode : unit -&gt; int
@@ -306,7 +308,6 @@ type Point2D&lt;&#39;Units,&#39;Coordinates&gt; =
     static member ( * ) : lhs:Point2D&lt;&#39;Units,&#39;Coordinates&gt; * rhs:float -&gt; Point2D&lt;&#39;Units,&#39;Coordinates&gt; + 1 overload
     static member ( + ) : lhs:Point2D&lt;&#39;Units,&#39;Coordinates&gt; * rhs:Vector2D&lt;&#39;Units,&#39;Coordinates&gt; -&gt; Point2D&lt;&#39;Units,&#39;Coordinates&gt;
     static member ( - ) : lhs:Point2D&lt;&#39;Units,&#39;Coordinates&gt; * rhs:Point2D&lt;&#39;Units,&#39;Coordinates&gt; -&gt; Vector2D&lt;&#39;Units,&#39;Coordinates&gt; + 1 overload
-    static member ( / ) : lhs:Point2D&lt;&#39;Units,&#39;Coordinates&gt; * rhs:float -&gt; Point2D&lt;&#39;Units,&#39;Coordinates&gt;
     ...</div>
 <div class="fsdocs-tip" id="fs8">val meters : x:float -&gt; y:float -&gt; Point2D&lt;Meters,&#39;Coordinates&gt;</div>
 <div class="fsdocs-tip" id="fs9">val fromEndpoints : Point2D&lt;&#39;Units,&#39;Coordinates&gt; * Point2D&lt;&#39;Units,&#39;Coordinates&gt; -&gt; LineSegment2D&lt;&#39;Units,&#39;Coordinates&gt;<br /><em>&lt;summary&gt;
@@ -329,6 +330,7 @@ type Vector2D&lt;&#39;Units,&#39;Coordinates&gt; =
     Y: Quantity&lt;&#39;Units&gt; }
     interface IComparable
     interface IComparable&lt;Vector2D&lt;&#39;Units,&#39;Coordinates&gt;&gt;
+    interface IGeometry
     member Comparison : other:Vector2D&lt;&#39;Units,&#39;Coordinates&gt; -&gt; int
     override Equals : obj:obj -&gt; bool + 1 overload
     override GetHashCode : unit -&gt; int
@@ -336,7 +338,6 @@ type Vector2D&lt;&#39;Units,&#39;Coordinates&gt; =
     static member ( * ) : vector:Vector2D&lt;&#39;Units,&#39;Coordinates&gt; * scale:float -&gt; Vector2D&lt;&#39;Units,&#39;Coordinates&gt; + 1 overload
     static member ( + ) : lhs:Vector2D&lt;&#39;Units,&#39;Coordinates&gt; * rhs:Vector2D&lt;&#39;Units,&#39;Coordinates&gt; -&gt; Vector2D&lt;&#39;Units,&#39;Coordinates&gt;
     static member ( - ) : lhs:Vector2D&lt;&#39;Units,&#39;Coordinates&gt; * rhs:Vector2D&lt;&#39;Units,&#39;Coordinates&gt; -&gt; Vector2D&lt;&#39;Units,&#39;Coordinates&gt;
-    static member ( / ) : vector:Vector2D&lt;&#39;Units,&#39;Coordinates&gt; * scale:float -&gt; Vector2D&lt;&#39;Units,&#39;Coordinates&gt;
     ...</div>
 <div class="fsdocs-tip" id="fs15">val meters : x:float -&gt; y:float -&gt; Vector2D&lt;Meters,&#39;Coordinates&gt;</div>
 <div class="fsdocs-tip" id="fs16">val along : axis:Axis2D&lt;&#39;Units,&#39;Coordinates&gt; -&gt; start:Quantity&lt;&#39;Units&gt; -&gt; finish:Quantity&lt;&#39;Units&gt; -&gt; LineSegment2D&lt;&#39;Units,&#39;Coordinates&gt;<br /><em>&lt;summary&gt;
@@ -349,6 +350,7 @@ from Math.Geometry<br /><br />--------------------<br />[&lt;Struct&gt;]
 type Axis2D&lt;&#39;Units,&#39;Coordinates&gt; =
   { Origin: Point2D&lt;&#39;Units,&#39;Coordinates&gt;
     Direction: Direction2D&lt;&#39;Coordinates&gt; }
+    interface IGeometry
     override Equals : obj:obj -&gt; bool
     override GetHashCode : unit -&gt; int</div>
 <div class="fsdocs-tip" id="fs18">val x&lt;&#39;Units,&#39;Coordinates&gt; : Axis2D&lt;&#39;Units,&#39;Coordinates&gt;</div>

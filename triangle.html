@@ -255,6 +255,7 @@ type Point2D&lt;&#39;Units,&#39;Coordinates&gt; =
     Y: Quantity&lt;&#39;Units&gt; }
     interface IComparable
     interface IComparable&lt;Point2D&lt;&#39;Units,&#39;Coordinates&gt;&gt;
+    interface IGeometry
     member Comparison : other:Point2D&lt;&#39;Units,&#39;Coordinates&gt; -&gt; int
     override Equals : obj:obj -&gt; bool + 1 overload
     override GetHashCode : unit -&gt; int
@@ -262,7 +263,6 @@ type Point2D&lt;&#39;Units,&#39;Coordinates&gt; =
     static member ( * ) : lhs:Point2D&lt;&#39;Units,&#39;Coordinates&gt; * rhs:float -&gt; Point2D&lt;&#39;Units,&#39;Coordinates&gt; + 1 overload
     static member ( + ) : lhs:Point2D&lt;&#39;Units,&#39;Coordinates&gt; * rhs:Vector2D&lt;&#39;Units,&#39;Coordinates&gt; -&gt; Point2D&lt;&#39;Units,&#39;Coordinates&gt;
     static member ( - ) : lhs:Point2D&lt;&#39;Units,&#39;Coordinates&gt; * rhs:Point2D&lt;&#39;Units,&#39;Coordinates&gt; -&gt; Vector2D&lt;&#39;Units,&#39;Coordinates&gt; + 1 overload
-    static member ( / ) : lhs:Point2D&lt;&#39;Units,&#39;Coordinates&gt; * rhs:float -&gt; Point2D&lt;&#39;Units,&#39;Coordinates&gt;
     ...</div>
 <div class="fsdocs-tip" id="fs7">Multiple items<br />union case Meters.Meters: Meters<br /><br />--------------------<br />type Meters = | Meters<br /><em>&lt;category&gt;Unit&lt;/category&gt;</em></div>
 <div class="fsdocs-tip" id="fs8">val meters : x:float -&gt; y:float -&gt; Point2D&lt;Meters,&#39;Coordinates&gt;</div>
@@ -275,6 +275,7 @@ type Triangle2D&lt;&#39;Units,&#39;Coordinates&gt; =
   { P1: Point2D&lt;&#39;Units,&#39;Coordinates&gt;
     P2: Point2D&lt;&#39;Units,&#39;Coordinates&gt;
     P3: Point2D&lt;&#39;Units,&#39;Coordinates&gt; }
+    interface IGeometry
     override Equals : obj:obj -&gt; bool
     override GetHashCode : unit -&gt; int</div>
 <div class="fsdocs-tip" id="fs12">val from : p1:Point2D&lt;&#39;Units,&#39;Coordinates&gt; -&gt; p2:Point2D&lt;&#39;Units,&#39;Coordinates&gt; -&gt; p3:Point2D&lt;&#39;Units,&#39;Coordinates&gt; -&gt; Triangle2D&lt;&#39;Units,&#39;Coordinates&gt;<br /><em>&lt;summary&gt;
@@ -340,6 +341,7 @@ type Vector2D&lt;&#39;Units,&#39;Coordinates&gt; =
     Y: Quantity&lt;&#39;Units&gt; }
     interface IComparable
     interface IComparable&lt;Vector2D&lt;&#39;Units,&#39;Coordinates&gt;&gt;
+    interface IGeometry
     member Comparison : other:Vector2D&lt;&#39;Units,&#39;Coordinates&gt; -&gt; int
     override Equals : obj:obj -&gt; bool + 1 overload
     override GetHashCode : unit -&gt; int
@@ -347,7 +349,6 @@ type Vector2D&lt;&#39;Units,&#39;Coordinates&gt; =
     static member ( * ) : vector:Vector2D&lt;&#39;Units,&#39;Coordinates&gt; * scale:float -&gt; Vector2D&lt;&#39;Units,&#39;Coordinates&gt; + 1 overload
     static member ( + ) : lhs:Vector2D&lt;&#39;Units,&#39;Coordinates&gt; * rhs:Vector2D&lt;&#39;Units,&#39;Coordinates&gt; -&gt; Vector2D&lt;&#39;Units,&#39;Coordinates&gt;
     static member ( - ) : lhs:Vector2D&lt;&#39;Units,&#39;Coordinates&gt; * rhs:Vector2D&lt;&#39;Units,&#39;Coordinates&gt; -&gt; Vector2D&lt;&#39;Units,&#39;Coordinates&gt;
-    static member ( / ) : vector:Vector2D&lt;&#39;Units,&#39;Coordinates&gt; * scale:float -&gt; Vector2D&lt;&#39;Units,&#39;Coordinates&gt;
     ...</div>
 <div class="fsdocs-tip" id="fs26">val meters : x:float -&gt; y:float -&gt; Vector2D&lt;Meters,&#39;Coordinates&gt;</div>
 <div class="fsdocs-tip" id="fs27">val translateIn : direction:Direction2D&lt;&#39;Coordinates&gt; -&gt; distance:Quantity&lt;&#39;Units&gt; -&gt; triangle:Triangle2D&lt;&#39;Units,&#39;Coordinates&gt; -&gt; Triangle2D&lt;&#39;Units,&#39;Coordinates&gt;<br /><em>&lt;summary&gt;
@@ -360,6 +361,7 @@ from Math.Geometry<br /><br />--------------------<br />type Direction2D&lt;&#39
     Y: float }
     interface IComparable
     interface IComparable&lt;Direction2D&lt;&#39;Coordinates&gt;&gt;
+    interface IGeometry
     member Comparison : other:Direction2D&lt;&#39;Coordinates&gt; -&gt; int
     override Equals : obj:obj -&gt; bool + 1 overload
     override GetHashCode : unit -&gt; int
@@ -385,6 +387,7 @@ from Math.Geometry<br /><br />--------------------<br />[&lt;Struct&gt;]
 type Axis2D&lt;&#39;Units,&#39;Coordinates&gt; =
   { Origin: Point2D&lt;&#39;Units,&#39;Coordinates&gt;
     Direction: Direction2D&lt;&#39;Coordinates&gt; }
+    interface IGeometry
     override Equals : obj:obj -&gt; bool
     override GetHashCode : unit -&gt; int</div>
 <div class="fsdocs-tip" id="fs34">val x&lt;&#39;Units,&#39;Coordinates&gt; : Axis2D&lt;&#39;Units,&#39;Coordinates&gt;</div>
