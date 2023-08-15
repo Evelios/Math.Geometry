@@ -11,7 +11,7 @@ let private axisAligned
     : Rectangle2D<'Units, 'Coordinates> =
 
     let computedCenterPoint =
-        Point2D.xy (Length.midpoint x1 x2) (Length.midpoint y1 y2)
+        Point2D.xy (Quantity.midpoint x1 x2) (Quantity.midpoint y1 y2)
 
     let computedXDirection =
         if x2 >= x1 then
@@ -197,7 +197,7 @@ let area (rectangle: Rectangle2D<'Units, 'Coordinates>) : Quantity<'Units Square
 let vertices (rectangle: Rectangle2D<'Units, 'Coordinates>) : Point2D<'Units, 'Coordinates> list =
     let localFrame = axes rectangle
     let x = Length.half rectangle.Dimensions.Width
-    let y = Length.half rectangle.Dimensions.Width
+    let y = Length.half rectangle.Dimensions.Height
 
     [ Point2D.xyIn localFrame -x -y
       Point2D.xyIn localFrame x -y
