@@ -8,6 +8,7 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <Compile Include="Geometry.fs" />
         <Compile Include="Direction2D.fs" />
         <Compile Include="Vector2D.fs" />
         <Compile Include="Point2D.fs" />
