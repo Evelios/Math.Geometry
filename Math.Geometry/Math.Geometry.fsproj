@@ -34,7 +34,7 @@
         <Compile Include="Axis2D.fs" />
         <Compile Include="LineSegment2D.fs" />
         <Compile Include="Line2D.fs" />
-        <Compile Include="Size.fs" />
+        <Compile Include="Size2D.fs" />
         <Compile Include="BoundingBox2D.fs" />
         <Compile Include="Rectangle2D.fs" />
         <Compile Include="Circle2D.fs" />
