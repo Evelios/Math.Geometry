@@ -41,7 +41,8 @@ Size2D.create (Length.meters 4.) (Length.meters 3.)
 # Modifiers
 *)
 
-let size = Size2D.create (Length.meters 2.) (Length.meters 7.)
+let size: Size2D<Meters, Cartesian> =
+    Size2D.create (Length.meters 2.) (Length.meters 7.)
 
 (***)
 
