@@ -31,12 +31,16 @@
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="FsCheck.NUnit" Version="2.16.0" />
-        <PackageReference Include="Math.Units" Version="0.1.136" />
-        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.10.0" />
-        <PackageReference Include="NUnit" Version="3.13.2" />
-        <PackageReference Include="NUnit3TestAdapter" Version="4.0.0" />
-        <PackageReference Include="coverlet.collector" Version="3.0.2" />
+        <PackageReference Include="FsCheck.NUnit" Version="2.16.6" />
+        <PackageReference Include="Math.Units" Version="0.1.149" />
+        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.7.1" />
+        <PackageReference Include="NUnit" Version="3.13.3" />
+        <PackageReference Include="NUnit3TestAdapter" Version="4.5.0" />
+        <PackageReference Include="coverlet.collector" Version="6.0.0">
+          <PrivateAssets>all</PrivateAssets>
+          <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Update="FSharp.Core" Version="7.0.400" />
     </ItemGroup>
 
     <ItemGroup>

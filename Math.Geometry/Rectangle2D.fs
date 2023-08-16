@@ -30,8 +30,7 @@ let private axisAligned
           XDirection = computedXDirection
           YDirection = computedYDirection }
 
-    let computedDimensions =
-        Size2D.create (Length.abs (x2 - x1)) (Length.abs (y2 - y1))
+    let computedDimensions = Size2D.create (Length.abs (x2 - x1)) (Length.abs (y2 - y1))
 
     { Axes = computedAxes
       Dimensions = computedDimensions }
@@ -106,7 +105,7 @@ let fromPoints
 //     --> , Point2D.meters -1.4142 0
 //     --> ]
 let withDimensions
-    (size: Size2D<'Units>)
+    (size: Size2D<'Units, 'Coordinates>)
     (angle: Angle)
     (center: Point2D<'Units, 'Coordinates>)
     : Rectangle2D<'Units, 'Coordinates> =
@@ -123,7 +122,7 @@ let withDimensions
 ///         dimensions
 let centeredOn
     (givenAxes: Frame2D<'Units, 'Coordinates, 'Defines>)
-    (dimensions: Size2D<'Units>)
+    (dimensions: Size2D<'Units, 'Coordinates>)
     : Rectangle2D<'Units, 'Coordinates> =
 
     { Axes = Frame2D.copy givenAxes
@@ -131,13 +130,19 @@ let centeredOn
 
 /// Construct a rectangle with the given X axis and overall dimensions. The
 /// rectangle will be centered on the axis' origin point.
-let withXAxis (axis: Axis2D<'Units, 'Coordinates>) (dimensions: Size2D<'Units>) : Rectangle2D<'Units, 'Coordinates> =
+let withXAxis
+    (axis: Axis2D<'Units, 'Coordinates>)
+    (dimensions: Size2D<'Units, 'Coordinates>)
+    : Rectangle2D<'Units, 'Coordinates> =
     centeredOn (Frame2D.fromXAxis axis) dimensions
 
 
 /// Construct a rectangle with the given Y axis and overall dimensions. The
 /// rectangle will be centered on the axis' origin point.
-let withYAxis (axis: Axis2D<'Units, 'Coordinates>) (dimensions: Size2D<'Units>) : Rectangle2D<'Units, 'Coordinates> =
+let withYAxis
+    (axis: Axis2D<'Units, 'Coordinates>)
+    (dimensions: Size2D<'Units, 'Coordinates>)
+    : Rectangle2D<'Units, 'Coordinates> =
     centeredOn (Frame2D.fromYAxis axis) dimensions
 
 /// Convert a `BoundingBox2D` to the equivalent axis-aligned `Rectangle2D`.
@@ -183,13 +188,12 @@ let centerPoint (rectangle: Rectangle2D<'Units, 'Coordinates>) : Point2D<'Units,
 ///             }
 ///     Rectangle2D.dimensions rectangle
 ///     --> ( Length.meters 3, Length.meters 2 )
-let dimensions (rectangle: Rectangle2D<'Units, 'Coordinates>) : Size2D<'Units> = rectangle.Dimensions
+let dimensions (rectangle: Rectangle2D<'Units, 'Coordinates>) : Size2D<'Units, 'Coordinates> = rectangle.Dimensions
 
 
 /// Get the area of a rectangle.
 let area (rectangle: Rectangle2D<'Units, 'Coordinates>) : Quantity<'Units Squared> =
-    rectangle.Dimensions.Width
-    * rectangle.Dimensions.Height
+    rectangle.Dimensions.Width * rectangle.Dimensions.Height
 
 /// Get the vertices of a rectangle as a list. The vertices will be returned
 /// in counterclockwise order if the rectangle's axes are right-handed, and
@@ -217,10 +221,8 @@ let contains (point: Point2D<'Units, 'Coordinates>) (rectangle: Rectangle2D<'Uni
     let x = Point2D.xCoordinateIn localFrame point
     let y = Point2D.yCoordinateIn localFrame point
 
-    Length.abs x
-    <= Length.half rectangle.Dimensions.Width
-    && Length.abs y
-       <= Length.half rectangle.Dimensions.Height
+    Length.abs x <= Length.half rectangle.Dimensions.Width
+    && Length.abs y <= Length.half rectangle.Dimensions.Height
 
 /// Get the edges of a rectangle as a list. The edges will be returned
 /// in counterclockwise order if the rectangle's axes are right-handed, and
@@ -310,11 +312,9 @@ let scaleAbout
               XDirection = Direction2D.reverse currentXDirection
               YDirection = Direction2D.reverse currentYDirection }
 
-    let newWidth =
-        Length.abs (scale * rectangle.Dimensions.Width)
+    let newWidth = Length.abs (scale * rectangle.Dimensions.Width)
 
-    let newHeight =
-        Length.abs (scale * rectangle.Dimensions.Height)
+    let newHeight = Length.abs (scale * rectangle.Dimensions.Height)
 
     { Axes = newAxes
       Dimensions = Size2D.create newWidth newHeight }

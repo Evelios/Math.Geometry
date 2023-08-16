@@ -8,22 +8,22 @@ open Math.Units
 /// This interface allows for bundling all geometry objects together to make
 /// some API generation and consumption easier without having to create
 /// wrapper objects around each individual geometry class.
-type IGeometry =
+type IGeometry<'Coordinates> =
     interface
     end
 
 [<CustomEquality>]
 [<NoComparison>]
 [<Struct>]
-type Size2D<'Units> =
+type Size2D<'Units, 'Coordinates> =
     { Width: Quantity<'Units>
       Height: Quantity<'Units> }
 
-    interface IGeometry
+    interface IGeometry<'Coordinates>
 
     override this.Equals(obj: obj) : bool =
         match obj with
-        | :? Size2D<'Units> as other -> this.Width = other.Width && this.Height = other.Height
+        | :? Size2D<'Units, 'Coordinates> as other -> this.Width = other.Width && this.Height = other.Height
         | _ -> false
 
     override this.GetHashCode() : int =
@@ -41,7 +41,7 @@ type Direction2D<'Coordinates> =
     { X: float
       Y: float }
 
-    interface IGeometry
+    interface IGeometry<'Coordinates>
 
     // Comparable interfaces
 
@@ -99,7 +99,7 @@ type Vector2D<'Units, 'Coordinates> =
     { X: Quantity<'Units>
       Y: Quantity<'Units> }
 
-    interface IGeometry
+    interface IGeometry<'Coordinates>
 
     // Comparable interfaces
 
@@ -168,7 +168,7 @@ type Point2D<'Units, 'Coordinates> =
     { X: Quantity<'Units>
       Y: Quantity<'Units> }
 
-    interface IGeometry
+    interface IGeometry<'Coordinates>
 
     // Comparable interfaces
 
@@ -242,7 +242,7 @@ type Axis2D<'Units, 'Coordinates> =
     { Origin: Point2D<'Units, 'Coordinates>
       Direction: Direction2D<'Coordinates> }
 
-    interface IGeometry
+    interface IGeometry<'Coordinates>
 
     override this.Equals(obj: obj) : bool =
         match obj with
@@ -258,7 +258,7 @@ type Frame2D<'Units, 'Coordinates, 'Defines> =
       XDirection: Direction2D<'Coordinates>
       YDirection: Direction2D<'Coordinates> }
 
-    interface IGeometry
+    interface IGeometry<'Coordinates>
 
 
 [<CustomEquality>]
@@ -268,7 +268,7 @@ type LineSegment2D<'Units, 'Coordinates> =
     { Start: Point2D<'Units, 'Coordinates>
       Finish: Point2D<'Units, 'Coordinates> }
 
-    interface IGeometry
+    interface IGeometry<'Coordinates>
 
     interface IComparable<LineSegment2D<'Units, 'Coordinates>> with
         member this.CompareTo(line) = this.Comparison(line)
@@ -331,7 +331,7 @@ type Line2D<'Units, 'Coordinates> =
     { Start: Point2D<'Units, 'Coordinates>
       Finish: Point2D<'Units, 'Coordinates> }
 
-    interface IGeometry
+    interface IGeometry<'Coordinates>
 
 
     interface IComparable<Line2D<'Units, 'Coordinates>> with
@@ -380,7 +380,7 @@ type Triangle2D<'Units, 'Coordinates> =
       P2: Point2D<'Units, 'Coordinates>
       P3: Point2D<'Units, 'Coordinates> }
 
-    interface IGeometry
+    interface IGeometry<'Coordinates>
 
     override this.Equals(obj: obj) : bool =
         match obj with
@@ -399,7 +399,7 @@ type BoundingBox2D<'Units, 'Coordinates> =
       MinY: Quantity<'Units>
       MaxY: Quantity<'Units> }
 
-    interface IGeometry
+    interface IGeometry<'Coordinates>
 
     member this.TopLeft: Point2D<'Units, 'Coordinates> = { X = this.MinX; Y = this.MaxY }
     member this.TopRight: Point2D<'Units, 'Coordinates> = { X = this.MaxX; Y = this.MaxY }
@@ -428,9 +428,9 @@ type BoundingBox2D<'Units, 'Coordinates> =
 [<Struct>]
 type Rectangle2D<'Units, 'Coordinates> =
     { Axes: Frame2D<'Units, 'Coordinates, unit>
-      Dimensions: Size2D<'Units> }
+      Dimensions: Size2D<'Units, 'Coordinates> }
 
-    interface IGeometry
+    interface IGeometry<'Coordinates>
 
     override this.Equals(obj: obj) : bool =
         match obj with
@@ -446,7 +446,7 @@ type Circle2D<'Units, 'Coordinates> =
     { Center: Point2D<'Units, 'Coordinates>
       Radius: Quantity<'Units> }
 
-    interface IGeometry
+    interface IGeometry<'Coordinates>
 
     override this.Equals(obj: obj) : bool =
         match obj with
@@ -463,7 +463,7 @@ type Ellipse2D<'Units, 'Coordinates> =
       XRadius: Quantity<'Units>
       YRadius: Quantity<'Units> }
 
-    interface IGeometry
+    interface IGeometry<'Coordinates>
 
     override this.Equals(obj: obj) : bool =
         match obj with
@@ -487,7 +487,7 @@ type Arc2D<'Units, 'Coordinates> =
       SignedLength: Quantity<'Units>
       SweptAngle: Angle }
 
-    interface IGeometry
+    interface IGeometry<'Coordinates>
 
     override this.Equals(obj: obj) : bool =
         match obj with
@@ -510,7 +510,7 @@ type Polygon2D<'Units, 'Coordinates> =
     { OuterLoop: Point2D<'Units, 'Coordinates> list
       InnerLoops: Point2D<'Units, 'Coordinates> list list }
 
-    interface IGeometry
+    interface IGeometry<'Coordinates>
 
     // Comparable interfaces
 
@@ -547,9 +547,9 @@ type Polygon2D<'Units, 'Coordinates> =
 [<CustomComparison>]
 [<RequireQualifiedAccess>]
 type Polyline2D<'Units, 'Coordinates> =
-    { Vertices : Point2D<'Units, 'Coordinates> list }
-    
-    interface IGeometry
+    { Vertices: Point2D<'Units, 'Coordinates> list }
+
+    interface IGeometry<'Coordinates>
     // Comparable interfaces
 
     interface IComparable<Polyline2D<'Units, 'Coordinates>> with
@@ -566,17 +566,13 @@ type Polyline2D<'Units, 'Coordinates> =
         elif this.LessThan(other) then -1
         else 1
 
-    member this.LessThan(other: Polyline2D<'Units, 'Coordinates>) =
-        this.Vertices < other.Vertices
+    member this.LessThan(other: Polyline2D<'Units, 'Coordinates>) = this.Vertices < other.Vertices
 
     override this.Equals(obj: obj) : bool =
         match obj with
         | :? Polyline2D<'Units, 'Coordinates> as other -> this.Equals(other)
         | _ -> false
 
-    member this.Equals(other: Polyline2D<'Units, 'Coordinates>) : bool =
-        this.Vertices = other.Vertices
+    member this.Equals(other: Polyline2D<'Units, 'Coordinates>) : bool = this.Vertices = other.Vertices
 
-    override this.GetHashCode() =
-        hash this.Vertices
-    
+    override this.GetHashCode() = hash this.Vertices
