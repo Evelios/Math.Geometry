@@ -15,7 +15,7 @@
 
         <RepositoryType>git</RepositoryType>
         <NeutralLanguage>en-US</NeutralLanguage>
-        
+
         <FsDocsLicenseLink>https://opensource.org/licenses/MIT</FsDocsLicenseLink>
         <FsDocsReleaseNotesLink>https://www.nuget.org/packages/Math.Geometry/</FsDocsReleaseNotesLink>
         <FsDocsWarnOnMissingDocs>true</FsDocsWarnOnMissingDocs>

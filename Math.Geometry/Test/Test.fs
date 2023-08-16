@@ -7,8 +7,7 @@ open Math.Units
 open Math.Units.Test
 
 let validFrame2D (frame: Frame2D<'Units, 'Coordinates, 'Defines>) : bool =
-    let parallelComponent =
-        Direction2D.componentIn frame.XDirection frame.YDirection
+    let parallelComponent = Direction2D.componentIn frame.XDirection frame.YDirection
 
     if Float.almostEqual parallelComponent 0. then
         true

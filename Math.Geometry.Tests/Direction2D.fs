@@ -16,8 +16,7 @@ let Setup () = Gen.ArbGeometry.Register()
 
 [<Property>]
 let ``angleFrom And equalWithin Are Consistent`` (first: Direction2D<TestSpace>) (second: Direction2D<TestSpace>) =
-    let angle =
-        Angle.abs (Direction2D.angleFrom first second)
+    let angle = Angle.abs (Direction2D.angleFrom first second)
 
     let tolerance = angle + Angle.radians Float.Epsilon
 
@@ -29,9 +28,7 @@ let ``angleFrom And equalWithin Are Consistent`` (first: Direction2D<TestSpace>)
 let ``angleFrom And rotateBy Are Consistent`` (first: Direction2D<TestSpace>) (second: Direction2D<TestSpace>) =
     let angle = Direction2D.angleFrom first second
 
-    first
-    |> Direction2D.rotateBy angle
-    |> Test.equal second
+    first |> Direction2D.rotateBy angle |> Test.equal second
 
 
 [<Property>]
@@ -42,15 +39,13 @@ let ``orthonormalize Produces a Valid Frame Basis``
 
     match Direction2D.orthonormalize vx vy with
 
-    | Some (xDirection, yDirection) ->
+    | Some(xDirection, yDirection) ->
         Test.validFrame2D
             { Origin = Point2D.origin
               XDirection = xDirection
               YDirection = yDirection }
 
-    | None ->
-        Vector2D.cross vx vy
-        |> Test.equal Quantity.zero
+    | None -> Vector2D.cross vx vy |> Test.equal Quantity.zero
 
 
 [<Property>]
@@ -76,9 +71,7 @@ let ``fromAngle Is Consistent With angleFrom`` (direction: Direction2D<TestSpace
 [<Ignore("Need to fix later")>]
 [<Property>]
 let ``fromAngle Is Consistent With toAngle`` (direction: Direction2D<TestSpace>) =
-    Direction2D.toAngle direction
-    |> Direction2D.fromAngle
-    |> Test.equal direction
+    Direction2D.toAngle direction |> Direction2D.fromAngle |> Test.equal direction
 
 
 [<Property>]
@@ -110,11 +103,9 @@ let ``Mirroring twice returns original direction``
 let ``Mirroring negates angle from axis`` (direction: Direction2D<TestSpace>) (axis: Axis2D<Meters, TestSpace>) =
     let mirroredDirection = Direction2D.mirrorAcross axis direction
 
-    let originalAngle =
-        Direction2D.angleFrom axis.Direction direction
+    let originalAngle = Direction2D.angleFrom axis.Direction direction
 
-    let mirroredAngle =
-        Direction2D.angleFrom axis.Direction mirroredDirection
+    let mirroredAngle = Direction2D.angleFrom axis.Direction mirroredDirection
 
     Test.equal -originalAngle mirroredAngle
 
@@ -142,8 +133,7 @@ let ``components and xComponents/yComponents are consistent`` (direction: Direct
 [<Ignore("Need to fix later")>]
 [<Property>]
 let ``Rotation by 2 degrees`` (direction: Direction2D<TestSpace>) =
-    let rotatedDirection =
-        Direction2D.rotateBy (Angle.degrees 2.) direction
+    let rotatedDirection = Direction2D.rotateBy (Angle.degrees 2.) direction
 
     Direction2D.equalWithin (Angle.degrees 3.) direction rotatedDirection
     && not (Direction2D.equalWithin (Angle.degrees 1.) direction rotatedDirection)
@@ -152,8 +142,7 @@ let ``Rotation by 2 degrees`` (direction: Direction2D<TestSpace>) =
 [<Ignore("Need to fix later")>]
 [<Property>]
 let ``Rotation by 90 degrees`` (direction: Direction2D<TestSpace>) =
-    let rotatedDirection =
-        Direction2D.rotateBy (Angle.degrees 90.) direction
+    let rotatedDirection = Direction2D.rotateBy (Angle.degrees 90.) direction
 
     Direction2D.equalWithin (Angle.degrees 91.) direction rotatedDirection
     && not (Direction2D.equalWithin (Angle.degrees 89.) direction rotatedDirection)
@@ -162,8 +151,7 @@ let ``Rotation by 90 degrees`` (direction: Direction2D<TestSpace>) =
 [<Ignore("Need to fix later")>]
 [<Property>]
 let ``Rotation by 178 degrees`` (direction: Direction2D<TestSpace>) =
-    let rotatedDirection =
-        Direction2D.rotateBy (Angle.degrees 178.) direction
+    let rotatedDirection = Direction2D.rotateBy (Angle.degrees 178.) direction
 
     Direction2D.equalWithin (Angle.degrees 179.) direction rotatedDirection
     && not (Direction2D.equalWithin (Angle.degrees 177.) direction rotatedDirection)

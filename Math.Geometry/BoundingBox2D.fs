@@ -26,8 +26,7 @@ let from (p1: Point2D<'Units, 'Coordinates>) (p2: Point2D<'Units, 'Coordinates>)
 /// if `minX` is greater than `maxX`), then they will be swapped so that the
 /// resulting bounding box is valid.
 let fromExtrema given : BoundingBox2D<'Units, 'Coordinates> =
-    if (given.MinX <= given.MaxX)
-       && (given.MinY <= given.MaxY) then
+    if (given.MinX <= given.MaxX) && (given.MinY <= given.MaxY) then
         given
 
     else
@@ -59,10 +58,7 @@ let singleton (p: Point2D<'Units, 'Coordinastes>) : BoundingBox2D<'Units, 'Coord
 
 /// Returned in clockwise order from top left rotating around clockwise
 let corners (box: BoundingBox2D<'Units, 'Coordinates>) : Point2D<'Units, 'Coordinates> list =
-    [ box.TopLeft
-      box.TopRight
-      box.BottomRight
-      box.BottomLeft ]
+    [ box.TopLeft; box.TopRight; box.BottomRight; box.BottomLeft ]
 
 let width (box: BoundingBox2D<'Units, 'Coordinates>) : Quantity<'Units> = box.MaxX - box.MinX
 
@@ -474,8 +470,7 @@ let overlappingByAtLeast
 
     let clampedTolerance = Length.max tolerance Quantity.zero
 
-    xOverlap >= clampedTolerance
-    && yOverlap >= clampedTolerance
+    xOverlap >= clampedTolerance && yOverlap >= clampedTolerance
 
 /// Check if two boxes are separated by at least the given amount. For example,
 /// to perform clash detection between some objects, you could use `separatedBy` on
@@ -501,11 +496,10 @@ let separatedByAtLeast
         Length.max firstBox.MinY secondBox.MinY
         - Length.min firstBox.MaxY secondBox.MaxY
 
-    if xSeparation > Quantity.zero
-       && ySeparation > Quantity.zero then
+    if xSeparation > Quantity.zero && ySeparation > Quantity.zero then
 
-        Length.squared xSeparation
-        + Length.squared ySeparation >= Length.squared clampedTolerance
+        Length.squared xSeparation + Length.squared ySeparation
+        >= Length.squared clampedTolerance
 
     else if xSeparation > Quantity.zero then
         xSeparation >= clampedTolerance

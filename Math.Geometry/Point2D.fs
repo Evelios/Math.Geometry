@@ -226,8 +226,7 @@ let distanceTo (p1: Point2D<'Units, 'Coordinates>) (p2: Point2D<'Units, 'Coordin
     let deltaX = p2.X - p1.X
     let deltaY = p2.Y - p1.Y
 
-    let largestComponent =
-        max (Length.abs deltaX) (Length.abs deltaY)
+    let largestComponent = max (Length.abs deltaX) (Length.abs deltaY)
 
     if largestComponent = Quantity.zero then
         Quantity.zero
@@ -236,8 +235,7 @@ let distanceTo (p1: Point2D<'Units, 'Coordinates>) (p2: Point2D<'Units, 'Coordin
         let scaledX = deltaX / largestComponent
         let scaledY = deltaY / largestComponent
 
-        let scaledLength =
-            sqrt (scaledX * scaledX + scaledY * scaledY)
+        let scaledLength = sqrt (scaledX * scaledX + scaledY * scaledY)
 
         scaledLength * largestComponent
 
@@ -293,8 +291,7 @@ let private circumcenterHelp
             let cosA = (bx * cx + by * cy) / bc
             let scale = cosA / (2. * sinA)
 
-            xy (p1.X + 0.5 * ax + scale * ay) (p1.Y + 0.5 * ay - scale * ax)
-            |> Some
+            xy (p1.X + 0.5 * ax + scale * ay) (p1.Y + 0.5 * ay - scale * ax) |> Some
 
 let circumcenter
     (p1: Point2D<'Units, 'Coordinates>)
@@ -327,8 +324,7 @@ let projectOnto
     let p0 = axis.Origin
     let d = axis.Direction
 
-    let distance =
-        (p.X - p0.X) * d.X + (p.Y - p0.Y) * d.Y
+    let distance = (p.X - p0.X) * d.X + (p.Y - p0.Y) * d.Y
 
     xy (p0.X + distance * d.X) (p0.Y + distance * d.Y)
 
@@ -453,21 +449,19 @@ let relativeTo
     (p: Point2D<'Units, 'GlobalCoordinates>)
     : Point2D<'Units, 'LocalCoordinates> =
     Internal.Point2D.relativeTo frame p
-    
+
 let placeIn
     (frame: Frame2D<'Units, 'GlobalCoordinates, 'LocalCoordinates>)
     (point: Point2D<'Units, 'LocalCoordinates>)
     : Point2D<'Units, 'GlobalCoordinates> =
     Internal.Point2D.placeIn frame point
-    
+
 
 // ---- Json ----
 
 let fromList (list: float list) : Point2D<'Units, 'Coordinates> option =
     match list with
-    | [ x; y ] ->
-        Some
-        <| xy (Quantity<'Units>.create x) (Quantity<'Units>.create y)
+    | [ x; y ] -> Some <| xy (Quantity<'Units>.create x) (Quantity<'Units>.create y)
     | _ -> None
 
 let toList (point: Point2D<'Units, 'Coordinates>) : float list = [ point.X.Value; point.Y.Value ]
@@ -493,14 +487,9 @@ type ListTransform() =
         member this.targetType() = (fun _ -> typeof<float list list>) ()
 
         member this.toTargetType value =
-            value :?> Point2D<obj, obj> list
-            |> List.map toList
-            :> obj
+            value :?> Point2D<obj, obj> list |> List.map toList :> obj
 
         member this.fromTargetType value =
             value :?> float list list
-            |> List.map (
-                fromList
-                >> Option.defaultValue (xy Length.zero Length.zero)
-            )
+            |> List.map (fromList >> Option.defaultValue (xy Length.zero Length.zero))
             :> obj

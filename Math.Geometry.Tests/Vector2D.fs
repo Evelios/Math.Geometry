@@ -47,8 +47,7 @@ let ``Equality and hash code comparison with random points``
 let ``Vector from polar`` () =
     let expected = Vector2D.meters 0. 1.
 
-    let actual =
-        Vector2D.polar (Length.meters 1.) (Angle.pi / 2.)
+    let actual = Vector2D.polar (Length.meters 1.) (Angle.pi / 2.)
 
     Assert.AreEqual(expected, actual)
 
@@ -65,8 +64,7 @@ let Direction () =
     let vector = Vector2D.meters 1. 1.
     let actual = Vector2D.direction vector
 
-    let expected =
-        Direction2D.xy (sqrt 2.) (sqrt 2.)
+    let expected = Direction2D.xy (sqrt 2.) (sqrt 2.)
 
     Assert.AreEqual(expected, actual)
 
@@ -74,34 +72,29 @@ let Direction () =
 
 [<Test>]
 let Scale () =
-    let actual =
-        Vector2D.scaleBy 2. (Vector2D.meters 2. 2.)
+    let actual = Vector2D.scaleBy 2. (Vector2D.meters 2. 2.)
 
     let expected = Vector2D.meters 4. 4.
     Assert.AreEqual(expected, actual)
 
 [<Test>]
 let ``Scale to`` () =
-    let actual =
-        Vector2D.scaleTo (Length.meters 2.) (Vector2D.meters 2. 2.)
+    let actual = Vector2D.scaleTo (Length.meters 2.) (Vector2D.meters 2. 2.)
 
-    let expected =
-        Vector2D.meters (sqrt 2.) (sqrt 2.)
+    let expected = Vector2D.meters (sqrt 2.) (sqrt 2.)
 
     Assert.AreEqual(expected, actual)
 
 [<Test>]
 let ``Rotate counterclockwise`` () =
-    let actual =
-        Vector2D.rotateBy Angle.halfPi (Vector2D.meters 2. 2.)
+    let actual = Vector2D.rotateBy Angle.halfPi (Vector2D.meters 2. 2.)
 
     let expected = (Vector2D.meters -2. 2.)
     Assert.AreEqual(expected, actual)
 
 [<Test>]
 let ``Rotate clockwise`` () =
-    let actual =
-        Vector2D.rotateBy (-Angle.halfPi) (Vector2D.meters 2. 2.)
+    let actual = Vector2D.rotateBy (-Angle.halfPi) (Vector2D.meters 2. 2.)
 
     let expected = (Vector2D.meters 2. -2.)
     Assert.AreEqual(expected, actual)
@@ -113,15 +106,13 @@ let Round () =
     let actual =
         Vector2D.roundTo Float.DigitPrecision (Vector2D.meters 22.2222222222 22.2222222222)
 
-    let expected =
-        (Vector2D.meters 22.22222222 22.22222222)
+    let expected = (Vector2D.meters 22.22222222 22.22222222)
 
     Assert.AreEqual(expected, actual)
 
 [<Test>]
 let ``Round to`` () =
-    let actual =
-        Vector2D.roundTo 2 (Vector2D.meters 2.222 2.222)
+    let actual = Vector2D.roundTo 2 (Vector2D.meters 2.222 2.222)
 
     let expected = (Vector2D.meters 2.22 2.22)
     Assert.AreEqual(expected, actual)
@@ -131,23 +122,19 @@ let ``Distance squared to`` () =
     let v1 = Vector2D.meters 1. 1.
     let v2 = Vector2D.meters 3. 3.
 
-    let actual: Quantity<Meters Squared> =
-        Vector2D.distanceSquaredTo v1 v2
+    let actual: Quantity<Meters Squared> = Vector2D.distanceSquaredTo v1 v2
 
-    let expected: Quantity<Meters Squared> =
-        Quantity 8.
+    let expected: Quantity<Meters Squared> = Quantity 8.
 
     Assert.AreEqual(expected, actual)
 
 [<Test>]
 let ``Distance to`` () =
-    let v1: Vector2D<Meters, TestSpace> =
-        Vector2D.meters 1. 1.
+    let v1: Vector2D<Meters, TestSpace> = Vector2D.meters 1. 1.
 
     let v2 = Vector2D.meters 3. 3.
 
-    let actual: Length =
-        Vector2D.distanceTo v1 v2
+    let actual: Length = Vector2D.distanceTo v1 v2
 
     let expected = Length.meters (2. * sqrt 2.)
     Assert.AreEqual(expected, actual)
@@ -162,18 +149,15 @@ let ``Mid vector`` () =
 
 [<Test>]
 let ``From list`` () =
-    let actual: Vector2D<Meters, TestSpace> option =
-        Vector2D.fromList [ 1.; 2. ]
+    let actual: Vector2D<Meters, TestSpace> option = Vector2D.fromList [ 1.; 2. ]
 
-    let expected: Vector2D<Meters, TestSpace> option =
-        Some(Vector2D.meters 1. 2.)
+    let expected: Vector2D<Meters, TestSpace> option = Some(Vector2D.meters 1. 2.)
 
     Assert.AreEqual(expected, actual)
 
 [<Test>]
 let ``To list`` () =
-    let actual =
-        Vector2D.toList (Vector2D.meters 1. 2.)
+    let actual = Vector2D.toList (Vector2D.meters 1. 2.)
 
     let expected = [ 1.; 2. ]
     Assert.AreEqual(expected, actual)
@@ -212,9 +196,7 @@ let ``Rotate by preserves length`` (vector: Vector2D<Meters, TestSpace>) (angle:
 let ``Rotating rotates correct angle`` (vector: Vector2D<Meters, TestSpace>) (angle: Angle) =
     let direction = Vector2D.direction vector
 
-    let rotatedDirection =
-        Vector2D.rotateBy angle vector
-        |> Vector2D.direction
+    let rotatedDirection = Vector2D.rotateBy angle vector |> Vector2D.direction
 
     let measuredAngle =
         Option.map2 Direction2D.angleFrom direction rotatedDirection
@@ -247,6 +229,4 @@ let ``Scale to returns consistent length`` (vector: Vector2D<Meters, TestSpace>)
 [<Ignore("Need to look into further")>]
 [<Property>]
 let ``Normalize has a consistent length`` (vector: Vector2D<Meters, TestSpace>) =
-    Vector2D.normalize vector
-    |> Vector2D.length
-    |> Test.equal (Length.meters 1.)
+    Vector2D.normalize vector |> Vector2D.length |> Test.equal (Length.meters 1.)

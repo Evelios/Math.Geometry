@@ -42,12 +42,11 @@ let mirroring (axis: Axis2D<Meters, TestSpace>) : Transformation =
 
 
 let transformation =
-    Gen.oneof [
-        Gen.map2 rotation Gen.point2D Gen.angle
-        Gen.map translation Gen.vector2D
-        Gen.map2 scaling Gen.point2D Gen.float
-        Gen.map mirroring Gen.axis2D
-    ]
+    Gen.oneof
+        [ Gen.map2 rotation Gen.point2D Gen.angle
+          Gen.map translation Gen.vector2D
+          Gen.map2 scaling Gen.point2D Gen.float
+          Gen.map mirroring Gen.axis2D ]
 
 type ArbTransformation =
     static member Transformation() = Arb.fromGen transformation
@@ -73,8 +72,7 @@ let ``Rectangle/point containment is consistent through transformation``
     let transformedPoint = transformation.Point point
     let transformedRectangle = transformation.Rectangle rectangle
 
-    let finalContainment =
-        Rectangle2D.contains transformedPoint transformedRectangle
+    let finalContainment = Rectangle2D.contains transformedPoint transformedRectangle
 
     Test.equal initialContainment finalContainment
 

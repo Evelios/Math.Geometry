@@ -26,43 +26,26 @@ type Cartesian = Cartesian
 # Builders
 *)
 
-LineSegment2D.from
-    (Point2D.meters 3. 4.)
-    (Point2D.meters -8. 2.)
+LineSegment2D.from (Point2D.meters 3. 4.) (Point2D.meters -8. 2.)
 (***)
-    
-LineSegment2D.fromEndpoints
-    (Point2D.meters 3. 4.,
-     Point2D.meters -8. 2.)
+
+LineSegment2D.fromEndpoints (Point2D.meters 3. 4., Point2D.meters -8. 2.)
 (***)
-    
-LineSegment2D.safeFrom
-    (Point2D.meters 3. 4.)
-    (Point2D.meters -8. 2.)
+
+LineSegment2D.safeFrom (Point2D.meters 3. 4.) (Point2D.meters -8. 2.)
 (*** hide ***)
-LineSegment2D.safeFrom<Meters, Cartesian>
-    (Point2D.meters 3. 4.)
-    (Point2D.meters -8. 2.)
+LineSegment2D.safeFrom<Meters, Cartesian> (Point2D.meters 3. 4.) (Point2D.meters -8. 2.)
 (*** include-it ***)
 
-LineSegment2D.safeFrom
-    (Point2D.meters 2. 1.)
-    (Point2D.meters 2. 1.)
+LineSegment2D.safeFrom (Point2D.meters 2. 1.) (Point2D.meters 2. 1.)
 (*** hide ***)
-LineSegment2D.safeFrom<Meters, Cartesian>
-    (Point2D.meters 2. 1.)
-    (Point2D.meters 2. 1.)
+LineSegment2D.safeFrom<Meters, Cartesian> (Point2D.meters 2. 1.) (Point2D.meters 2. 1.)
 (*** include-it ***)
 
-LineSegment2D.fromPointAndVector
-    Point2D.origin
-    (Vector2D.meters 7. 8.)
+LineSegment2D.fromPointAndVector Point2D.origin (Vector2D.meters 7. 8.)
 (***)
 
-LineSegment2D.along
-    Axis2D.x
-    (Length.meters 3.)
-    (Length.meters 7.)
+LineSegment2D.along Axis2D.x (Length.meters 3.) (Length.meters 7.)
 (***)
 
 (**
@@ -70,16 +53,14 @@ LineSegment2D.along
 *)
 
 let segment: LineSegment2D<Meters, Cartesian> =
-    LineSegment2D.from
-        (Point2D.meters 3. 4.)
-        (Point2D.meters -8. 2.)
+    LineSegment2D.from (Point2D.meters 3. 4.) (Point2D.meters -8. 2.)
 (***)
 
-LineSegment2D.start segment  // or
+LineSegment2D.start segment // or
 segment.Start
 (*** include-it ***)
 
-LineSegment2D.finish segment  // or
+LineSegment2D.finish segment // or
 segment.Finish
 (*** include-it ***)
 
@@ -108,8 +89,7 @@ LineSegment2D.midpoint segment
 # Modifiers
 *)
 
-LineSegment2D.mapEndpoints
-    (Point2D.plus (Vector2D.meters 4. 2.))
+LineSegment2D.mapEndpoints (Point2D.plus (Vector2D.meters 4. 2.))
 (***)
 
 LineSegment2D.reverse segment
@@ -139,7 +119,7 @@ LineSegment2D.round
 # Queries
 *)
 
-LineSegment2D.interpolate 
+LineSegment2D.interpolate
 (***)
 
 LineSegment2D.areParallel

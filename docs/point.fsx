@@ -54,9 +54,9 @@ Because these functions are intended to be used in pipes the order goes like
 (*** hide ***)
 type Cartesian = Cartesian
 
-let point : Point2D<Meters, Cartesian> = Point2D.meters 3. 4.
-let secondPoint : Point2D<Meters, Cartesian> = Point2D.meters 8. 16.
-let vec : Vector2D<Meters, Cartesian> = Vector2D.meters 5. 12.
+let point: Point2D<Meters, Cartesian> = Point2D.meters 3. 4.
+let secondPoint: Point2D<Meters, Cartesian> = Point2D.meters 8. 16.
+let vec: Vector2D<Meters, Cartesian> = Vector2D.meters 5. 12.
 
 (**
 The following three statements are equivalent.
@@ -93,4 +93,3 @@ point objects.
 | /        | Point  | float  | Point      | `lhs / 4.`  | `Point2D.dividedBy` |
 
 *)
-

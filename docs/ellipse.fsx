@@ -27,34 +27,26 @@ type Cartesian = Cartesian
 # Builders
 *)
 
-Ellipse2D.from
-    (Point2D.meters 4. 4.)
-    Direction2D.x
-    (Length.meters 2.)
-    (Length.meters 4.)
+Ellipse2D.from (Point2D.meters 4. 4.) Direction2D.x (Length.meters 2.) (Length.meters 4.)
 (*** include-it ***)
 
 (**
 # Accessors
 *)
 let ellipse: Ellipse2D<Meters, Cartesian> =
-    Ellipse2D.from
-        (Point2D.meters 4. 4.)
-        Direction2D.x
-        (Length.meters 2.)
-        (Length.meters 4.)
+    Ellipse2D.from (Point2D.meters 4. 4.) Direction2D.x (Length.meters 2.) (Length.meters 4.)
 
 (***)
 
-Ellipse2D.axes ellipse  // or
+Ellipse2D.axes ellipse // or
 ellipse.Axes
 (*** include-it ***)
 
-Ellipse2D.xRadius ellipse  // or
+Ellipse2D.xRadius ellipse // or
 ellipse.XRadius
 (*** include-it ***)
 
-Ellipse2D.yRadius ellipse  // or
+Ellipse2D.yRadius ellipse // or
 ellipse.YRadius
 (*** include-it ***)
 

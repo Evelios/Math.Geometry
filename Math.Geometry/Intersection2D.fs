@@ -23,14 +23,9 @@ let lineSegmentAndLine
         let r = first.Finish - first.Start
         let s = second.Finish - second.Start
 
-        let t =
-            Vector2D.cross (q - p) s
-            / Vector2D.cross r s
+        let t = Vector2D.cross (q - p) s / Vector2D.cross r s
 
-        if (0.0 <= t && t <= 1.0) then
-            p + (t * r) |> Some
-        else
-            None
+        if (0.0 <= t && t <= 1.0) then p + (t * r) |> Some else None
 
 let lineAndLineSegment line segment = lineSegmentAndLine segment line
 

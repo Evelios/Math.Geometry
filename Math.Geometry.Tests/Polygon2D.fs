@@ -18,9 +18,7 @@ let Setup () = Gen.ArbGeometry.Register()
 let ``The convex hull of a list of points is actually convex`` (points: Point2D<Meters, TestSpace> list) =
     let convexHull = Polygon2D.convexHull points
 
-    let edgeVectors =
-        Polygon2D.edges convexHull
-        |> List.map LineSegment2D.vector
+    let edgeVectors = Polygon2D.edges convexHull |> List.map LineSegment2D.vector
 
     match edgeVectors with
     | [] -> Test.pass
@@ -41,8 +39,7 @@ let ``The convex hull of a list of points contains all of those points`` (points
         let p1, p2 = LineSegment2D.endpoints edge
         let triangle = Triangle2D.from point p1 p2
 
-        Triangle2D.counterclockwiseArea triangle
-        >= Quantity.zero
+        Triangle2D.counterclockwiseArea triangle >= Quantity.zero
 
     let isContained point =
         List.forall (isNonNegativeArea point) edges
@@ -50,29 +47,28 @@ let ``The convex hull of a list of points contains all of those points`` (points
     Test.isTrue "Convex hull should contain all points" (List.forall isContained points)
 
 
-let simplePolygon : Polygon2D<Meters, TestSpace> =
-    Polygon2D.singleLoop [
-        Point2D.meters 1. 1.
-        Point2D.meters 3. 1.
-        Point2D.meters 3. 2.
-        Point2D.meters 1. 2.
-    ]
+let simplePolygon: Polygon2D<Meters, TestSpace> =
+    Polygon2D.singleLoop
+        [ Point2D.meters 1. 1.
+          Point2D.meters 3. 1.
+          Point2D.meters 3. 2.
+          Point2D.meters 1. 2. ]
 
 
-let withHole : Polygon2D<Meters, TestSpace> =
-    Polygon2D.withHoles [ [ Point2D.meters 1. 1.
-                            Point2D.meters 1. 2.
-                            Point2D.meters 2. 2.
-                            Point2D.meters 2. 1. ] ] [
-        Point2D.meters 0. 0.
-        Point2D.meters 3. 0.
-        Point2D.meters 3. 3.
-        Point2D.meters 0. 3.
-    ]
+let withHole: Polygon2D<Meters, TestSpace> =
+    Polygon2D.withHoles
+        [ [ Point2D.meters 1. 1.
+            Point2D.meters 1. 2.
+            Point2D.meters 2. 2.
+            Point2D.meters 2. 1. ] ]
+        [ Point2D.meters 0. 0.
+          Point2D.meters 3. 0.
+          Point2D.meters 3. 3.
+          Point2D.meters 0. 3. ]
 
 
 let ``Polygon contains point test cases`` =
-    let testCases : (string * Polygon2D<Meters, TestSpace> * Point2D<Meters, TestSpace> * bool) list =
+    let testCases: (string * Polygon2D<Meters, TestSpace> * Point2D<Meters, TestSpace> * bool) list =
         [ "Inside", simplePolygon, Point2D.meters 2. 1.5, true
           "Boundary", simplePolygon, Point2D.meters 2. 1.5, true
           "Outside", simplePolygon, Point2D.meters 4. 1.5, false
@@ -81,11 +77,7 @@ let ``Polygon contains point test cases`` =
           "Outside (in the hole)", withHole, Point2D.meters 1.5 15., false ]
 
     testCases
-    |> List.map
-        (fun (name, poly, point, result) ->
-            TestCaseData(poly, point)
-                .SetName(name)
-                .Returns(result))
+    |> List.map (fun (name, poly, point, result) -> TestCaseData(poly, point).SetName(name).Returns(result))
 
 [<TestCaseSource(nameof ``Polygon contains point test cases``)>]
 let ``Polygon contains point`` (polygon: Polygon2D<Meters, TestSpace>) (point: Point2D<Meters, TestSpace>) =
@@ -104,9 +96,7 @@ let ``Rotating a polygon around its centroid keeps the centroid point``
     | None -> Test.fail "Original polygon needs a centroid"
     | Some centroid ->
 
-        match polygon
-              |> Polygon2D.rotateAround centroid angle
-              |> Polygon2D.centroid with
+        match polygon |> Polygon2D.rotateAround centroid angle |> Polygon2D.centroid with
 
         | Some rotatedCentroid -> centroid .=. rotatedCentroid
         | None -> Test.fail "Rotated polygon needs a centroid"

@@ -18,7 +18,6 @@ index: 5
 
 
 open Math.Geometry
-open Math.Units
 
 type Cartesian = Cartesian
 (***)
@@ -41,8 +40,7 @@ guarantee a valid direction is created.
 
 Direction2D.xy 3. 4.
 (***hide***)
-Direction2D.xy 3. 4.
-|> Option.map Direction2D.toTuple
+Direction2D.xy 3. 4. |> Option.map Direction2D.toTuple
 (*** include-it ***)
 
 (**
@@ -52,8 +50,7 @@ When both values are zero, a proper direction cannot be created, so the program 
 
 Direction2D.xy 0. 0.
 (*** hide ***)
-Direction2D.xy 0. 0.
-|> Option.map Direction2D.toTuple
+Direction2D.xy 0. 0. |> Option.map Direction2D.toTuple
 (*** include-it ***)
 
 (**

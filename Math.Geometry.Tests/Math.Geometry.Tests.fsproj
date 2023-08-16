@@ -8,43 +8,43 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <Compile Include="Geometry.fs" />
-        <Compile Include="Direction2D.fs" />
-        <Compile Include="Vector2D.fs" />
-        <Compile Include="Point2D.fs" />
-        <Compile Include="Axis2D.fs" />
-        <Compile Include="Frame2D.fs" />
-        <Compile Include="LineSegment2D.fs" />
-        <Compile Include="Line2D.fs" />
-        <Compile Include="Size.fs" />
-        <Compile Include="BoundingBox2D.fs" />
-        <Compile Include="Rectangle2D.fs" />
-        <Compile Include="Circle2D.fs" />
-        <Compile Include="Ellipse2D.fs" />
-        <Compile Include="Triangle2D.fs" />
-        <Compile Include="Polyline2D.fs" />
-        <Compile Include="Arc2D.fs" />
-        <Compile Include="Polygon2D.fs" />
-        <Compile Include="Intersection2D.fs" />
-        <Compile Include="Boolean2D.fs" />
-        <Compile Include="Program.fs" />
+        <Compile Include="Geometry.fs"/>
+        <Compile Include="Direction2D.fs"/>
+        <Compile Include="Vector2D.fs"/>
+        <Compile Include="Point2D.fs"/>
+        <Compile Include="Axis2D.fs"/>
+        <Compile Include="Frame2D.fs"/>
+        <Compile Include="LineSegment2D.fs"/>
+        <Compile Include="Line2D.fs"/>
+        <Compile Include="Size.fs"/>
+        <Compile Include="BoundingBox2D.fs"/>
+        <Compile Include="Rectangle2D.fs"/>
+        <Compile Include="Circle2D.fs"/>
+        <Compile Include="Ellipse2D.fs"/>
+        <Compile Include="Triangle2D.fs"/>
+        <Compile Include="Polyline2D.fs"/>
+        <Compile Include="Arc2D.fs"/>
+        <Compile Include="Polygon2D.fs"/>
+        <Compile Include="Intersection2D.fs"/>
+        <Compile Include="Boolean2D.fs"/>
+        <Compile Include="Program.fs"/>
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="FsCheck.NUnit" Version="2.16.6" />
-        <PackageReference Include="Math.Units" Version="0.1.149" />
-        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.7.1" />
-        <PackageReference Include="NUnit" Version="3.13.3" />
-        <PackageReference Include="NUnit3TestAdapter" Version="4.5.0" />
+        <PackageReference Include="FsCheck.NUnit" Version="2.16.6"/>
+        <PackageReference Include="Math.Units" Version="0.1.149"/>
+        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.7.1"/>
+        <PackageReference Include="NUnit" Version="3.13.3"/>
+        <PackageReference Include="NUnit3TestAdapter" Version="4.5.0"/>
         <PackageReference Include="coverlet.collector" Version="6.0.0">
-          <PrivateAssets>all</PrivateAssets>
-          <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
-        <PackageReference Update="FSharp.Core" Version="7.0.400" />
+        <PackageReference Update="FSharp.Core" Version="7.0.400"/>
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\Math.Geometry\Math.Geometry.fsproj" />
+        <ProjectReference Include="..\Math.Geometry\Math.Geometry.fsproj"/>
     </ItemGroup>
 
 </Project>

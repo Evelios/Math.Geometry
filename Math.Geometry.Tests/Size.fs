@@ -1,7 +1,6 @@
 module Math.Geometry.Tests.Size
 
 open NUnit.Framework
-open FsCheck.NUnit
 open FsCheck
 
 open Math.Geometry.Test

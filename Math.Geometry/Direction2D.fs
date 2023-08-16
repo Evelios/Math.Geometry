@@ -35,8 +35,7 @@ let fromComponents (x: float, y: float) : Direction2D<'Coordinates> option =
 /// care of normalizing the x and y components into the unit direction vector.
 /// This function also checks for the edge case where the x and y components
 /// are both zero. In that case, the function returns `None`.
-let xyQuantity ( x: Quantity<'Units>) ( y: Quantity<'Units>) : Direction2D<'Coordinates> option =
-    xy x.Value y.Value
+let xyQuantity (x: Quantity<'Units>) (y: Quantity<'Units>) : Direction2D<'Coordinates> option = xy x.Value y.Value
 
 /// Create a direction vector from the x and y components. This function
 /// doesn't perform either zero magnitude checks nor does it normalize the
@@ -163,8 +162,7 @@ let equalWithin (angle: Angle) (rhs: Direction2D<'Coordinates>) (lhs: Direction2
     let relativeX = lhs.X * rhs.X + lhs.Y * rhs.Y
     let relativeY = lhs.X * rhs.Y - lhs.Y * rhs.X
 
-    abs (atan2 relativeY relativeX)
-    <= Angle.inRadians angle
+    abs (atan2 relativeY relativeX) <= Angle.inRadians angle
 
 /// Find the component of one direction in another direction. This is equal to
 /// the cosine of the angle between the directions, or equivalently the dot product

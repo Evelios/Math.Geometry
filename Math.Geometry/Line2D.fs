@@ -5,7 +5,10 @@ open Math.Units
 
 // ---- Builders ----
 
-let through (start: Point2D<'Units, 'Coordinates>) (finish: Point2D<'Units, 'Coordinates>) : Line2D<'Units, 'Coordinates> =
+let through
+    (start: Point2D<'Units, 'Coordinates>)
+    (finish: Point2D<'Units, 'Coordinates>)
+    : Line2D<'Units, 'Coordinates> =
     { Start = start; Finish = finish }
 
 /// Create a line Starting at point in a particular direction and length
@@ -87,14 +90,10 @@ let intersect
         let p = first.Start
         let q = second.Start
 
-        let r =
-            first.Start |> Point2D.vectorTo first.Finish
+        let r = first.Start |> Point2D.vectorTo first.Finish
 
-        let s =
-            second.Start |> Point2D.vectorTo second.Finish
+        let s = second.Start |> Point2D.vectorTo second.Finish
 
-        let t =
-            Vector2D.cross (q - p) s
-            / Vector2D.cross r s
+        let t = Vector2D.cross (q - p) s / Vector2D.cross r s
 
         p + (t * r) |> Some

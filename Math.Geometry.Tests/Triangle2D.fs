@@ -21,5 +21,4 @@ let ``non-zero area triangle contains its own centroid`` (triangle: Triangle2D<M
 
     Test.isTrue
         "non-zero area triangle did not contain its own centroid"
-        (area = Quantity.zero
-         || Triangle2D.contains centroid triangle)
+        (area = Quantity.zero || Triangle2D.contains centroid triangle)

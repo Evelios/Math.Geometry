@@ -30,9 +30,7 @@ type Cartesian = Cartesian
 BoundingBox2D.singleton (Point2D.meters 3. 5.)
 (*** include-it ***)
 
-BoundingBox2D.from
-    (Point2D.meters 1. -3.)
-    (Point2D.meters -5. 2.)
+BoundingBox2D.from (Point2D.meters 1. -3.) (Point2D.meters -5. 2.)
 (*** include-it ***)
 
 BoundingBox2D.fromExtrema
@@ -42,9 +40,7 @@ BoundingBox2D.fromExtrema
       MaxY = Length.meters 1. }
 (*** include-it ***)
 
-BoundingBox2D.withDimensions
-    (Length.meters 7., Length.meters 2.)
-    (Point2D.meters -3. 5.)
+BoundingBox2D.withDimensions (Length.meters 7., Length.meters 2.) (Point2D.meters -3. 5.)
 (*** include-it ***)
 
 
@@ -52,7 +48,7 @@ BoundingBox2D.withDimensions
 # Accessors
 *)
 
-let boundingBox : BoundingBox2D<Meters, Cartesian> =
+let boundingBox: BoundingBox2D<Meters, Cartesian> =
     BoundingBox2D.fromExtrema
         { MinX = Length.meters 2.
           MaxX = Length.meters 4.
@@ -65,7 +61,7 @@ boundingBox.MaxX = BoundingBox2D.maxX boundingBox
 boundingBox.MinY = BoundingBox2D.minY boundingBox
 boundingBox.MaxY = BoundingBox2D.maxY boundingBox
 (***)
-    
+
 BoundingBox2D.corners boundingBox
 (*** include-it ***)
 
@@ -95,10 +91,7 @@ BoundingBox2D.centerPoint boundingBox
 BoundingBox2D.containingPoint (Point2D.meters 10. 10.) boundingBox
 (*** include-it ***)
 
-BoundingBox2D.containingPoints
-    [ Point2D.meters 10. 10.
-      Point2D.meters -10. -10. ]
-    boundingBox
+BoundingBox2D.containingPoints [ Point2D.meters 10. 10.; Point2D.meters -10. -10. ] boundingBox
 (*** include-it ***)
 
 

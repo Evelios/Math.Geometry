@@ -25,7 +25,7 @@ type Cartesian = Cartesian
 # Builders
 *)
 
-let outerPoints : Point2D<Meters, Cartesian> list =
+let outerPoints: Point2D<Meters, Cartesian> list =
     [ Point2D.meters 5. 0.
       Point2D.meters 7. 2.
       Point2D.meters 3. 6.
@@ -35,10 +35,8 @@ let outerPoints : Point2D<Meters, Cartesian> list =
 Polygon2D.singleLoop outerPoints
 (***)
 
-let innerPoints : Point2D<Meters, Cartesian> list =
-    [ Point2D.meters 3. 1.
-      Point2D.meters 2. 2.
-      Point2D.meters 1. 1. ]
+let innerPoints: Point2D<Meters, Cartesian> list =
+    [ Point2D.meters 3. 1.; Point2D.meters 2. 2.; Point2D.meters 1. 1. ]
 
 Polygon2D.withHoles [ innerPoints ] outerPoints
 (***)
@@ -53,19 +51,18 @@ Polygon2D.convexHull
 let polygon: Polygon2D<Meters, Cartesian> =
     Polygon2D.withHoles [ innerPoints ] outerPoints
 
-Polygon2D.outerLoop polygon  // or
+Polygon2D.outerLoop polygon // or
 polygon.OuterLoop
 (*** include-it ***)
 
-Polygon2D.innerLoops polygon  // or
+Polygon2D.innerLoops polygon // or
 polygon.InnerLoops
 (*** include-it ***)
 
 Polygon2D.vertices polygon
 (***)
 
-Polygon2D.loopEdges
-    (Polygon2D.vertices polygon)
+Polygon2D.loopEdges (Polygon2D.vertices polygon)
 (***)
 
 Polygon2D.edges polygon
@@ -88,10 +85,7 @@ Polygon2D.boundingBox polygon
 *)
 
 let invert = false
-Polygon2D.mapVertices
-    (Point2D.translate (Vector2D.meters 1. 2.))
-    invert
-    polygon
+Polygon2D.mapVertices (Point2D.translate (Vector2D.meters 1. 2.)) invert polygon
 (***)
 
 
@@ -123,12 +117,8 @@ Polygon2D.boundingBox
 # Queries
 *)
 
-Polygon2D.contains
-    (Point2D.meters 2. 2.)
-    polygon
+Polygon2D.contains (Point2D.meters 2. 2.) polygon
 (*** include-it ***)
 
-Polygon2D.contains
-    (Point2D.meters 10. 10.)
-    polygon
+Polygon2D.contains (Point2D.meters 10. 10.) polygon
 (*** include-it ***)

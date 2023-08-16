@@ -42,7 +42,7 @@ Vector2D.withQuantity (Length.meters 5.) (Direction2D.fromAngle Angle.halfPi)
 
 (** # Accessors *)
 
-let vec : Vector2D<Meters, Cartesian> =
+let vec: Vector2D<Meters, Cartesian> =
     Vector2D.xy (Length.meters 3.) (Length.meters 4.)
 
 vec.X = Vector2D.x vec
@@ -66,9 +66,9 @@ Because these functions are intended to be used in pipes the order goes like
 
 
 (*** hide ***)
-let lhs : Vector2D<Meters, Cartesian> = Vector2D.meters 3. 4.
+let lhs: Vector2D<Meters, Cartesian> = Vector2D.meters 3. 4.
 
-let rhs : Vector2D<Meters, Cartesian> = Vector2D.meters 5. 12.
+let rhs: Vector2D<Meters, Cartesian> = Vector2D.meters 5. 12.
 (***)
 
 lhs |> Vector2D.plus rhs = lhs + rhs

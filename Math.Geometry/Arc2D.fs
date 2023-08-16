@@ -12,29 +12,24 @@ let from
     (givenEndPoint: Point2D<'Units, 'Coordinates>)
     (givenSweptAngle: Angle)
     =
-    let displacement =
-        Vector2D.from givenStartPoint givenEndPoint
+    let displacement = Vector2D.from givenStartPoint givenEndPoint
 
     match Vector2D.direction displacement with
     | Some direction ->
         let distance = Vector2D.length displacement
         let numTurns = givenSweptAngle / Angle.twoPi
 
-        let angleModTwoPi =
-            givenSweptAngle - (Angle.twoPi * (floor numTurns))
+        let angleModTwoPi = givenSweptAngle - (Angle.twoPi * (floor numTurns))
 
         let halfAngle = 0.5 * givenSweptAngle
 
-        let scale =
-            1. / (2. * abs (Angle.sin halfAngle))
+        let scale = 1. / (2. * abs (Angle.sin halfAngle))
 
         let computedRadius = distance * scale
 
         { StartPoint = givenStartPoint
           SweptAngle = givenSweptAngle
-          XDirection =
-            direction
-            |> Direction2D.rotateBy (-0.5 * angleModTwoPi)
+          XDirection = direction |> Direction2D.rotateBy (-0.5 * angleModTwoPi)
           SignedLength =
             if givenSweptAngle = Angle.zero then
                 distance
@@ -62,18 +57,14 @@ let withCenterPoint
     let givenStartAngle = startAngle
     let givenSweptAngle = sweptAngle
 
-    let startX =
-        x0 + (givenRadius * Angle.sin givenStartAngle)
+    let startX = x0 + (givenRadius * Angle.sin givenStartAngle)
 
-    let startY =
-        y0 + (givenRadius * Angle.sin givenStartAngle)
+    let startY = y0 + (givenRadius * Angle.sin givenStartAngle)
 
     { StartPoint = Point2D.xy startX startY
       SweptAngle = givenSweptAngle
       XDirection = Direction2D.fromAngle (givenStartAngle + Angle.halfPi)
-      SignedLength =
-        (Length.abs givenRadius)
-        * Angle.inRadians givenSweptAngle }
+      SignedLength = (Length.abs givenRadius) * Angle.inRadians givenSweptAngle }
 
 /// Construct an arc by sweeping (rotating) a given start point around a given
 /// center point by a given angle. The center point to sweep around is given first
@@ -87,13 +78,11 @@ let sweptAround
     (givenSweptAngle: Angle)
     (givenStartPoint: Point2D<'Units, 'Coordinates>)
     : Arc2D<'Units, 'Coordinates> =
-    let displacement =
-        Vector2D.from givenStartPoint givenCenterPoint
+    let displacement = Vector2D.from givenStartPoint givenCenterPoint
 
     match Vector2D.direction displacement with
     | Some yDirection ->
-        let computedRadius =
-            Vector2D.length displacement
+        let computedRadius = Vector2D.length displacement
 
         { StartPoint = givenStartPoint
           XDirection = yDirection |> Direction2D.rotateClockwise
@@ -116,36 +105,25 @@ let throughPoints
     match Point2D.circumcenter first second third with
     | None -> None
     | Some circumcenter ->
-        let firstVector =
-            Vector2D.from circumcenter first
+        let firstVector = Vector2D.from circumcenter first
 
-        let secondVector =
-            Vector2D.from circumcenter second
+        let secondVector = Vector2D.from circumcenter second
 
-        let thirdVector =
-            Vector2D.from circumcenter third
+        let thirdVector = Vector2D.from circumcenter third
 
         match (Vector2D.direction firstVector), (Vector2D.direction secondVector), (Vector2D.direction thirdVector) with
         | Some firstDirection, Some secondDirection, Some thirdDirection ->
-            let partial =
-                Direction2D.angleFrom firstDirection secondDirection
+            let partial = Direction2D.angleFrom firstDirection secondDirection
 
-            let full =
-                Direction2D.angleFrom firstDirection thirdDirection
+            let full = Direction2D.angleFrom firstDirection thirdDirection
 
             let computedSweptAngle =
-                if partial >= Angle.zero && full >= partial then
-                    full
-                else if partial <= Angle.zero && full <= partial then
-                    full
-                else if full >= Angle.zero then
-                    full - Angle.twoPi
-                else
-                    full + Angle.twoPi
+                if partial >= Angle.zero && full >= partial then full
+                else if partial <= Angle.zero && full <= partial then full
+                else if full >= Angle.zero then full - Angle.twoPi
+                else full + Angle.twoPi
 
-            first
-            |> sweptAround circumcenter computedSweptAngle
-            |> Some
+            first |> sweptAround circumcenter computedSweptAngle |> Some
 
         | _ -> None
 
@@ -156,13 +134,11 @@ let withRadius
     (endPoint: Point2D<'Units, 'Coordinates>)
     : Arc2D<'Units, 'Coordinates> option =
 
-    let chord =
-        LineSegment2D.from startPoint endPoint
+    let chord = LineSegment2D.from startPoint endPoint
 
     let squaredRadius = Length.squared radius
 
-    let squaredHalfLength =
-        0.5 * LineSegment2D.length chord |> Length.squared
+    let squaredHalfLength = 0.5 * LineSegment2D.length chord |> Length.squared
 
     if squaredRadius < squaredHalfLength then
         None
@@ -171,8 +147,7 @@ let withRadius
         match LineSegment2D.perpendicularDirection chord with
         | None -> None
         | Some offsetDirection ->
-            let offsetMagnitude =
-                Length.sqrt (squaredRadius - squaredHalfLength)
+            let offsetMagnitude = Length.sqrt (squaredRadius - squaredHalfLength)
 
             let offsetDistance =
                 match sweptAngle with
@@ -185,11 +160,9 @@ let withRadius
                 LineSegment2D.midpoint chord
                 |> Point2D.translateIn offsetDirection offsetDistance
 
-            let halfLength =
-                Length.sqrt squaredHalfLength
+            let halfLength = Length.sqrt squaredHalfLength
 
-            let shortAngle =
-                2. * Angle.asin (halfLength / radius)
+            let shortAngle = 2. * Angle.asin (halfLength / radius)
 
             let sweptAngleInRadians =
                 match sweptAngle with
@@ -198,9 +171,7 @@ let withRadius
                 | LargePositive -> Angle.twoPi - shortAngle
                 | LargeNegative -> shortAngle - Angle.twoPi
 
-            startPoint
-            |> sweptAround computedCenterPoint sweptAngleInRadians
-            |> Some
+            startPoint |> sweptAround computedCenterPoint sweptAngleInRadians |> Some
 
 /// Construct an arc with the given center point, radius, start angle and swept
 let withSweptAngle
@@ -212,11 +183,9 @@ let withSweptAngle
     let x0 = center.X
     let y0 = center.Y
 
-    let startX =
-        x0 - (radius * Angle.cos startAngle)
+    let startX = x0 - (radius * Angle.cos startAngle)
 
-    let startY =
-        y0 - (radius * Angle.sin startAngle)
+    let startY = y0 - (radius * Angle.sin startAngle)
 
     { StartPoint = Point2D.xy startX startY
       SweptAngle = sweptAngle
@@ -232,9 +201,7 @@ let centerPoint (arc: Arc2D<'Units, 'Coordinates>) : Point2D<'Units, 'Coordinate
     let dx = arc.XDirection.X
     let dy = arc.XDirection.Y
 
-    let r =
-        arc.SignedLength
-        / (Angle.inRadians arc.SweptAngle)
+    let r = arc.SignedLength / (Angle.inRadians arc.SweptAngle)
 
     let cx = x0 - (r * dy)
     let cy = y0 + (r * dx)
@@ -257,8 +224,7 @@ let pointOn (arc: Arc2D<'Units, 'Coordinates>) (parameterValue: float) : Point2D
     let arcSweptAngle = arc.SweptAngle
 
     if arcSweptAngle = Angle.zero then
-        let distance =
-            parameterValue * arcSignedLength
+        let distance = parameterValue * arcSignedLength
 
         let px = x0 + (distance * dx)
         let py = y0 + (distance * dy)
@@ -267,8 +233,7 @@ let pointOn (arc: Arc2D<'Units, 'Coordinates>) (parameterValue: float) : Point2D
     else
         let theta = parameterValue * arcSweptAngle
 
-        let arcRadius =
-            arcSignedLength / arcSweptAngle
+        let arcRadius = arcSignedLength / arcSweptAngle
 
         let x = arcRadius * Angle.sin theta
 
@@ -279,8 +244,8 @@ let pointOn (arc: Arc2D<'Units, 'Coordinates>) (parameterValue: float) : Point2D
             else
                 (1. - Angle.cos theta) * arcRadius
 
-        let px = x0 + Quantity (dx * x.Value + -dy * y.Value)
-        let py = y0 + Quantity (dy * x.Value + dx * y.Value)
+        let px = x0 + Quantity(dx * x.Value + -dy * y.Value)
+        let py = y0 + Quantity(dy * x.Value + dx * y.Value)
 
         Point2D.xy px py
 
@@ -300,18 +265,14 @@ let boundingBox (givenArc: Arc2D<'Units, 'Coordinates>) : BoundingBox2D<'Units, 
         let p1 = startPoint givenArc
         let p2 = endPoint givenArc
 
-        let offset =
-            Length.half (Point2D.distanceTo p1 p2)
-            / (Angle.cos (Angle.half theta))
+        let offset = Length.half (Point2D.distanceTo p1 p2) / (Angle.cos (Angle.half theta))
 
-        let offsetPoint =
-            p1 |> Point2D.translateIn xDirection offset
+        let offsetPoint = p1 |> Point2D.translateIn xDirection offset
 
         BoundingBox2D.hull3 p1 p2 offsetPoint
 
     else
-        let startAngle =
-            Direction2D.toAngle xDirection - Angle.halfPi
+        let startAngle = Direction2D.toAngle xDirection - Angle.halfPi
 
         let endAngle = startAngle + theta
         let startCos = Angle.cos startAngle
@@ -323,8 +284,7 @@ let boundingBox (givenArc: Arc2D<'Units, 'Coordinates>) : BoundingBox2D<'Units, 
         let sinMin = min startSin endSin
         let sinMax = max startSin endSin
 
-        let x0, y0 =
-            Point2D.coordinates (centerPoint givenArc)
+        let x0, y0 = Point2D.coordinates (centerPoint givenArc)
 
         let r = radius givenArc
 
@@ -335,11 +295,9 @@ let boundingBox (givenArc: Arc2D<'Units, 'Coordinates>) : BoundingBox2D<'Units, 
 
 /// Get the first derivative of an arc at a given parameter value.
 let firstDerivative (arc: Arc2D<'Units, 'Coordinates>) (parameterValue: float) : Vector2D<'Units, 'Coordinates> =
-    let startDerivative =
-        Vector2D.withQuantity arc.SignedLength arc.XDirection
+    let startDerivative = Vector2D.withQuantity arc.SignedLength arc.XDirection
 
-    startDerivative
-    |> Vector2D.rotateBy (parameterValue * arc.SweptAngle)
+    startDerivative |> Vector2D.rotateBy (parameterValue * arc.SweptAngle)
 
 // ---- Non-Degenerative ----
 
@@ -362,8 +320,7 @@ let fromNondegenerate (arc: Nondegenerate<'Units, 'Coordinates>) : Arc2D<'Units,
 
 ///  Get the tangent direction to a nondegenerate arc at a given parameter
 let tangentDirection (arc: Nondegenerate<'Units, 'Coordinates>) (parameterValue: float) : Direction2D<'Coordinates> =
-    arc.XDirection
-    |> Direction2D.rotateBy (parameterValue * arc.SweptAngle)
+    arc.XDirection |> Direction2D.rotateBy (parameterValue * arc.SweptAngle)
 
 /// Get both the point and tangent direction of a nondegenerate arc at a given
 /// parameter value.
@@ -381,9 +338,7 @@ let reverse (arc: Arc2D<'Units, 'Coordinates>) : Arc2D<'Units, 'Coordinates> =
     { StartPoint = endPoint arc
       SweptAngle = -arc.SweptAngle
       SignedLength = -arc.SignedLength
-      XDirection =
-        arc.XDirection
-        |> Direction2D.rotateBy arc.SweptAngle }
+      XDirection = arc.XDirection |> Direction2D.rotateBy arc.SweptAngle }
 
 /// Scale an arc about a given point by a given scale.
 let scaleAbout

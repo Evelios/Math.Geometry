@@ -18,11 +18,9 @@ let ``intersection is consistent with intersects``
     (first: BoundingBox2D<Meters, TestSpace>)
     (second: BoundingBox2D<Meters, TestSpace>)
     =
-    let intersects =
-        BoundingBox2D.intersects first second
+    let intersects = BoundingBox2D.intersects first second
 
-    let intersection =
-        BoundingBox2D.intersection first second
+    let intersection = BoundingBox2D.intersection first second
 
     match intersects, intersection with
     | true, Some _ -> Test.pass
@@ -39,11 +37,9 @@ let ``intersection is consistent with overlappingByAtLeast``
     (second: BoundingBox2D<Meters, TestSpace>)
     =
 
-    let overlapping =
-        BoundingBox2D.overlappingByAtLeast Length.zero first second
+    let overlapping = BoundingBox2D.overlappingByAtLeast Length.zero first second
 
-    let intersection =
-        BoundingBox2D.intersection first second
+    let intersection = BoundingBox2D.intersection first second
 
     match overlapping, intersection with
     | true, Some _ -> Test.pass
@@ -141,10 +137,7 @@ let ``Separation test cases`` =
       "Expected separation to be greater than -1", Length.unitless -1., true
       "Expected separation to be greater than 0.99", Length.unitless 0.99, true
       "Expected separation to not be greater than 1.01", Length.unitless 1.01, false ]
-    |> List.map (fun (name, greaterThan, expected) ->
-        TestCaseData(greaterThan)
-            .SetName(name)
-            .Returns(expected))
+    |> List.map (fun (name, greaterThan, expected) -> TestCaseData(greaterThan).SetName(name).Returns(expected))
 
 [<TestCaseSource(nameof ``Separation test cases``)>]
 let ``separation is determined correctly for horizontally displaced boxes`` (separation: Quantity<Unitless>) =
@@ -186,10 +179,7 @@ let ``Diagonal separation test cases`` =
       "Expected separation to be greater than -1", Length.unitless -1., true
       "Expected separation to be greater than 0.99", Length.unitless 4.99, true
       "Expected separation to not be greater than 1.01", Length.unitless 5.01, false ]
-    |> List.map (fun (name, greaterThan, expected) ->
-        TestCaseData(greaterThan)
-            .SetName(name)
-            .Returns(expected))
+    |> List.map (fun (name, greaterThan, expected) -> TestCaseData(greaterThan).SetName(name).Returns(expected))
 
 [<TestCaseSource(nameof ``Diagonal separation test cases``)>]
 let ``separation is determined correctly for diagonally displaced boxes`` (separation: Quantity<Unitless>) =
@@ -222,8 +212,7 @@ let ``offsetBy returns either Nothing or Just a valid box``
 let ``offsetBy returns either Nothing or Just a valid box when offsetting by -width / 2``
     (boundingBox: BoundingBox2D<Meters, TestSpace>)
     =
-    let negativeHalfWidth =
-        -0.5 * BoundingBox2D.width boundingBox
+    let negativeHalfWidth = -0.5 * BoundingBox2D.width boundingBox
 
     match BoundingBox2D.offsetBy negativeHalfWidth boundingBox with
     | None -> Test.pass
@@ -235,8 +224,7 @@ let ``offsetBy returns either Nothing or Just a valid box when offsetting by -he
     (boundingBox: BoundingBox2D<Meters, TestSpace>)
     =
 
-    let negativeHalfHeight =
-        -0.5 * BoundingBox2D.height boundingBox
+    let negativeHalfHeight = -0.5 * BoundingBox2D.height boundingBox
 
     match BoundingBox2D.offsetBy negativeHalfHeight boundingBox with
     | None -> Test.pass
@@ -251,5 +239,4 @@ let ``hullN is consistent with from`` (first: Point2D<Meters, TestSpace>) (secon
 
 [<Property>]
 let ``hullN does not depend on input order`` (points: Point2D<Meters, TestSpace> list) =
-    BoundingBox2D.hullN (List.rev points)
-    |> Test.equal (BoundingBox2D.hullN points)
+    BoundingBox2D.hullN (List.rev points) |> Test.equal (BoundingBox2D.hullN points)

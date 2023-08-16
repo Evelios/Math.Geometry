@@ -18,8 +18,7 @@ let Setup () = Gen.ArbGeometry.Register()
 let ``X Builder`` () =
     let xAxis = Axis2D.x
 
-    let expected =
-        Axis2D.through Point2D.origin Direction2D.x
+    let expected = Axis2D.through Point2D.origin Direction2D.x
 
     Assert.AreEqual(expected, xAxis)
 
@@ -28,8 +27,7 @@ let ``X Builder`` () =
 let ``Y Builder`` () =
     let xAxis = Axis2D.y
 
-    let expected =
-        Axis2D.through Point2D.origin Direction2D.y
+    let expected = Axis2D.through Point2D.origin Direction2D.y
 
     Assert.AreEqual(expected, xAxis)
 
@@ -38,30 +36,26 @@ let ``Y Builder`` () =
 let Reverse () =
     let actual = Axis2D.reverse Axis2D.x
 
-    let expected =
-        Axis2D.through Point2D.origin Direction2D.negativeX
+    let expected = Axis2D.through Point2D.origin Direction2D.negativeX
 
     Assert.AreEqual(expected, actual)
 
 
 [<Test>]
 let ``Move To`` () =
-    let axis =
-        Axis2D.withDirection Direction2D.y (Point2D.meters 4. 5.)
+    let axis = Axis2D.withDirection Direction2D.y (Point2D.meters 4. 5.)
 
     let newOrigin = Point2D.meters 4. 5.
     let actual = Axis2D.moveTo newOrigin axis
 
-    let expected =
-        Axis2D.withDirection Direction2D.y (Point2D.meters 4. 5.)
+    let expected = Axis2D.withDirection Direction2D.y (Point2D.meters 4. 5.)
 
     Assert.AreEqual(expected, actual)
 
 
 [<Test>]
 let ``Rotate around`` () =
-    let actual =
-        Axis2D.rotateAround Point2D.origin Angle.halfPi Axis2D.x
+    let actual = Axis2D.rotateAround Point2D.origin Angle.halfPi Axis2D.x
 
     let expected = Axis2D.y
 
@@ -70,8 +64,7 @@ let ``Rotate around`` () =
 
 [<Test>]
 let ``rotateAround example`` () =
-    let rotated =
-        Axis2D.rotateAround Point2D.origin (Angle.degrees 90.) Axis2D.x
+    let rotated = Axis2D.rotateAround Point2D.origin (Angle.degrees 90.) Axis2D.x
 
     Assert.AreEqual(Axis2D.y, rotated)
 
@@ -79,8 +72,7 @@ let ``rotateAround example`` () =
 let ``translateBy example`` () =
     let displacement = Vector2D.meters 2. 3.
 
-    let expected =
-        Axis2D.withDirection Direction2D.y (Point2D.meters 2. 3.)
+    let expected = Axis2D.withDirection Direction2D.y (Point2D.meters 2. 3.)
 
     let actual = Axis2D.translateBy displacement Axis2D.y
 
@@ -102,11 +94,9 @@ let ``mirrorAcross example`` () =
 let ``relativeTo example`` () =
     let origin = Point2D.meters 2. 3.
 
-    let expected =
-        Axis2D.withDirection Direction2D.x (Point2D.meters 2. 3.)
+    let expected = Axis2D.withDirection Direction2D.x (Point2D.meters 2. 3.)
 
-    let actual =
-        Axis2D.placeIn (Frame2D.atPoint origin) Axis2D.x
+    let actual = Axis2D.placeIn (Frame2D.atPoint origin) Axis2D.x
 
     Assert.AreEqual(expected, actual)
 
@@ -114,11 +104,9 @@ let ``relativeTo example`` () =
 let ``placeInExample example`` () =
     let origin = Point2D.meters 2. 3.
 
-    let expected =
-        Axis2D.withDirection Direction2D.x (Point2D.meters 2. 3.)
+    let expected = Axis2D.withDirection Direction2D.x (Point2D.meters 2. 3.)
 
-    let actual =
-        Axis2D.placeIn (Frame2D.atPoint origin) Axis2D.x
+    let actual = Axis2D.placeIn (Frame2D.atPoint origin) Axis2D.x
 
     Assert.AreEqual(expected, actual)
 
@@ -126,8 +114,7 @@ let ``placeInExample example`` () =
 let throughPoints (p1: Point2D<Meters, TestSpace>) (p2: Point2D<Meters, TestSpace>) =
     match Axis2D.throughPoints p1 p2 with
     | Some axis ->
-        Test.all [
-            Test.equal p1 axis.Origin
-            Test.equal Quantity.zero (Point2D.signedDistanceFrom axis p2)
-        ]
+        Test.all
+            [ Test.equal p1 axis.Origin
+              Test.equal Quantity.zero (Point2D.signedDistanceFrom axis p2) ]
     | None -> Test.equal p1 p2

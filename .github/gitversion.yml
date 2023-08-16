@@ -5,6 +5,6 @@ mode: Mainline
 branches:
   feature:
     tag: beta
-  main: {}
+  main: { }
 ignore:
-  sha: []
+  sha: [ ]

@@ -78,9 +78,9 @@ type Cartesian = Cartesian
 
 *)
 
-let vec1 : Vector2D<Meters, Cartesian> = Vector2D.meters 10. 20.
+let vec1: Vector2D<Meters, Cartesian> = Vector2D.meters 10. 20.
 
-let vec2 : Vector2D<Meters, Cartesian> = Vector2D.meters 30. 40.
+let vec2: Vector2D<Meters, Cartesian> = Vector2D.meters 30. 40.
 
 (***)
 

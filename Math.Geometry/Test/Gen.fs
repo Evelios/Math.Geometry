@@ -62,7 +62,8 @@ module Gen =
     let twoCloseVector2D<'Units, 'Coordinates> : Gen<Vector2D<'Units, 'Coordinates> * Vector2D<'Units, 'Coordinates>> =
         Gen.map2 (fun first offset -> (first, first + offset)) vector2D (vector2DWithinRadius (epsilonLength ()))
 
-    let point2D<'Units, 'Coordinates> : Gen<Point2D<'Units, 'Coordinates>> = Gen.map2 Point2D.xy Gen.quantity Gen.quantity
+    let point2D<'Units, 'Coordinates> : Gen<Point2D<'Units, 'Coordinates>> =
+        Gen.map2 Point2D.xy Gen.quantity Gen.quantity
 
     let point2DWithinOffset
         (radius: Quantity<'Units>)
@@ -75,7 +76,8 @@ module Gen =
     let twoClosePoint2D<'Units, 'Coordinates> : Gen<Point2D<'Units, 'Coordinates> * Point2D<'Units, 'Coordinates>> =
         Gen.map2 (fun first offset -> (first, first + offset)) point2D (vector2DWithinRadius (epsilonLength ()))
 
-    let axis2D<'Units, 'Coordinates> : Gen<Axis2D<'Units, 'Coordinates>> = Gen.map2 Axis2D.through point2D direction2D
+    let axis2D<'Units, 'Coordinates> : Gen<Axis2D<'Units, 'Coordinates>> =
+        Gen.map2 Axis2D.through point2D direction2D
 
     let frame2D<'Units, 'Coordiantes> : Gen<Frame2D<'Units, 'Coordinates, TestDefines>> =
         Gen.map2 Frame2D.withAngle angle point2D
@@ -85,7 +87,7 @@ module Gen =
         |> Gen.filter (fun (p1, p2) -> p1 <> p2)
         |> Gen.map (Tuple2.map Line2D.through)
 
-    let lineSegment2D<'Units, 'Coordianates> :  Gen<LineSegment2D<'Units, 'Coordinates>>  =
+    let lineSegment2D<'Units, 'Coordianates> : Gen<LineSegment2D<'Units, 'Coordinates>> =
         Gen.map2 Tuple2.pair point2D point2D
         |> Gen.filter (fun (p1, p2) -> p1 <> p2)
         |> Gen.map (Tuple2.map LineSegment2D.from)
@@ -93,7 +95,9 @@ module Gen =
     let boundingBox2D<'Units, 'Coordinates> : Gen<BoundingBox2D<Meters, 'Coordinates>> =
         Gen.map2 BoundingBox2D.from point2D point2D
 
-    let point2DInBoundingBox2D<'Units, 'Coordinates> (bbox: BoundingBox2D<'Units, 'Coordinates>) : Gen<Point2D<'Units, 'Coordinates>> =
+    let point2DInBoundingBox2D<'Units, 'Coordinates>
+        (bbox: BoundingBox2D<'Units, 'Coordinates>)
+        : Gen<Point2D<'Units, 'Coordinates>> =
         Gen.map2 Point2D.xy (lengthBetween bbox.MinX bbox.MaxX) (lengthBetween bbox.MinY bbox.MaxY)
 
     let lineSegment2DInBoundingBox2D<'Units, 'Coordinates> (bbox: BoundingBox2D<'Units, 'Coordinates>) =
@@ -108,7 +112,8 @@ module Gen =
               Gen.constant SweptAngle.largePositive
               Gen.constant SweptAngle.largeNegative ]
 
-    let arc2D<'Units, 'Coordinates> : Gen<Arc2D<'Units, 'Coordinates>> = Gen.map3 Arc2D.from point2D point2D angle
+    let arc2D<'Units, 'Coordinates> : Gen<Arc2D<'Units, 'Coordinates>> =
+        Gen.map3 Arc2D.from point2D point2D angle
 
     let polygon2D<'Units, 'Coordinates> : Gen<Polygon2D<'Units, 'Coordinates>> =
         let boundingBox =

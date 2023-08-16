@@ -1,7 +1,6 @@
 module Math.Geometry.Tests.Frame2D
 
 open NUnit.Framework
-open FsCheck.NUnit
 open FsCheck
 
 open Math.Geometry.Test
