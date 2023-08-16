@@ -174,8 +174,8 @@ let translateAlongOwn
       XDirection = frame.XDirection
       YDirection = frame.YDirection }
 
-/// Mirror a frame across an axis.
-/// Note that this will switch the [handedness](https://en.wikipedia.org/wiki/Cartesian_coordinate_system#Orientation_and_handedness)
+/// Mirror a frame across an axis. Note that this will switch the
+/// [handedness](https://en.wikipedia.org/wiki/Cartesian_coordinate_system#Orientation_and_handedness)
 /// of the frame.
 let mirrorAcross
     (axis: Axis2D<'Units, 'Coordinates>)
