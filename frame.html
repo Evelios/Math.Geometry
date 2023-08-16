@@ -426,11 +426,11 @@ type Vector2D&lt;&#39;Units,&#39;Coordinates&gt; =
  Note that this will switch the [handedness](https://en.wikipedia.org/wiki/Cartesian_coordinate_system#Orientation_and_handedness)
  of the frame.
 &lt;/summary&gt;</em></div>
-<div class="fsdocs-tip" id="fs47">val relativeTo : otherFrame:Frame2D&lt;&#39;Units,&#39;GlobalCoordinates,&#39;Defines&gt; -&gt; frame:Frame2D&lt;&#39;Units,&#39;GlobalCoordinates,&#39;Defines&gt; -&gt; Frame2D&lt;&#39;Units,&#39;LocalCoordinates,&#39;Defines&gt;<br /><em>&lt;summary&gt;
+<div class="fsdocs-tip" id="fs47">val relativeTo : otherFrame:Frame2D&lt;&#39;Units,&#39;GlobalCoordinates,&#39;LocalCoordinates&gt; -&gt; frame:Frame2D&lt;&#39;Units,&#39;GlobalCoordinates,&#39;LocalCoordinates&gt; -&gt; Frame2D&lt;&#39;Units,&#39;LocalCoordinates,&#39;GlobalCoordinates&gt;<br /><em>&lt;summary&gt;
  Take two frames defined in global coordinates, and return the second one
  expressed in local coordinates relative to the first.
 &lt;/summary&gt;</em></div>
-<div class="fsdocs-tip" id="fs48">val placeIn : reference:Frame2D&lt;&#39;Units,&#39;GlobalCoordinates,&#39;Defines&gt; -&gt; frame:Frame2D&lt;&#39;Units,&#39;GlobalCoordinates,&#39;Defines&gt; -&gt; Frame2D&lt;&#39;Units,&#39;LocalCoordinates,&#39;Defines&gt;<br /><em>&lt;summary&gt;
+<div class="fsdocs-tip" id="fs48">val placeIn : reference:Frame2D&lt;&#39;Units,&#39;GlobalCoordinates,&#39;LocalCoordinates&gt; -&gt; frame:Frame2D&lt;&#39;Units,&#39;LocalCoordinates,&#39;GlobalCoordinates&gt; -&gt; Frame2D&lt;&#39;Units,&#39;GlobalCoordinates,&#39;LocalCoordinates&gt;<br /><em>&lt;summary&gt;
  Take one frame defined in global coordinates and a second frame defined
  in local coordinates relative to the first frame, and return the second frame
  expressed in global coordinates.

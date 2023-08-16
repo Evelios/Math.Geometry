@@ -284,11 +284,11 @@ type Point2D&lt;&#39;Units,&#39;Coordinates&gt; =
 <div class="fsdocs-tip" id="fs29">val translateIn : direction:Direction2D&lt;&#39;Coordinates&gt; -&gt; distance:Quantity&lt;&#39;Units&gt; -&gt; circle:Circle2D&lt;&#39;Units,&#39;Coordinates&gt; -&gt; Circle2D&lt;&#39;Units,&#39;Coordinates&gt;<br /><em>&lt;summary&gt;
  Translate a circle in a given direction by a given distance.
 &lt;/summary&gt;</em></div>
-<div class="fsdocs-tip" id="fs30">val relativeTo : frame:Frame2D&lt;&#39;Units,&#39;Coordinates,&#39;Defines&gt; -&gt; circle:Circle2D&lt;&#39;Units,&#39;Coordinates&gt; -&gt; Circle2D&lt;&#39;Units,&#39;Coordinates&gt;<br /><em>&lt;summary&gt;
+<div class="fsdocs-tip" id="fs30">val relativeTo : frame:Frame2D&lt;&#39;Units,&#39;GlobalCoordinates,&#39;LocalCoordinates&gt; -&gt; circle:Circle2D&lt;&#39;Units,&#39;GlobalCoordinates&gt; -&gt; Circle2D&lt;&#39;Units,&#39;LocalCoordinates&gt;<br /><em>&lt;summary&gt;
  Take a circle defined in global coordinates, and return it expressed in
  local coordinates relative to a given reference frame.
 &lt;/summary&gt;</em></div>
-<div class="fsdocs-tip" id="fs31">val placeIn : frame:Frame2D&lt;&#39;Units,&#39;Coordinates,&#39;Defines&gt; -&gt; circle:Circle2D&lt;&#39;Units,&#39;Coordinates&gt; -&gt; Circle2D&lt;&#39;Units,&#39;Coordinates&gt;<br /><em>&lt;summary&gt;
+<div class="fsdocs-tip" id="fs31">val placeIn : frame:Frame2D&lt;&#39;Units,&#39;GlobalCoordinates,&#39;LocalCoordinates&gt; -&gt; circle:Circle2D&lt;&#39;Units,&#39;LocalCoordinates&gt; -&gt; Circle2D&lt;&#39;Units,&#39;GlobalCoordinates&gt;<br /><em>&lt;summary&gt;
  Take a circle considered to be defined in local coordinates relative to a
  given reference frame, and return that circle expressed in global coordinates.
 &lt;/summary&gt;</em></div>

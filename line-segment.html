@@ -439,11 +439,11 @@ from Math.Units<br /><em>&lt;category&gt;Module: Unit System&lt;/category&gt;<br
   - contains zero, then the line segment crosses the axis
  Note that reversing the line segment will _not_ affect the result.
 &lt;/summary&gt;</em></div>
-<div class="fsdocs-tip" id="fs52">val relativeTo : frame:Frame2D&lt;&#39;Units,&#39;GlobalCoordinates,&#39;Defines&gt; -&gt; segment:LineSegment2D&lt;&#39;Units,&#39;GlobalCoordinates&gt; -&gt; LineSegment2D&lt;&#39;Units,&#39;LocalCoordinates&gt;<br /><em>&lt;summary&gt;
+<div class="fsdocs-tip" id="fs52">val relativeTo : frame:Frame2D&lt;&#39;Units,&#39;GlobalCoordinates,&#39;LocalCoordinates&gt; -&gt; segment:LineSegment2D&lt;&#39;Units,&#39;GlobalCoordinates&gt; -&gt; LineSegment2D&lt;&#39;Units,&#39;LocalCoordinates&gt;<br /><em>&lt;summary&gt;
  Take a line segment defined in global coordinates, and return it expressed
  in local coordinates relative to a given reference frame.
 &lt;/summary&gt;</em></div>
-<div class="fsdocs-tip" id="fs53">val placeIn : frame:Frame2D&lt;&#39;Units,&#39;GlobalCoordinates,&#39;Defines&gt; -&gt; segment:LineSegment2D&lt;&#39;Units,&#39;GlobalCoordinates&gt; -&gt; LineSegment2D&lt;&#39;Units,&#39;LocalCoordinates&gt;<br /><em>&lt;summary&gt;
+<div class="fsdocs-tip" id="fs53">val placeIn : frame:Frame2D&lt;&#39;Units,&#39;GlobalCoordinates,&#39;LocalCoordinates&gt; -&gt; segment:LineSegment2D&lt;&#39;Units,&#39;LocalCoordinates&gt; -&gt; LineSegment2D&lt;&#39;Units,&#39;GlobalCoordinates&gt;<br /><em>&lt;summary&gt;
  Take a line segment considered to be defined in local coordinates relative
  to a given reference frame, and return that line segment expressed in global
  coordinates.

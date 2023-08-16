@@ -411,7 +411,7 @@ type Vector2D&lt;&#39;Units,&#39;Coordinates&gt; =
  counterclockwise order and its inner vertices in clockwise order.
 &lt;/summary&gt;</em></div>
 <div class="fsdocs-tip" id="fs37">val translate : amount:Vector2D&lt;&#39;Units,&#39;Coordinates&gt; -&gt; polygon:Polygon2D&lt;&#39;Units,&#39;Coordinates&gt; -&gt; Polygon2D&lt;&#39;Units,&#39;Coordinates&gt;</div>
-<div class="fsdocs-tip" id="fs38">val relativeTo : frame:Frame2D&lt;&#39;Units,&#39;Coordinates,&#39;Defines&gt; -&gt; polygon:Polygon2D&lt;&#39;Units,&#39;Coordinates&gt; -&gt; Polygon2D&lt;&#39;Units,&#39;Coordinates&gt;<br /><em>&lt;summary&gt;
+<div class="fsdocs-tip" id="fs38">val relativeTo : frame:Frame2D&lt;&#39;Units,&#39;GlobalCoordinates,&#39;LocalCoordinates&gt; -&gt; polygon:Polygon2D&lt;&#39;Units,&#39;GlobalCoordinates&gt; -&gt; Polygon2D&lt;&#39;Units,&#39;LocalCoordinates&gt;<br /><em>&lt;summary&gt;
  Take a polygon defined in global coordinates, and return it expressed in
  local coordinates relative to a given reference frame. If the given frame is
  left-handed, the order of the polygon&#39;s vertices will be reversed so that the
