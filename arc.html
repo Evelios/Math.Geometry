@@ -265,7 +265,7 @@ from Math.Geometry<br /><br />--------------------<br />type Arc2D&lt;&#39;Units
     XDirection: Direction2D&lt;&#39;Coordinates&gt;
     SignedLength: Quantity&lt;&#39;Units&gt;
     SweptAngle: Angle }
-    interface IGeometry
+    interface IGeometry&lt;&#39;Coordinates&gt;
     override Equals : obj:obj -&gt; bool
     override GetHashCode : unit -&gt; int</div>
 <div class="fsdocs-tip" id="fs6">val from : givenStartPoint:Point2D&lt;&#39;Units,&#39;Coordinates&gt; -&gt; givenEndPoint:Point2D&lt;&#39;Units,&#39;Coordinates&gt; -&gt; givenSweptAngle:Angle -&gt; Arc2D&lt;&#39;Units,&#39;Coordinates&gt;<br /><em>&lt;summary&gt;
@@ -279,7 +279,7 @@ type Point2D&lt;&#39;Units,&#39;Coordinates&gt; =
     Y: Quantity&lt;&#39;Units&gt; }
     interface IComparable
     interface IComparable&lt;Point2D&lt;&#39;Units,&#39;Coordinates&gt;&gt;
-    interface IGeometry
+    interface IGeometry&lt;&#39;Coordinates&gt;
     member Comparison : other:Point2D&lt;&#39;Units,&#39;Coordinates&gt; -&gt; int
     override Equals : obj:obj -&gt; bool + 1 overload
     override GetHashCode : unit -&gt; int

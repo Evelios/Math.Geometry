@@ -251,7 +251,7 @@ from Math.Geometry<br /><br />--------------------<br />type Frame2D&lt;&#39;Uni
   { Origin: Point2D&lt;&#39;Units,&#39;Coordinates&gt;
     XDirection: Direction2D&lt;&#39;Coordinates&gt;
     YDirection: Direction2D&lt;&#39;Coordinates&gt; }
-    interface IGeometry</div>
+    interface IGeometry&lt;&#39;Coordinates&gt;</div>
 <div class="fsdocs-tip" id="fs6">val atOrigin&lt;&#39;Units,&#39;Coordinates,&#39;Defines&gt; : Frame2D&lt;&#39;Units,&#39;Coordinates,&#39;Defines&gt;</div>
 <div class="fsdocs-tip" id="fs7">val atPoint : point:Point2D&lt;&#39;Units,&#39;Coordinates&gt; -&gt; Frame2D&lt;&#39;Units,&#39;Coordinates,&#39;Defines&gt;</div>
 <div class="fsdocs-tip" id="fs8">Multiple items<br />module Point2D
@@ -262,7 +262,7 @@ type Point2D&lt;&#39;Units,&#39;Coordinates&gt; =
     Y: Quantity&lt;&#39;Units&gt; }
     interface IComparable
     interface IComparable&lt;Point2D&lt;&#39;Units,&#39;Coordinates&gt;&gt;
-    interface IGeometry
+    interface IGeometry&lt;&#39;Coordinates&gt;
     member Comparison : other:Point2D&lt;&#39;Units,&#39;Coordinates&gt; -&gt; int
     override Equals : obj:obj -&gt; bool + 1 overload
     override GetHashCode : unit -&gt; int
@@ -284,7 +284,7 @@ from Math.Geometry<br /><br />--------------------<br />type Direction2D&lt;&#39
     Y: float }
     interface IComparable
     interface IComparable&lt;Direction2D&lt;&#39;Coordinates&gt;&gt;
-    interface IGeometry
+    interface IGeometry&lt;&#39;Coordinates&gt;
     member Comparison : other:Direction2D&lt;&#39;Coordinates&gt; -&gt; int
     override Equals : obj:obj -&gt; bool + 1 overload
     override GetHashCode : unit -&gt; int
@@ -322,7 +322,7 @@ from Math.Geometry<br /><br />--------------------<br />[&lt;Struct&gt;]
 type Axis2D&lt;&#39;Units,&#39;Coordinates&gt; =
   { Origin: Point2D&lt;&#39;Units,&#39;Coordinates&gt;
     Direction: Direction2D&lt;&#39;Coordinates&gt; }
-    interface IGeometry
+    interface IGeometry&lt;&#39;Coordinates&gt;
     override Equals : obj:obj -&gt; bool
     override GetHashCode : unit -&gt; int</div>
 <div class="fsdocs-tip" id="fs19">Multiple items<br />union case Meters.Meters: Meters<br /><br />--------------------<br />type Meters = | Meters<br /><em>&lt;category&gt;Unit&lt;/category&gt;</em></div>
@@ -401,7 +401,7 @@ type Vector2D&lt;&#39;Units,&#39;Coordinates&gt; =
     Y: Quantity&lt;&#39;Units&gt; }
     interface IComparable
     interface IComparable&lt;Vector2D&lt;&#39;Units,&#39;Coordinates&gt;&gt;
-    interface IGeometry
+    interface IGeometry&lt;&#39;Coordinates&gt;
     member Comparison : other:Vector2D&lt;&#39;Units,&#39;Coordinates&gt; -&gt; int
     override Equals : obj:obj -&gt; bool + 1 overload
     override GetHashCode : unit -&gt; int

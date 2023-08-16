@@ -254,7 +254,7 @@ type Point2D&lt;&#39;Units,&#39;Coordinates&gt; =
     Y: Quantity&lt;&#39;Units&gt; }
     interface IComparable
     interface IComparable&lt;Point2D&lt;&#39;Units,&#39;Coordinates&gt;&gt;
-    interface IGeometry
+    interface IGeometry&lt;&#39;Coordinates&gt;
     member Comparison : other:Point2D&lt;&#39;Units,&#39;Coordinates&gt; -&gt; int
     override Equals : obj:obj -&gt; bool + 1 overload
     override GetHashCode : unit -&gt; int
@@ -272,7 +272,7 @@ type Vector2D&lt;&#39;Units,&#39;Coordinates&gt; =
     Y: Quantity&lt;&#39;Units&gt; }
     interface IComparable
     interface IComparable&lt;Vector2D&lt;&#39;Units,&#39;Coordinates&gt;&gt;
-    interface IGeometry
+    interface IGeometry&lt;&#39;Coordinates&gt;
     member Comparison : other:Vector2D&lt;&#39;Units,&#39;Coordinates&gt; -&gt; int
     override Equals : obj:obj -&gt; bool + 1 overload
     override GetHashCode : unit -&gt; int

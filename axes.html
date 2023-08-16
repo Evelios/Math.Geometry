@@ -225,7 +225,7 @@ from Math.Geometry<br /><br />--------------------<br />[&lt;Struct&gt;]
 type Axis2D&lt;&#39;Units,&#39;Coordinates&gt; =
   { Origin: Point2D&lt;&#39;Units,&#39;Coordinates&gt;
     Direction: Direction2D&lt;&#39;Coordinates&gt; }
-    interface IGeometry
+    interface IGeometry&lt;&#39;Coordinates&gt;
     override Equals : obj:obj -&gt; bool
     override GetHashCode : unit -&gt; int</div>
 <div class="fsdocs-tip" id="fs6">val x&lt;&#39;Units,&#39;Coordinates&gt; : Axis2D&lt;&#39;Units,&#39;Coordinates&gt;</div>
@@ -238,7 +238,7 @@ from Math.Geometry<br /><br />--------------------<br />type Direction2D&lt;&#39
     Y: float }
     interface IComparable
     interface IComparable&lt;Direction2D&lt;&#39;Coordinates&gt;&gt;
-    interface IGeometry
+    interface IGeometry&lt;&#39;Coordinates&gt;
     member Comparison : other:Direction2D&lt;&#39;Coordinates&gt; -&gt; int
     override Equals : obj:obj -&gt; bool + 1 overload
     override GetHashCode : unit -&gt; int
@@ -272,7 +272,7 @@ type Point2D&lt;&#39;Units,&#39;Coordinates&gt; =
     Y: Quantity&lt;&#39;Units&gt; }
     interface IComparable
     interface IComparable&lt;Point2D&lt;&#39;Units,&#39;Coordinates&gt;&gt;
-    interface IGeometry
+    interface IGeometry&lt;&#39;Coordinates&gt;
     member Comparison : other:Point2D&lt;&#39;Units,&#39;Coordinates&gt; -&gt; int
     override Equals : obj:obj -&gt; bool + 1 overload
     override GetHashCode : unit -&gt; int

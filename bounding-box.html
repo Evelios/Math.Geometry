@@ -263,7 +263,7 @@ type BoundingBox2D&lt;&#39;Units,&#39;Coordinates&gt; =
     MaxX: Quantity&lt;&#39;Units&gt;
     MinY: Quantity&lt;&#39;Units&gt;
     MaxY: Quantity&lt;&#39;Units&gt; }
-    interface IGeometry
+    interface IGeometry&lt;&#39;Coordinates&gt;
     override Equals : obj:obj -&gt; bool
     override GetHashCode : unit -&gt; int
     member BottomLeft : Point2D&lt;&#39;Units,&#39;Coordinates&gt;
@@ -279,7 +279,7 @@ type Point2D&lt;&#39;Units,&#39;Coordinates&gt; =
     Y: Quantity&lt;&#39;Units&gt; }
     interface IComparable
     interface IComparable&lt;Point2D&lt;&#39;Units,&#39;Coordinates&gt;&gt;
-    interface IGeometry
+    interface IGeometry&lt;&#39;Coordinates&gt;
     member Comparison : other:Point2D&lt;&#39;Units,&#39;Coordinates&gt; -&gt; int
     override Equals : obj:obj -&gt; bool + 1 overload
     override GetHashCode : unit -&gt; int

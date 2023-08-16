@@ -232,7 +232,7 @@
 from Math.Geometry<br /><br />--------------------<br />type Circle2D&lt;&#39;Units,&#39;Coordinates&gt; =
   { Center: Point2D&lt;&#39;Units,&#39;Coordinates&gt;
     Radius: Quantity&lt;&#39;Units&gt; }
-    interface IGeometry
+    interface IGeometry&lt;&#39;Coordinates&gt;
     override Equals : obj:obj -&gt; bool
     override GetHashCode : unit -&gt; int</div>
 <div class="fsdocs-tip" id="fs6">val atOrigin : radius:Quantity&lt;&#39;a&gt; -&gt; Circle2D&lt;&#39;a,&#39;b&gt;</div>
@@ -252,7 +252,7 @@ type Point2D&lt;&#39;Units,&#39;Coordinates&gt; =
     Y: Quantity&lt;&#39;Units&gt; }
     interface IComparable
     interface IComparable&lt;Point2D&lt;&#39;Units,&#39;Coordinates&gt;&gt;
-    interface IGeometry
+    interface IGeometry&lt;&#39;Coordinates&gt;
     member Comparison : other:Point2D&lt;&#39;Units,&#39;Coordinates&gt; -&gt; int
     override Equals : obj:obj -&gt; bool + 1 overload
     override GetHashCode : unit -&gt; int
