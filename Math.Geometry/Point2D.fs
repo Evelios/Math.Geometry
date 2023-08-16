@@ -176,11 +176,6 @@ let rotateAround
     : Point2D<'Units, 'Coordinates> =
     Internal.Point2D.rotateAround reference angle point
 
-let placeIn
-    (frame: Frame2D<'Units, 'GlobalCoordinates, 'Defines>)
-    (point: Point2D<'Units, 'GlobalCoordinates>)
-    : Point2D<'Units, 'LocalCoordinates> =
-    Internal.Point2D.placeIn frame point
 
 /// Translate a point in a given direction by a given distance.
 let translateIn
@@ -441,8 +436,8 @@ let coordinates (p: Point2D<'Units, 'Coordinates>) : Quantity<'Units> * Quantity
 /// tuple; these are the coordinates the point would have as viewed by an observer
 /// in that frame.
 let coordinatesIn
-    (frame: Frame2D<'Units, 'Coordinates, 'Defines>)
-    (p: Point2D<'Units, 'Coordinates>)
+    (frame: Frame2D<'Units, 'GlobalCoordinates, 'LocalCoordinates>)
+    (p: Point2D<'Units, 'GlobalCoordinates>)
     : Quantity<'Units> * Quantity<'Units> =
     let p0 = frame.Origin
     let dx = frame.XDirection
@@ -454,11 +449,17 @@ let coordinatesIn
 /// Take a point defined in global coordinates, and return it expressed in local
 /// coordinates relative to a given reference frame.
 let relativeTo
-    (frame: Frame2D<'Units, 'GlobalCoordinates, 'Defines>)
+    (frame: Frame2D<'Units, 'GlobalCoordinates, 'LocalCoordinates>)
     (p: Point2D<'Units, 'GlobalCoordinates>)
     : Point2D<'Units, 'LocalCoordinates> =
     Internal.Point2D.relativeTo frame p
-
+    
+let placeIn
+    (frame: Frame2D<'Units, 'GlobalCoordinates, 'LocalCoordinates>)
+    (point: Point2D<'Units, 'LocalCoordinates>)
+    : Point2D<'Units, 'GlobalCoordinates> =
+    Internal.Point2D.placeIn frame point
+    
 
 // ---- Json ----
 

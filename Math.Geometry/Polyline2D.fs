@@ -71,7 +71,7 @@ let projectOnto
 // Take a polyline defined in global coordinates, and return it expressed
 // in local coordinates relative to a given reference frame.
 let relativeTo
-    (frame: Frame2D<'Units, 'GlobalCoordinates, 'Defines>)
+    (frame: Frame2D<'Units, 'GlobalCoordinates, 'LocalCoordinates>)
     (polyline: Polyline2D<'Units, 'GlobalCoordinates>)
     : Polyline2D<'Units, 'LocalCoordinates> =
     mapVertices (Point2D.relativeTo frame) polyline
@@ -80,9 +80,9 @@ let relativeTo
 // to a given reference frame, and return that polyline expressed in global
 // coordinates.
 let placeIn
-    (frame: Frame2D<'Units, 'GlobalCoordinates, 'Defines>)
-    (polyline: Polyline2D<'Units, 'GlobalCoordinates>)
-    : Polyline2D<'Units, 'LocalCoordinates> =
+    (frame: Frame2D<'Units, 'GlobalCoordinates, 'LocalCoordinates>)
+    (polyline: Polyline2D<'Units, 'LocalCoordinates>)
+    : Polyline2D<'Units, 'GlobalCoordinates> =
     mapVertices (Point2D.placeIn frame) polyline
 
 // Get the minimal bounding box containing a given polyline. Returns `Nothing`

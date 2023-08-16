@@ -21,13 +21,12 @@ let throughPoints
     (p3: Point2D<'Units, 'Coordinates>)
     =
     Point2D.circumcenter p1 p2 p3
-    |> Option.map
-        (fun p0 ->
-            let r1 = Point2D.distanceTo p0 p1
-            let r2 = Point2D.distanceTo p0 p2
-            let r3 = Point2D.distanceTo p0 p3
-            let r = (r1 + r2 + r3) * (1. / 3.)
-            withRadius r p0)
+    |> Option.map (fun p0 ->
+        let r1 = Point2D.distanceTo p0 p1
+        let r2 = Point2D.distanceTo p0 p2
+        let r3 = Point2D.distanceTo p0 p3
+        let r = (r1 + r2 + r3) * (1. / 3.)
+        withRadius r p0)
 
 let sweptAround (centerPoint: Point2D<'Units, 'Coordinates>) (point: Point2D<'Units, 'Coordinates>) =
     withRadius (Point2D.distanceTo centerPoint point) centerPoint
@@ -77,7 +76,7 @@ let translateBy
     (displacement: Vector2D<'Units, 'Coordinates>)
     (circle: Circle2D<'Units, 'Coordinates>)
     : Circle2D<'Units, 'Coordinates> =
-        
+
     withRadius circle.Radius (Point2D.translateBy displacement circle.Center)
 
 
@@ -87,7 +86,7 @@ let translateIn
     (distance: Quantity<'Units>)
     (circle: Circle2D<'Units, 'Coordinates>)
     : Circle2D<'Units, 'Coordinates> =
-        
+
     translateBy (Vector2D.withQuantity distance direction) circle
 
 
@@ -99,20 +98,20 @@ let mirrorAcross (axis: Axis2D<'Units, 'Coordinates>) (circle: Circle2D<'Units, 
 /// Take a circle defined in global coordinates, and return it expressed in
 /// local coordinates relative to a given reference frame.
 let relativeTo
-    (frame: Frame2D<'Units, 'Coordinates, 'Defines>)
-    (circle: Circle2D<'Units, 'Coordinates>)
-    : Circle2D<'Units, 'Coordinates> =
-        
+    (frame: Frame2D<'Units, 'GlobalCoordinates, 'LocalCoordinates>)
+    (circle: Circle2D<'Units, 'GlobalCoordinates>)
+    : Circle2D<'Units, 'LocalCoordinates> =
+
     withRadius circle.Radius (Point2D.relativeTo frame circle.Center)
 
 
 /// Take a circle considered to be defined in local coordinates relative to a
 /// given reference frame, and return that circle expressed in global coordinates.
 let placeIn
-    (frame: Frame2D<'Units, 'Coordinates, 'Defines>)
-    (circle: Circle2D<'Units, 'Coordinates>)
-    : Circle2D<'Units, 'Coordinates> =
-        
+    (frame: Frame2D<'Units, 'GlobalCoordinates, 'LocalCoordinates>)
+    (circle: Circle2D<'Units, 'LocalCoordinates>)
+    : Circle2D<'Units, 'GlobalCoordinates> =
+
     withRadius circle.Radius (Point2D.placeIn frame circle.Center)
 
 // ---- Queries ----
@@ -120,20 +119,17 @@ let placeIn
 /// Test if a circle point is contained within a circle. A point is considered
 /// to be contained if the point lies on the edge of the circle.
 let containsPoint (point: Point2D<'Units, 'Coordinates>) (circle: Circle2D<'Units, 'Coordinates>) : bool =
-    Point2D.distanceSquaredTo point circle.Center
-    <= Length.squared circle.Radius
+    Point2D.distanceSquaredTo point circle.Center <= Length.squared circle.Radius
 
 /// Check if a circle intersects with a given bounding box. This function will
 /// return true if the circle intersects the edges of the bounding box _or_ is fully
 /// contained within the bounding box.
 let intersectsBoundingBox (box: BoundingBox2D<'Units, 'Coordinates>) (circle: Circle2D<'Units, 'Coordinates>) : bool =
     let deltaX =
-        circle.Center.X
-        - Length.max box.MinX (Length.min circle.Center.X box.MaxX)
+        circle.Center.X - Length.max box.MinX (Length.min circle.Center.X box.MaxX)
 
     let deltaY =
-        circle.Center.Y
-        - (Length.max box.MinY (Length.min circle.Center.Y box.MaxY))
+        circle.Center.Y - (Length.max box.MinY (Length.min circle.Center.Y box.MaxY))
 
     Length.squared deltaX + (Length.squared deltaY)
     <= (Length.squared circle.Radius)

@@ -4,16 +4,6 @@ open Math.Geometry
 
 open Math.Units
 
-let placeIn<'Units, 'GlobalCoordinates, 'Defines, 'LocalCoordinates>
-    (frame: Frame2D<'Units, 'GlobalCoordinates, 'Defines>)
-    (point: Point2D<'Units, 'GlobalCoordinates>)
-    : Point2D<'Units, 'LocalCoordinates> =
-    let i = frame.XDirection
-    let j = frame.YDirection
-
-    { X = (frame.Origin.X + point.X * i.X + point.Y * j.X)
-      Y = (frame.Origin.Y + point.X * i.Y + point.Y * j.Y) }
-
 let rotateAround
     (reference: Point2D<'Units, 'Coordinates>)
     (angle: Angle)
@@ -31,7 +21,10 @@ let rotateAround
 let translateBy (v: Vector2D<'Units, 'Coordiantes>) (p: Point2D<'Units, 'Coordinates>) : Point2D<'Units, 'Coordinates> =
     { X = p.X + v.X; Y = p.Y + v.Y }
 
-let mirrorAcross (axis: Axis2D<'Units, 'Coordinates>) (p: Point2D<'Units, 'Corodinates>) : Point2D<'Units, 'Coordinates> =
+let mirrorAcross
+    (axis: Axis2D<'Units, 'Coordinates>)
+    (p: Point2D<'Units, 'Corodinates>)
+    : Point2D<'Units, 'Coordinates> =
     let d = axis.Direction
     let p0 = axis.Origin
     let a = 1. - 2. * d.Y * d.Y
@@ -43,8 +36,8 @@ let mirrorAcross (axis: Axis2D<'Units, 'Coordinates>) (p: Point2D<'Units, 'Corod
     { X = p0.X + a * deltaX + b * deltaY
       Y = p0.Y + b * deltaX + c * deltaY }
 
-let relativeTo<'Units, 'GlobalCoordinates, 'Defines, 'LocalCoordinates>
-    (frame: Frame2D<'Units, 'GlobalCoordinates, 'Defines>)
+let relativeTo
+    (frame: Frame2D<'Units, 'GlobalCoordinates, 'LocalCoordinates>)
     (p: Point2D<'Units, 'GlobalCoordinates>)
     : Point2D<'Units, 'LocalCoordinates> =
     let p0 = frame.Origin
@@ -55,3 +48,13 @@ let relativeTo<'Units, 'GlobalCoordinates, 'Defines, 'LocalCoordinates>
 
     { X = deltaX * i.X + deltaY * i.Y
       Y = deltaX * j.X + deltaY * j.Y }
+
+let placeIn
+    (frame: Frame2D<'Units, 'GlobalCoordinates, 'LocalCoordinates>)
+    (point: Point2D<'Units, 'LocalCoordinates>)
+    : Point2D<'Units, 'GlobalCoordinates> =
+    let i = frame.XDirection
+    let j = frame.YDirection
+
+    { X = (frame.Origin.X + point.X * i.X + point.Y * j.X)
+      Y = (frame.Origin.Y + point.X * i.Y + point.Y * j.Y) }

@@ -72,7 +72,7 @@ module Gen =
         Gen.map (fun offset -> point + offset) (vector2DWithinRadius radius)
 
     /// Generate two points that are within Epsilon of each other
-    let twoClosePoint2D<'Units, 'Coordinates> : Gen<Point2D<'Units, 'Coordinates> * Point2D<'Units, 'Coordiantes>> =
+    let twoClosePoint2D<'Units, 'Coordinates> : Gen<Point2D<'Units, 'Coordinates> * Point2D<'Units, 'Coordinates>> =
         Gen.map2 (fun first offset -> (first, first + offset)) point2D (vector2DWithinRadius (epsilonLength ()))
 
     let axis2D<'Units, 'Coordinates> : Gen<Axis2D<'Units, 'Coordinates>> = Gen.map2 Axis2D.through point2D direction2D

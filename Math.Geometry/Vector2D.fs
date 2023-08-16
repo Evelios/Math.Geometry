@@ -67,8 +67,7 @@ let feet (x: float) (y: float) : Vector2D<Meters, 'Coordinates> = fromUnit Lengt
 // ---- Accessors ----
 
 let magnitude (v: Vector2D<'Units, 'Coordinates>) : Quantity<'Units> =
-    let largestComponent =
-        max (Quantity.abs v.X) (Quantity.abs v.Y)
+    let largestComponent = max (Quantity.abs v.X) (Quantity.abs v.Y)
 
     if largestComponent = Quantity.zero then
         Quantity.zero
@@ -77,8 +76,7 @@ let magnitude (v: Vector2D<'Units, 'Coordinates>) : Quantity<'Units> =
         let scaledX = v.X / largestComponent
         let scaledY = v.Y / largestComponent
 
-        let scaledQuantity =
-            sqrt (scaledX * scaledX + scaledY * scaledY)
+        let scaledQuantity = sqrt (scaledX * scaledX + scaledY * scaledY)
 
         scaledQuantity * largestComponent
 
@@ -133,8 +131,7 @@ let half (v: Vector2D<'Units, 'Coordinates>) : Vector2D<'Units, 'Coordinates> = 
 
 /// Scale a vector to a given length.
 let scaleTo (scale: Quantity<'Units>) (v: Vector2D<'Units, 'Coordinates>) : Vector2D<'Units, 'Coordinates> =
-    let largestComponent =
-        max (Quantity.abs v.X) (Quantity.abs v.Y)
+    let largestComponent = max (Quantity.abs v.X) (Quantity.abs v.Y)
 
     if largestComponent = Quantity.zero then
         zero
@@ -143,8 +140,7 @@ let scaleTo (scale: Quantity<'Units>) (v: Vector2D<'Units, 'Coordinates>) : Vect
         let scaledX = v.X / largestComponent
         let scaledY = v.Y / largestComponent
 
-        let scaledQuantity =
-            sqrt (scaledX * scaledX + scaledY * scaledY)
+        let scaledQuantity = sqrt (scaledX * scaledX + scaledY * scaledY)
 
         xy (scale * scaledX / scaledQuantity) (scale * scaledY / scaledQuantity)
 
@@ -218,8 +214,7 @@ let mirrorAcross
 /// direction and a portion perpendicular to it, then returning the parallel
 /// portion.
 let projectionIn (d: Direction2D<'Coordinates>) (v: Vector2D<'Units, 'Coordiantes>) : Vector2D<'Units, 'Coordinates> =
-    let projectedQuantity =
-        v.X * d.X + v.Y * d.Y
+    let projectedQuantity = v.X * d.X + v.Y * d.Y
 
     xy (projectedQuantity * d.X) (projectedQuantity * d.Y)
 
@@ -230,14 +225,16 @@ let projectOnto
     : Vector2D<'Units, 'Coordinates> =
     let d = axis.Direction
 
-    let projectedQuantity =
-        v.X * d.X + v.Y * d.Y
+    let projectedQuantity = v.X * d.X + v.Y * d.Y
 
     xy (projectedQuantity * d.X) (projectedQuantity * d.Y)
 
 /// Take a vector defined in global coordinates, and return it expressed in
 /// local coordinates relative to a given reference frame.
-let relativeTo (frame: Frame2D<'Units, 'Coordinates, 'Defines>) (v: Vector2D<'Units, 'Coordinates>) =
+let relativeTo
+    (frame: Frame2D<'Units, 'GlobalCoordinates, 'LocalCoordinates>)
+    (v: Vector2D<'Units, 'GlobalCoordinates>)
+    : Vector2D<'Units, 'LocalCoordinates> =
     let dx = frame.XDirection
     let dy = frame.YDirection
     xy (v.X * dx.X + v.Y * dx.Y) (v.X * dy.X + v.Y * dy.Y)
@@ -245,9 +242,9 @@ let relativeTo (frame: Frame2D<'Units, 'Coordinates, 'Defines>) (v: Vector2D<'Un
 /// Take a vector defined in local coordinates relative to a given reference
 /// frame, and return that vector expressed in global coordinates.
 let placeIn
-    (frame: Frame2D<'Units, 'Coordinates, 'Defines>)
-    (v: Vector2D<'Units, 'Coordinates>)
-    : Vector2D<'Units, 'Coordinates> =
+    (frame: Frame2D<'Units, 'GlobalCoordinates, 'LocalCoordinates>)
+    (v: Vector2D<'Units, 'LocalCoordinates>)
+    : Vector2D<'Units, 'GlobalCoordinates> =
     let dx = frame.XDirection
     let dy = frame.YDirection
     xy (v.X * dx.X + v.Y * dy.X) (v.X * dx.Y + v.Y * dy.Y)
@@ -307,9 +304,7 @@ let equalWithin
 
 let fromList (list: float list) : Vector2D<'Units, 'Coordinates> option =
     match list with
-    | [ x; y ] ->
-        xy (Quantity<'Units>.create x) (Quantity<'Units>.create y)
-        |> Some
+    | [ x; y ] -> xy (Quantity<'Units>.create x) (Quantity<'Units>.create y) |> Some
 
     | _ -> None
 
@@ -336,14 +331,9 @@ type ListTransform() =
         member this.targetType() = (fun _ -> typeof<float list list>) ()
 
         member this.toTargetType value =
-            value :?> Vector2D<obj, obj> list
-            |> List.map toList
-            :> obj
+            value :?> Vector2D<obj, obj> list |> List.map toList :> obj
 
         member this.fromTargetType value =
             value :?> float list list
-            |> List.map (
-                fromList
-                >> Option.defaultValue (xy Quantity.zero Quantity.zero)
-            )
+            |> List.map (fromList >> Option.defaultValue (xy Quantity.zero Quantity.zero))
             :> obj

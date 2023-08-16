@@ -24,10 +24,7 @@ let fromEndpoints
 /// Safely create a segment segment. This function returns `None` when the two points are almost equal.
 /// This has to do with the <see cref="Geometry.Internal.Tolerance"/>.
 let safeFrom (start: Point2D<'Units, 'Coordinates>) (finish: Point2D<'Units, 'Coordinates>) =
-    if start = finish then
-        None
-    else
-        Some(from start finish)
+    if start = finish then None else Some(from start finish)
 
 /// Create a segment segment starting at point in a particular direction and length
 let fromPointAndVector (start: Point2D<'Units, 'Coordinates>) (direction: Vector2D<'Units, 'Coordinates>) =
@@ -192,10 +189,12 @@ let pointClosestTo
     if point = segment.Start || point = segment.Finish then
         point
 
-    else
+    else if
 
-    // Perpendicular projection is the closest point
-    if isPointOnSegment point segment then
+
+        // Perpendicular projection is the closest point
+        isPointOnSegment point segment
+    then
         point
 
     else
@@ -239,8 +238,7 @@ let intersectionPoint
     let tDenominator = pqXs - sXqp_
     let uDenominator = pqXr + rXpq_
 
-    if tDenominator = Quantity.zero
-       || uDenominator = Quantity.zero then
+    if tDenominator = Quantity.zero || uDenominator = Quantity.zero then
         // Segments are parallel or collinear.
         // In collinear case, we check if there is only one intersection point.
         if Vector2D.dot s r < Quantity.zero then
@@ -255,9 +253,11 @@ let intersectionPoint
             else
                 None
 
-        else
+        else if
 
-        if p_ = q then
+
+            p_ = q
+        then
             // p |----- p_ | q -----| q_
             Some p_
 
@@ -309,22 +309,28 @@ let intersectionWithAxis
         let t = (d1 - d2) / d1
         Point2D.interpolateFrom p1 p2 t |> Some
 
-    else
+    else if
 
-    if product > Quantity.zero then
+
+        product > Quantity.zero
+    then
         // Both points are on the same side of the axis, so no intersection
         // point exists
         None
 
-    else
+    else if
 
-    if d1 <> Quantity.zero then
+
+        d1 <> Quantity.zero
+    then
         // d2 must be zero since the product is zero, so only p2 is on the axis
         Some p2
 
-    else
+    else if
 
-    if d2 <> Quantity.zero then
+
+        d2 <> Quantity.zero
+    then
         // d1 must be zero since the product is zero, so only p1 is on the axis
         Some p1
 
@@ -363,7 +369,7 @@ let signedDistanceFrom
 /// Take a line segment defined in global coordinates, and return it expressed
 /// in local coordinates relative to a given reference frame.
 let relativeTo
-    (frame: Frame2D<'Units, 'GlobalCoordinates, 'Defines>)
+    (frame: Frame2D<'Units, 'GlobalCoordinates, 'LocalCoordinates>)
     (segment: LineSegment2D<'Units, 'GlobalCoordinates>)
     : LineSegment2D<'Units, 'LocalCoordinates> =
     mapEndpoints (Point2D.relativeTo frame) segment
@@ -372,9 +378,9 @@ let relativeTo
 /// to a given reference frame, and return that line segment expressed in global
 /// coordinates.
 let placeIn
-    (frame: Frame2D<'Units, 'GlobalCoordinates, 'Defines>)
-    (segment: LineSegment2D<'Units, 'GlobalCoordinates>)
-    : LineSegment2D<'Units, 'LocalCoordinates> =
+    (frame: Frame2D<'Units, 'GlobalCoordinates, 'LocalCoordinates>)
+    (segment: LineSegment2D<'Units, 'LocalCoordinates>)
+    : LineSegment2D<'Units, 'GlobalCoordinates> =
     mapEndpoints (Point2D.placeIn frame) segment
 
 /// Get the minimal bounding box containing a given line segment.

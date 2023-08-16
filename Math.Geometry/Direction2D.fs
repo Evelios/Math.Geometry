@@ -189,7 +189,7 @@ let angleFrom (d1: Direction2D<'Coordinates>) (d2: Direction2D<'Coordinates>) : 
 /// Take a direction defined in global coordinates, and return it expressed in
 /// local coordinates relative to a given reference frame.
 let relativeTo
-    (frame: Frame2D<'Units, 'GlobalCoordaintes, 'Defines>)
+    (frame: Frame2D<'Units, 'GlobalCoordaintes, 'LocalCoordinates>)
     (d: Direction2D<'GlobalCoordinates>)
     : Direction2D<'LocalCoordaintes> =
 
@@ -200,9 +200,9 @@ let relativeTo
 /// Take a direction defined in local coordinates relative to a given reference
 /// frame, and return that direction expressed in global coordinates.
 let placeIn
-    (reference: Frame2D<'Units, 'GlobalCoordinates, 'Defines>)
-    (direction: Direction2D<'GlobalCoordinates>)
-    : Direction2D<'LocalCoordinates> =
+    (reference: Frame2D<'Units, 'GlobalCoordinates, 'LocalCoordinates>)
+    (direction: Direction2D<'LocalCoordinates>)
+    : Direction2D<'GlobalCoordinates> =
 
     let dx = reference.XDirection
     let dy = reference.YDirection

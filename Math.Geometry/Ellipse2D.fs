@@ -69,8 +69,7 @@ let scaleAbout
     (scale: float)
     (ellipse: Ellipse2D<'Units, 'Coordinates>)
     : Ellipse2D<'Units, 'Coordinates> =
-    let newCenterPoint =
-        Point2D.scaleAbout point scale (centerPoint ellipse)
+    let newCenterPoint = Point2D.scaleAbout point scale (centerPoint ellipse)
 
     let newAxes =
         if scale >= 0. then
@@ -137,7 +136,7 @@ let mirrorAcross
 /// Take an ellipse defined in global coordinates, and return it expressed in
 /// local coordinates relative to a given reference frame.
 let relativeTo
-    (frame: Frame2D<'Units, 'GlobalCoordinates, 'Defines>)
+    (frame: Frame2D<'Units, 'GlobalCoordinates, 'LocalCoordinates>)
     (ellipse: Ellipse2D<'Units, 'GlobalCoordinates>)
     : Ellipse2D<'Units, 'LocalCoordinates> =
 
@@ -146,8 +145,8 @@ let relativeTo
 /// Take an ellipse considered to be defined in local coordinates relative to a
 /// given reference frame, and return that circle expressed in global coordinates.
 let placeIn
-    (frame: Frame2D<'Units, 'GlobalCoordinates, 'Defines>)
-    (ellipse: Ellipse2D<'Units, 'GlobalCoordinates>)
-    : Ellipse2D<'Units, 'LocalCoordinates> =
+    (frame: Frame2D<'Units, 'GlobalCoordinates, 'LocalCoordinates>)
+    (ellipse: Ellipse2D<'Units, 'LocalCoortdinates>)
+    : Ellipse2D<'Units, 'GlobalCoordinates> =
 
     transformBy (Frame2D.placeIn frame) ellipse

@@ -33,8 +33,7 @@ let throughPoints
 
     let vector = (second - first)
 
-    Direction2D.xyQuantity vector.X vector.Y
-    |> Option.map (through first)
+    Direction2D.xyQuantity vector.X vector.Y |> Option.map (through first)
 
 
 // ---- Accessors ----
@@ -65,8 +64,7 @@ let rotateAround
     (axis: Axis2D<'Units, 'Coordinates>)
     : Axis2D<'Units, 'Coordinates> =
 
-    let rotatePoint =
-        Internal.Point2D.rotateAround center angle
+    let rotatePoint = Internal.Point2D.rotateAround center angle
 
     let rotateDirection = Direction2D.rotateBy angle
     through (rotatePoint axis.Origin) (rotateDirection axis.Direction)
@@ -108,16 +106,16 @@ let mirrorAcross
 /// Take an axis defined in global coordinates, and return it expressed in local
 /// coordinates relative to a given reference frame.
 let relativeTo
-    (frame: Frame2D<'Units, 'Coordinates, 'Defines>)
-    (axis: Axis2D<'Units, 'Coordinates>)
-    : Axis2D<'Units, 'Coordinates> =
+    (frame: Frame2D<'Units, 'GlobalCoordinates, 'LocalCoordinates>)
+    (axis: Axis2D<'Units, 'GlobalCoordinates>)
+    : Axis2D<'Units, 'LocalCoordinates> =
     through (Point2D.relativeTo frame axis.Origin) (Direction2D.relativeTo frame axis.Direction)
 
 
 /// Take an axis defined in local coordinates relative to a given reference
 /// frame, and return that axis expressed in global coordinates.
 let placeIn
-    (frame: Frame2D<'Units, 'Coordinates, 'Defines>)
-    (axis: Axis2D<'Units, 'Coordinates>)
-    : Axis2D<'Units, 'Coordinates> =
+    (frame: Frame2D<'Units, 'GlobalCoordinates, 'LocalCoordinates>)
+    (axis: Axis2D<'Units, 'LocalCoordinates>)
+    : Axis2D<'Units, 'GlobalCoordinates> =
     through (Point2D.placeIn frame axis.Origin) (Direction2D.placeIn frame axis.Direction)

@@ -10,8 +10,7 @@ let private axisAligned
     (y2: Quantity<'Units>)
     : Rectangle2D<'Units, 'Coordinates> =
 
-    let computedCenterPoint =
-        Point2D.xy (Length.midpoint x1 x2) (Length.midpoint y1 y2)
+    let computedCenterPoint = Point2D.xy (Quantity.midpoint x1 x2) (Quantity.midpoint y1 y2)
 
     let computedXDirection =
         if x2 >= x1 then
@@ -30,8 +29,7 @@ let private axisAligned
           XDirection = computedXDirection
           YDirection = computedYDirection }
 
-    let computedDimensions =
-        Size2D.create (Length.abs (x2 - x1)) (Length.abs (y2 - y1))
+    let computedDimensions = Size2D.create (Length.abs (x2 - x1)) (Length.abs (y2 - y1))
 
     { Axes = computedAxes
       Dimensions = computedDimensions }
@@ -188,8 +186,7 @@ let dimensions (rectangle: Rectangle2D<'Units, 'Coordinates>) : Size2D<'Units> =
 
 /// Get the area of a rectangle.
 let area (rectangle: Rectangle2D<'Units, 'Coordinates>) : Quantity<'Units Squared> =
-    rectangle.Dimensions.Width
-    * rectangle.Dimensions.Height
+    rectangle.Dimensions.Width * rectangle.Dimensions.Height
 
 /// Get the vertices of a rectangle as a list. The vertices will be returned
 /// in counterclockwise order if the rectangle's axes are right-handed, and
@@ -217,10 +214,8 @@ let contains (point: Point2D<'Units, 'Coordinates>) (rectangle: Rectangle2D<'Uni
     let x = Point2D.xCoordinateIn localFrame point
     let y = Point2D.yCoordinateIn localFrame point
 
-    Length.abs x
-    <= Length.half rectangle.Dimensions.Width
-    && Length.abs y
-       <= Length.half rectangle.Dimensions.Height
+    Length.abs x <= Length.half rectangle.Dimensions.Width
+    && Length.abs y <= Length.half rectangle.Dimensions.Height
 
 /// Get the edges of a rectangle as a list. The edges will be returned
 /// in counterclockwise order if the rectangle's axes are right-handed, and
@@ -310,11 +305,9 @@ let scaleAbout
               XDirection = Direction2D.reverse currentXDirection
               YDirection = Direction2D.reverse currentYDirection }
 
-    let newWidth =
-        Length.abs (scale * rectangle.Dimensions.Width)
+    let newWidth = Length.abs (scale * rectangle.Dimensions.Width)
 
-    let newHeight =
-        Length.abs (scale * rectangle.Dimensions.Height)
+    let newHeight = Length.abs (scale * rectangle.Dimensions.Height)
 
     { Axes = newAxes
       Dimensions = Size2D.create newWidth newHeight }
@@ -358,26 +351,27 @@ let mirrorAcross
     { Axes = Frame2D.mirrorAcross axis (axes rectangle)
       Dimensions = dimensions rectangle }
 
-/// Take a rectangle considered to be defined in local coordinates relative to a
-/// given reference frame, and return that rectangle expressed in global
-/// coordinates.
-let placeIn
-    (frame: Frame2D<'Units, 'GlobalCoordinates, 'Defines>)
-    (rectangle: Rectangle2D<'Units, 'GlobalCoordinates>)
-    : Rectangle2D<'Units, 'LocalCoordinates> =
-
-    { Axes = Frame2D.placeIn frame (axes rectangle)
-      Dimensions = dimensions rectangle }
-
 /// Take a rectangle defined in global coordinates, and return it expressed
 /// in local coordinates relative to a given reference frame.
 let relativeTo
-    (frame: Frame2D<'Units, 'GlobalCoordinates, 'Defines>)
+    (frame: Frame2D<'Units, 'GlobalCoordinates, 'LocalCoordinates>)
     (rectangle: Rectangle2D<'Units, 'GlobalCoordinates>)
     : Rectangle2D<'Units, 'LocalCoordinates> =
 
     { Axes = Frame2D.relativeTo frame (axes rectangle)
       Dimensions = dimensions rectangle }
+
+/// Take a rectangle considered to be defined in local coordinates relative to a
+/// given reference frame, and return that rectangle expressed in global
+/// coordinates.
+let placeIn
+    (frame: Frame2D<'Units, 'GlobalCoordinates, 'Defines>)
+    (rectangle: Rectangle2D<'Units, 'LocalCoordinates>)
+    : Rectangle2D<'Units, 'GlobalCoordinates> =
+
+    { Axes = Frame2D.placeIn frame (axes rectangle)
+      Dimensions = dimensions rectangle }
+
 
 /// Interpolate within a rectangle based on coordinates which range from 0 to 1.
 /// For example, the four vertices of a given rectangle are

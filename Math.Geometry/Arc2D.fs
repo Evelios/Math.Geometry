@@ -449,9 +449,9 @@ let mirrorAcross (axis: Axis2D<'Units, 'Coordinates>) (arc: Arc2D<'Units, 'Coord
 /// Take an arc defined in global coordinates, and return it expressed in local
 /// coordinates relative to a given reference frame.
 let relativeTo
-    (frame: Frame2D<'Units, 'Coordinates, 'Defines>)
-    (arc: Arc2D<'Units, 'Coordinates>)
-    : Arc2D<'Units, 'Coordinates> =
+    (frame: Frame2D<'Units, 'GlobalCoordinates, 'LocalCoordinates>)
+    (arc: Arc2D<'Units, 'GlobalCoordinates>)
+    : Arc2D<'Units, 'LocalCoordinates> =
 
     if Frame2D.isRightHanded frame then
         { StartPoint = Point2D.relativeTo frame arc.StartPoint
@@ -469,9 +469,9 @@ let relativeTo
 /// Take an arc considered to be defined in local coordinates relative to a
 /// given reference frame, and return that arc expressed in global coordinates.
 let placeIn
-    (frame: Frame2D<'Units, 'Coordinates, 'Defines>)
-    (arc: Arc2D<'Units, 'Coordinates>)
-    : Arc2D<'Units, 'Coordinates> =
+    (frame: Frame2D<'Units, 'GlobalCoordinates, 'LocalCoordinates>)
+    (arc: Arc2D<'Units, 'LocalCoordinates>)
+    : Arc2D<'Units, 'GlobalCoordinates> =
 
     if Frame2D.isRightHanded frame then
         { StartPoint = Point2D.placeIn frame arc.StartPoint

@@ -132,8 +132,7 @@ let rotateAround
     (angle: Angle)
     (frame: Frame2D<'Units, 'Coordinates, 'Defines>)
     : Frame2D<'Units, 'Coordinates, 'Defines> =
-    let rotatePoint =
-        Internal.Point2D.rotateAround centerPoint angle
+    let rotatePoint = Internal.Point2D.rotateAround centerPoint angle
 
     let rotateDirection = Direction2D.rotateBy angle
 
@@ -169,9 +168,7 @@ let translateAlongOwn
     (distance: Quantity<'Units>)
     (frame: Frame2D<'Units, 'Coordinates, 'Defines1>)
     : Frame2D<'Units, 'Coordinates, 'Defines2> =
-    let frame =
-        frame
-        |> translateIn (axis frame).Direction distance
+    let frame = frame |> translateIn (axis frame).Direction distance
 
     { Origin = frame.Origin
       XDirection = frame.XDirection
@@ -202,10 +199,10 @@ let copy (properties: Frame2D<'Units, 'Coordinates, 'Defines1>) : Frame2D<'Units
 
 /// Take two frames defined in global coordinates, and return the second one
 /// expressed in local coordinates relative to the first.
-let relativeTo<'Units, 'GlobalCoordinates, 'Defines, 'LocalCoordinates>
-    (otherFrame: Frame2D<'Units, 'GlobalCoordinates, 'Defines>)
-    (frame: Frame2D<'Units, 'GlobalCoordinates, 'Defines>)
-    : Frame2D<'Units, 'LocalCoordinates, 'Defines> =
+let relativeTo<'Units, 'GlobalCoordinates, 'LocalCoordinates>
+    (otherFrame: Frame2D<'Units, 'GlobalCoordinates, 'LocalCoordinates>)
+    (frame: Frame2D<'Units, 'GlobalCoordinates, 'LocalCoordinates>)
+    : Frame2D<'Units, 'LocalCoordinates, 'GlobalCoordinates> =
     { Origin = Internal.Point2D.relativeTo otherFrame (originPoint frame)
       XDirection = Direction2D.relativeTo otherFrame (xDirection frame)
       YDirection = Direction2D.relativeTo otherFrame (yDirection frame) }
@@ -213,10 +210,10 @@ let relativeTo<'Units, 'GlobalCoordinates, 'Defines, 'LocalCoordinates>
 /// Take one frame defined in global coordinates and a second frame defined
 /// in local coordinates relative to the first frame, and return the second frame
 /// expressed in global coordinates.
-let placeIn<'Units, 'GlobalCoordinates, 'Defines, 'LocalCoordinates>
-    (reference: Frame2D<'Units, 'GlobalCoordinates, 'Defines>)
-    (frame: Frame2D<'Units, 'GlobalCoordinates, 'Defines>)
-    : Frame2D<'Units, 'LocalCoordinates, 'Defines> =
+let placeIn<'Units, 'GlobalCoordinates, 'LocalCoordinates>
+    (reference: Frame2D<'Units, 'GlobalCoordinates, 'LocalCoordinates>)
+    (frame: Frame2D<'Units, 'LocalCoordinates, 'GlobalCoordinates>)
+    : Frame2D<'Units, 'GlobalCoordinates, 'LocalCoordinates> =
     { Origin = Internal.Point2D.placeIn reference frame.Origin
       XDirection = Direction2D.placeIn reference frame.XDirection
       YDirection = Direction2D.placeIn reference frame.YDirection }
