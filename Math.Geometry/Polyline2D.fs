@@ -19,7 +19,10 @@ let length (polyline: Polyline2D<'Units, 'Coordinates>) : Quantity<'Units> =
 //     Polyline2D.mirrorAcross axis
 // is equivalent to
 //     Polyline2D.mapVertices (Point2d.mirrorAcross axis)
-let mapVertices (f: Point2D<'Units, 'Coordinates> -> Point2D<'Units, 'Coordinates>) polyline =
+let mapVertices
+    (f: Point2D<'Units, 'Coordinates1> -> Point2D<'Units, 'Coordinates2>)
+    (polyline: Polyline2D<'Units, 'Coordinates1>)
+    : Polyline2D<'Units, 'Coordinates2> =
     vertices polyline |> List.map f |> fromVertices
 
 // Scale a polyline about a given center point by a given scale.
@@ -75,6 +78,7 @@ let relativeTo
     (polyline: Polyline2D<'Units, 'GlobalCoordinates>)
     : Polyline2D<'Units, 'LocalCoordinates> =
     mapVertices (Point2D.relativeTo frame) polyline
+
 
 // Take a polyline considered to be defined in local coordinates relative
 // to a given reference frame, and return that polyline expressed in global

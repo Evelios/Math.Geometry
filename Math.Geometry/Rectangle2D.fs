@@ -190,6 +190,10 @@ let centerPoint (rectangle: Rectangle2D<'Units, 'Coordinates>) : Point2D<'Units,
 ///     --> ( Length.meters 3, Length.meters 2 )
 let dimensions (rectangle: Rectangle2D<'Units, 'Coordinates>) : Size2D<'Units, 'Coordinates> = rectangle.Dimensions
 
+/// Used for coordinate conversions with dimensions
+let private unsafeDimensions (rectangle: Rectangle2D<'Units, 'Coordinates1>) : Size2D<'Units, 'Coordinates2> =
+    Size2D.create rectangle.Dimensions.Width rectangle.Dimensions.Height
+
 
 /// Get the area of a rectangle.
 let area (rectangle: Rectangle2D<'Units, 'Coordinates>) : Quantity<'Units Squared> =
@@ -360,24 +364,20 @@ let mirrorAcross
 
 /// Take a rectangle defined in global coordinates, and return it expressed
 /// in local coordinates relative to a given reference frame.
-let relativeTo
+let relativeTo<'Units, 'GlobalCoordinates, 'LocalCoordinates>
     (frame: Frame2D<'Units, 'GlobalCoordinates, 'LocalCoordinates>)
     (rectangle: Rectangle2D<'Units, 'GlobalCoordinates>)
     : Rectangle2D<'Units, 'LocalCoordinates> =
-
-    { Axes = Frame2D.relativeTo frame (axes rectangle)
-      Dimensions = dimensions rectangle }
+    centeredOn (Frame2D.relativeTo frame (axes rectangle)) (unsafeDimensions rectangle)
 
 /// Take a rectangle considered to be defined in local coordinates relative to a
 /// given reference frame, and return that rectangle expressed in global
 /// coordinates.
-let placeIn
-    (frame: Frame2D<'Units, 'GlobalCoordinates, 'Defines>)
+let placeIn<'Units, 'GlobalCoordinates, 'LocalCoordinates>
+    (frame: Frame2D<'Units, 'GlobalCoordinates, 'LocalCoordinates>)
     (rectangle: Rectangle2D<'Units, 'LocalCoordinates>)
     : Rectangle2D<'Units, 'GlobalCoordinates> =
-
-    { Axes = Frame2D.placeIn frame (axes rectangle)
-      Dimensions = dimensions rectangle }
+    centeredOn (Frame2D.placeIn frame (axes rectangle)) (unsafeDimensions rectangle)
 
 
 /// Interpolate within a rectangle based on coordinates which range from 0 to 1.
