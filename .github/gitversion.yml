@@ -2,9 +2,11 @@
 # https://gitversion.net/docs/reference/configuration
 
 mode: Mainline
-branches:
-  feature:
-    tag: beta
-  main: { }
-ignore:
-  sha: [ ]
+assembly-versioning-scheme: MajorMinorPatch
+assembly-file-versioning-scheme: MajorMinorPatch
+increment: Inherit
+tag-prefix: '[vV]'
+major-version-bump-message: '\+semver:\s?(breaking|major)'
+minor-version-bump-message: '\+semver:\s?(feature|minor)'
+patch-version-bump-message: '\+semver:\s?(fix|patch)'
+no-bump-message: '\+semver:\s?(none|skip)'
