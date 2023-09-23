@@ -26,8 +26,7 @@ type Size2D<'Units, 'Coordinates> =
         | :? Size2D<'Units, 'Coordinates> as other -> this.Width = other.Width && this.Height = other.Height
         | _ -> false
 
-    override this.GetHashCode() : int =
-        HashCode.Combine(this.Width, this.Height)
+    override this.GetHashCode() : int = hash (this.Width, this.Height)
 
 
 // ---- Geometry ----
@@ -85,10 +84,7 @@ type Direction2D<'Coordinates> =
         Float.almostEqual this.X other.X && Float.almostEqual this.Y other.Y
 
     override this.GetHashCode() =
-        HashCode.Combine(
-            (Float.roundFloatTo Float.DigitPrecision this.X),
-            (Float.roundFloatTo Float.DigitPrecision this.Y)
-        )
+        hash ((Float.roundFloatTo Float.DigitPrecision this.X), (Float.roundFloatTo Float.DigitPrecision this.Y))
 
 
 [<CustomEquality>]
@@ -130,7 +126,7 @@ type Vector2D<'Units, 'Coordinates> =
 
     member this.Equals(other: Vector2D<'Units, 'Coordinates>) : bool = this.X = other.X && this.Y = other.Y
 
-    override this.GetHashCode() = HashCode.Combine(this.X, this.Y)
+    override this.GetHashCode() = hash (this.X, this.Y)
 
     static member (+)
         (
@@ -199,7 +195,7 @@ type Point2D<'Units, 'Coordinates> =
 
     member this.Equals(other: Point2D<'Units, 'Coordinates>) : bool = this.X = other.X && this.Y = other.Y
 
-    override this.GetHashCode() = HashCode.Combine(this.X, this.Y)
+    override this.GetHashCode() = hash (this.X, this.Y)
 
     static member (+)
         (
@@ -250,8 +246,7 @@ type Axis2D<'Units, 'Coordinates> =
 
         | _ -> false
 
-    override this.GetHashCode() : int =
-        HashCode.Combine(this.Origin, this.Direction)
+    override this.GetHashCode() : int = hash (this.Origin, this.Direction)
 
 type Frame2D<'Units, 'Coordinates, 'Defines> =
     { Origin: Point2D<'Units, 'Coordinates>
@@ -321,8 +316,7 @@ type LineSegment2D<'Units, 'Coordinates> =
     static member (/)(lhs: float, rhs: LineSegment2D<'Units, 'Coordinates>) : LineSegment2D<'Units, 'Coordinates> =
         rhs / lhs
 
-    override this.GetHashCode() : int =
-        HashCode.Combine(this.Start, this.Finish)
+    override this.GetHashCode() : int = hash (this.Start, this.Finish)
 
 [<CustomEquality>]
 [<CustomComparison>]
@@ -369,8 +363,7 @@ type Line2D<'Units, 'Coordinates> =
             || (this.Start = other.Finish && this.Finish = other.Start)
         | _ -> false
 
-    override this.GetHashCode() : int =
-        HashCode.Combine(this.Start, this.Finish)
+    override this.GetHashCode() : int = hash (this.Start, this.Finish)
 
 [<CustomEquality>]
 [<NoComparison>]
@@ -387,8 +380,7 @@ type Triangle2D<'Units, 'Coordinates> =
         | :? Triangle2D<'Units, 'Coordinates> as other -> this.P1 = other.P1 && this.P2 = other.P2 && this.P3 = other.P3
         | _ -> false
 
-    override this.GetHashCode() : int =
-        HashCode.Combine(this.P1, this.P2, this.P3)
+    override this.GetHashCode() : int = hash (this.P1, this.P2, this.P3)
 
 [<CustomEquality>]
 [<NoComparison>]
@@ -421,7 +413,7 @@ type BoundingBox2D<'Units, 'Coordinates> =
         | _ -> false
 
     override this.GetHashCode() : int =
-        HashCode.Combine(this.MinX, this.MaxX, this.MinY, this.MaxY)
+        hash (this.MinX, this.MaxX, this.MinY, this.MaxY)
 
 [<CustomEquality>]
 [<NoComparison>]
@@ -437,8 +429,7 @@ type Rectangle2D<'Units, 'Coordinates> =
         | :? Rectangle2D<'Units, 'Coordinates> as other -> this.Axes = other.Axes && this.Dimensions = other.Dimensions
         | _ -> false
 
-    override this.GetHashCode() : int =
-        HashCode.Combine(this.Axes, this.Dimensions)
+    override this.GetHashCode() : int = hash (this.Axes, this.Dimensions)
 
 [<CustomEquality>]
 [<NoComparison>]
@@ -453,8 +444,7 @@ type Circle2D<'Units, 'Coordinates> =
         | :? Circle2D<'Units, 'Coordinates> as other -> this.Center = other.Center && this.Radius = other.Radius
         | _ -> false
 
-    override this.GetHashCode() : int =
-        HashCode.Combine(this.Center, this.Radius)
+    override this.GetHashCode() : int = hash (this.Center, this.Radius)
 
 [<CustomEquality>]
 [<NoComparison>]
@@ -471,7 +461,7 @@ type Ellipse2D<'Units, 'Coordinates> =
         | _ -> false
 
     override this.GetHashCode() : int =
-        HashCode.Combine(this.Axes, this.XRadius, this.YRadius)
+        hash (this.Axes, this.XRadius, this.YRadius)
 
 type SweptAngle =
     | SmallPositive
@@ -499,7 +489,7 @@ type Arc2D<'Units, 'Coordinates> =
         | _ -> false
 
     override this.GetHashCode() : int =
-        HashCode.Combine(this.StartPoint, this.XDirection, this.SignedLength, this.SweptAngle)
+        hash (this.StartPoint, this.XDirection, this.SignedLength, this.SweptAngle)
 
 type Nondegenerate<'Units, 'Coordinates> = Arc2D<'Units, 'Coordinates>
 
@@ -540,7 +530,7 @@ type Polygon2D<'Units, 'Coordinates> =
         this.OuterLoop = other.OuterLoop && this.InnerLoops = this.InnerLoops
 
     override this.GetHashCode() =
-        HashCode.Combine(hash this.OuterLoop, hash this.InnerLoops)
+        hash (hash this.OuterLoop, hash this.InnerLoops)
 
 
 [<CustomEquality>]

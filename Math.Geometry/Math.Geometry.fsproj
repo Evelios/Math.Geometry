@@ -20,15 +20,6 @@
         <Product>Math.Geometry</Product>
     </PropertyGroup>
 
-    <!-- Fable Properties -->
-    <PropertyGroup>
-        <PackageTags>fable;fable-library</PackageTags>
-    </PropertyGroup>
-
-    <!-- Add source files to "fable" folder in Nuget package -->
-    <ItemGroup>
-        <Content Include="*.fsproj; **\*.fs; **\*.fsi" PackagePath="fable\" />
-    </ItemGroup>
 
     <ItemGroup>
         <Compile Include="Extensions\TupleExtensions.fs" />
@@ -60,10 +51,20 @@
         <Compile Include="Test\Assert.fs" />
         <Compile Include="Test\Gen.fs" />
     </ItemGroup>
+    
+    <!-- Fable Properties -->
+    <PropertyGroup>
+        <PackageTags>fable;fable-library</PackageTags>
+    </PropertyGroup>
+
+    <!-- Add source files to "fable" folder in Nuget package -->
+    <ItemGroup>
+        <Content Include="*.fsproj; **\*.fs; **\*.fsi" PackagePath="fable\" />
+    </ItemGroup>
 
     <ItemGroup>
         <PackageReference Include="FSharp.Json" Version="0.4.1" />
-        <PackageReference Include="Math.Units" Version="0.1.161" />
+        <PackageReference Include="Math.Units" Version="0.1.164" />
         <PackageReference Update="FSharp.Core" Version="7.0.400" />
     </ItemGroup>
 </Project>
