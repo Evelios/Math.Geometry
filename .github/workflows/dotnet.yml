@@ -44,7 +44,7 @@ jobs:
         run: dotnet test --configuration Release /p:Version=${{ steps.gitversion.outputs.AssemblySemVer }} --no-build --verbosity normal
 
       - name: Package nuget
-        run: dotnet pack --include-source Math.Geometry.sln --configuration Release -o:package /p:PackageVersion=${{ steps.gitversion.outputs.AssemblySemVer }}
+        run: dotnet pack Math.Geometry.sln --configuration Release -o:package /p:PackageVersion=${{ steps.gitversion.outputs.AssemblySemVer }}
 
       - name: Download fsdocs documentation tool
         run: dotnet tool restore
