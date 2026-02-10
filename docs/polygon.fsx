@@ -84,34 +84,48 @@ Polygon2D.boundingBox polygon
 # Modifiers
 *)
 
-let invert = false
-Polygon2D.mapVertices (Point2D.translate (Vector2D.meters 1. 2.)) invert polygon
-(***)
+(**
+Scale a polygon about a given center point by a given scale.
+*)
+Polygon2D.scaleAbout Point2D.origin 1.5 polygon
+(*** include-it ***)
 
+(**
+Rotate a polygon around the given center point counterclockwise by the given angle.
+*)
+Polygon2D.rotateAround Point2D.origin (Angle.degrees 45.0) polygon
+(*** include-it ***)
 
-Polygon2D.scaleAbout
-(***)
+(**
+Translate a polygon by the given displacement.
+*)
+Polygon2D.translateBy (Vector2D.meters 2. 0.) polygon
+(*** include-it ***)
 
-Polygon2D.rotateAround
-(***)
+(**
+Translate a polygon in a given direction by a given distance.
+*)
+Polygon2D.translateIn Direction2D.y (Length.meters 1.0) polygon
+(*** include-it ***)
 
-Polygon2D.translateBy
-(***)
+(**
+Mirror a polygon across the given axis.
+*)
+Polygon2D.mirrorAcross Axis2D.x polygon
+(*** include-it ***)
 
-Polygon2D.translateIn
-(***)
+(**
+Take a polygon defined in global coordinates and return it expressed in local coordinates relative to a given frame.
+*)
+let frame : Frame2D<Meters, Cartesian, unit> = Frame2D.atPoint (Point2D.meters 1. 1.)
+Polygon2D.relativeTo frame polygon
+(*** include-it ***)
 
-Polygon2D.mirrorAcross
-(***)
-
-Polygon2D.translate
-(***)
-
-Polygon2D.relativeTo
-(***)
-
-Polygon2D.boundingBox
-(***)
+(**
+Take a polygon defined in local coordinates and return it expressed in global coordinates.
+*)
+Polygon2D.placeIn frame polygon
+(*** include-it ***)
 
 (**
 # Queries

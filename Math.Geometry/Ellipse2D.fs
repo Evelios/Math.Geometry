@@ -140,13 +140,13 @@ let relativeTo
     (ellipse: Ellipse2D<'Units, 'GlobalCoordinates>)
     : Ellipse2D<'Units, 'LocalCoordinates> =
 
-    transformBy (Frame2D.relativeTo frame) ellipse
+    transformBy (Frame2D.relativeTo frame >> Frame2D.copy) ellipse
 
 /// Take an ellipse considered to be defined in local coordinates relative to a
 /// given reference frame, and return that circle expressed in global coordinates.
 let placeIn
     (frame: Frame2D<'Units, 'GlobalCoordinates, 'LocalCoordinates>)
-    (ellipse: Ellipse2D<'Units, 'LocalCoortdinates>)
+    (ellipse: Ellipse2D<'Units, 'LocalCoordinates>)
     : Ellipse2D<'Units, 'GlobalCoordinates> =
 
-    transformBy (Frame2D.placeIn frame) ellipse
+    transformBy (Frame2D.placeIn frame >> Frame2D.copy) ellipse

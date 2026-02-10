@@ -47,13 +47,17 @@ Angle.degrees 30.
 | [Frame](frame.html) | [2D](reference/geometry-frame2dmodule.html) |
 | [Axes](axes.html) | [2D](reference/geometry-axes2dmodule.html) |
 | [Line Segment](line-segment.html) | [2D](reference/geometry-linesegment2dmodule.html) |
+| [Line](line.html) | [2D](reference/geometry-line2dmodule.html) |
 | [Triangle](triangle.html) | [2D](reference/geometry-triangle2dmodule.html) |
 | [Circle](circle.html) | [2D](reference/geometry-circle2dmodule.html) |
 | [Ellipse](ellipse.html) | [2D](reference/geometry-ellipse2dmodule.html) |
 | [Arc](arc.html) | [2D](reference/geometry-arc2dmodule.html) |
 | [Polyline](polyline.html) | [2D](reference/geometry-polyline2dmodule.html) |
 | [Polygon](polygon.html) | [2D](reference/geometry-polygon2dmodule.html) |
+| [Rectangle](rectangle.html) | [2D](reference/geometry-rectangle2dmodule.html) |
 | [Size ](size.html) | [2D](reference/geometry-size2dmodule.html) |
 | [Bounding Box](bounding-box.html) | [2D](reference/geometry-boundingbox2dmodule.html) |
+| [Intersection](intersection.html) | [2D](reference/geometry-intersection2dmodule.html) |
+| [Boolean](boolean.html) | [2D](reference/geometry-boolean2dmodule.html) |
 
 *)

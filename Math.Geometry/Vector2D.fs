@@ -1,4 +1,4 @@
-﻿[<CompilationRepresentation(CompilationRepresentationFlags.ModuleSuffix)>]
+[<CompilationRepresentation(CompilationRepresentationFlags.ModuleSuffix)>]
 module Math.Geometry.Vector2D
 
 open FSharp.Json
@@ -26,6 +26,9 @@ let from (p1: Point2D<'Units, 'Coordinates>) (p2: Point2D<'Units, 'Coordinates>)
 /// Construct a vector with the given length in the given direction.
 let withQuantity (a: Quantity<'Units>) (d: Direction2D<'Coordinates>) : Vector2D<'Units, 'Coordinates> =
     Internal.Vector2D.withQuantity a d
+
+/// Alias for `withQuantity`
+let withLength (a: Quantity<'Units>) (d: Direction2D<'Coordinates>) : Vector2D<'Units, 'Coordinates> = withQuantity a d
 
 /// Construct a vector using polar coordinates coordinates given a length and angle
 let rTheta (r: Quantity<'Units>) (theta: Angle) : Vector2D<'Units, 'Coordinates> =

@@ -34,12 +34,12 @@ LineSegment2D.fromEndpoints (Point2D.meters 3. 4., Point2D.meters -8. 2.)
 
 LineSegment2D.safeFrom (Point2D.meters 3. 4.) (Point2D.meters -8. 2.)
 (*** hide ***)
-LineSegment2D.safeFrom<Meters, Cartesian> (Point2D.meters 3. 4.) (Point2D.meters -8. 2.)
+LineSegment2D.safeFrom (Point2D.meters 3. 4.) (Point2D.meters -8. 2.)
 (*** include-it ***)
 
 LineSegment2D.safeFrom (Point2D.meters 2. 1.) (Point2D.meters 2. 1.)
 (*** hide ***)
-LineSegment2D.safeFrom<Meters, Cartesian> (Point2D.meters 2. 1.) (Point2D.meters 2. 1.)
+LineSegment2D.safeFrom (Point2D.meters 2. 1.) (Point2D.meters 2. 1.)
 (*** include-it ***)
 
 LineSegment2D.fromPointAndVector Point2D.origin (Vector2D.meters 7. 8.)
@@ -89,68 +89,124 @@ LineSegment2D.midpoint segment
 # Modifiers
 *)
 
-LineSegment2D.mapEndpoints (Point2D.plus (Vector2D.meters 4. 2.))
-(***)
+(**
+Transform the start and end points of a line segment by a given function.
+*)
+segment |> LineSegment2D.mapEndpoints (Point2D.translate (Vector2D.meters 4. 2.))
+(*** include-it ***)
 
+(**
+Reverse the direction of a line segment.
+*)
 LineSegment2D.reverse segment
 (*** include-it ***)
 
-LineSegment2D.scaleAbout
-(***)
+(**
+Scale a line segment about the given center point by the given scale.
+*)
+segment |> LineSegment2D.scaleAbout Point2D.origin 2.0
+(*** include-it ***)
 
-LineSegment2D.rotateAround
-(***)
+(**
+Rotate a line segment counterclockwise around a given center point by a given angle.
+*)
+segment |> LineSegment2D.rotateAround Point2D.origin (Angle.degrees 90.0)
+(*** include-it ***)
 
-LineSegment2D.translateBy
-(***)
+(**
+Translate a line segment by a given displacement.
+*)
+segment |> LineSegment2D.translateBy (Vector2D.meters 1. 1.)
+(*** include-it ***)
 
-LineSegment2D.translateIn
-(***)
+(**
+Translate a line segment in a given direction by a given distance.
+*)
+segment |> LineSegment2D.translateIn Direction2D.y (Length.meters 2.0)
+(*** include-it ***)
 
-LineSegment2D.mirrorAcross
-(***)
+(**
+Mirror a line segment across an axis.
+*)
+segment |> LineSegment2D.mirrorAcross Axis2D.x
+(*** include-it ***)
 
-LineSegment2D.projectOnto
-(***)
+(**
+Project a line segment onto an axis.
+*)
+segment |> LineSegment2D.projectOnto Axis2D.x
+(*** include-it ***)
 
-LineSegment2D.round
+(**
+Round the endpoints of a line segment.
+*)
+LineSegment2D.round segment
+(*** include-it ***)
 
 (**
 # Queries
 *)
 
-LineSegment2D.interpolate
-(***)
+(**
+Interpolate along a line segment based on a parameter that ranges from 0 to 1.
+*)
+LineSegment2D.interpolate segment 0.5
+(*** include-it ***)
 
-LineSegment2D.areParallel
-(***)
+(**
+Check if two line segments are parallel.
+*)
+let otherSegment = LineSegment2D.from (Point2D.meters 0. 1.) (Point2D.meters 2. 1.)
+LineSegment2D.areParallel segment otherSegment
+(*** include-it ***)
 
-LineSegment2D.isPointOnSegment
-(***)
+(**
+Check if a point lies on a line segment.
+*)
+LineSegment2D.isPointOnSegment (Point2D.meters 0. 0.) segment
+(*** include-it ***)
 
-LineSegment2D.distanceToPoint
-(***)
+(**
+Find the distance from a point to a line segment.
+*)
+LineSegment2D.distanceToPoint (Point2D.meters 5. 5.) segment
+(*** include-it ***)
 
-LineSegment2D.pointClosestTo
-(***)
+(**
+Get the point on a line segment that is closest to the input point.
+*)
+LineSegment2D.pointClosestTo (Point2D.meters 5. 5.) segment
+(*** include-it ***)
 
-LineSegment2D.intersectionPoint
-(***)
+(**
+Try to find the intersection point between two line segments.
+*)
+let crossingSegment = LineSegment2D.from (Point2D.meters 0. 5.) (Point2D.meters 5. 0.)
+LineSegment2D.intersectionPoint segment crossingSegment
+(*** include-it ***)
 
-LineSegment2D.intersectionWithAxis
-(***)
+(**
+Attempt to find the unique intersection point of a line segment with an axis.
+*)
+LineSegment2D.intersectionWithAxis Axis2D.x segment
+(*** include-it ***)
 
-LineSegment2D.signedDistanceAlong
-(***)
+(**
+Take a line segment defined in global coordinates and return it expressed in local coordinates relative to a given frame.
+*)
+let frame : Frame2D<Meters, Cartesian, unit> = Frame2D.atPoint (Point2D.meters 1. 1.)
+LineSegment2D.relativeTo frame segment
+(*** include-it ***)
 
-LineSegment2D.signedDistanceFrom
-(***)
+(**
+Take a line segment defined in local coordinates and return it expressed in global coordinates.
+*)
+let localSegment = LineSegment2D.relativeTo frame segment
+LineSegment2D.placeIn frame localSegment
+(*** include-it ***)
 
-LineSegment2D.relativeTo
-(***)
-
-LineSegment2D.placeIn
-(***)
-
-LineSegment2D.boundingBox
-(***)
+(**
+Get the minimal bounding box containing a given line segment.
+*)
+LineSegment2D.boundingBox segment
+(*** include-it ***)

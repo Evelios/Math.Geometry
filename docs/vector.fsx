@@ -97,3 +97,39 @@ Vector2D.dot lhs rhs
 (** $$ lhs \times rhs $$ *)
 Vector2D.cross lhs rhs
 (*** include-it ***)
+
+(** # Modifiers *)
+
+(**
+Scale a vector to a given length.
+*)
+vec |> Vector2D.scaleTo (Length.meters 10.0)
+(*** include-it ***)
+
+(**
+Rotate a vector counterclockwise by a given angle.
+*)
+vec |> Vector2D.rotateBy (Angle.degrees 90.0)
+(*** include-it ***)
+
+(**
+Mirror a vector across a given axis.
+*)
+vec |> Vector2D.mirrorAcross Axis2D.x
+(*** include-it ***)
+
+(** # Coordinate Conversions *)
+
+(**
+Take a vector defined in global coordinates and return it expressed in local coordinates relative to a given frame.
+*)
+let frame : Frame2D<Meters, Cartesian, unit> = Frame2D.atPoint (Point2D.meters 1. 1.)
+Vector2D.relativeTo frame vec
+(*** include-it ***)
+
+(**
+Take a vector defined in local coordinates and return it expressed in global coordinates.
+*)
+let localVec = Vector2D.relativeTo frame vec
+Vector2D.placeIn frame localVec
+(*** include-it ***)

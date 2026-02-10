@@ -18,6 +18,7 @@ index: 5
 
 
 open Math.Geometry
+open Math.Units
 
 type Cartesian = Cartesian
 (***)
@@ -78,34 +79,63 @@ Direction2D.negativeY
 (** # Accessors *)
 
 (*** hide ***)
-let direction: Direction2D<Cartesian> = Direction2D.xyUnsafe 1. 0.5
+let direction: Direction2D<Cartesian> = Direction2D.xyUnsafe 1. 0. |> Direction2D.rotateBy (Angle.degrees 30.0)
 
 (***)
 
-Direction2D.toAngle
-Direction2D.toTuple
+Direction2D.toAngle direction
+(*** include-it ***)
 
-Direction2D.xComponent
-direction.X
+Direction2D.toTuple direction
+(*** include-it ***)
 
-Direction2D.yComponent
-direction.Y
+Direction2D.xComponent direction
+(*** include-it ***)
+
+Direction2D.yComponent direction
+(*** include-it ***)
 
 
 (** # Modifiers *)
 
-Direction2D.reverse
-Direction2D.rotateClockwise
-Direction2D.rotateCounterclockwise
-Direction2D.perpendicularTo
-Direction2D.mirrorAcross
-Direction2D.orthonormalize
+Direction2D.reverse direction
+(*** include-it ***)
+
+Direction2D.rotateClockwise direction
+(*** include-it ***)
+
+Direction2D.rotateCounterclockwise direction
+(*** include-it ***)
+
+Direction2D.perpendicularTo direction
+(*** include-it ***)
+
+Direction2D.mirrorAcross Axis2D.x direction
+(*** include-it ***)
 
 (** # Queries *)
-Direction2D.equalWithin
-Direction2D.componentIn
-Direction2D.angleFrom
+
+let otherDirection = Direction2D.fromAngle (Angle.degrees 45.0)
+
+Direction2D.equalWithin (Angle.degrees 1.0) otherDirection direction
+(*** include-it ***)
+
+Direction2D.componentIn otherDirection direction
+(*** include-it ***)
+
+Direction2D.angleFrom direction otherDirection
+(*** include-it ***)
 
 (** # Coordinate Conversions *)
-Direction2D.relativeTo
-Direction2D.placeIn
+
+let frame : Frame2D<Meters, Cartesian, unit> = Frame2D.atPoint (Point2D.meters 1. 1.) |> Frame2D.rotateBy (Angle.degrees 45.0)
+
+Direction2D.relativeTo frame direction
+(*** include-it ***)
+
+(**
+Take a direction defined in local coordinates and return it expressed in global coordinates.
+*)
+let localDirection = Direction2D.relativeTo frame direction
+Direction2D.placeIn frame localDirection
+(*** include-it ***)

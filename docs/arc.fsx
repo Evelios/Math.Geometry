@@ -95,14 +95,54 @@ Arc2D.firstDerivative arc 0.8
 # Modifiers
 *)
 
-Arc2D.reverse
-Arc2D.scaleAbout
-Arc2D.rotateAround
-Arc2D.translateBy
-Arc2D.translateIn
-Arc2D.mirrorAcross
-Arc2D.relativeTo
-Arc2D.placeIn
+(**
+Reverse the direction of an arc.
+*)
+Arc2D.reverse arc
+(*** include-it ***)
+
+(**
+Scale an arc about a given point by a given scale.
+*)
+Arc2D.scaleAbout Point2D.origin 1.5 arc
+(*** include-it ***)
+
+(**
+Rotate an arc around a given point by a given angle.
+*)
+Arc2D.rotateAround Point2D.origin (Angle.degrees 45.0) arc
+(*** include-it ***)
+
+(**
+Translate an arc by a given displacement.
+*)
+Arc2D.translateBy (Vector2D.meters 2. 0.) arc
+(*** include-it ***)
+
+(**
+Translate an arc in a given direction by a given distance.
+*)
+Arc2D.translateIn Direction2D.y (Length.meters 1.0) arc
+(*** include-it ***)
+
+(**
+Mirror an arc across a given axis.
+*)
+Arc2D.mirrorAcross Axis2D.x arc
+(*** include-it ***)
+
+(**
+Take an arc defined in global coordinates and return it expressed in local coordinates relative to a given frame.
+*)
+let frame : Frame2D<Meters, Cartesian, unit> = Frame2D.atPoint (Point2D.meters 1. 1.)
+Arc2D.relativeTo frame arc
+(*** include-it ***)
+
+(**
+Take an arc defined in local coordinates and return it expressed in global coordinates.
+*)
+Arc2D.placeIn frame arc
+(*** include-it ***)
 
 (**
 # Non-Degenerative

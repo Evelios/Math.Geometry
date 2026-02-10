@@ -81,8 +81,18 @@ Triangle2D.translateIn (Direction2D.degrees 30.) (Length.meters 2.) triangle
 Triangle2D.mirrorAcross Axis2D.x triangle
 (*** include-it ***)
 
-Triangle2D.placeIn
-(***)
+(**
+Take a triangle defined in global coordinates and return it expressed in local coordinates relative to a given frame.
+*)
+let frame : Frame2D<Meters, Cartesian, unit> = Frame2D.atPoint (Point2D.meters 1. 1.)
+Triangle2D.relativeTo frame triangle
+(*** include-it ***)
+
+(**
+Take a triangle defined in local coordinates and return it expressed in global coordinates.
+*)
+Triangle2D.placeIn frame triangle
+(*** include-it ***)
 
 (**
 # Queries

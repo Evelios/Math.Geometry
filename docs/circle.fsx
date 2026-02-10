@@ -78,10 +78,51 @@ Circle2D.boundingBox circle
 # Modifiers
 *)
 
-Circle2D.scaleAbout
-Circle2D.translateBy
-Circle2D.translateIn
-Circle2D.relativeTo
-Circle2D.placeIn
-Circle2D.containsPoint
-Circle2D.intersectsBoundingBox
+(**
+Scale a circle about a given point by a given scale.
+*)
+Circle2D.scaleAbout Point2D.origin 1.5 circle
+(*** include-it ***)
+
+(**
+Translate a circle by a given displacement.
+*)
+Circle2D.translateBy (Vector2D.meters 2. 0.) circle
+(*** include-it ***)
+
+(**
+Translate a circle in a given direction by a given distance.
+*)
+Circle2D.translateIn Direction2D.y (Length.meters 1.0) circle
+(*** include-it ***)
+
+(**
+Take a circle defined in global coordinates and return it expressed in local coordinates relative to a given frame.
+*)
+let frame : Frame2D<Meters, Cartesian, unit> = Frame2D.atPoint (Point2D.meters 1. 1.)
+Circle2D.relativeTo frame circle
+(*** include-it ***)
+
+(**
+Take a circle defined in local coordinates and return it expressed in global coordinates.
+*)
+let localCircle = Circle2D.relativeTo frame circle
+Circle2D.placeIn frame localCircle
+(*** include-it ***)
+
+(**
+# Queries
+*)
+
+(**
+Check if a circle contains a given point.
+*)
+Circle2D.containsPoint (Point2D.meters 6. 2.) circle
+(*** include-it ***)
+
+(**
+Check if a circle intersects a bounding box.
+*)
+let bbox = BoundingBox2D.from (Point2D.meters 0. 0.) (Point2D.meters 2. 2.)
+Circle2D.intersectsBoundingBox bbox circle
+(*** include-it ***)

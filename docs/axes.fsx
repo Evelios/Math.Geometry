@@ -75,18 +75,58 @@ axis.Direction
 # Modifiers
 *)
 
+(**
+Reverse the direction of an axis.
+*)
 Axis2D.reverse axis
 (*** include-it ***)
 
+(**
+Move an axis so that its origin point is the given point.
+*)
 Axis2D.moveTo (Point2D.meters -1. 4.) axis
 (*** include-it ***)
 
-Axis2D.rotateAround Point2D.origin Angle.pi axis
+(**
+Rotate an axis counterclockwise by a given angle around a given center point.
+*)
+Axis2D.rotateAround Point2D.origin (Angle.degrees 90.0) axis
 (*** include-it ***)
 
-Axis2D.rotateBy
-Axis2D.translateBy
-Axis2D.translateIn
-Axis2D.mirrorAcross
-Axis2D.relativeTo
-Axis2D.placeIn
+(**
+Rotate an axis counterclockwise by a given angle around its own origin point.
+*)
+Axis2D.rotateBy (Angle.degrees 45.0) axis
+(*** include-it ***)
+
+(**
+Translate an axis by a given displacement.
+*)
+Axis2D.translateBy (Vector2D.meters 2. 3.) axis
+(*** include-it ***)
+
+(**
+Translate an axis in a given direction by a given distance.
+*)
+Axis2D.translateIn Direction2D.y (Length.meters 1.5) axis
+(*** include-it ***)
+
+(**
+Mirror an axis across another axis.
+*)
+Axis2D.mirrorAcross Axis2D.x axis
+(*** include-it ***)
+
+(**
+Take an axis defined in global coordinates and return it expressed in local coordinates relative to a given frame.
+*)
+let frame : Frame2D<Meters, Cartesian, unit> = Frame2D.atPoint (Point2D.meters 1. 1.)
+Axis2D.relativeTo frame axis
+(*** include-it ***)
+
+(**
+Take an axis defined in local coordinates and return it expressed in global coordinates.
+*)
+let localAxis = Axis2D.relativeTo frame axis
+Axis2D.placeIn frame localAxis
+(*** include-it ***)

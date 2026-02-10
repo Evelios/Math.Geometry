@@ -21,3 +21,55 @@ open Math.Units
 
 type Cartesian = Cartesian
 (***)
+
+(**
+# Polyline 2D
+
+A `Polyline2D` represents a series of connected line segments.
+
+# Builders
+
+You can create a polyline from a list of points.
+*)
+
+let vertices =
+    [ Point2D.meters 0. 0.
+      Point2D.meters 1. 1.
+      Point2D.meters 2. 0.
+      Point2D.meters 3. 1. ]
+
+let polyline = Polyline2D.fromVertices vertices
+(***)
+
+(**
+# Accessors
+*)
+
+Polyline2D.vertices polyline
+(*** include-it ***)
+
+Polyline2D.segments polyline
+(*** include-it ***)
+
+Polyline2D.length polyline
+(*** include-it ***)
+
+Polyline2D.centroid polyline
+(*** include-it ***)
+
+(**
+# Modifiers
+*)
+
+polyline |> Polyline2D.translateBy (Vector2D.meters 1. 0.)
+(***)
+
+polyline |> Polyline2D.rotateAround Point2D.origin (Angle.degrees 90.)
+(***)
+
+(**
+# Queries
+*)
+
+Polyline2D.boundingBox polyline
+(*** include-it ***)
