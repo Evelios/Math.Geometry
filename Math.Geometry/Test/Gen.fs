@@ -79,15 +79,15 @@ module Gen =
     let axis2D<'Units, 'Coordinates> : Gen<Axis2D<'Units, 'Coordinates>> =
         Gen.map2 Axis2D.through point2D direction2D
 
-    let frame2D<'Units, 'Coordiantes> : Gen<Frame2D<'Units, 'Coordinates, TestDefines>> =
+    let frame2D<'Units, 'Coordinates> : Gen<Frame2D<'Units, 'Coordinates, TestDefines>> =
         Gen.map2 Frame2D.withAngle angle point2D
 
-    let line2D<'Units, 'Coordianates> : Gen<Line2D<'Units, 'Coordinates>> =
+    let line2D<'Units, 'Coordinates> : Gen<Line2D<'Units, 'Coordinates>> =
         Gen.map2 Tuple2.pair point2D point2D
         |> Gen.filter (fun (p1, p2) -> p1 <> p2)
         |> Gen.map (Tuple2.map Line2D.through)
 
-    let lineSegment2D<'Units, 'Coordianates> : Gen<LineSegment2D<'Units, 'Coordinates>> =
+    let lineSegment2D<'Units, 'Coordinates> : Gen<LineSegment2D<'Units, 'Coordinates>> =
         Gen.map2 Tuple2.pair point2D point2D
         |> Gen.filter (fun (p1, p2) -> p1 <> p2)
         |> Gen.map (Tuple2.map LineSegment2D.from)

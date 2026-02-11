@@ -90,8 +90,8 @@ To generate the API documentation you need to run the following commands.
 
 ```bash
 dotnet tool install fsdocs-tool
-dotnet fsdocs build --eval
-dotnet fsdocs watch --eval
+dotnet fsdocs build --eval --mdcomments
+dotnet fsdocs watch --eval --mdcomments
 ```
 
 ## Attribution

@@ -89,7 +89,6 @@ type Direction2D<'Coordinates> =
 
 [<CustomEquality>]
 [<CustomComparison>]
-[<RequireQualifiedAccess>]
 [<Struct>]
 type Vector2D<'Units, 'Coordinates> =
     { X: Quantity<'Units>
@@ -158,7 +157,6 @@ type Vector2D<'Units, 'Coordinates> =
 
 [<CustomEquality>]
 [<CustomComparison>]
-[<RequireQualifiedAccess>]
 [<Struct>]
 type Point2D<'Units, 'Coordinates> =
     { X: Quantity<'Units>

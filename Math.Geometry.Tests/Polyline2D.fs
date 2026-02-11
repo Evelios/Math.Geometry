@@ -13,7 +13,7 @@ open Math.Units.Test
 let Setup () = Gen.ArbGeometry.Register()
 
 [<Property>]
-let ``Centriod is None if polyline is empty`` =
+let ``Centriod is None if polyline is empty`` () =
     let emptyPolyline = Polyline2D.fromVertices []
 
     Polyline2D.centroid emptyPolyline |> Test.equal None

@@ -29,8 +29,8 @@ type Cartesian = Cartesian
 # Line Segment and Line
 *)
 
-let segment = LineSegment2D.from (Point2D.meters 0. 0.) (Point2D.meters 2. 2.)
-let line = Line2D.from (Point2D.meters 0. 2.) (Point2D.meters 2. 0.)
+let segment : LineSegment2D<Meters, Cartesian> = LineSegment2D.from (Point2D.meters 0. 0.) (Point2D.meters 2. 2.)
+let line : Line2D<Meters, Cartesian> = Line2D.through (Point2D.meters 0. 2.) (Point2D.meters 2. 0.)
 
 Intersection2D.lineSegmentAndLine segment line
 (*** include-it ***)
@@ -39,6 +39,6 @@ Intersection2D.lineSegmentAndLine segment line
 # Bounding Box and Line
 *)
 
-let bbox = BoundingBox2D.from (Point2D.meters 0. 0.) (Point2D.meters 2. 2.)
+let bbox : BoundingBox2D<Meters, Cartesian> = BoundingBox2D.from (Point2D.meters 0. 0.) (Point2D.meters 2. 2.)
 Intersection2D.boundingBoxAndLine bbox line
 (*** include-it ***)

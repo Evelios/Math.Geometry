@@ -12,7 +12,7 @@ This framework is currently in alpha development and is currently working on bui
 functionality first before moving to expand into 3D objects.
 
 *)
-(*** hide ***)
+(*** condition: prepare ***)
 
 #r "../Math.Geometry/bin/Debug/net6.0/Math.Geometry.dll"
 #r "../Math.Geometry/bin/Release/net6.0/Math.Geometry.dll"
@@ -36,8 +36,8 @@ Point2D.pixels 100. 200.
 Vector2D.meters 4. 4.
 
 Angle.degrees 30.
-(**
 
+(**
 # Overview
 | Tutorial | Api |
 |----------|-----|
@@ -59,5 +59,4 @@ Angle.degrees 30.
 | [Bounding Box](bounding-box.html) | [2D](reference/geometry-boundingbox2dmodule.html) |
 | [Intersection](intersection.html) | [2D](reference/geometry-intersection2dmodule.html) |
 | [Boolean](boolean.html) | [2D](reference/geometry-boolean2dmodule.html) |
-
 *)

@@ -32,8 +32,8 @@ A `Rectangle2D` is defined by its central axes (a `Frame2D`) and its dimensions 
 You can create an axis-aligned rectangle from two diagonally opposite points.
 *)
 
-let p1 = Point2D.meters 0. 0.
-let p2 = Point2D.meters 3. 2.
+let p1 : Point2D<Meters, Cartesian> = Point2D.meters 0. 0.
+let p2 : Point2D<Meters, Cartesian> = Point2D.meters 3. 2.
 
 Rectangle2D.fromPoints p1 p2
 (***)
@@ -43,7 +43,7 @@ Or by providing dimensions, an angle, and a center point.
 *)
 
 let size = Size2D.create (Length.meters 4.) (Length.meters 2.)
-let center = Point2D.meters 5. 5.
+let center : Point2D<Meters, Cartesian> = Point2D.meters 5. 5.
 let angle = Angle.degrees 45.
 
 Rectangle2D.withDimensions size angle center
@@ -53,7 +53,7 @@ Rectangle2D.withDimensions size angle center
 # Accessors
 *)
 
-let rect = Rectangle2D.fromPoints p1 p2
+let rect : Rectangle2D<Meters, Cartesian> = Rectangle2D.fromPoints p1 p2
 
 Rectangle2D.centerPoint rect
 (*** include-it ***)

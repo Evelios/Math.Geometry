@@ -31,8 +31,8 @@ type Cartesian = Cartesian
 Find the portion of a line that lies within a bounding box.
 *)
 
-let bbox = BoundingBox2D.from (Point2D.meters 0. 0.) (Point2D.meters 2. 2.)
-let line = Line2D.from (Point2D.meters -1. 1.) (Point2D.meters 3. 1.)
+let bbox : BoundingBox2D<Meters, Cartesian> = BoundingBox2D.from (Point2D.meters 0. 0.) (Point2D.meters 2. 2.)
+let line : Line2D<Meters, Cartesian> = Line2D.through (Point2D.meters -1. 1.) (Point2D.meters 3. 1.)
 
 Boolean2D.boundingBoxAndLine bbox line
 (*** include-it ***)

@@ -3,6 +3,7 @@
 output/
 tmp/
 cache
+.fsdocs/
 
 # Mac Files
 

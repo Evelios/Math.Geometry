@@ -18,7 +18,16 @@
 
         <FsDocsLicenseLink>https://opensource.org/licenses/MIT</FsDocsLicenseLink>
         <FsDocsReleaseNotesLink>https://www.nuget.org/packages/Math.Geometry/</FsDocsReleaseNotesLink>
+        <FsDocsLogoSource>$(MSBuildThisFileDirectory)docs/img/logo.png</FsDocsLogoSource>
+        <FsDocsFaviconSource>$(MSBuildThisFileDirectory)docs/img/favicon.ico</FsDocsFaviconSource>
         <FsDocsWarnOnMissingDocs>true</FsDocsWarnOnMissingDocs>
-        <FsDocsTheme>default</FsDocsTheme>
+        <FsDocsTheme>fsharp.org</FsDocsTheme>
+
+        <WarnOn>3390;$(WarnOn)</WarnOn>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <PublishRepositoryUrl>true</PublishRepositoryUrl>
+        <EmbedUntrackedSources>true</EmbedUntrackedSources>
+        <IncludeSymbols>true</IncludeSymbols>
+        <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     </PropertyGroup>
 </Project>

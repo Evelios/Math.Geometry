@@ -91,7 +91,8 @@ Triangle2D.relativeTo frame triangle
 (**
 Take a triangle defined in local coordinates and return it expressed in global coordinates.
 *)
-Triangle2D.placeIn frame triangle
+let localTriangle = Triangle2D.relativeTo frame triangle
+Triangle2D.placeIn frame localTriangle
 (*** include-it ***)
 
 (**

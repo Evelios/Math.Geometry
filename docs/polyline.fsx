@@ -32,13 +32,13 @@ A `Polyline2D` represents a series of connected line segments.
 You can create a polyline from a list of points.
 *)
 
-let vertices =
+let vertices : Point2D<Meters, Cartesian> list =
     [ Point2D.meters 0. 0.
       Point2D.meters 1. 1.
       Point2D.meters 2. 0.
       Point2D.meters 3. 1. ]
 
-let polyline = Polyline2D.fromVertices vertices
+let polyline : Polyline2D<Meters, Cartesian> = Polyline2D.fromVertices vertices
 (***)
 
 (**

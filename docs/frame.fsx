@@ -143,12 +143,13 @@ Frame2D.mirrorAcross Axis2D.x frame
 (**
 Take one frame and express it relative to another frame.
 *)
-let otherFrame = Frame2D.atPoint (Point2D.meters 1. 1.)
+let otherFrame : Frame2D<Meters, Cartesian, unit> = Frame2D.atPoint (Point2D.meters 1. 1.)
 Frame2D.relativeTo otherFrame frame
 (*** include-it ***)
 
 (**
 Take a frame expressed in local coordinates and express it in global coordinates.
 *)
-Frame2D.placeIn otherFrame frame
+let localFrame = Frame2D.relativeTo otherFrame frame
+Frame2D.placeIn otherFrame localFrame
 (*** include-it ***)

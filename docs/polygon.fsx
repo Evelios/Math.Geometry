@@ -124,7 +124,8 @@ Polygon2D.relativeTo frame polygon
 (**
 Take a polygon defined in local coordinates and return it expressed in global coordinates.
 *)
-Polygon2D.placeIn frame polygon
+let localPolygon = Polygon2D.relativeTo frame polygon
+Polygon2D.placeIn frame localPolygon
 (*** include-it ***)
 
 (**

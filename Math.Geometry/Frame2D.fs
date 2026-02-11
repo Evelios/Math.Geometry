@@ -199,10 +199,10 @@ let copy (properties: Frame2D<'Units, 'Coordinates, 'Defines1>) : Frame2D<'Units
 
 /// Take two frames defined in global coordinates, and return the second one
 /// expressed in local coordinates relative to the first.
-let relativeTo<'Units, 'GlobalCoordinates, 'LocalCoordinates>
+let relativeTo<'Units, 'GlobalCoordinates, 'LocalCoordinates, 'Defines>
     (otherFrame: Frame2D<'Units, 'GlobalCoordinates, 'LocalCoordinates>)
-    (frame: Frame2D<'Units, 'GlobalCoordinates, 'LocalCoordinates>)
-    : Frame2D<'Units, 'LocalCoordinates, 'GlobalCoordinates> =
+    (frame: Frame2D<'Units, 'GlobalCoordinates, 'Defines>)
+    : Frame2D<'Units, 'LocalCoordinates, 'Defines> =
     { Origin = Internal.Point2D.relativeTo otherFrame (originPoint frame)
       XDirection = Direction2D.relativeTo otherFrame (xDirection frame)
       YDirection = Direction2D.relativeTo otherFrame (yDirection frame) }
@@ -210,10 +210,10 @@ let relativeTo<'Units, 'GlobalCoordinates, 'LocalCoordinates>
 /// Take one frame defined in global coordinates and a second frame defined
 /// in local coordinates relative to the first frame, and return the second frame
 /// expressed in global coordinates.
-let placeIn<'Units, 'GlobalCoordinates, 'LocalCoordinates>
+let placeIn<'Units, 'GlobalCoordinates, 'LocalCoordinates, 'Defines>
     (reference: Frame2D<'Units, 'GlobalCoordinates, 'LocalCoordinates>)
-    (frame: Frame2D<'Units, 'LocalCoordinates, 'GlobalCoordinates>)
-    : Frame2D<'Units, 'GlobalCoordinates, 'LocalCoordinates> =
+    (frame: Frame2D<'Units, 'LocalCoordinates, 'Defines>)
+    : Frame2D<'Units, 'GlobalCoordinates, 'Defines> =
     { Origin = Internal.Point2D.placeIn reference frame.Origin
       XDirection = Direction2D.placeIn reference frame.XDirection
       YDirection = Direction2D.placeIn reference frame.YDirection }

@@ -29,8 +29,8 @@ type Cartesian = Cartesian
 # Builders
 *)
 
-let p1 = Point2D.meters 0. 0.
-let p2 = Point2D.meters 2. 2.
+let p1 : Point2D<Meters, Cartesian> = Point2D.meters 0. 0.
+let p2 : Point2D<Meters, Cartesian> = Point2D.meters 2. 2.
 
 Line2D.through p1 p2
 (***)
@@ -42,7 +42,7 @@ Line2D.fromPointAndVector p1 (Vector2D.meters 1. 0.)
 # Accessors
 *)
 
-let line = Line2D.through p1 p2
+let line : Line2D<Meters, Cartesian> = Line2D.through p1 p2
 
 Line2D.direction line
 (*** include-it ***)
@@ -70,7 +70,7 @@ Line2D.distanceToPoint (Point2D.meters 0. 2.) line
 Line2D.isPointOnLine (Point2D.meters 1. 1.) line
 (*** include-it ***)
 
-let otherLine = Line2D.through (Point2D.meters 0. 2.) (Point2D.meters 2. 0.)
+let otherLine : Line2D<Meters, Cartesian> = Line2D.through (Point2D.meters 0. 2.) (Point2D.meters 2. 0.)
 
 Line2D.areParallel line otherLine
 (*** include-it ***)

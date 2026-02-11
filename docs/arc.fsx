@@ -141,7 +141,8 @@ Arc2D.relativeTo frame arc
 (**
 Take an arc defined in local coordinates and return it expressed in global coordinates.
 *)
-Arc2D.placeIn frame arc
+let localArc = Arc2D.relativeTo frame arc
+Arc2D.placeIn frame localArc
 (*** include-it ***)
 
 (**
